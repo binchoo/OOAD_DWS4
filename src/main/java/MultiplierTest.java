@@ -2,7 +2,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MultiplierTest {
-
+    /*
+    assertArrayEquals,
+    assertEquals,
+    assertSame,  // object comparison
+    assertTrue,
+    assertNotNull
+    */
     @Test
     public void multiply() {
         Multiplier multiplier = new Multiplier();
