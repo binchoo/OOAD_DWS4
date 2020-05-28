@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="" />
+    <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/checkstyle-output/checkstyle-report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/checkstyle-output/checkstyle-report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/checkstyle-output/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/checkstyle-output/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/findbugs-output/findbugs-report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/findbugs-output/findbugs-report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/OOAD_DWS4-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/OOAD_DWS4-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/pmd-output/pmd-report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/pmd-output/pmd-report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +36,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cVxQnBAKtyq4F0NZReJTs9STvw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -27,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -63,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590627547141</updated>
       <workItem from="1590627550584" duration="1164000" />
-      <workItem from="1590628734177" duration="474000" />
+      <workItem from="1590628734177" duration="2042000" />
     </task>
     <servers />
   </component>
@@ -79,21 +101,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629032202" />
-    <state width="2519" height="400" key="GridCell.Tab.0.bottom" timestamp="1590629084609">
+    <state width="2519" height="400" key="GridCell.Tab.0.bottom" timestamp="1590630623209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.center" timestamp="1590629084609">
+    <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590630623209" />
+    <state width="2519" height="400" key="GridCell.Tab.0.center" timestamp="1590630623209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.left" timestamp="1590629084609">
+    <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590630623209" />
+    <state width="2519" height="400" key="GridCell.Tab.0.left" timestamp="1590630623208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.right" timestamp="1590629084609">
+    <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590630623208" />
+    <state width="2519" height="400" key="GridCell.Tab.0.right" timestamp="1590630623209">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
+    <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590630623209" />
   </component>
 </project>

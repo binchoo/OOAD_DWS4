@@ -60,7 +60,7 @@ findbugsMain {
 
 jar {
     manifest {
-        attributes "Main-Class": "org.ooad_dws.Application"
+        attributes "Main-Class": "org.ooad_dws4.Application"
     }
 
     from {
