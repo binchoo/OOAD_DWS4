@@ -5,7 +5,7 @@ plugins {
     id 'findbugs'
 }
 
-group 'org.ooad_dws'
+group 'org.ooad_dws4'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
