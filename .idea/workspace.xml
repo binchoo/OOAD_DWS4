@@ -250,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590758111059</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="update Jenkinsfile">
+      <created>1590760204574</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590760204574</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,10 +285,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590756457857" />
-    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590758110312">
+    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590760203851">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590758110312" />
+    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590760203851" />
     <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590756552623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -306,10 +313,10 @@
     <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590758112687">
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590760211063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590758112687" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590760211063" />
     <state x="1066" y="479" key="chooseDestDirectoryDialog" timestamp="1590632870632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

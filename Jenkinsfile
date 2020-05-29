@@ -8,18 +8,7 @@ node {
             }
 
         stage('Build & Static Analysis') {
-            slackSend color: 'good', message: 'Build Starts..'
             sh 'chmod +x gradlew; ./gradlew build -x test'
-
-            post {
-                success {
-                    slackSend color: 'good', message: 'Build Starts..'
-                }
-
-                failure {
-
-                }
-            }
         }
 
         stage('Unit Test & Coverage') {
@@ -32,6 +21,7 @@ node {
         }
     } catch (e) {
         currentBuild.result = "FAILED"
+        throw e
     } finally {
         notifyBuild(currentBuild.result)
     }
