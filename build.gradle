@@ -3,6 +3,7 @@ plugins {
     id 'checkstyle'
     id 'pmd'
     id 'findbugs'
+    id 'net.saliman.cobertura' version "3.0.0"
 }
 
 group 'org.ooad_dws4'
@@ -20,8 +21,19 @@ dependencies {
 }
 
 test {
+    reports {
+        junitXml.enabled = true
+        html.enabled = false
+    }
     testLogging.showStandardStreams(true)
     useJUnitPlatform()
+}
+
+cobertura {
+    coverageSourceDirs = sourceSets.main.java.srcDirs
+    coverageFormats = ['xml', 'html']
+    coverageIncludes = ['**/*.java', '**/*.groovy']
+    coverageExcludes = []
 }
 
 checkstyle {
