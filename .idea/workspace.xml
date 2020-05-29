@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="">
@@ -8,9 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,26 +68,19 @@
       <recent name="C:\Users\wnwoq\IdeaProjects\OOAD_DWS4" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.OOAD_DWS4 [test]">
-    <configuration name="JUnit5ExampleTest.printHelloTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;JUnit5ExampleTest.printHelloTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ooad_dws4.Application" />
+      <module name="OOAD_DWS4.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ooad_dws4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="JUnit5ExampleTest.runApplication" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -169,44 +159,6 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OOAD_DWS4" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="OOAD_DWS4 [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="OOAD_DWS4 [test]" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -226,13 +178,32 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="OOAD_DWS4" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.OOAD_DWS4 [test]" />
         <item itemvalue="Gradle.JUnit5ExampleTest.runApplication" />
         <item itemvalue="Gradle.OOAD_DWS4 [coberturaCheck]" />
         <item itemvalue="Gradle.OOAD_DWS4 [cobertura]" />
-        <item itemvalue="Gradle.JUnit5ExampleTest.printHelloTest" />
       </list>
     </recent_temporary>
   </component>
@@ -249,6 +220,7 @@
       <workItem from="1590627550584" duration="1164000" />
       <workItem from="1590628734177" duration="2588000" />
       <workItem from="1590758126942" duration="6208000" />
+      <workItem from="1590767025716" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="configuration for junit5">
       <created>1590748359767</created>
@@ -352,30 +324,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590761215774" />
-    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590763223844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1616" height="396" key="GridCell.Tab.0.bottom" timestamp="1590767056988">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1590763223844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1616" height="396" key="GridCell.Tab.0.bottom/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590767056988" />
+    <state width="1616" height="396" key="GridCell.Tab.0.center" timestamp="1590767056988">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1590763223844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1616" height="396" key="GridCell.Tab.0.center/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590767056988" />
+    <state width="1616" height="396" key="GridCell.Tab.0.left" timestamp="1590767056988">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1590763223844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1616" height="396" key="GridCell.Tab.0.left/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590767056988" />
+    <state width="1616" height="396" key="GridCell.Tab.0.right" timestamp="1590767056988">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
-    <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
+    <state width="1616" height="396" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590767056988" />
     <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590763314627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
