@@ -229,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590757203202</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update Jenkinsfile">
+      <created>1590757775850</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1590757775850</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +247,8 @@
     <MESSAGE value="configuration for junit5&#10;gitignore ignoring build directory" />
     <MESSAGE value="Test Coverage Analysis Is Enabled." />
     <MESSAGE value="Multibranch Jenkins CI Is Enabled." />
-    <option name="LAST_COMMIT_MESSAGE" value="Multibranch Jenkins CI Is Enabled." />
+    <MESSAGE value="update Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Jenkinsfile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="655" y="267" width="716" height="507" key="#Project_Structure" timestamp="1590747560529">
@@ -256,10 +264,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590756457857" />
-    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590757202276">
+    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590757775065">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590757202276" />
+    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590757775065" />
     <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590756552623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -284,10 +292,10 @@
     <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590757210032">
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590757781062">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590757210032" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590757781062" />
     <state x="1066" y="479" key="chooseDestDirectoryDialog" timestamp="1590632870632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

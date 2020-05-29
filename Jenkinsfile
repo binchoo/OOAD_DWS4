@@ -1,4 +1,4 @@
-node('any') {
+node {
     stage('Fetch') {
         echo 'Cloning Github Repo..'
         scm checkout
