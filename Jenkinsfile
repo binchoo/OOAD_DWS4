@@ -1,7 +1,7 @@
 node {
     stage('Fetch') {
         echo 'Cloning Github Repo..'
-        scm checkout
+        checkout scm
     }
 
     stage('Build & Static Analysis') {
