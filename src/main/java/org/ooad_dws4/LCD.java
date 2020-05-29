@@ -6,6 +6,5 @@ import java.util.*;
  * 
  */
 public interface LCD {
-
-
+    public boolean update(Dictionary<String, String> arg);
 }

@@ -17,6 +17,7 @@ public class LCDAdapter implements LCD {
      * @param arg 
      * @return
      */
+    @Override
     public boolean update(Dictionary<String, String> arg) {
         // TODO implement here
         return false;

@@ -3,7 +3,7 @@ package org.ooad_dws4;
 import java.util.*;
 
 /**
- * 
+ *
  */
 public class InputController implements Input {
 
@@ -13,14 +13,8 @@ public class InputController implements Input {
     public InputController() {
     }
 
-
-
-
-    /**
-     * @param button
-     */
+    @Override
     public void buttonClick(int button) {
-        // TODO implement here
-    }
 
+    }
 }

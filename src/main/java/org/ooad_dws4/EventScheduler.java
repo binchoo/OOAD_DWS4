@@ -1,58 +1,64 @@
 package org.ooad_dws4;
 
+import jdk.tools.jaotc.Main;
+
 import java.util.*;
 
 /**
- * 
+ *
  */
-public class EventScheduler {
+public class EventScheduler extends DWSObject {
+
+
+    /**
+     *
+     */
+
+    private MainController mainController;
+
+    private List<Event> eventQueue;
+
+    private Event defaultScreenTimer;
+
+    private Event buzzerOffTimer;
 
     /**
      * Default constructor
      */
     public EventScheduler() {
+        eventQueue = new LinkedList<Event>();
     }
-
     /**
-     * 
+     * @param mainController MainController Object
+     * @return
      */
-    private List<Event> eventQueue;
-
-    /**
-     * 
-     */
-    private Event defaultScreenTimer;
-
-    /**
-     * 
-     */
-    private Event buzzerOffTimer;
-
-
+    public void linkObjects(MainController mainController) {
+        this.mainController = mainController;
+    }
 
     /**
      * @param systemTime
      */
-    public void broadcast(Long systemTime) {
+    public void broadcast(long systemTime) {
         // TODO implement here
     }
 
     /**
-     * 
+     *
      */
     public void defaultScreenTimerReset() {
         // TODO implement here
     }
 
     /**
-     * 
+     *
      */
     public void sortEventQueue() {
         // TODO implement here
     }
 
     /**
-     * 
+     *
      */
     public void decreaseDeadline() {
         // TODO implement here
@@ -73,17 +79,17 @@ public class EventScheduler {
     }
 
     /**
-     * 
+     *
      */
     public void makeEvent() {
         // TODO implement here
     }
 
     /**
-     * @param deadline 
+     * @param deadline
      * @return
      */
-    public Message getMessageAndReset(Long deadline) {
+    public Message getMessageAndReset(long deadline) {
         // TODO implement here
         return null;
     }
@@ -103,5 +109,6 @@ public class EventScheduler {
         // TODO implement here
         return null;
     }
+
 
 }

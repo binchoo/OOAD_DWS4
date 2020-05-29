@@ -1,11 +1,9 @@
 package org.ooad_dws4;
 
-import java.util.*;
-
 /**
  * 
  */
-public class ButtonsetAdapter implements Buttonset {
+public class ButtonsetAdapter {
 
     /**
      * Default constructor

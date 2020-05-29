@@ -7,6 +7,6 @@ import java.util.*;
  */
 public interface PulseMaker {
 
-    public void makePulse();
+    public void makePulse(long timeUnit);
 
 }

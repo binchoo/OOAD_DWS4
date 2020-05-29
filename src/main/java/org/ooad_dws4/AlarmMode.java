@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class AlarmMode {
+public class AlarmMode extends Mode{
 
     /**
      * Default constructor

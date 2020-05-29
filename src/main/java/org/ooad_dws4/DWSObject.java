@@ -2,7 +2,7 @@ package org.ooad_dws4;
 
 import java.util.Dictionary;
 
-public class DWSObject {
+public abstract class DWSObject {
     protected Message encodingMessage(int destination, String action, Dictionary<String, String> arg) {
         return new Message(destination, action, arg);
     }
@@ -11,7 +11,5 @@ public class DWSObject {
         return true;
     }
 
-    public void linkObject(DWSObject obj) {
 
-    }
 }

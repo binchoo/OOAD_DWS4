@@ -2,19 +2,766 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.8.0" timestamp="2020-05-28T10:50:31.162">
-<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\Application.java">
-<violation beginline="1" endline="7" begincolumn="26" endcolumn="1" rule="UseUtilityClass" ruleset="Design" class="Application" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#useutilityclass" priority="3">
+    version="6.8.0" timestamp="2020-05-29T22:16:18.443">
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Alarm.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Alarm" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Alarm" method="Alarm" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Alarm" method="Alarm" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="21" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Alarm" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'state'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Alarm" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="21" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Alarm" variable="time" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'time'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="22" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Alarm" variable="time" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\AlarmMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="AlarmMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="AlarmMode" method="AlarmMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="AlarmMode" method="AlarmMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="21" endcolumn="26" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="AlarmMode" variable="alarms" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'alarms'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="27" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="AlarmMode" variable="alarms" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="19" endcolumn="30" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="AlarmMode" variable="currentAlarm" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'currentAlarm'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="31" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="AlarmMode" variable="currentAlarm" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Application.java">
+<violation beginline="3" endline="9" begincolumn="26" endcolumn="1" rule="UseUtilityClass" ruleset="Design" package="org.ooad_dws4" class="Application" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#useutilityclass" priority="3">
 All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
 </violation>
-<violation beginline="2" endline="2" begincolumn="29" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" class="Application" method="main" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+<violation beginline="4" endline="4" begincolumn="29" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Application" method="main" variable="args" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
 Parameter 'args' is not assigned and could be declared final
 </violation>
-<violation beginline="3" endline="3" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" class="Application" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+<violation beginline="5" endline="5" begincolumn="9" endcolumn="39" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Application" method="main" variable="t" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 't' could be declared final
+</violation>
+<violation beginline="6" endline="6" begincolumn="9" endcolumn="49" rule="LocalVariableCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Application" method="main" variable="c" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#localvariablecouldbefinal" priority="3">
+Local variable 'c' could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Button.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Button" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Button" method="Button" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Button" method="Button" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Buttonset.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Buttonset" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\ButtonsetAdapter.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="ButtonsetAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="ButtonsetAdapter" method="ButtonsetAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="ButtonsetAdapter" method="ButtonsetAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="19" endcolumn="23" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="ButtonsetAdapter" variable="input" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'input'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="24" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="ButtonsetAdapter" variable="input" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Buzzer.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Buzzer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\BuzzerAdapter.java">
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="BuzzerAdapter" method="BuzzerAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="BuzzerAdapter" method="BuzzerAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="21" endline="21" begincolumn="28" endcolumn="57" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="BuzzerAdapter" method="execute" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'arg' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\City.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="City" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="City" method="City" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="City" method="City" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="21" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="City" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'state'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="City" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="17" endcolumn="24" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="City" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'timeZone'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="25" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="City" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Clock.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Clock" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="25" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Clock" variable="timeUnit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="25" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Clock" variable="timeUnit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="9" endline="9" begincolumn="18" endcolumn="25" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="Clock" variable="timeUnit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'timeUnit' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="10" endline="10" begincolumn="24" endcolumn="33" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Clock" variable="pulseMaker" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="10" endline="10" begincolumn="24" endcolumn="33" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Clock" variable="pulseMaker" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="10" endline="10" begincolumn="24" endcolumn="33" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="Clock" variable="pulseMaker" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'pulseMaker' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="15" endline="15" begincolumn="33" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Clock" method="Clock" variable="pulseMaker" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'pulseMaker' is not assigned and could be declared final
+</violation>
+<violation beginline="15" endline="15" begincolumn="18" endcolumn="30" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Clock" method="Clock" variable="timeUnit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'timeUnit' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="18" endcolumn="29" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Clock" method="Clock" variable="p" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'p' is not assigned and could be declared final
+</violation>
+<violation beginline="20" endline="20" begincolumn="32" endcolumn="44" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Clock" method="Clock" variable="timeUnit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'timeUnit' is not assigned and could be declared final
+</violation>
+<violation beginline="31" endline="31" begincolumn="17" endcolumn="35" rule="AvoidPrintStackTrace" ruleset="Best Practices" package="org.ooad_dws4" class="Clock" method="run" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#avoidprintstacktrace" priority="3">
+Avoid printStackTrace(); use a logger call instead.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\DDay.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="DDay" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="DDay" method="DDay" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="DDay" method="DDay" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="21" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="DDay" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'state'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="DDay" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="21" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="DDay" variable="date" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'date'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="22" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="DDay" variable="date" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\DDayMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="DDayMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="DDayMode" method="DDayMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="DDayMode" method="DDayMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="20" endcolumn="24" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="DDayMode" variable="ddays" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'ddays'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="25" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="DDayMode" variable="ddays" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="17" endcolumn="27" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="DDayMode" variable="currentDday" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'currentDday'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="28" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="DDayMode" variable="currentDday" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\DWSObject.java">
+<violation beginline="5" endline="17" begincolumn="8" endcolumn="1" rule="AtLeastOneConstructor" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#atleastoneconstructor" priority="3">
+Each class should declare at least one constructor
+</violation>
+<violation beginline="6" endline="6" begincolumn="56" endcolumn="68" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" method="encodingMessage" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'action' is not assigned and could be declared final
+</violation>
+<violation beginline="6" endline="6" begincolumn="71" endcolumn="100" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" method="encodingMessage" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'arg' is not assigned and could be declared final
+</violation>
+<violation beginline="6" endline="6" begincolumn="39" endcolumn="53" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" method="encodingMessage" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'destination' is not assigned and could be declared final
+</violation>
+<violation beginline="10" endline="10" begincolumn="39" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" method="decodingMessage" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+<violation beginline="14" endline="16" begincolumn="43" endcolumn="5" rule="UncommentedEmptyMethodBody" ruleset="Documentation" package="org.ooad_dws4" class="DWSObject" method="linkObject" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptymethodbody" priority="3">
+Document empty method body
+</violation>
+<violation beginline="14" endline="14" begincolumn="28" endcolumn="40" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="DWSObject" method="linkObject" variable="obj" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'obj' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Event.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Event" method="Event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Event" method="Event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="18" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Event" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'deadline'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Event" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="21" endcolumn="27" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Event" variable="message" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'message'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="28" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Event" variable="message" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="32" endline="32" begincolumn="29" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Event" method="setDeadline" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'deadline' is not assigned and could be declared final
+</violation>
+<violation beginline="55" endline="55" begincolumn="34" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Event" method="decreaseDeadline" variable="unit" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'unit' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\EventScheduler.java">
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" method="EventScheduler" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="EventScheduler" method="EventScheduler" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="25" endcolumn="34" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="EventScheduler" variable="eventQueue" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'eventQueue'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="35" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" variable="eventQueue" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="19" endcolumn="36" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="EventScheduler" variable="defaultScreenTimer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'defaultScreenTimer'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="37" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" variable="defaultScreenTimer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="29" endline="29" begincolumn="19" endcolumn="32" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="EventScheduler" variable="buzzerOffTimer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'buzzerOffTimer'.
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="33" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" variable="buzzerOffTimer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="36" endline="36" begincolumn="27" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" method="broadcast" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'systemTime' is not assigned and could be declared final
+</violation>
+<violation beginline="64" endline="64" begincolumn="29" endcolumn="42" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" method="removeEvent" variable="target" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'target' is not assigned and could be declared final
+</violation>
+<violation beginline="71" endline="71" begincolumn="27" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" method="pushEvent" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+<violation beginline="86" endline="86" begincolumn="39" endcolumn="51" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="EventScheduler" method="getMessageAndReset" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'deadline' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\IOBridge.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="IOBridge" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" method="IOBridge" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="IOBridge" method="IOBridge" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="30" endcolumn="35" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="IOBridge" variable="output" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'output'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="36" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" variable="output" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="29" endcolumn="33" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="IOBridge" variable="input" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'input'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="34" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" variable="input" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="29" endline="29" begincolumn="21" endcolumn="35" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="IOBridge" variable="isBuzzerRinging" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'isBuzzerRinging'.
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="36" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" variable="isBuzzerRinging" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="34" endline="34" begincolumn="21" endcolumn="26" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="IOBridge" variable="isMute" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'isMute'.
+</violation>
+<violation beginline="34" endline="34" begincolumn="13" endcolumn="27" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" variable="isMute" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="42" endline="42" begincolumn="29" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" method="outputEvent" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+<violation beginline="49" endline="49" begincolumn="28" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="IOBridge" method="inputEvent" variable="event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'event' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Input.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Input" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\InputController.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="InputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="InputController" method="InputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="InputController" method="InputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="22" endline="22" begincolumn="29" endcolumn="38" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="InputController" method="buttonClick" variable="button" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'button' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\LCD.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="LCD" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\LCDAdapter.java">
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="LCDAdapter" method="LCDAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="LCDAdapter" method="LCDAdapter" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="20" endline="20" begincolumn="27" endcolumn="56" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="LCDAdapter" method="update" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'arg' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\MainController.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="MainController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="MainController" method="MainController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="MainController" method="MainController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="24" endcolumn="33" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="MainController" variable="timeRunner" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'timeRunner'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="34" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="MainController" variable="timeRunner" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="28" endcolumn="41" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="MainController" variable="eventScheduler" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'eventScheduler'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="42" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="MainController" variable="eventScheduler" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="29" endline="29" begincolumn="22" endcolumn="29" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="MainController" variable="ioBridge" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'ioBridge'.
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="30" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="MainController" variable="ioBridge" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="34" endline="34" begincolumn="25" endcolumn="35" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="MainController" variable="modeManager" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'modeManager'.
+</violation>
+<violation beginline="34" endline="34" begincolumn="13" endcolumn="36" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="MainController" variable="modeManager" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="43" endline="43" begincolumn="27" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="MainController" method="broadcast" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'systemTime' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="28" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="MainController" method="inputEvent" variable="event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'event' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Message.java">
+<violation beginline="22" endline="22" begincolumn="13" endcolumn="28" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Message" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="22" endline="22" begincolumn="17" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="22" endline="22" begincolumn="17" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="22" endline="22" begincolumn="17" endcolumn="27" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="Message" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'destination' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="23" endline="23" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Message" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="23" endline="23" begincolumn="20" endcolumn="25" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="23" endline="23" begincolumn="20" endcolumn="25" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="23" endline="23" begincolumn="20" endcolumn="25" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="Message" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'action' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="43" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Message" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="40" endcolumn="42" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="24" endline="24" begincolumn="40" endcolumn="42" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="Message" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="24" endline="24" begincolumn="40" endcolumn="42" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="Message" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'arg' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="26" endline="26" begincolumn="37" endcolumn="49" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Message" method="Message" variable="action" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'action' is not assigned and could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="52" endcolumn="81" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Message" method="Message" variable="arg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'arg' is not assigned and could be declared final
+</violation>
+<violation beginline="26" endline="26" begincolumn="20" endcolumn="34" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Message" method="Message" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'destination' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Mode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Mode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Mode" method="Mode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Mode" method="Mode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="15" endcolumn="33" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Mode" variable="isActivate" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="15" endcolumn="24" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Mode" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="30" endline="30" begincolumn="27" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Mode" method="broadcast" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'systemTime' is not assigned and could be declared final
+</violation>
+<violation beginline="59" endline="59" begincolumn="28" endcolumn="36" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Mode" method="modeModify" variable="event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'event' is not assigned and could be declared final
+</violation>
+<violation beginline="66" endline="66" begincolumn="29" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Mode" method="changeState" variable="state" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'state' is not assigned and could be declared final
+</violation>
+<violation beginline="82" endline="82" begincolumn="35" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="Mode" method="receiveMessage" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\ModeManager.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="ModeManager" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" method="ModeManager" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="ModeManager" method="ModeManager" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="20" endcolumn="24" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="ModeManager" variable="modes" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'modes'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="25" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" variable="modes" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="28" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="ModeManager" variable="currentMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'currentMode'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="29" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" variable="currentMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="29" endline="29" begincolumn="18" endcolumn="28" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="ModeManager" variable="defaultMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'defaultMode'.
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="29" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" variable="defaultMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="36" endline="36" begincolumn="27" endcolumn="41" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" method="broadcast" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'systemTime' is not assigned and could be declared final
+</violation>
+<violation beginline="44" endline="44" begincolumn="31" endcolumn="39" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="ModeManager" method="modeModify" variable="event" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'event' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\OutputController.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="OutputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="OutputController" method="OutputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="OutputController" method="OutputController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="20" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="OutputController" variable="buzzer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'buzzer'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="OutputController" variable="buzzer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="17" endcolumn="19" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="OutputController" variable="lcd" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'lcd'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="20" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="OutputController" variable="lcd" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="35" endline="35" begincolumn="27" endcolumn="37" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="OutputController" method="output" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\PulseMaker.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="PulseMaker" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="10" endline="10" begincolumn="12" endcolumn="28" rule="UnnecessaryModifier" ruleset="Code Style" package="org.ooad_dws4" class="PulseMaker" method="makePulse" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on method 'makePulse': the method is declared in an interface type
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Stopwatch.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Stopwatch" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Stopwatch" method="Stopwatch" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Stopwatch" method="Stopwatch" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="18" endcolumn="30" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Stopwatch" variable="stopwatchTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'stopwatchTime'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="31" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Stopwatch" variable="stopwatchTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\StopwatchMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="StopwatchMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="StopwatchMode" method="StopwatchMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="StopwatchMode" method="StopwatchMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="23" endcolumn="31" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="StopwatchMode" variable="stopwatch" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'stopwatch'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="32" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="StopwatchMode" variable="stopwatch" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\TimeKeeping.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="TimeKeeping" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="TimeKeeping" method="TimeKeeping" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="TimeKeeping" method="TimeKeeping" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="18" endcolumn="21" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimeKeeping" variable="time" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'time'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="22" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimeKeeping" variable="time" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\TimeKeepingMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="TimeKeepingMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="TimeKeepingMode" method="TimeKeepingMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="TimeKeepingMode" method="TimeKeepingMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="25" endcolumn="35" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimeKeepingMode" variable="timekeeping" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'timekeeping'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="36" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimeKeepingMode" variable="timekeeping" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\TimeRunner.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="TimeRunner" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="16" begincolumn="12" endcolumn="5" rule="CallSuperInConstructor" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" method="TimeRunner" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#callsuperinconstructor" priority="3">
+It is a good practice to call super() in a constructor
+</violation>
+<violation beginline="21" endline="21" begincolumn="18" endcolumn="27" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'systemTime'.
+</violation>
+<violation beginline="21" endline="21" begincolumn="13" endcolumn="28" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="21" endline="21" begincolumn="18" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="21" endline="21" begincolumn="18" endcolumn="27" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="21" endline="21" begincolumn="13" endcolumn="28" rule="SingularField" ruleset="Design" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#singularfield" priority="3">
+Perhaps 'systemTime' could be replaced by a local variable.
+</violation>
+<violation beginline="21" endline="21" begincolumn="18" endcolumn="27" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="TimeRunner" variable="systemTime" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'systemTime' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="24" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'timeZone'.
+</violation>
+<violation beginline="26" endline="26" begincolumn="13" endcolumn="25" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="24" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="24" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="26" endline="26" begincolumn="13" endcolumn="25" rule="SingularField" ruleset="Design" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#singularfield" priority="3">
+Perhaps 'timeZone' could be replaced by a local variable.
+</violation>
+<violation beginline="26" endline="26" begincolumn="17" endcolumn="24" rule="ImmutableField" ruleset="Design" package="org.ooad_dws4" class="TimeRunner" variable="timeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'timeZone' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+<violation beginline="28" endline="28" begincolumn="28" endcolumn="41" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimeRunner" variable="mainController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'mainController'.
+</violation>
+<violation beginline="28" endline="28" begincolumn="13" endcolumn="42" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" variable="mainController" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="41" endline="41" begincolumn="37" endcolumn="47" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" method="systemTimeUpdate" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+<violation beginline="50" endline="50" begincolumn="35" endcolumn="45" rule="MethodArgumentCouldBeFinal" ruleset="Code Style" package="org.ooad_dws4" class="TimeRunner" method="changeTimeZone" variable="msg" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#methodargumentcouldbefinal" priority="3">
+Parameter 'msg' is not assigned and could be declared final
+</violation>
+<violation beginline="57" endline="57" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" package="org.ooad_dws4" class="TimeRunner" method="makePulse" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
 System.out.println is used
 </violation>
-<violation beginline="4" endline="4" begincolumn="9" endcolumn="26" rule="SystemPrintln" ruleset="Best Practices" class="Application" method="main" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
-System.out.println is used
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\Timer.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="Timer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="Timer" method="Timer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="Timer" method="Timer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="18" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="Timer" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'deadline'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="Timer" variable="deadline" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\TimerMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="TimerMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="TimerMode" method="TimerMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="TimerMode" method="TimerMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="19" endcolumn="23" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="TimerMode" variable="timer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'timer'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="24" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="TimerMode" variable="timer" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+</file>
+<file name="C:\Users\Lunox\IdeaProjects\OOAD_DWS4\src\main\java\org\ooad_dws4\WoldTimeMode.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="19" rule="UnusedImports" ruleset="Best Practices" package="org.ooad_dws4" class="WoldTimeMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util'
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UnnecessaryConstructor" ruleset="Code Style" package="org.ooad_dws4" class="WoldTimeMode" method="WoldTimeMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#unnecessaryconstructor" priority="3">
+Avoid unnecessary constructors - the compiler will generate these for you
+</violation>
+<violation beginline="13" endline="14" begincolumn="12" endcolumn="5" rule="UncommentedEmptyConstructor" ruleset="Documentation" package="org.ooad_dws4" class="WoldTimeMode" method="WoldTimeMode" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_documentation.html#uncommentedemptyconstructor" priority="3">
+Document empty constructor
+</violation>
+<violation beginline="19" endline="19" begincolumn="20" endcolumn="25" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="WoldTimeMode" variable="cities" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'cities'.
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="26" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="WoldTimeMode" variable="cities" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="24" endline="24" begincolumn="18" endcolumn="28" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="WoldTimeMode" variable="currentCity" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'currentCity'.
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="29" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="WoldTimeMode" variable="currentCity" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="29" endline="29" begincolumn="17" endcolumn="28" rule="UnusedPrivateField" ruleset="Best Practices" package="org.ooad_dws4" class="WoldTimeMode" variable="thisTimeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'thisTimeZone'.
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="29" rule="FieldDeclarationsShouldBeAtStartOfClass" ruleset="Code Style" package="org.ooad_dws4" class="WoldTimeMode" variable="thisTimeZone" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_codestyle.html#fielddeclarationsshouldbeatstartofclass" priority="3">
+Fields should be declared at the top of the class, before any method declarations, constructors, initializers or inner classes.
+</violation>
+<violation beginline="43" endline="43" begincolumn="18" endcolumn="32" rule="UnusedPrivateMethod" ruleset="Best Practices" package="org.ooad_dws4" class="WoldTimeMode" method="clacOffsetDif" externalInfoUrl="https://pmd.github.io/pmd-6.8.0/pmd_rules_java_bestpractices.html#unusedprivatemethod" priority="3">
+Avoid unused private methods such as 'clacOffsetDif()'.
 </violation>
 </file>
 <configerror rule="LoosePackageCoupling" msg="No packages or classes specified"/>

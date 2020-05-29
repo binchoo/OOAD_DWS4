@@ -7,5 +7,5 @@ import java.util.*;
  */
 public interface Input {
 
-
+    public void buttonClick(int button);
 }

@@ -1,5 +1,7 @@
 package org.ooad_dws4;
 
+import jdk.tools.jaotc.Main;
+
 import java.util.*;
 
 /**
@@ -12,6 +14,8 @@ public class ModeManager {
      */
     public ModeManager() {
     }
+
+    private MainController mainController;
 
     /**
      * 
@@ -28,6 +32,9 @@ public class ModeManager {
      */
     private Mode defaultMode;
 
+    public void linkObjects(MainController mainController){
+        this.mainController = mainController;
+    }
 
 
     /**

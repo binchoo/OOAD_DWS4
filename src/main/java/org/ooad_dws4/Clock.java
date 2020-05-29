@@ -12,27 +12,26 @@ public class Clock implements Runnable {
     /**
      * Default constructor
      */
-    public Clock(long timeUnit, PulseMaker pulseMaker) {
+    public Clock(long timeUnit) {
         this.timeUnit = timeUnit;
-        this.pulseMaker = pulseMaker;
     }
-
-    public Clock(PulseMaker p, long timeUnit) {
-        this.timeUnit = timeUnit;
-        this.pulseMaker = p;
+    /**
+     * @param pulseMaker PulseMaker Object
+     * @return
+     */
+    public void linkObjects(PulseMaker pulseMaker){
+        this.pulseMaker = pulseMaker;
     }
 
     public void run() {
         while (true) {
             try {
-                pulseMaker.makePulse();
+                pulseMaker.makePulse(timeUnit);
                 Thread.sleep(timeUnit);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
-
-
 
 }

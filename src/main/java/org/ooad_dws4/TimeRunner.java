@@ -1,5 +1,7 @@
 package org.ooad_dws4;
 
+import jdk.tools.jaotc.Main;
+
 import java.util.*;
 
 /**
@@ -14,7 +16,6 @@ public class TimeRunner extends DWSObject implements PulseMaker {
         systemTime = 0;
         timeZone = 0;
     }
-
     /**
      * 
      */
@@ -30,8 +31,9 @@ public class TimeRunner extends DWSObject implements PulseMaker {
     /**
      * 
      */
-    public void pulse() {
-        // TODO implement here
+
+    public void linkObject(MainController mainController){
+        this.mainController = mainController;
     }
 
     /**
@@ -53,7 +55,8 @@ public class TimeRunner extends DWSObject implements PulseMaker {
     }
 
     @Override
-    public void makePulse() {
-        System.out.println("Time Running");
+    public void makePulse(long timeUnit) {
+        systemTime += timeUnit;
+        mainController.broadcast(systemTime);
     }
 }

@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Mode {
+public abstract class Mode extends DWSObject{
 
     /**
      * Default constructor
