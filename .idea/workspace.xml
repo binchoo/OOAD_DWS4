@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="configuration for junit5">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Alarm.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Alarm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/AlarmMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/AlarmMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buttonset.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buttonset.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ButtonsetAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ButtonsetAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buzzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buzzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/BuzzerAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/BuzzerAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Clock.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Clock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDayMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDayMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DWSObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DWSObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Event.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/EventScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/EventScheduler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/IOBridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/IOBridge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Input.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/InputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/InputController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCD.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCDAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCDAdapter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Mode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Mode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ModeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ModeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/OutputController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/OutputController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/PulseMaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/PulseMaker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Stopwatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Stopwatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/StopwatchMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/StopwatchMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeeping.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeeping.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeepingMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeepingMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Timer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Timer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimerMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimerMode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/WoldTimeMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/WoldTimeMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Alarm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/AlarmMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Button.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buttonset.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ButtonsetAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Buzzer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/BuzzerAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Clock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DDayMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/DWSObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/EventScheduler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/IOBridge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Input.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/InputController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/LCDAdapter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Mode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/ModeManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/OutputController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/PulseMaker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Stopwatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/StopwatchMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeeping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeKeepingMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimeRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/Timer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/TimerMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/ooad_dws4/WoldTimeMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ooad_dws4/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ooad_dws4/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/JUnit5ExampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/JUnit5ExampleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,16 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,7 +101,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Gradle.OOAD_DWS4 [cobertura]">
+  <component name="RunManager" selected="Gradle.JUnit5ExampleTest.runApplication">
     <configuration name="JUnit5ExampleTest.printHelloTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -111,7 +122,27 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OOAD_DWS4 [checkstyleMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="JUnit5ExampleTest.runApplication" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;JUnit5ExampleTest.runApplication&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OOAD_DWS4 [coberturaCheck]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -122,7 +153,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="checkstyleMain" />
+            <option value="coberturaCheck" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -142,25 +173,6 @@
         <option name="taskNames">
           <list>
             <option value="cobertura" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="OOAD_DWS4 [pmdMain]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="pmdMain" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,10 +218,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.JUnit5ExampleTest.runApplication" />
+        <item itemvalue="Gradle.OOAD_DWS4 [coberturaCheck]" />
         <item itemvalue="Gradle.OOAD_DWS4 [cobertura]" />
         <item itemvalue="Gradle.OOAD_DWS4 [test]" />
-        <item itemvalue="Gradle.OOAD_DWS4 [pmdMain]" />
-        <item itemvalue="Gradle.OOAD_DWS4 [checkstyleMain]" />
         <item itemvalue="Gradle.JUnit5ExampleTest.printHelloTest" />
       </list>
     </recent_temporary>
@@ -234,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590748359767</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="configuration for junit5&#10;gitignore ignoring build directory">
+      <created>1590751904919</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590751904919</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +261,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="configuration for junit5" />
-    <option name="LAST_COMMIT_MESSAGE" value="configuration for junit5" />
+    <MESSAGE value="configuration for junit5&#10;gitignore ignoring build directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="configuration for junit5&#10;gitignore ignoring build directory" />
   </component>
   <component name="WindowStateProjectService">
     <state x="655" y="267" width="716" height="507" key="#Project_Structure" timestamp="1590747560529">
@@ -254,38 +274,42 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629032202" />
-    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590750007067">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1590756457857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590750007067" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1590751701569">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590756457857" />
+    <state x="1047" y="118" key="CommitChangelistDialog2" timestamp="1590751903886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590751701569" />
+    <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590751903886" />
+    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590756552623">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1590751701569">
+    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1590756552623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590751701569" />
+    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1590751701569">
+    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1590756552623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590751701569" />
+    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1590751701569">
+    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1590756552623">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590751701569" />
+    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590749732302">
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590751949307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590749732302" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590751949307" />
     <state x="1066" y="479" key="chooseDestDirectoryDialog" timestamp="1590632870632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

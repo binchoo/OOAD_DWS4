@@ -18,6 +18,7 @@ repositories {
 dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
     testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+    testRuntime('org.slf4j:slf4j-api:1.7.10')
 }
 
 test {
@@ -25,15 +26,21 @@ test {
         junitXml.enabled = true
         html.enabled = false
     }
-    testLogging.showStandardStreams(true)
+    testLogging {
+        showStandardStreams = true
+    }
     useJUnitPlatform()
 }
 
 cobertura {
-    coverageSourceDirs = sourceSets.main.java.srcDirs
-    coverageFormats = ['xml', 'html']
-    coverageIncludes = ['**/*.java', '**/*.groovy']
-    coverageExcludes = []
+    coverageFormats = ['html', 'xml']
+    coverageIgnoreTrivial = true
+    coverageIgnores = ['org.slf4j.Logger.*']
+    coverageReportDir = new File("$buildDir/reports/cobertura")
+}
+
+coberturaCheck {
+
 }
 
 checkstyle {
