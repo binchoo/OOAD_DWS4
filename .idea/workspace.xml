@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a77aee1b-d881-49ba-8d11-11287848ac8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +70,7 @@
       <recent name="C:\Users\wnwoq\IdeaProjects\OOAD_DWS4" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.JUnit5ExampleTest.runApplication">
+  <component name="RunManager" selected="Gradle.OOAD_DWS4 [test]">
     <configuration name="JUnit5ExampleTest.printHelloTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -179,10 +187,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.OOAD_DWS4 [test]" />
         <item itemvalue="Gradle.JUnit5ExampleTest.runApplication" />
         <item itemvalue="Gradle.OOAD_DWS4 [coberturaCheck]" />
         <item itemvalue="Gradle.OOAD_DWS4 [cobertura]" />
-        <item itemvalue="Gradle.OOAD_DWS4 [test]" />
         <item itemvalue="Gradle.JUnit5ExampleTest.printHelloTest" />
       </list>
     </recent_temporary>
@@ -285,10 +293,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="update Jenkinsfile" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="655" y="267" width="716" height="507" key="#Project_Structure" timestamp="1590747560529">
+    <state x="655" y="267" width="716" height="507" key="#Project_Structure" timestamp="1590762341129">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="267" width="716" height="507" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1590747560529" />
+    <state x="655" y="267" width="716" height="507" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1590762341129" />
     <state x="873" y="359" width="903" height="682" key="#Project_Structure/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629008426" />
     <state x="736" y="356" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590629032202">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -302,34 +310,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1047" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590761215774" />
-    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590756552623">
+    <state width="914" height="279" key="GridCell.Tab.0.bottom" timestamp="1590763223844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
+    <state width="914" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.bottom/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1590756552623">
+    <state width="914" height="279" key="GridCell.Tab.0.center" timestamp="1590763223844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
+    <state width="914" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.center/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1590756552623">
+    <state width="914" height="279" key="GridCell.Tab.0.left" timestamp="1590763223844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
+    <state width="914" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.left/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1590756552623">
+    <state width="914" height="279" key="GridCell.Tab.0.right" timestamp="1590763223844">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590756552623" />
+    <state width="914" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590763223844" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1079.1920.1020/-1920.1095.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590629084609" />
     <state width="2519" height="400" key="GridCell.Tab.0.right/3840.1100.1920.1020/-1920.1093.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590632354752" />
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590761994786">
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2" timestamp="1590763314627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590761994786" />
+    <state x="552" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590763314627" />
     <state x="1066" y="479" key="chooseDestDirectoryDialog" timestamp="1590632870632">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

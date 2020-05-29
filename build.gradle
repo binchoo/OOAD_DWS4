@@ -23,8 +23,8 @@ dependencies {
 
 test {
     reports {
-        junitXml.enabled = true
-        html.enabled = false
+        junitXml.enabled = false
+        html.enabled = true
     }
     testLogging {
         showStandardStreams = true
@@ -36,7 +36,6 @@ cobertura {
     coverageFormats = ['html', 'xml']
     coverageIgnoreTrivial = true
     coverageIgnores = ['org.slf4j.Logger.*']
-    coverageReportDir = new File("$buildDir/reports/cobertura")
 }
 
 coberturaCheck {
