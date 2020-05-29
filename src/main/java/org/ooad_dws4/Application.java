@@ -10,7 +10,6 @@ public class Application {
         EventScheduler eventScheduler = new EventScheduler();
         ModeManager modeManager = new ModeManager();
 
-
         mainController.linkObjects(ioBridge, timeRunner, eventScheduler, modeManager);
         timeRunner.linkObject(mainController);
         clock.linkObjects(timeRunner);
