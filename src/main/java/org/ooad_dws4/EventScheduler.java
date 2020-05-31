@@ -1,9 +1,5 @@
 package org.ooad_dws4;
-
-import jdk.tools.jaotc.Main;
-
 import java.util.*;
-
 /**
  *
  */
@@ -16,7 +12,7 @@ public class EventScheduler extends DWSObject {
 
     private MainController mainController;
 
-    private List<Event> eventQueue;
+    private LinkedList<Event> eventQueue;
 
     private Event defaultScreenTimer;
 
@@ -105,9 +101,9 @@ public class EventScheduler extends DWSObject {
     /**
      * @return
      */
-    public Boolean removeBuzzerOffEvent() {
+    public boolean removeBuzzerOffEvent() {
         // TODO implement here
-        return null;
+        return false;
     }
 
 

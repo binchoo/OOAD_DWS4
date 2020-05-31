@@ -1,8 +1,5 @@
 package org.ooad_dws4;
 
-import jdk.tools.jaotc.Main;
-
-import java.util.*;
 
 /**
  * 
@@ -40,7 +37,7 @@ public class ModeManager {
     /**
      * @param systemTime
      */
-    public void broadcast(Long systemTime) {
+    public void broadcast(long systemTime) {
         // TODO implement here
     }
 
