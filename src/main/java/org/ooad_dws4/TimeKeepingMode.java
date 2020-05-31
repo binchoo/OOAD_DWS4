@@ -5,24 +5,13 @@ import java.util.*;
 /**
  * 
  */
-public class TimeKeepingMode {
-
-    /**
-     * Default constructor
-     */
-    public TimeKeepingMode() {
-    }
-
-    /**
-     * 
-     */
+public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
 
+    public TimeKeepingMode() {
 
+    }
 
-    /**
-     * 
-     */
     public void changeField() {
         // TODO implement here
     }

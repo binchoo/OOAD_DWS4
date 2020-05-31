@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class WoldTimeMode {
+public class WoldTimeMode extends Mode{
 
     /**
      * Default constructor
