@@ -1,6 +1,5 @@
 package org.ooad_dws4;
 
-import java.util.*;
 
 /**
  * 
@@ -16,7 +15,7 @@ public abstract class Mode extends DWSObject{
     /**
      * 
      */
-    protected Boolean isActivate;
+    protected boolean isActivate;
 
     /**
      * 
@@ -27,7 +26,7 @@ public abstract class Mode extends DWSObject{
     /**
      * @param systemTime
      */
-    public void broadcast(Long systemTime) {
+    public void broadcast(long systemTime) {
         // TODO implement here
     }
 
@@ -79,9 +78,9 @@ public abstract class Mode extends DWSObject{
      * @param msg 
      * @return
      */
-    public Boolean receiveMessage(Message msg) {
+    public boolean receiveMessage(Message msg) {
         // TODO implement here
-        return null;
+        return false;
     }
 
 }

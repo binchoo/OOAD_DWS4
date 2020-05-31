@@ -19,9 +19,9 @@ public class BuzzerAdapter implements Buzzer {
      * @return
      */
     @Override
-    public Boolean execute(Dictionary<String, String> arg) {
+    public boolean execute(Dictionary<String, String> arg) {
         // TODO implement here
-        return null;
+        return false;
     }
 
 }

@@ -16,7 +16,7 @@ public class City {
     /**
      * 
      */
-    private Boolean state;
+    private boolean state;
 
     /**
      * 

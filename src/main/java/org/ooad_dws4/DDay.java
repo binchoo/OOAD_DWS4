@@ -16,12 +16,12 @@ public class DDay {
     /**
      * 
      */
-    private Boolean state;
+    private boolean state;
 
     /**
      * 
      */
-    private Long date;
+    private long date;
 
 
     /**

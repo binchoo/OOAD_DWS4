@@ -6,5 +6,5 @@ import java.util.*;
  * 
  */
 public interface Buzzer {
-    public Boolean execute(Dictionary<String, String> arg);
+    public boolean execute(Dictionary<String, String> arg);
 }

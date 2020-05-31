@@ -1,7 +1,5 @@
 package org.ooad_dws4;
 
-import java.util.*;
-
 /**
  * 
  */
@@ -30,12 +28,12 @@ public class IOBridge {
     /**
      * 
      */
-    private Boolean isBuzzerRinging;
+    private boolean isBuzzerRinging;
 
     /**
      * 
      */
-    private Boolean isMute;
+    private boolean isMute;
 
     public void linkObject(MainController mainController, InputController inputController, OutputController outputController){
         this.mainController = mainController;
