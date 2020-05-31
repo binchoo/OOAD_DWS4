@@ -1,39 +1,18 @@
 package org.ooad_dws4;
 
-import java.util.*;
-
-/**
- * 
- */
 public class City {
-
-    /**
-     * Default constructor
-     */
-    public City() {
-    }
-
-    /**
-     * 
-     */
     private boolean state;
-
-    /**
-     * 
-     */
     private int timeZone;
 
+    public City(boolean state, int timeZone) {
+        this.state = state;
+        this.timeZone = timeZone;
+    }
 
-    /**
-     * 
-     */
     public void changeState() {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
     public void getTimeZoneData() {
         // TODO implement here
     }

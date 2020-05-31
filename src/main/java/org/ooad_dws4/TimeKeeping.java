@@ -1,41 +1,23 @@
 package org.ooad_dws4;
 
-/**
- * 
- */
 public class TimeKeeping {
-
-    /**
-     * Default constructor
-     */
-    public TimeKeeping() {
+    private long time;
+    public TimeKeeping(long systemTime) {
+        this.time = systemTime;
     }
 
-    /**
-     * 
-     */
-    private long time;
-
-
-    /**
-     * 
-     */
     public void changeState() {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    public void getTimeData() {
-        // TODO implement here
+    /* finished */
+    public long getTimeData() {
+        return time;
     }
 
-    /**
-     * 
-     */
-    public void changeValue() {
-        // TODO implement here
+    public long changeValue(int value) {
+        time += value;
+        return time;
     }
 
 }

@@ -1,14 +1,12 @@
 package org.ooad_dws4;
 
-
-/**
- * 
- */
 public class AlarmMode extends Mode{
     private Alarm[] alarms;
-    private Alarm currentAlarm;
+    private int currentAlarmIndex;
 
     public AlarmMode() {
+        this.alarms = new Alarm[4];
+        this.currentAlarmIndex = 0;
     }
 
     public void changeAlarmIndex() {
@@ -37,6 +35,26 @@ public class AlarmMode extends Mode{
 
     public void changeValue() {
         // TODO implement here
+    }
+
+    private void toggleActivation(){}
+    public Message getModeData(){
+        return null;
+    }
+
+    @Override
+    public void toggleModeActivation() {
+
+    }
+
+    @Override
+    public Message modeModify(int event) {
+        return null;
+    }
+
+    @Override
+    public void changeState(int state) {
+
     }
 
 }
