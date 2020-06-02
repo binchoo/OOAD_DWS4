@@ -13,8 +13,12 @@ public class City {
         // TODO implement here
     }
 
-    public void getTimeZoneData() {
-        // TODO implement here
+    public int getTimeZoneData() {
+        return this.timeZone;
+    }
+
+    public int getOffset(int tz){
+        return (timeZone - tz);
     }
 
 }

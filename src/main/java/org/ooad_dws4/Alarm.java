@@ -5,22 +5,31 @@ public class Alarm {
     private long time;
 
     public Alarm() {
+        this.state = false;
+        this.time = 0;
     }
 
     public void changeState() {
         // TODO implement here
     }
-
-    public void getAlarmData() {
-        // TODO implement here
+    public boolean toggleAlarmActivation(){
+        state = !state;
+        return state;
+    }
+    public long getAlarmData() {
+        return time;
     }
 
-    public void toggleActivation() {
-        // TODO implement here
+    public boolean toggleActivation() {
+        this.state = !this.state;
+        return this.state;
     }
 
     public void changeValue() {
         // TODO implement here
     }
 
+    public boolean getState(){
+        return this.state;
+    }
 }

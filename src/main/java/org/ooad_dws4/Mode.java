@@ -7,21 +7,15 @@ public abstract class Mode extends DWSObject{
     protected boolean isActivate;
     protected int state;
 
-    public void broadcast(long systemTime) {
-        // TODO implement here
-    }
     public abstract Message getModeData();
-    public abstract void toggleModeActivation();
+    public abstract Message toggleModeActivation();
 
     public void saveModeActivation() {
         // TODO implement here
     }
     public abstract Message modeModify(int event);
     public abstract void changeState(int state);
-    public Message update() {
-        // TODO implement here
-        return null;
-    }
+    public abstract Message update(long systemTime);
 
     /**
      * @param msg 
