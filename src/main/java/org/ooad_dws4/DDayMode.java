@@ -26,6 +26,16 @@ public class DDayMode extends Mode{
         }
     }
 
+    @Override
+    public Message getModeData() {
+        return null;
+    }
+
+    @Override
+    public Message toggleModeActivation() {
+        return null;
+    }
+
     /**
      * 
      */
@@ -106,6 +116,11 @@ public class DDayMode extends Mode{
         // TODO implement here
         this.state =state;
 
+    }
+
+    @Override
+    public Message update(long systemTime) {
+        return null;
     }
 
     public Message modeModify(int event) {

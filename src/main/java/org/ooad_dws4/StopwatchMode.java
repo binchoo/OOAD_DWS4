@@ -25,6 +25,17 @@ public class StopwatchMode extends Mode {
     public StopwatchMode() {
         this.stopwatch = new Stopwatch();
     }
+
+    @Override
+    public Message getModeData() {
+        return null;
+    }
+
+    @Override
+    public Message toggleModeActivation() {
+        return null;
+    }
+
     /**
      * 
      */
@@ -67,6 +78,11 @@ public class StopwatchMode extends Mode {
     public void changeState(int state) {
         // TODO implement here
         this.state = state;
+    }
+
+    @Override
+    public Message update(long systemTime) {
+        return null;
     }
 
     public Message modeModify(int event) {
