@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TimeKeepingModeTest {
     @Test
     public void changeTimeTest() {
-        TimeKeepingMode t = new TimeKeepingMode(0);
+        TimeKeepingMode t = new TimeKeepingMode();
         Message returnMsg = t.modeModify(5);
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, 0, Integer.toString(0));
@@ -18,16 +18,16 @@ public class TimeKeepingModeTest {
 
     @Test
     public void changeFieldTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(5);
         Message returnMsg = t.modeModify(2);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, 5, Integer.toString(1));
+        makeUpdateViewArg(arg, 0, Integer.toString(1));
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
     public void changeValueIncreaseTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(5);
         Message returnMsg = t.modeModify(4);
         HashMap<String, String> arg = new HashMap<String, String>();
@@ -36,7 +36,7 @@ public class TimeKeepingModeTest {
     }
     @Test
     public void changeValueBoundTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(5);
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
@@ -45,7 +45,7 @@ public class TimeKeepingModeTest {
     }
     @Test
     public void changeValueDecreaseTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(5);
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
@@ -54,14 +54,14 @@ public class TimeKeepingModeTest {
     }
     @Test
     public void changeStatTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.changeState(1);
         assertEquals(t.state, 1);
     }
 
     @Test
     public void saveTimeTest(){
-        TimeKeepingMode t = new TimeKeepingMode(5);
+        TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(4);
         t.modeModify(2);
         Message returnMsg = t.modeModify(5);
