@@ -14,7 +14,7 @@ public class DDay {
     }
 
     /**
-     * 
+     * true = on  false =off
      */
     private boolean state;
 
@@ -25,17 +25,20 @@ public class DDay {
 
 
     /**
-     * 
+     * toggle day state (on<->off)
      */
     public void changeState() {
         // TODO implement here
+        if (state){state=false;}
+        else{state= true;}
     }
 
     /**
      * 
      */
-    public void getDdayData() {
+    public long getDdayData() {
         // TODO implement here
+        return date;
     }
 
 }

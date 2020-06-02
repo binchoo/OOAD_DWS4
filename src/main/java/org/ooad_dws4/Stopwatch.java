@@ -5,6 +5,7 @@ package org.ooad_dws4;
  */
 public class Stopwatch {
 
+    private long stopWatchTime;
     /**
      * Default constructor
      */
@@ -27,8 +28,9 @@ public class Stopwatch {
     /**
      * 
      */
-    public void getStopwatchData() {
+    public long getStopwatchData() {
         // TODO implement here
+        return stopWatchTime;
     }
 
     /**
@@ -36,6 +38,8 @@ public class Stopwatch {
      */
     public void reset() {
         // TODO implement here
+
+        stopWatchTime=0;
     }
 
 }
