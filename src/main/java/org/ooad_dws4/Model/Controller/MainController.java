@@ -2,6 +2,8 @@ package org.ooad_dws4.Model.Controller;
 
 import org.ooad_dws4.Model.Common.Message;
 
+import java.util.HashMap;
+
 public class MainController {
 
     public MainController() {
@@ -14,38 +16,105 @@ public class MainController {
     private IOBridge ioBridge;
 
     public void inputEvent(int event) {
-        // TODO implement here
-        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
+//        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
 
 //    <TimeKeeping Mode>
-
+// ------------------------------------- Scenario 1 -------------------------------------
 //    Use Case 1. Change Mode           : button 1
-//        this.ioBridge.outputEvent(new Message(11, "updateView",
-//                new HashMap<String, String>() {{
-//                    put("0","   ");
-//                    put("1","3+ 253");
-//                    put("3","01|3000");
-//                    put("4","  TIMER   ");
-//                }}));
+        if(event==1){
+            this.ioBridge.outputEvent(new Message(11, "updateView",
+                    new HashMap<String, String>() {{
+                        put("0","MON");
+                        put("1","3+ 253");
+                        put("3","06|2042");
+                        put("4","2020-05-04");
+                    }}));
+        }
 
-//    Use Case 2. Activate Modes        : button 1/2/3/4/5
+// ------------------------------------- Scenario 2 -------------------------------------
+//    Use Case 2. Activate Modes        : button 1/2/3/4/5/6
 //        this.ioBridge.outputEvent(new Message(11, "updateView",
 //                new HashMap<String, String>() {{
-//                    put("0","   ");
+//                    put("0"," ON");
+//                    put("1","   4/4");
+//                    put("3"," MODE  ");
+//                    put("4","  D_DAY   ");
+//                }})); // BTN 6 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("0","OFF");
+//                    put("1","   3/4");
+//                }})); // BTN 2 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("0","MON");
 //                    put("1","3+ 253");
-//                    put("3","01|3000");
-//                    put("4","  TIMER   ");
-//                }}));
+//                    put("3","06|2042");
+//                    put("4","2020-05-04");
+//                }})); // BTN 1 PRESSED
+
 //    Use Case 6. Timekeeping           : no button             blink
+
+// ------------------------------------- Scenario 3 -------------------------------------
 //    Use Case 7. Change Date and Time  : button 1/2/3/4/5      blink
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("0","EDT");
+//                    put("blink","3");
+//                }})); // BTN 5 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("blink","4");
+//                }})); // BTN 2 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("3","06|2142");
+//                }})); // BTN 4 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("3","06|2242");
+//                }})); // BTN 4 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("3","06|2142");
+//                }})); // BTN 3 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("blink","5");
+//                }})); // BTN 2 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("blink","0");
+//                }})); // BTN 2 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("blink","1");
+//                }})); // BTN 2 PRESSED
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("0", "   ");
+//                    put("blink", "");
+//                }})); // BTN 1 PRESSED
+
 //    Use Case 8. Watch D-Day           : no button
+
+// ------------------------------------- Scenario 4 -------------------------------------
 //    Use Case 9. Change D-Day Index    : button 3/4
+//        this.ioBridge.outputEvent(new Message(11, "updateView",
+//                new HashMap<String, String>() {{
+//                    put("1","2-  35");
+//                }})); // BTN 3 PRESSED
+
 //    Use Case 28. Toggle Sound         : button 8
-        this.ioBridge.outputEvent(new Message(10, "toggleMute", null));
+//        this.ioBridge.outputEvent(new Message(10, "toggleMute",
+//            null)); // BTN 8 PRESSED
+
 //    Use Case 29. Watch Timekeeping    : no button
+
 //    Use Case 30. Time Refresh         : no button
 
 //    <D-Day Mode>
+// ------------------------------------- Scenario 5 -------------------------------------
 //    Use Case 3. Change D-Day Index    : button 3/4
 //    Use Case 5. Toggle D-Day          : button 2
 //    Use Case 4. Set Date of D-Day     : button 1/2/3/4/5      blink

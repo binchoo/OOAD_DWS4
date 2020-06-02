@@ -17,11 +17,11 @@ public class LCDPanel extends JPanel{
 //    Use Case 28. Toggle Sound
 //    Use Case 29. Watch Timekeeping
 //    Use Case 30. Time Refresh
-    private char LCDCharacter[] = {
-       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
-       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
-       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
-    };
+//    private char LCDCharacter[] = {
+//       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
+//       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
+//    };
 
 //    Use Case 2. Activate Modes
 //    private char LCDCharacter[] = {
@@ -70,16 +70,15 @@ public class LCDPanel extends JPanel{
 //       ' ', ' ', 'A', 'L', 'A', 'R', 'M', ' ', ' ', ' ' // 17~26
 //    };
 
-
 //    Use Case 22. Start Stopwatch
 //    Use Case 23. Pause Stopwatch
 //    Use Case 24. Reset Stopwatch
 //    Use Case 25. Resume Stopwatch
-//    private char LCDCharacter[] = {
-//       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
-//       ' ',     '0', '0', '|', '0', '0',    ' ', '0', // 9~16
-//       'S', 'T', 'O', 'P', 'W', 'A', 'T', 'C', 'H', ' ' // 17~26
-//    };
+    private char LCDCharacter[] = {
+       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
+       ' ',     '0', '0', '|', '0', '0',    ' ', '0', // 9~16
+       'S', 'T', 'O', 'P', 'W', 'A', 'T', 'C', 'H', ' ' // 17~26
+    };
 
 //    Use Case 26. Change City Index
 //    Use Case 27. Choose City
@@ -126,6 +125,7 @@ public class LCDPanel extends JPanel{
         this.setBounds(50,100,imageWidth,imageHeight);
         this.setVisible(true);
         this.setOpaque(false);
+        this.setLayout(null);
 
         int offsetX = 57, offsetY = 48;
         for (int i=0; i<27; i++){
@@ -205,7 +205,7 @@ public class LCDPanel extends JPanel{
 
     public void setText(int startIndex, int finishIndex, String value){
         for (int i=0; i<=finishIndex-startIndex; i++){
-            lcdComp[startIndex+i].setText(String.valueOf(value.indexOf(i)));
+            lcdComp[startIndex+i].setText(String.valueOf(value.charAt(i)));
         }
     }
 

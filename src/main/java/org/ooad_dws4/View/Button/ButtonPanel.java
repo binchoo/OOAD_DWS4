@@ -28,6 +28,7 @@ public class ButtonPanel extends JPanel {
         this.setBounds(0,0,680,800);
         this.setVisible(true);
         this.setOpaque(false);
+        this.setLayout(null);
 
         for (int i=0; i<4; i++){
             this.btnComp[i] = new ButtonComponent(i, btnName[i], img, imageSize, btnProperty[i][0], btnProperty[i][1]);
