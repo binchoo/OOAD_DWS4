@@ -1,11 +1,9 @@
 package org.ooad_dws4;
-
 import java.util.HashMap;
 
 public class WoldTimeMode extends Mode{
     private City[] cities;
     private int thisTimeZone;
-
     public WoldTimeMode() {
         this.cities = new City[4];
         for(int i = 0; i < 4; i++){
@@ -17,7 +15,6 @@ public class WoldTimeMode extends Mode{
         * Paris : GMT+2
         * Seoul : GMT+9 */
     }
-
     public void changeCityIndex(int value) {
         if(this.thisTimeZone == 0 && value == -1){
             thisTimeZone = 3;
@@ -33,12 +30,10 @@ public class WoldTimeMode extends Mode{
     public void changeCity(int value) {
         // TODO implement here
     }
-
     private Message setCity() {
         int offset = cities[thisTimeZone].getOffset(thisTimeZone);
         return null;
     }
-
     private void toggleActivation(){}
     public Message getModeData(){
         return null;
@@ -70,7 +65,6 @@ public class WoldTimeMode extends Mode{
     }
     @Override
     public void changeState(int state) {
-
     }
     @Override
     public Message update(long systemTime) {
@@ -81,7 +75,6 @@ public class WoldTimeMode extends Mode{
     public Message update(long systemTime, boolean currentMode) {
         return null;
     }
-
     /* personally added */
     private void makeUpdateViewArg(HashMap<String, String> arg, long timeDiff, String blink){ //f
         arg.put("0", Long.toString(timeDiff));

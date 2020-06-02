@@ -2,25 +2,12 @@ package org.ooad_dws4;
 
 import java.util.HashMap;
 
-/**
- * 
- */
 public class DDayMode extends Mode{
-
-    /**
-     * Default constructor
-     */
-    /*public DDayMode() {
-    }
-    */
-
-    /**
-     * 
-     */
     private DDay[] ddays;
     private HashMap<String, String> arg;
 
     public DDayMode() {
+        ddays = new DDay[4];
         for(int i=0;i<4;i++) {
             ddays[i] = new DDay();
         }
@@ -37,16 +24,15 @@ public class DDayMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     private int currentDday=0;
     private int field=0;
     private long value=0;
 
 
-
     /**
-     * 
+     *
      */
     public void changeField() {
         // TODO implement here
@@ -58,7 +44,7 @@ public class DDayMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void changeValue() {
         // TODO implement here
@@ -95,11 +81,10 @@ public class DDayMode extends Mode{
     }
 
     /**
-     *    chage dday state edit
-     */
+     *    chage dday state edit*/
     public void enterDdayEdit() {
         // TODO implement here
-        changeState(1);
+//        changeState(1);
     }
 
     /**

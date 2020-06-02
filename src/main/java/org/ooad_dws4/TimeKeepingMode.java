@@ -1,13 +1,11 @@
 package org.ooad_dws4;
-
 import java.util.HashMap;
-
 public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
     private int field ;
     private int valueChangeTracking[];
-    public TimeKeepingMode(long systemTime) {
-        this.timekeeping = new TimeKeeping(systemTime);
+    public TimeKeepingMode() {
+        this.timekeeping = new TimeKeeping(0);
         this.state = 0;
         this.field = -1;
         this.valueChangeTracking = new int[6];

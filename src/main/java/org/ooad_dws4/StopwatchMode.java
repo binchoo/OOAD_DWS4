@@ -3,7 +3,7 @@ package org.ooad_dws4;
 import java.util.HashMap;
 
 /**
- * 
+ *
  */
 public class StopwatchMode extends Mode {
 
@@ -16,7 +16,7 @@ public class StopwatchMode extends Mode {
      */
 
     /**
-     * 
+     *
      */
     private Stopwatch stopwatch;
     private HashMap <String, String> arg;
@@ -37,7 +37,7 @@ public class StopwatchMode extends Mode {
     }
 
     /**
-     * 
+     *
      */
     public void runStopwatch() {
         // TODO implement here
@@ -49,7 +49,7 @@ public class StopwatchMode extends Mode {
     }
 
     /**
-     * 
+     *
      */
     public void pauseStopwatch() {
         // TODO implement here
@@ -58,7 +58,7 @@ public class StopwatchMode extends Mode {
     }
 
     /**
-     * 
+     *
      */
     public void resetStopwatch() {
         // TODO implement here
@@ -67,7 +67,7 @@ public class StopwatchMode extends Mode {
     }
 
     /**
-     * 
+     *
      */
     public void resumeStopwatch() {
         // TODO implement here

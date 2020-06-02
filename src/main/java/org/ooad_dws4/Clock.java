@@ -1,25 +1,34 @@
 package org.ooad_dws4;
 
-import java.util.*;
-
 /**
- *
+ * @author Kelvin Kwak (lunox273@gmail.com)
+ * @brief System clock in DWS
  */
+
 public class Clock implements Runnable {
-    private long timeUnit;
+
+    /**
+     * @brief System Clock Data
+     */
+    static long timeUnit;
+    static long defaultScreenTime;
+    static long buzzerOffTime;
+
+    /**
+     * @brief The objects that Clock can use.
+     */
     private PulseMaker pulseMaker;
 
     /**
-     * Default constructor
+     * @brief Default constructor
      */
-    public Clock(long timeUnit) {
-        this.timeUnit = timeUnit;
+    public Clock() {
     }
+
     /**
-     * @param pulseMaker PulseMaker Object
-     * @return
+     * @param pulseMaker    TimeRunner Object   Object Number : 21
      */
-    public void linkObjects(PulseMaker pulseMaker){
+    public void linkObjects(PulseMaker pulseMaker) {
         this.pulseMaker = pulseMaker;
     }
 

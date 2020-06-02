@@ -1,57 +1,71 @@
 package org.ooad_dws4;
-
 /**
- * 
+ * @author Kelvin Kwak (lunox273@gmail.com)
+ * @brief Default unit for Event Scheduler
  */
 public class Event {
 
     /**
-     * Default constructor
+     * @brief Where is this Message Come from?
      */
-    public Event() {
-    }
+    private int id;
 
     /**
-     * 
+     * @brief When is this Message Occur?
      */
     private long deadline;
 
     /**
-     * 
+     *@brief What is this Message?
      */
     private Message message;
 
-
-
-
     /**
-     * @param deadline
+     * Default constructor
      */
+    public Event(int id, Message message, long deadline) {
+        this.id = id;
+        this.message = message;
+        this.deadline = deadline;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public long getDeadline() {
+        return deadline;
+    }
+
     public void setDeadline(long deadline) {
-        // TODO implement here
+        this.deadline = deadline;
     }
 
     /**
-     * @return
+     * @param difference
+     * @brief add difference to the deadline
+     */
+    public void differenceDeadline(long difference) {
+        this.deadline += difference;
+    }
+
+    /**
+     * @return Is the deadline over?
      */
     public boolean checkDeadline() {
-        // TODO implement here
-        return false;
+        return this.deadline <= 0;
     }
 
-    /**
-     * @return
-     */
-    public int getEventType() {
-        // TODO implement here
-        return 0;
+    public String getEventType() {
+        return this.message.getAction();
     }
 
-    /**
-     * @param unit
-     */
-    public void decreaseDeadline(int unit) {
-        // TODO implement here
+    public Message getMessage() {
+        return this.message;
+    }
+
+    public void decreaseDeadline() {
+        this.deadline -= Clock.timeUnit;
     }
 
 }

@@ -3,13 +3,12 @@ package org.ooad_dws4;
 import java.util.HashMap;
 
 /**
- * 
+ *
  */
 public class TimerMode extends Mode{
 
-
     /**
-     * 
+     *
      */
     private Timer timer;
 
@@ -35,9 +34,8 @@ public class TimerMode extends Mode{
         return null;
     }
 
-
     /**
-     * 
+     *
      */
     public void changeField() {
         // TODO implement here
@@ -48,7 +46,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void changeValue() {
         // TODO implement here
@@ -64,7 +62,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void resetTimer() {
         // TODO implement here
@@ -73,7 +71,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void startTimer() {
         // TODO implement here
@@ -82,7 +80,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void changeTimerTime() {
         // TODO implement here
@@ -91,7 +89,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void saveTimer(long value) {
         // TODO implement here
@@ -100,7 +98,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void pauseTimer() {
         // TODO implement here
@@ -109,7 +107,7 @@ public class TimerMode extends Mode{
     }
 
     /**
-     * 
+     *
      */
     public void resumeTimer() {
         // TODO implement here
