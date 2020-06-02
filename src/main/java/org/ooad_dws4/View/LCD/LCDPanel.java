@@ -132,6 +132,7 @@ public class LCDPanel extends JPanel{
             if(i==9){
                 this.lcdComp[i] = new LCDIcon(new ImageIcon("./img/mute.png").getImage(),
                         LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY, i);
+                this.lcdComp[i].setVisible(false);
             }
             else{
                 this.lcdComp[i] = new LCDText(LCDCharacter[i], LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY,i);
@@ -191,6 +192,9 @@ public class LCDPanel extends JPanel{
                 break;
             case 1:
                 setText(3,8,value);
+                break;
+            case 2:
+                lcdComp[9].setVisible(Boolean.valueOf(value));
                 break;
             case 3:
                 setText(10,16,value);

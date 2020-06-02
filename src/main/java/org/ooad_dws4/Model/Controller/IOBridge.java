@@ -2,14 +2,14 @@ package org.ooad_dws4.Model.Controller;
 
 import org.ooad_dws4.Model.Common.DWSObject;
 import org.ooad_dws4.Model.Common.Message;
-import org.ooad_dws4.Model.Input.InputController;
 import org.ooad_dws4.Model.Output.OutputController;
+
+import java.util.HashMap;
 
 public class IOBridge extends DWSObject {
 
     private MainController mainController;
     private OutputController output;
-    private InputController input;
     private boolean isBuzzerRinging;
     private boolean isMute;
 
@@ -29,7 +29,13 @@ public class IOBridge extends DWSObject {
         switch (dest){
             case 10:
             {
-                if(action.equals("toggleMute")) this.toggleSound();
+                if(action.equals("toggleMute")){
+                    this.toggleSound();
+                    this.output.output(new Message(11, "updateView",
+                        new HashMap<String, String>() {{
+                            put("2", String.valueOf(isMute));
+                        }}));
+                }
             }
             break;
             case 11: {
@@ -43,12 +49,13 @@ public class IOBridge extends DWSObject {
     }
 
     public void inputEvent(int event) {
-        if(!this.isMute) this.output.output(new Message(11, "beep",null)); // beep
         mainController.inputEvent(event);
+        if(!this.isMute) this.output.output(new Message(11, "beep",null)); // beep
     }
 
     public void toggleSound() {
         this.isMute = !this.isMute;
+        System.out.println(isMute);
     }
 
 }

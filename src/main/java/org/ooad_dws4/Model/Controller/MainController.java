@@ -18,7 +18,7 @@ public class MainController {
     private IOBridge ioBridge;
 
     public void inputEvent(int event) {
-//        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
+        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
 
 //    <TimeKeeping Mode>
 // ------------------------------------- Scenario 1 -------------------------------------
@@ -65,81 +65,84 @@ public class MainController {
 
 // ------------------------------------- Scenario 3 -------------------------------------
 //    Use Case 7. Change Date and Time  : button 1/2/3/4/5      blink
-        if(event==5){
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("0","EDT");
-                        put("blink","3");
-                    }}));
-        }
-        else if(event==2 && repeat2==0) {
-            repeat2++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("blink", "4");
-                    }}));
-        }
-        else if(event==4 && repeat4==0) {
-            repeat4++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("3", "06|2142");
-                    }}));
-        }
-        else if(event==4 && repeat4==1) {
-            repeat4++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("3", "06|2242");
-                    }}));
-        }
-        else if(event==3){
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("3","06|2142");
-                    }}));
-        }
-        else if(event==2 && repeat2==1){
-            repeat2++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("blink","5");
-                    }}));
-        }
-        else if(event==2 && repeat2==2){
-            repeat2++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("blink","0");
-                    }}));
-        }
-        else if(event==2 && repeat2==3){
-            repeat2++;
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("blink","1");
-                    }}));
-        }
-        else if(event==1){
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("0", "   ");
-                        put("blink", null);
-                    }}));
-        }
+//        if(event==5){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("0","EDT");
+//                        put("blink","3");
+//                    }}));
+//        }
+//        else if(event==2 && repeat2==0) {
+//            repeat2++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("blink", "4");
+//                    }}));
+//        }
+//        else if(event==4 && repeat4==0) {
+//            repeat4++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("3", "06|2142");
+//                    }}));
+//        }
+//        else if(event==4 && repeat4==1) {
+//            repeat4++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("3", "06|2242");
+//                    }}));
+//        }
+//        else if(event==3){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("3","06|2142");
+//                    }}));
+//        }
+//        else if(event==2 && repeat2==1){
+//            repeat2++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("blink","5");
+//                    }}));
+//        }
+//        else if(event==2 && repeat2==2){
+//            repeat2++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("blink","0");
+//                    }}));
+//        }
+//        else if(event==2 && repeat2==3){
+//            repeat2++;
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("blink","1");
+//                    }}));
+//        }
+//        else if(event==1){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("0", "   ");
+//                        put("blink", null);
+//                    }}));
+//        }
 
 //    Use Case 8. Watch D-Day           : no button
 
 // ------------------------------------- Scenario 4 -------------------------------------
 //    Use Case 9. Change D-Day Index    : button 3/4
-//        this.ioBridge.outputEvent(new Message(11, "updateView",
-//                new HashMap<String, String>() {{
-//                    put("1","2-  35");
-//                }})); // BTN 3 PRESSED
-
+        if(event==3) {
+            this.ioBridge.outputEvent(new Message(11, "updateView",
+                    new HashMap<String, String>() {{
+                        put("1", "2-  35");
+                    }}));
+        }
 //    Use Case 28. Toggle Sound         : button 8
-//        this.ioBridge.outputEvent(new Message(10, "toggleMute",
-//            null)); // BTN 8 PRESSED
+        if(event==8){
+            this.ioBridge.outputEvent(new Message(10, "toggleMute",
+                    null));
+        }
 
 //    Use Case 29. Watch Timekeeping    : no button
 

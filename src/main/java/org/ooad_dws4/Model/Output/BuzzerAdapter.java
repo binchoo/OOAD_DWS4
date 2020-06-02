@@ -4,14 +4,14 @@ import org.ooad_dws4.View.Buzzer.BuzzerSound;
 
 public class BuzzerAdapter implements Buzzer {
 
+    private BuzzerSound buzzerSound;
+
     public BuzzerAdapter() {
     }
 
     public void linkObject(BuzzerSound buzzerSound){
         this.buzzerSound = buzzerSound;
     }
-
-    private BuzzerSound buzzerSound;
 
     public void execute(String action) {
         if(action.equals("beep")) buzzerSound.beep();

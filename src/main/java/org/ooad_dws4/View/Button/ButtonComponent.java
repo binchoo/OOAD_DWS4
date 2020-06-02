@@ -32,7 +32,7 @@ public class ButtonComponent extends JButton {
     
     public void setParentReference(ButtonPanel buttonPanel){
         for(int i=0; i<4; i++){
-            this.buttonEvent.setParentReference(buttonPanel);
+            this.buttonEvent.setButtonPanel(buttonPanel);
         }
     }
 }
