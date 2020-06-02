@@ -1,30 +1,25 @@
 package org.ooad_dws4.Model.Output;
 
-import org.ooad_dws4.Model.Common.DWSObject;
 import org.ooad_dws4.Model.Common.Message;
 
-public class OutputController extends DWSObject {
+public class OutputController{
+
+    private BuzzerAdapter buzzerAdapter;
+    private LCDAdapter lcdAdapter;
 
     public OutputController() {
         this.buzzerAdapter = new BuzzerAdapter();
         this.lcdAdapter = new LCDAdapter();
     }
 
-    private BuzzerAdapter buzzerAdapter;
-    private LCDAdapter lcdAdapter;
-
-    public boolean output(Message msg) {
-        // TODO implement here
-        if(true){
-//            buzzerAdapter.execute();
-            return true;
+    public void output(Message msg) {
+        String action = msg.getAction();
+        if(action.equals("updateView")){
+            this.lcdAdapter.update(msg.getArg());
         }
-        else if(true){
-//                lcdAdapter.update();
-            return true;
+        else{
+            this.buzzerAdapter.execute(action);
         }
-        else
-            return false;
     }
 
     public BuzzerAdapter getBuzzerAdapter() {

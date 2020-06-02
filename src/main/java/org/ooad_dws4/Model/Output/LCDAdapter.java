@@ -3,8 +3,11 @@ package org.ooad_dws4.Model.Output;
 import org.ooad_dws4.View.LCD.LCDPanel;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class LCDAdapter implements LCD {
+
+    private LCDPanel lcdPanel;
 
     public LCDAdapter() {
     }
@@ -13,12 +16,19 @@ public class LCDAdapter implements LCD {
         this.lcdPanel = lcdPanel;
     }
 
-    private LCDPanel lcdPanel;
-
-    @Override
-    public boolean update(HashMap<String, String> arg) {
-        // TODO implement here
-        return false;
+    public void update(HashMap<String, String> arg) {
+        Set<String> keys = arg.keySet();
+        for (String key : keys) {
+            if(key.equals("blink")){
+                if(arg.get("blink")==null){
+                    this.lcdPanel.stopBlink();
+                }
+                else this.lcdPanel.blink(Integer.parseInt(arg.get("blink")));
+            }
+            else{
+                this.lcdPanel.changeLCD(Integer.parseInt(key),arg.get(key));
+            }
+        }
     }
 
 }

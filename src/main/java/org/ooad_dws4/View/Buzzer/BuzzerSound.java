@@ -8,7 +8,9 @@ import java.io.File;
 public class BuzzerSound {
     private Clip clip;
     private File soundFile;
+    private boolean stop;
     public BuzzerSound() {
+        this.stop = false;
         soundFile = new File("./sound/beep.wav");
     }
 
@@ -25,6 +27,10 @@ public class BuzzerSound {
 
     public void ring(){
         for (int i=0; i<60; i++){
+            if(stop) {
+                stop = false;
+                break;
+            }
             try {
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
                 clip = AudioSystem.getClip();
@@ -35,5 +41,9 @@ public class BuzzerSound {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void stop(){
+        this.stop = true;
     }
 }

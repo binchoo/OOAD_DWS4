@@ -4,19 +4,28 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class LCDComponent extends JLabel {
+    private LCDBlink lcdBlink;
     LCDComponent(){
         this.setForeground(new Color(152,152,152));
         this.setVisible(true);
         this.setOpaque(false);
+        this.lcdBlink = new LCDBlink(this);
     }
 
-    public boolean blink(){
-
-        return true;
+    public void startBlink(){
+        this.lcdBlink.run();
     }
 
-    public boolean toggle(){
+    public void stopBlink(){
+        this.lcdBlink.stop();
+    }
 
-        return true;
+    public void blink() {
+        if (this.isVisible()) this.setVisible(false);
+        else this.setVisible(true);
+    }
+
+    public void toggle(){
+
     }
 }

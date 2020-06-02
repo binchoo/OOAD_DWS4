@@ -8,16 +8,86 @@ public class LCDPanel extends JPanel{
     private int imageWidth;
     private int imageHeight;
     private LCDComponent[] lcdComp = new LCDComponent[27];
-//    private char LCDCharacter[] = {
-//            'M', 'O', 'N', '3', '+', '0', '2', '5', '3',
-//            ' ', 'D', '-', 'D', 'A', 'Y', ' ', '2',
-//            '2', '0', '2', '0', '-', '0', '5', '-', '0', '4'
-//    };
+
+//    Use Case 1. Change Mode
+//    Use Case 6. Timekeeping                                           blink
+//    Use Case 7. Change Date and Time                                  blink
+//    Use Case 8. Watch D-Day
+//    Use Case 9. Change D-Day Index (on TimeKeeping Mode)
+//    Use Case 28. Toggle Sound
+//    Use Case 29. Watch Timekeeping
+//    Use Case 30. Time Refresh
     private char LCDCharacter[] = {
-       'M', 'O', 'N', '3', '+', '0', '2', '5', '3', // 0~8
-       ' ', '0', '0', '|', '0', '0', '4', '2', // 9~16
+       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
+       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
        '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
     };
+
+//    Use Case 2. Activate Modes
+//    private char LCDCharacter[] = {
+//       ' ', 'O', 'N',   ' ', ' ',   ' ', '2', '/', '4', // 0~8
+//       ' ',     ' ', 'M', 'O', 'D', 'E',    ' ', ' ', // 9~16
+//       ' ', ' ', 'D', '-', 'D', 'A', 'Y', ' ', ' ', ' ' // 17~26
+//    };
+
+//    Use Case 3. Change D-Day Index
+//    Use Case 5. Toggle D-Day
+//    private char LCDCharacter[] = {
+//       ' ', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     'D', '-', 'D', 'A', 'Y',    ' ', '3', // 9~16
+//       '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
+//    };
+
+//    Use Case 4. Set Date of D-Day                                     blink
+//    private char LCDCharacter[] = {
+//       'E', 'D', 'T',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     'D', '-', 'D', 'A', 'Y',    ' ', '3', // 9~16
+//       '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
+//    };
+
+//    Use Case 10. Start Timer
+//    Use Case 11. Set Timer Time                                       blink
+//    Use Case 12. Pause Timer
+//    Use Case 13. Resume Timer
+//    Use Case 14. Reset Timer
+//    private char LCDCharacter[] = {
+//       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '0', '|', '0', '0',    '0', '0', // 9~16
+//       ' ', ' ', 'T', 'I', 'M', 'E', 'R', ' ', ' ', ' ' // 17~26
+//    };
+
+//    Use Case 15. Start Buzzing
+//    Use Case 16. Stop Buzzing
+//    Use Case 20. Stop Buzzing
+//    Use Case 21. Start Buzzing
+
+//    Use Case 17. Change Alarm Index
+//    Use Case 18. Toggle Alarm
+//    Use Case 19. Set Alarm Time
+//    private char LCDCharacter[] = {
+//       'O', 'F', 'F',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '4', '|', '3', '0',    ' ', '2', // 9~16
+//       ' ', ' ', 'A', 'L', 'A', 'R', 'M', ' ', ' ', ' ' // 17~26
+//    };
+
+
+//    Use Case 22. Start Stopwatch
+//    Use Case 23. Pause Stopwatch
+//    Use Case 24. Reset Stopwatch
+//    Use Case 25. Resume Stopwatch
+//    private char LCDCharacter[] = {
+//       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '0', '|', '0', '0',    ' ', '0', // 9~16
+//       'S', 'T', 'O', 'P', 'W', 'A', 'T', 'C', 'H', ' ' // 17~26
+//    };
+
+//    Use Case 26. Change City Index
+//    Use Case 27. Choose City
+//       'N', 'Y', 'C',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '1', '2', '|', '2', '2',    'T', 'Z', // 9~16
+//       'W', 'O', 'R', 'L', 'D', ' ', 'T', 'I', 'M', 'E' // 17~26
+//    };
+
     private int LCDProperty[][] = {
     // { size, x, y }
         { 2, 120, 110 }, // 0
@@ -69,6 +139,74 @@ public class LCDPanel extends JPanel{
             this.add(lcdComp[i]);
         }
         this.lcdComp[12].setHorizontalAlignment(SwingConstants.CENTER); // '|' middle alignment
+
+    }
+
+    public void stopBlink(){
+        for (int i=0; i<27; i++){
+            lcdComp[i].stopBlink();
+        }
+    }
+
+    public void blink(int screenNum){
+        this.stopBlink();
+        switch(screenNum){
+            case 0:
+                for(int i=17; i<=20; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            case 1:
+                for(int i=22; i<=23; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            case 2:
+                for(int i=25; i<=26; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            case 3:
+                for(int i=10; i<=11; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            case 4:
+                for(int i=13; i<=14; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            case 5:
+                for(int i=15; i<=16; i++){
+                    lcdComp[i].startBlink();
+                }
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + screenNum);
+        }
+    }
+
+    public void changeLCD(int screenNum, String value){
+        switch (screenNum){
+            case 0:
+                setText(0,2,value);
+                break;
+            case 1:
+                setText(3,8,value);
+                break;
+            case 3:
+                setText(10,16,value);
+                break;
+            case 4:
+                setText(17,26,value);
+                break;
+        }
+    }
+
+    public void setText(int startIndex, int finishIndex, String value){
+        for (int i=0; i<=finishIndex-startIndex; i++){
+            lcdComp[startIndex+i].setText(String.valueOf(value.indexOf(i)));
+        }
     }
 
     protected void paintComponent(Graphics g)

@@ -2,8 +2,6 @@ package org.ooad_dws4.Model.Output;
 
 import org.ooad_dws4.View.Buzzer.BuzzerSound;
 
-import java.util.HashMap;
-
 public class BuzzerAdapter implements Buzzer {
 
     public BuzzerAdapter() {
@@ -15,10 +13,10 @@ public class BuzzerAdapter implements Buzzer {
 
     private BuzzerSound buzzerSound;
 
-    @Override
-    public boolean execute(HashMap<String, String> arg) {
-        // TODO implement here
-        return false;
+    public void execute(String action) {
+        if(action.equals("beep")) buzzerSound.beep();
+        else if(action.equals("buzzOff")) buzzerSound.stop();
+        else if(action.equals("buzzRinging")) buzzerSound.ring();
     }
 
 }
