@@ -4,70 +4,87 @@ import java.util.HashMap;
 
 public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
-    /* personally added */
     private int field ;
-    /*private int blink;*/
-    /* personally added */
-
+    private int valueChangeTracking[];
     public TimeKeepingMode(long systemTime) {
         this.timekeeping = new TimeKeeping(systemTime);
         this.state = 0;
         this.field = -1;
-        /*this.blink = 0;*/
+        this.valueChangeTracking = new int[6];
+        for(int i=0; i<6; i++)
+            valueChangeTracking[i] = 0;
         isActivate = true;
     }
 
-    public Message modeModify(int event){ //f
-        long systemTime = 0;
-        HashMap<String, String> arg = new HashMap<String, String>();
+    /* 5 -> 2 -> 3|4 -> 1|5 */
+    @Override
+    public Message modeModify(int event){
         if(this.state == 0){ /* default state */
             switch(event){
-                case 5:
-                    changeState(this.state);
-                    systemTime = timekeeping.getTimeData();
-                    return changeTime(systemTime);
+                case 5: /* change state to edit mode */
+                    return changeTime();
             }
         }else if(this.state==1){ /* edit state */
             switch(event){
-                case 1:
+                case 1: /* change state to default mode */
                 case 5:
-                    systemTime = timekeeping.getTimeData();
-                    return saveTime(systemTime);
+                    return saveTime();
                 case 2:
-                    systemTime = timekeeping.getTimeData();
-                    return changeField(systemTime);
+                    return changeField();
                 case 3:
                     return changeValue(-1);
                 case 4:
                     return changeValue(1);
-                default: break;
             }
         }else return null;
-        makeUpdateViewArg(arg, systemTime, null);
-        if(this.state==1 && event == 2) makeUpdateViewArg(arg, systemTime, Integer.toString(this.field));
+        return null;
+    }
+
+    /* system operation */
+    private Message changeField() {
+        field = (field + 1) % 7;
+        long timeData = timekeeping.getTimeData();
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg, timeData, Integer.toString(field));
+        return new Message(11, "updateView", arg);
+    } //f
+
+    /* system operation */
+    private Message changeValue(int value) {
+        timekeeping.setTimeData(timekeeping.getTimeData() + value);
+        long timeData = timekeeping.getTimeData();
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateSystemTimeArg(arg, timeData, Integer.toString(field));
+        return new Message(21, "updateSystemTime", arg);
+    }
+
+    /* system operation */
+    private Message changeTime() {
+        changeState((this.state+1) % 2);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        long timeData = timekeeping.getTimeData();
+        this.field++;
+        makeUpdateViewArg(arg, timeData, Integer.toString(this.field));
         return new Message(11, "updateView", arg);
     }
 
-    private Message changeField(long systemTime) {
-        field = (field + 1) % 7;
-        return null;
-    } //f
-
-    /* seq.7 need to be deleted */
-    public Message changeValue(long systemTime) {
-        return null;
+    /* system operation */
+    private Message saveTime() {
+        changeState((this.state+1) % 2);
+        long timeData = timekeeping.getTimeData();
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg, timeData, null);
+        this.field = -1;
+        return new Message(11, "updateView", arg);
     }
-
-
     @Override
     public void changeState(int state) {
-        this.state = (this.state + 1) % 2;
+        this.state = state;
     }
-
-    /*public void saveModeActivation(){} //f*/
 
     /* for 6. View Time*/
     /* need to modify function name */
+    @Override
     public Message update(long systemTime){ //f
         timekeeping.setTimeData(systemTime);
         long timeData = timekeeping.getTimeData();
@@ -77,6 +94,13 @@ public class TimeKeepingMode extends Mode{
         else makeUpdateViewArg(arg, -1, null);
         return new Message(11, "updateView", arg);
     }
+
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
+        return null;
+    }
+
+    @Override
     public Message getModeData(){ //f
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timekeeping.getTimeData(), null);
@@ -89,17 +113,10 @@ public class TimeKeepingMode extends Mode{
     }
 
 
-    public Message changeTime(long systemTime) {
-        return null;
-    }
-
-
-    public Message saveTime(long systemTime) {
-        changeState(this.state);
-        return null;
-    }
-
     /* personally added */
+    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
+
+    }
     private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
         if(systemTime == -1)
         {

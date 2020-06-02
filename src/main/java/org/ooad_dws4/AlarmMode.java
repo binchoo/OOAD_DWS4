@@ -122,6 +122,11 @@ public class AlarmMode extends Mode{
         return null;
     }
 
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
+        return null;
+    }
+
     public int getCurrentAlarmIndex(){
         return currentAlarmIndex;
     }

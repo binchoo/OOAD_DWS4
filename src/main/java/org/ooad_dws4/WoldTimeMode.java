@@ -12,6 +12,10 @@ public class WoldTimeMode extends Mode{
             this.cities[i] = new City(false, i);
         }
         this.thisTimeZone = 3;
+        /* NY : GMT-4
+        * London: GMT+1
+        * Paris : GMT+2
+        * Seoul : GMT+9 */
     }
 
     public void changeCityIndex(int value) {
@@ -30,7 +34,7 @@ public class WoldTimeMode extends Mode{
         // TODO implement here
     }
 
-    public Message setCity() {
+    private Message setCity() {
         int offset = cities[thisTimeZone].getOffset(thisTimeZone);
         return null;
     }
@@ -57,7 +61,7 @@ public class WoldTimeMode extends Mode{
         }
         return null;
     }
-    public Message showCity(int value){
+    private Message showCity(int value){
         changeCityIndex(value);
         int timeZone = cities[thisTimeZone].getTimeZoneData();
         HashMap<String, String> arg = new HashMap<String, String>();
@@ -68,9 +72,13 @@ public class WoldTimeMode extends Mode{
     public void changeState(int state) {
 
     }
-
     @Override
     public Message update(long systemTime) {
+        return null;
+    }
+
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
         return null;
     }
 

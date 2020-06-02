@@ -14,7 +14,9 @@ public class TimeKeeping {
     public long getTimeData() {
         return time;
     }
-    public void setTimeData(long systemTime){ this.time = systemTime;}
+    public void setTimeData(long systemTime){
+        this.time = systemTime >= 0 ? systemTime : 0;
+    }
     public long changeValue(int value) {
         time += value;
         return time;
