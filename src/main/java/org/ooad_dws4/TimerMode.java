@@ -7,12 +7,7 @@ import java.util.HashMap;
  */
 public class TimerMode extends Mode{
 
-    /**
-     * Default constructor
-     */
-    /*public TimerMode() {
-    }
-    */
+
     /**
      * 
      */
@@ -22,10 +17,12 @@ public class TimerMode extends Mode{
     private long value=0;
     private HashMap <String, String> arg;
 
-
     public TimerMode() {
 
         this.timer = new Timer();
+        this.state=0;
+        this.field=-1;
+        isActivate=true;
     }
 
     @Override
@@ -96,7 +93,7 @@ public class TimerMode extends Mode{
     /**
      * 
      */
-    public void saveTimer() {
+    public void saveTimer(long value) {
         // TODO implement here
         timer.setDeadlineData(value);
         changeState(0);
@@ -136,53 +133,88 @@ public class TimerMode extends Mode{
 
     public Message modeModify(int event) {
         // TODO implement here
-        if(event==5||state==1){
-            arg= new HashMap<String, String>();
 
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
+        HashMap<String, String> arg = new HashMap<String, String>();
 
-            Message msg = new Message(11,"updateView",arg);
+        if(this.state==0){
+            switch (event){
+                case 1:
+                    //change mode
+                case 3:
+                    startTimer();
+                case 5:
+                    changeTimerTime();
+
+            }
+
+        }else if(this.state==1){
+            switch (event){
+                case 1:
+                case 5:
+                    saveTimer(value);
+
+                case 2:
+                    changeField();
+                case 3:
+                    changeValue();  // -
+                case 4:
+                    changeValue();   // +
+                default: break;
+            }
+
+        }else if(this.state==2){   // when running
+            switch (event){
+                case 1:
+                    //mode change
+                case 3:
+                    pauseTimer();
+                default: break;
+            }
+        }else if(this.state==3){    // when pause
+            switch (event){
+                case 1:
+                    // mode change
+                case 2:
+                    resetTimer();
+                case 3:
+                    resumeTimer();
+                default: break;
+            }
+
         }
+        makeUpdateViewArg(arg, 1, null);
+        Message msg = new Message(11,"updateView",null);
 
-        else if(event==2||state==1){
-            arg= new HashMap<String, String>();
-
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
-
-            Message msg = new Message(11,"updateView",arg);
-
-        }
-
-        else if((event==3||event==4)||state==1){
-
-            arg= new HashMap<String, String>();
-
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
-
-            Message msg = new Message(11,"updateView",arg);
-        }
-
-
-        return null;
+        return msg;
     }
 
     public Message update() {
         // TODO implement here
-        Message msg = new Message(11,"update",null);
+        //state   0:default    1:edit 2: running 3: pause
+        long sendtime = timer.getDeadlineData() - 1;
+        timer.setDeadlineData(sendtime);
+
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg, 1, null);
+        Message msg = new Message(11,"updateView",null);
         return msg;
     }
 
+    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
+        if(systemTime == -1)
+        {
+            arg.put("0", "");
+            arg.put("1", ""); /* should be added in mode manager */
+            arg.put("3", "");
+            arg.put("4", "");
+            arg.put("blink", blink);
+            return;
+        }
+        arg.put("0", Long.toString(systemTime));
+        arg.put("1", null); /* should be added in mode manager */
+        arg.put("3", Long.toString(systemTime));
+        arg.put("4", Long.toString(systemTime));
+        arg.put("blink", blink);
+    }
 
 }

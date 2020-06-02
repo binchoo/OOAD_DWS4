@@ -125,42 +125,39 @@ public class DDayMode extends Mode{
 
     public Message modeModify(int event) {
         // TODO implement here
-        if(event==5||state==1){
-            arg= new HashMap<String, String>();
+        HashMap<String, String> arg = new HashMap<String, String>();
 
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
+        if(this.state==0){
+            switch (event){
+                case 1:
+                    //change mode
+                case 2:
+                    toggleDdayActivation();
+                case 3:
+                    changeDdayIndex();   // -
+                case 4:
+                    changeDdayIndex();   // +
+                case 5:
+                    enterDdayEdit();
 
-            Message msg = new Message(11,"updateView",arg);
-        }
 
-        else if(event==2||state==1){
-            arg= new HashMap<String, String>();
+            }
 
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
+        }else if(this.state==1){
+            switch (event){
+                case 1:
+                case 5:
+                    saveDday();
 
-            Message msg = new Message(11,"updateView",arg);
+                case 2:
+                    changeField();
+                case 3:
+                    changeValue();  // -
+                case 4:
+                    changeValue();   // +
+                default: break;
+            }
 
-        }
-
-        else if((event==3||event==4)||state==1){
-
-            arg= new HashMap<String, String>();
-
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
-
-            Message msg = new Message(11,"updateView",arg);
         }
 
 
