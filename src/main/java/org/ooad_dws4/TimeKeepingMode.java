@@ -12,6 +12,7 @@ public class TimeKeepingMode extends Mode{
         for(int i=0; i<6; i++)
             valueChangeTracking[i] = 0;
         isActivate = true;
+        this.modeName = "WATCH";
     }
 
     /* 5 -> 2 -> 3|4 -> 1|5 */
@@ -99,15 +100,20 @@ public class TimeKeepingMode extends Mode{
     }
 
     @Override
+    public Message saveActivation() {
+        return null;
+    }
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
+
+    @Override
     public Message getModeData(){ //f
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timekeeping.getTimeData(), null);
         return new Message(11,"updateView", arg);
-    }
-
-    @Override
-    public Message toggleModeActivation() {
-        return null;
     }
 
 

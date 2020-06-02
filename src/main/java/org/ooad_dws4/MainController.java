@@ -68,7 +68,7 @@ public class MainController {
      */
     public void inputEvent(int event) {
         Message message = this.modeManager.modeModify(event);
-
+        if (message == null) return;
         if (message.getDestination() < 20)
             ioBridge.outputEvent(message);
         else if (message.getDestination() < 30) {

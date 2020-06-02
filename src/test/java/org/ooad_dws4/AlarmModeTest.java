@@ -10,7 +10,7 @@ class AlarmModeTest {
 
     @Test
     void changeAlarmIndexTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.changeAlarmIndex(1);
         a.changeAlarmIndex(1);
         a.changeAlarmIndex(1);
@@ -39,7 +39,7 @@ class AlarmModeTest {
 
     @Test
     void getModeDataTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "OFF");
         arg.put("1", null);
@@ -52,7 +52,7 @@ class AlarmModeTest {
 
     @Test
     void toggleModeActivationTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.isActivate = false;
         a.toggleModeActivation();
         assertTrue(a.isActivate);
@@ -64,7 +64,7 @@ class AlarmModeTest {
 
     @Test
     void changeStateTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.state = 1;
         a.changeState(1);
         assertEquals(a.state, 0);

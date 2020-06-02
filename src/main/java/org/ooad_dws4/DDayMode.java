@@ -6,11 +6,13 @@ public class DDayMode extends Mode{
     private DDay[] ddays;
     private HashMap<String, String> arg;
 
-    public DDayMode() {
+    public DDayMode(boolean isActivation) {
         ddays = new DDay[4];
         for(int i=0;i<4;i++) {
             ddays[i] = new DDay();
         }
+        this.isActivate = isActivation;
+        this.modeName = "D-DAY";
     }
 
     @Override
@@ -18,10 +20,6 @@ public class DDayMode extends Mode{
         return null;
     }
 
-    @Override
-    public Message toggleModeActivation() {
-        return null;
-    }
 
     /**
      *
@@ -111,6 +109,16 @@ public class DDayMode extends Mode{
     @Override
     public Message update(long systemTime, boolean currentMode) {
         return null;
+    }
+
+    @Override
+    public Message saveActivation() {
+        return null;
+    }
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
     }
 
     public Message modeModify(int event) {
