@@ -17,11 +17,11 @@ public class LCDPanel extends JPanel{
 //    Use Case 28. Toggle Sound
 //    Use Case 29. Watch Timekeeping
 //    Use Case 30. Time Refresh
-//    private char LCDCharacter[] = {
-//       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
-//       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
-//       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
-//    };
+    private char LCDCharacter[] = {
+       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
+       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
+       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
+    };
 
 //    Use Case 2. Activate Modes
 //    private char LCDCharacter[] = {
@@ -74,11 +74,11 @@ public class LCDPanel extends JPanel{
 //    Use Case 23. Pause Stopwatch
 //    Use Case 24. Reset Stopwatch
 //    Use Case 25. Resume Stopwatch
-    private char LCDCharacter[] = {
-       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
-       ' ',     '0', '0', '|', '0', '0',    ' ', '0', // 9~16
-       'S', 'T', 'O', 'P', 'W', 'A', 'T', 'C', 'H', ' ' // 17~26
-    };
+//    private char LCDCharacter[] = {
+//       ' ', ' ', ' ',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '0', '|', '0', '0',    ' ', '0', // 9~16
+//       'S', 'T', 'O', 'P', 'W', 'A', 'T', 'C', 'H', ' ' // 17~26
+//    };
 
 //    Use Case 26. Change City Index
 //    Use Case 27. Choose City
@@ -131,55 +131,53 @@ public class LCDPanel extends JPanel{
         for (int i=0; i<27; i++){
             if(i==9){
                 this.lcdComp[i] = new LCDIcon(new ImageIcon("./img/mute.png").getImage(),
-                        LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY);
+                        LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY, i);
             }
             else{
-                this.lcdComp[i] = new LCDText(LCDCharacter[i], LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY);
+                this.lcdComp[i] = new LCDText(LCDCharacter[i], LCDProperty[i][0],LCDProperty[i][1]+offsetX,LCDProperty[i][2]+offsetY,i);
             }
             this.add(lcdComp[i]);
         }
         this.lcdComp[12].setHorizontalAlignment(SwingConstants.CENTER); // '|' middle alignment
-
     }
 
-    public void stopBlink(){
-        for (int i=0; i<27; i++){
+    public void stopBlink(int from, int to){
+        for (int i=from; i<=to; i++){
             lcdComp[i].stopBlink();
         }
     }
 
+    public void startBlink(int from, int to){
+        for(int i=from; i<=to; i++){
+            lcdComp[i].startBlink();
+        }
+    }
+
     public void blink(int screenNum){
-        this.stopBlink();
         switch(screenNum){
             case 0:
-                for(int i=17; i<=20; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(15,16);
+                startBlink(17,20);
                 break;
             case 1:
-                for(int i=22; i<=23; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(17,20);
+                startBlink(22,23);
                 break;
             case 2:
-                for(int i=25; i<=26; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(22,23);
+                startBlink(25,26);
                 break;
             case 3:
-                for(int i=10; i<=11; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(25,26);
+                startBlink(10,11);
                 break;
             case 4:
-                for(int i=13; i<=14; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(10,11);
+                startBlink(13,14);
                 break;
             case 5:
-                for(int i=15; i<=16; i++){
-                    lcdComp[i].startBlink();
-                }
+                stopBlink(13,14);
+                startBlink(15,16);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + screenNum);

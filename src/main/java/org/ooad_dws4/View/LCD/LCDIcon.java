@@ -4,7 +4,8 @@ import java.awt.*;
 
 public class LCDIcon extends LCDComponent{
     private Image img;
-    LCDIcon(Image img, int size, int x, int y){
+    LCDIcon(Image img, int size, int x, int y, int lcdNum){
+        super(lcdNum);
         this.img = img;
         this.setBounds(0,0, size, size);
         this.setLocation(x,y);

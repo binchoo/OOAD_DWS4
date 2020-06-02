@@ -2,8 +2,8 @@ package org.ooad_dws4.View.LCD;
 
 public class LCDText extends LCDComponent {
     FontRegister fg;
-    LCDText(char text, int size, int x, int y){
-        super();
+    LCDText(char text, int size, int x, int y, int lcdNum){
+        super(lcdNum);
         fg = new FontRegister();
         this.setSize(30,100);
         this.setFeature(text, size, x, y);

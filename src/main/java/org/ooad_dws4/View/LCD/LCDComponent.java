@@ -4,8 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class LCDComponent extends JLabel {
-    private LCDBlink lcdBlink;
-    LCDComponent(){
+    protected LCDBlink lcdBlink;
+    protected int lcdNum;
+    LCDComponent(int num){
+        this.lcdNum = num;
         this.setForeground(new Color(152,152,152));
         this.setVisible(true);
         this.setOpaque(false);
@@ -13,7 +15,7 @@ public abstract class LCDComponent extends JLabel {
     }
 
     public void startBlink(){
-        this.lcdBlink.run();
+        this.lcdBlink.blink();
     }
 
     public void stopBlink(){
