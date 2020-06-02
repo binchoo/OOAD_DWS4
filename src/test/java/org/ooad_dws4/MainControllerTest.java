@@ -9,7 +9,7 @@ class MainControllerTest {
     }
 
     @Test
-    void broadcast(long systemTime) {
+    void broadcast() {
     }
 
     @Test
