@@ -189,6 +189,7 @@ public class MainController {
 //    Use Case 14. Reset Timer          : button 2
 
 //    <Buzzing : Timer & Alarm>
+// ------------------------------------- Scenario 6 -------------------------------------
 //    Use Case 15. Start Buzzing        : no button
 //        if(event==4){
 //            this.ioBridge.outputEvent(new Message(11, "buzzRinging", null));
@@ -197,6 +198,7 @@ public class MainController {
 //        if(event==3){
 //            this.ioBridge.outputEvent(new Message(11, "buzzOff", null));
 //        }
+
 //    Use Case 20. Stop Buzzing         : all button
 //    Use Case 21. Start Buzzing        : no button
 
