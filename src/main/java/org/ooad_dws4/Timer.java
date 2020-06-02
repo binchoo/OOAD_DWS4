@@ -17,25 +17,44 @@ public class Timer {
     private long deadline;
 
 
+
+
     /**
      * 
      */
     public void changeState() {
         // TODO implement here
+        // ???
     }
 
     /**
-     * 
+     *   return deadline
      */
-    public void getDeadlineData() {
+    public long getDeadlineData() {
         // TODO implement here
+
+        return deadline;
     }
 
     /**
-     * 
+     *  setDeadline
+     */
+    public void setDeadlineData(long deadline) {
+        // TODO implement here
+
+        this.deadline =deadline;
+    }
+
+    /**
+     *   reset deadline
      */
     public void reset() {
         // TODO implement here
+
+        deadline=0;
+
     }
+
+
 
 }
