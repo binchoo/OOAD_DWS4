@@ -85,44 +85,45 @@ public class StopwatchMode extends Mode {
         return null;
     }
 
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
+        return null;
+    }
+
     public Message modeModify(int event) {
         // TODO implement here
-        if(event==5||state==1){
-            arg= new HashMap<String, String>();
+        HashMap<String, String> arg = new HashMap<String, String>();
 
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
+        if(this.state==0){
+            switch (event){
+                case 1:
+                    //change mode
+                case 3:
+                    runStopwatch();
+                default: break;
 
-            Message msg = new Message(11,"updateView",arg);
-        }
 
-        else if(event==2||state==1){
-            arg= new HashMap<String, String>();
+            }
 
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
+        }else if(this.state==2){   // when running
+            switch (event){
+                case 1:
+                    //mode change
+                case 3:
+                    pauseStopwatch();
+                default: break;
+            }
+        }else if(this.state==3){    // when pause
+            switch (event){
+                case 1:
+                    // mode change
+                case 2:
+                    resetStopwatch();
+                case 3:
+                    resumeStopwatch();
+                default: break;
+            }
 
-            Message msg = new Message(11,"updateView",arg);
-
-        }
-
-        else if((event==3||event==4)||state==1){
-
-            arg= new HashMap<String, String>();
-
-            arg.put("0","EDT");
-            arg.put("1","");
-            arg.put("2","");
-            arg.put("3",Integer.toString(10));
-            arg.put("4","\\\\\\Timer\\\\");
-
-            Message msg = new Message(11,"updateView",arg);
         }
         return null;
     }
