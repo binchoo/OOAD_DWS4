@@ -17,11 +17,11 @@ public class LCDPanel extends JPanel{
 //    Use Case 28. Toggle Sound
 //    Use Case 29. Watch Timekeeping
 //    Use Case 30. Time Refresh
-    private char LCDCharacter[] = {
-       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
-       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
-       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
-    };
+//    private char LCDCharacter[] = {
+//       'M', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
+//       ' ',     '0', '6', '|', '2', '0',    '4', '2', // 9~16
+//       '2', '0', '2', '0', '-', '0', '5', '-', '0', '4' // 17~26
+//    };
 
 //    Use Case 2. Activate Modes
 //    private char LCDCharacter[] = {
@@ -32,11 +32,11 @@ public class LCDPanel extends JPanel{
 
 //    Use Case 3. Change D-Day Index
 //    Use Case 5. Toggle D-Day
-//    private char LCDCharacter[] = {
-//       ' ', 'O', 'N',   '3', '+',   ' ', '2', '5', '3', // 0~8
-//       ' ',     'D', '-', 'D', 'A', 'Y',    ' ', '3', // 9~16
-//       '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
-//    };
+    private char LCDCharacter[] = {
+       ' ', 'O', 'N',   '3', '+',   ' ', ' ', '6', '5', // 0~8
+       ' ',     'D', '-', 'D', 'A', 'Y',    ' ', '3', // 9~16
+       '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
+    };
 
 //    Use Case 4. Set Date of D-Day                                     blink
 //    private char LCDCharacter[] = {
@@ -158,6 +158,7 @@ public class LCDPanel extends JPanel{
         switch(screenNum){
             case 0:
                 stopBlink(15,16);
+                stopBlink(25,26);
                 startBlink(17,20);
                 break;
             case 1:

@@ -1,9 +1,5 @@
 package org.ooad_dws4.Model.Controller;
 
-import org.ooad_dws4.Model.Common.Message;
-
-import java.util.HashMap;
-
 public class MainController {
     int repeat2 = 0;
     int repeat4 = 0;
@@ -18,7 +14,7 @@ public class MainController {
     private IOBridge ioBridge;
 
     public void inputEvent(int event) {
-        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
+//        System.out.println("inputEvent() has been called from MainController : BUTTON NUMBER = "+event);
 
 //    <TimeKeeping Mode>
 // ------------------------------------- Scenario 1 -------------------------------------
@@ -132,17 +128,17 @@ public class MainController {
 
 // ------------------------------------- Scenario 4 -------------------------------------
 //    Use Case 9. Change D-Day Index    : button 3/4
-        if(event==3) {
-            this.ioBridge.outputEvent(new Message(11, "updateView",
-                    new HashMap<String, String>() {{
-                        put("1", "2-  35");
-                    }}));
-        }
+//        if(event==3) {
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("1", "2-  35");
+//                    }}));
+//        }
 //    Use Case 28. Toggle Sound         : button 8
-        if(event==8){
-            this.ioBridge.outputEvent(new Message(10, "toggleMute",
-                    null));
-        }
+//        if(event==8){
+//            this.ioBridge.outputEvent(new Message(10, "toggleMute",
+//                    null));
+//        }
 
 //    Use Case 29. Watch Timekeeping    : no button
 
@@ -151,8 +147,39 @@ public class MainController {
 //    <D-Day Mode>
 // ------------------------------------- Scenario 5 -------------------------------------
 //    Use Case 3. Change D-Day Index    : button 3/4
+//        if(event==4){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("0", "OFF");
+//                        put("1", "4+  34");
+//                        put("3", "D-DAY 4");
+//                        put("4", "2020-05-02");
+//                    }}));
+//        }
+
 //    Use Case 5. Toggle D-Day          : button 2
+//        if(event==2){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("0", " ON");
+//                    }}));
+//        }
+
+// ------------------------------------- Scenario 6 -------------------------------------
 //    Use Case 4. Set Date of D-Day     : button 1/2/3/4/5      blink
+//        if(event==5){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("0", "EDT");
+//                        put("blink", "0");
+//                    }}));
+//        }
+//        if(event==2){
+//            this.ioBridge.outputEvent(new Message(11, "updateView",
+//                    new HashMap<String, String>() {{
+//                        put("blink", "1");
+//                    }}));
+//        }
 
 //    <Timer Mode>
 //    Use Case 10. Start Timer          : button 3
@@ -163,7 +190,13 @@ public class MainController {
 
 //    <Buzzing : Timer & Alarm>
 //    Use Case 15. Start Buzzing        : no button
+//        if(event==4){
+//            this.ioBridge.outputEvent(new Message(11, "buzzRinging", null));
+//        }
 //    Use Case 16. Stop Buzzing         : all button
+//        if(event==3){
+//            this.ioBridge.outputEvent(new Message(11, "buzzOff", null));
+//        }
 //    Use Case 20. Stop Buzzing         : all button
 //    Use Case 21. Start Buzzing        : no button
 

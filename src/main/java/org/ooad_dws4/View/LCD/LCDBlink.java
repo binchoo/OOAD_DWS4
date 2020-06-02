@@ -12,23 +12,29 @@ public class LCDBlink implements Runnable{
     }
     public void run() {
         long start = System.currentTimeMillis();
-        System.out.println("blink"+this.lcdComponent.lcdNum+" run");
+//        System.out.println("blink"+this.lcdComponent.lcdNum+" run");
         stop = false;
         while(!stop){
             long current = System.currentTimeMillis();
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             if(current-start>500){
                 start+=500;
-                System.out.println(this.lcdComponent.lcdNum);
+//                System.out.println(this.lcdComponent.lcdNum);
                 this.lcdComponent.blink();
             }
         }
         stop = false;
-        System.out.println("blink"+this.lcdComponent.lcdNum+" stopped");
+//        System.out.println("blink"+this.lcdComponent.lcdNum+" stopped");
     }
     public void blink(){
         this.thread = new Thread(this);
         thread.start();
     }
+
     public void stop(){
         this.stop = true;
         this.lcdComponent.setVisible(true);
