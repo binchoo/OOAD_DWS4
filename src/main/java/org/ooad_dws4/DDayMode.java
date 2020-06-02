@@ -111,10 +111,6 @@ public class DDayMode extends Mode{
         return null;
     }
 
-    @Override
-    public Message saveActivation() {
-        return null;
-    }
 
     @Override
     public boolean receiveMessage(Message msg) {

@@ -132,11 +132,6 @@ public class AlarmMode extends Mode {
     }
 
     @Override
-    public Message saveActivation() {
-        return null;
-    }
-
-    @Override
     public boolean receiveMessage(Message msg) {
         return false;
     }

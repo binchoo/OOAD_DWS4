@@ -36,7 +36,7 @@ public abstract class Mode extends DWSObject {
 
     public abstract Message update(long systemTime, boolean currentMode);
 
-    public abstract Message saveActivation();
+    //public abstract Message saveActivation();
 
     public abstract boolean receiveMessage(Message msg);
 
