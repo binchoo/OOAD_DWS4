@@ -9,16 +9,9 @@ class ModeManagerTest {
     @Test
     void broadcast() {
     }
-    @Test
-    void showDefaultScreen() {
-    }
 
     @Test
-    void testBroadcast() {
-    }
-
-    @Test
-    void testModeModify() {
+    void modeModify() {
         ModeManager m = new ModeManager();
         m.modeModify(6).doMessageAction();
         m.modeModify(3).doMessageAction();
@@ -30,20 +23,9 @@ class ModeManagerTest {
         m.modeModify(3).doMessageAction();
         m.modeModify(2).doMessageAction();
         m.modeModify(1).doMessageAction();
-
     }
 
     @Test
-    void changeMode() {
+    void showDefaultScreen() {
     }
-
-    @Test
-    void testShowDefaultScreen() {
-    }
-
-
-    @Test
-    void testChangeMode() {
-    }
-
 }

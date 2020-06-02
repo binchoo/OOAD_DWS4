@@ -31,7 +31,7 @@ public class ModeManager {
      */
     private int defaultMode;
 
-    private Message ddayData;
+    private String ddayData;
 
     /**
      *
@@ -69,15 +69,16 @@ public class ModeManager {
      */
     public Message broadcast(long systemTime) {
         System.out.println("ModeManager : " + dateFormat.format(new Date(systemTime)));
-        Message message;
         Message outputMessage;
         for (int i = 0; i < modes.length; i++) {
             if (i == currentMode) continue;
+            if (!modes[i].getIsActivate()) continue;
             Message temp = modes[i].update(systemTime, false);
-            if (temp != null) message = temp;
+            if (temp != null)
+                if (i == 5) ddayData = temp.getArg().get("1");
         }
         outputMessage = modes[currentMode].update(systemTime, true);
-//        outputMessage.getArg().put("1",)
+        outputMessage.getArg().put("1", ddayData);
         if (isEditState) return null;
         return outputMessage;
     }
@@ -96,8 +97,11 @@ public class ModeManager {
                 if (event == 6)
                     return editModeActivation();
                 if (event == 3 || event == 4) {
-                    ddayData = modes[5].modeModify(event);
-//                    return new Message(11, "ddayData", );
+                    if (!modes[5].getIsActivate()) return null;
+                    ddayData = modes[5].modeModify(event).getArg().get("1");
+                    HashMap<String, String> map = new HashMap<>();
+                    map.put("1", ddayData);
+                    return new Message(11, "updateView", map);
                 }
             }
 
@@ -112,11 +116,20 @@ public class ModeManager {
     /**
      *
      */
+    public Message showDefaultScreen(Message message) {
+        if (message.getDestination() != 30) return null;
+        if (!"SwitchDefaultScreen".equals(message.getAction())) return null;
+        if (modes[currentMode].getState() == 1) return null;
+        return changeMode(defaultMode);
+    }
+
+    /**
+     *
+     */
     private Message changeMode(int index) {
         return makeEditModeView(index);
         //return modes[index].getModeData();
     }
-
 
     /**
      *
@@ -127,16 +140,6 @@ public class ModeManager {
             currentMode = currentMode % modes.length;
         if (!modes[currentMode].getIsActivate())
             changeModeIndex();
-    }
-
-    /**
-     *
-     */
-    public Message showDefaultScreen(Message message) {
-        if (message.getDestination() != 30) return null;
-        if (!"SwitchDefaultScreen".equals(message.getAction())) return null;
-        if (modes[currentMode].getState() == 1) return null;
-        return changeMode(defaultMode);
     }
 
     /**
@@ -162,7 +165,12 @@ public class ModeManager {
     private Message saveActivation() {
         this.isEditState = false;
         if (activationCount < 4) return null;
-        return changeMode(currentMode);
+        Message message = changeMode(currentMode);
+        if (!modes[2].getIsActivate())
+            message.getArg().put("Action", "removeAlarmAll");
+        if (!modes[5].getIsActivate())
+            ddayData = "      ";
+        return message;
     }
 
     private Message editModeActivation() {
@@ -175,8 +183,10 @@ public class ModeManager {
         if (activationModeIndex == defaultMode) return null;
         modes[activationModeIndex].toggleModeActivation();
         activationCount = countActiveMode();
-        if (activationCount > 4)
+        if (activationCount > 4) {
             modes[activationModeIndex].toggleModeActivation();
+            activationCount--;
+        }
         return makeEditModeView(activationModeIndex);
     }
 
@@ -188,7 +198,6 @@ public class ModeManager {
             activationModeIndex = modes.length - 1;
         return makeEditModeView(activationModeIndex);
     }
-
 
 
     private Message makeEditModeView(int modeNumber) {

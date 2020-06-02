@@ -87,23 +87,29 @@ public class EventScheduler extends DWSObject {
     }
 
     /**
+     * @return updateView : LCD 0 " ON" or "RUN"
      * @brief Pass message from mainController
      */
-    public void pushEvent(Message message) {
-
+    public Message pushEvent(Message message) {
         String action = message.getAction();
         if (!("updateTimerEvent".equals(action) || "updateAlarmEvent".equals(action)))
-            return;
-        if ("ringing".equals(message.getArg().get("0")))
+            return null;
+        if ("ringing".equals(message.getArg().get("0"))) {
             setEvent(makeBuzzEvent(message), "updateAlarmEvent".equals(action));
-        else
+            String lcd0 = message.getArg().get("2").equals("351") ? "RUN" : " ON";
+            HashMap<String, String> map = new HashMap<>();
+            map.put("0", lcd0);
+            return new Message(11, "updateView", map);
+        } else
             removeEvent(Integer.parseInt(message.getArg().get("2")));
+        return null;
     }
 
     /**
      * @brief Clear Alarm Event from eventQueue
      */
     public void removeAlarmAll() {
+        System.out.println("Remove Alarm All");
         for (Event event : this.alarmEventQueue)
             this.eventQueue.remove(event);
         this.alarmEventQueue.clear();

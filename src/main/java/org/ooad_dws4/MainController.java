@@ -69,9 +69,11 @@ public class MainController {
     public void inputEvent(int event) {
         Message message = this.modeManager.modeModify(event);
         if (message == null) return;
-        if (message.getDestination() < 20)
+        if (message.getDestination() < 20) {
+            if (message.getArg().containsValue("removeAlarmAll"))
+                this.eventScheduler.removeAlarmAll();
             ioBridge.outputEvent(message);
-        else if (message.getDestination() < 30) {
+        } else if (message.getDestination() < 30) {
             switch (message.getDestination()) {
                 case 20:
                     System.out.println(message.getAction());
@@ -82,7 +84,7 @@ public class MainController {
                     this.ioBridge.outputEvent(message);
                     break;
                 case 22:
-                    this.eventScheduler.pushEvent(message);
+                    this.ioBridge.outputEvent(this.eventScheduler.pushEvent(message));
                     break;
             }
         }
