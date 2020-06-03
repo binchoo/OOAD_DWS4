@@ -45,7 +45,7 @@ class AlarmModeTest {
         arg.put("0","EDT");
         arg.put("3", "00|00 1");
         arg.put("4", "  ALARM   ");
-        arg.put("blink", "0");
+        arg.put("blink", "3");
         assertEquals(arg, returnMsg.getArg());
     }
 
@@ -118,7 +118,7 @@ class AlarmModeTest {
         arg.put("0", "EDT");
         arg.put("3", "00|00 1");
         arg.put("4", "  ALARM   ");
-        arg.put("blink", "1");
+        arg.put("blink", "4");
         assertEquals(arg, returnMsg.getArg());
     }
 

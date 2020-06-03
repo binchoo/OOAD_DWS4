@@ -41,7 +41,7 @@ public class AlarmMode extends Mode {
     private Message editAlarm() {
         changeState(1);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(currentAlarmIndex));
+        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field+3));
         return new Message(11, "updateView", arg);
     }
 
@@ -71,7 +71,7 @@ public class AlarmMode extends Mode {
     private Message changeField() {
         this.field = (this.field+1) % 2;
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field));
+        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field+3));
         return new Message(11, "updateView", arg);
     }
     /* system operation */

@@ -45,7 +45,7 @@ public class TimeKeepingMode extends Mode{
 
     /* system operation */
     private Message changeField() {
-        field = (field + 1) % 7;
+        field = (field + 1) % 6;
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timeData, Integer.toString(field));
