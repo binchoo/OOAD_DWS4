@@ -14,7 +14,7 @@ public class MainController {
     private EventScheduler eventScheduler;
     private IOBridge ioBridge;
     private ModeManager modeManager;
-
+//    int repeat2=0, repeat4 = 0; // for UI test
     /**
      * @brief Default constructor
      */

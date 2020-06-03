@@ -155,30 +155,24 @@ public class LCDPanel extends JPanel{
     }
 
     public void blink(int screenNum){
+        stopBlink(0,26);
         switch(screenNum){
             case 0:
-                stopBlink(15,16);
-                stopBlink(25,26);
                 startBlink(17,20);
                 break;
             case 1:
-                stopBlink(17,20);
                 startBlink(22,23);
                 break;
             case 2:
-                stopBlink(22,23);
                 startBlink(25,26);
                 break;
             case 3:
-                stopBlink(25,26);
                 startBlink(10,11);
                 break;
             case 4:
-                stopBlink(10,11);
                 startBlink(13,14);
                 break;
             case 5:
-                stopBlink(13,14);
                 startBlink(15,16);
                 break;
             default:
