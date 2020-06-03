@@ -23,7 +23,6 @@ public class Application {
                 timeRunner.linkObject(mainController);
                 clock.linkObjects(timeRunner);
                 eventScheduler.linkObjects(mainController);
-                mainController.linkObjects(ioBridge);
                 ioBridge.linkObject(mainController, outputController);
                 inputController.linkObject(ioBridge);
 
@@ -32,6 +31,8 @@ public class Application {
                 dwsFrame.getBtnPanel().getButtonsetAdapter().linkObject(inputController);
                 outputController.getBuzzerAdapter().linkObject(dwsFrame.getBuzzer());
                 outputController.getLcdAdapter().linkObject(dwsFrame.getLcdPanel());
+
+//                clock.run();
 
         }
 }

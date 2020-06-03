@@ -28,8 +28,7 @@ public class MainController {
      * @param modeManager    ModeManager Object. Object Number : 30
      * @brief Make Reference Link with other Objects
      */
-    public void linkObjects(IOBridge ioBridge, TimeRunner timeRunner, EventScheduler eventScheduler,
-            ModeManager modeManager) {
+    public void linkObjects(IOBridge ioBridge, TimeRunner timeRunner, EventScheduler eventScheduler, ModeManager modeManager) {
         this.ioBridge = ioBridge;
         this.timeRunner = timeRunner;
         this.eventScheduler = eventScheduler;
@@ -39,9 +38,9 @@ public class MainController {
     /**
      * @param systemTime Pass the current system time throughout the system.
      * @brief The pulse started by TimeRunner is delivered to each part. 1. Deadline
-     *        check in eventScheduler. If there is a result (not null), output
-     *        occurs. 2. Each mode function is performed in modeManager. Creating
-     *        the current screen is mode.
+     * check in eventScheduler. If there is a result (not null), output
+     * occurs. 2. Each mode function is performed in modeManager. Creating
+     * the current screen is mode.
      */
     public void broadcast(long systemTime) {
         System.out.println("Time : " + systemTime);
@@ -58,13 +57,13 @@ public class MainController {
         if ((message = modeManager.broadcast(systemTime)) != null)
             ioBridge.outputEvent(message);
 
-        testCode(systemTime);
+//        testCode(systemTime);
     }
 
     /**
      * @param event The number of the button clicked.
      * @brief Button input event handling. The event itself is passed to the
-     *        modeManager. Distribute the Message according to the destination.
+     * modeManager. Distribute the Message according to the destination.
      */
     public void inputEvent(int event) {
         Message message = this.modeManager.modeModify(event);
@@ -93,7 +92,7 @@ public class MainController {
 
     /**
      * @brief Resets the timer that returns to the default screen each time a button
-     *        is pressed.
+     * is pressed.
      */
     public void defaultScreenTimerReset() {
         this.eventScheduler.defaultScreenTimerReset();
@@ -101,8 +100,8 @@ public class MainController {
 
     /**
      * @brief Remove BuzzOff event from eventScheduler If a button is input while
-     *        the buzzer is ringing, the buzzOffEvent is removed and the buzzer is
-     *        immediately turned off.
+     * the buzzer is ringing, the buzzOffEvent is removed and the buzzer is
+     * immediately turned off.
      */
     public void stopBuzzer() {
         defaultScreenTimerReset();
