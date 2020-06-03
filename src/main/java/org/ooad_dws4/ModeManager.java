@@ -163,8 +163,8 @@ public class ModeManager {
     }
 
     private Message saveActivation() {
-        this.isEditState = false;
         if (activationCount < 4) return null;
+        this.isEditState = false;
         Message message = changeMode(currentMode);
         if (!modes[2].getIsActivate())
             message.getArg().put("Action", "removeAlarmAll");
@@ -203,8 +203,8 @@ public class ModeManager {
     private Message makeEditModeView(int modeNumber) {
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", modes[modeNumber].getIsActivate() ? " ON" : "OFF");
-        arg.put("1", "  " + activationCount + "/4");
-        arg.put("3", " MODE");
+        arg.put("1", "   " + activationCount + "/4");
+        arg.put("3", " MODE  ");
         String modeName = modes[modeNumber].getModeName();
         switch (modeName.length()) {
             case 1:

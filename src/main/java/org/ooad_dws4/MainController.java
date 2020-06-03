@@ -70,8 +70,9 @@ public class MainController {
         if (message == null)
             return;
         if (message.getDestination() < 20) {
-            if (message.getArg().containsValue("removeAlarmAll"))
-                this.eventScheduler.removeAlarmAll();
+            if(message.getArg().containsKey("Action"))
+                if (message.getArg().containsValue("removeAlarmAll"))
+                    this.eventScheduler.removeAlarmAll();
             ioBridge.outputEvent(message);
         } else if (message.getDestination() < 30) {
             switch (message.getDestination()) {
@@ -80,11 +81,15 @@ public class MainController {
                     break;
                 case 21:
                     message = this.timeRunner.systemTimeUpdate(message);
-                    this.eventScheduler.changeSystemTime(Long.parseLong(message.getArg().get("TimeDifference")));
-                    this.ioBridge.outputEvent(message);
+                    if (message != null) {
+                        this.eventScheduler.changeSystemTime(Long.parseLong(message.getArg().get("TimeDifference")));
+                        this.ioBridge.outputEvent(message);
+                    }
                     break;
                 case 22:
-                    this.ioBridge.outputEvent(this.eventScheduler.pushEvent(message));
+                    message = this.eventScheduler.pushEvent(message);
+                    if(message != null)
+                        this.ioBridge.outputEvent(message);
                     break;
             }
         }
