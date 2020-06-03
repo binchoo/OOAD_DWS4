@@ -14,7 +14,7 @@ class WoldTimeModeTest {
 
     @Test
     void changeCityTest() {
-        WoldTimeMode w = new WoldTimeMode();
+        WoldTimeMode w = new WoldTimeMode(true);
         Message returnMsg = w.modeModify(4);
         HashMap<String , String> arg = new HashMap<>();
         arg.put("0", "PAR");
@@ -26,7 +26,7 @@ class WoldTimeModeTest {
     }
     @Test
     void setCityTest(){
-        WoldTimeMode w = new WoldTimeMode();
+        WoldTimeMode w = new WoldTimeMode(true);
         w.modeModify(4);
         w.modeModify(2);
         w.modeModify(4);
@@ -38,7 +38,7 @@ class WoldTimeModeTest {
 
     @Test
     void systemTimeTest(){
-        WoldTimeMode w = new WoldTimeMode();
+        WoldTimeMode w = new WoldTimeMode(true);
         w.modeModify(4);
         w.modeModify(2);
         w.modeModify(4);
@@ -49,7 +49,7 @@ class WoldTimeModeTest {
     }
     @Test
     void updateCurrentTest() {
-        WoldTimeMode w = new WoldTimeMode();
+        WoldTimeMode w = new WoldTimeMode(true);
         Message returnMsg = w.update(1000 * 60 * 3, true);
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", "SEL");

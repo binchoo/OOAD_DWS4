@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class AlarmMode extends Mode{
+public class AlarmMode extends Mode {
     private Alarm[] alarms;
     private int currentAlarmIndex;
     private int changingAlarmIndex;
@@ -14,7 +14,7 @@ public class AlarmMode extends Mode{
     private long systemTime;
     private Date date;
 
-    public AlarmMode() {
+    public AlarmMode(boolean isActivation) {
         this.alarms = new Alarm[4];
         for(int i=0; i<4; i++)
             this.alarms[i] = new Alarm();
@@ -23,6 +23,8 @@ public class AlarmMode extends Mode{
         this.changingAlarmIndex = this.currentAlarmIndex;
         this.field = 0;
         this.systemTime = 0;
+        this.isActivate = isActivation;
+        this.modeName = "ALARM";
         date = new Date(15 * 1000 * 60 * 60);
     }
 
@@ -55,7 +57,6 @@ public class AlarmMode extends Mode{
         if(this.currentAlarmIndex == 0 && value == -1) this.currentAlarmIndex = 3;
         else this.currentAlarmIndex = (this.currentAlarmIndex + value)% 4;
     }
-
     /* system operation */
     private Message toggleAlarmActivation() {
         alarms[currentAlarmIndex].toggleActivation();
@@ -94,6 +95,7 @@ public class AlarmMode extends Mode{
         return "EDT";
     }
     /*private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink){ //f
+
         arg.put("0", getStateName());
         arg.put("1", null); *//* should be added in mode manager *//*
         arg.put("3", Long.toString(alarmTime));
@@ -105,19 +107,17 @@ public class AlarmMode extends Mode{
         makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
-
     /*public Message toggleModeActivation() {
         HashMap<String, String> arg = new HashMap<String, String>();
         this.isActivate = !this.isActivate;
         return new Message(11, "updateView", arg);
     }*/
-
     @Override
     /* 5 -> 2 -> 3|4 -> 1|5*/
     public Message modeModify(int event) {
         HashMap<String, String> arg = new HashMap<String, String>();
-        if(this.state == 0){
-            switch(event){
+        if (this.state == 0) {
+            switch (event) {
                 case 2:
                     return toggleAlarmActivation();
                 case 3:
@@ -127,8 +127,8 @@ public class AlarmMode extends Mode{
                 case 5:
                     return editAlarm();
             }
-        }else{
-            switch(event){
+        } else {
+            switch (event) {
                 case 1:
                 case 5:
                     return saveAlarm();
@@ -162,7 +162,12 @@ public class AlarmMode extends Mode{
         return new Message(11, "updateView", arg);
     }
 
-    public int getCurrentAlarmIndex(){
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
+
+    public int getCurrentAlarmIndex() {
         return currentAlarmIndex;
     }
 

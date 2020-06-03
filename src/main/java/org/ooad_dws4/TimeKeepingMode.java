@@ -9,17 +9,14 @@ import java.util.Locale;
 public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
     private int field ;
-    private int valueChangeTracking[];
     private Date date;
     public TimeKeepingMode() {
         this.timekeeping = new TimeKeeping(0);
         this.state = 0;
         this.field = -1;
-        this.valueChangeTracking = new int[6];
-        for(int i=0; i<6; i++)
-            valueChangeTracking[i] = 0;
         this.isActivate = true;
         date = new Date(0);
+        this.modeName = "TIMEKEEPER";
     }
 
     /* 5 -> 2 -> 3|4 -> 1|5 */
@@ -136,6 +133,12 @@ public class TimeKeepingMode extends Mode{
             return new Message(11, "updateView", arg);
         }
         return null;
+    }
+
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
     }
 
     @Override

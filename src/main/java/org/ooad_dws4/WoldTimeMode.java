@@ -4,14 +4,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class WoldTimeMode extends Mode{
+public class WoldTimeMode extends Mode {
     private City[] cities;
     private int timeZoneIndex;
     private int currentTimeZone;
     private long systemTime;
     private int changingIndex;
     private boolean systemTimeUpdateFlag;
-    public WoldTimeMode() {
+    public WoldTimeMode(boolean isActivation) {
         this.cities = new City[4];
         this.cities[0] = new City(true, 9, "SEL"); /* Seoul : GMT+9 */
         this.cities[1] = new City(false, 2, "PAR"); /* Paris : GMT+2 */
@@ -21,6 +21,12 @@ public class WoldTimeMode extends Mode{
         this.changingIndex = timeZoneIndex;
         this.currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
+        /* NY : GMT-4
+         * London: GMT+1
+         * Paris : GMT+2
+         * Seoul : GMT+9 */
+        this.isActivate = isActivation;
+        this.modeName = "WORLD TIME";
     }
     private void changeCityIndex(int value) {
         if(this.changingIndex == 0 && value == -1){
@@ -44,9 +50,10 @@ public class WoldTimeMode extends Mode{
         return null;
     }
 
+
     @Override
     public Message modeModify(int event) {
-        switch(event){
+        switch (event) {
             case 2:
                 return setCity();
             case 3:
@@ -81,10 +88,12 @@ public class WoldTimeMode extends Mode{
         makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
         return new Message(11, "updateView", arg);
     }
+
     @Override
     public void changeState(int state) {
         return;
     }
+
     @Override
     public Message update(long systemTime) {
         this.systemTime = systemTime;
@@ -99,6 +108,12 @@ public class WoldTimeMode extends Mode{
         makeUpdateViewArg(arg, systemTime, null);
         return new Message(11, "updateView", arg);
     }
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
+
     /* personally added */
     public long getSystemTime(){
         return this.systemTime;

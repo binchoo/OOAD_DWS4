@@ -5,23 +5,24 @@ import java.util.HashMap;
 /**
  *
  */
-public class TimerMode extends Mode{
+public class TimerMode extends Mode {
 
     /**
      *
      */
     private Timer timer;
 
-    private int field=0;
-    private long value=0;
-    private HashMap <String, String> arg;
+    private int field = 0;
+    private long value = 0;
+    private HashMap<String, String> arg;
 
-    public TimerMode() {
+    public TimerMode(boolean isActivation) {
 
         this.timer = new Timer();
-        this.state=0;
-        this.field=-1;
-        isActivate=true;
+        this.state = 0;
+        this.field = -1;
+        this.isActivate = isActivation;
+        this.modeName = "TIMER";
     }
 
     @Override
@@ -41,7 +42,7 @@ public class TimerMode extends Mode{
         // TODO implement here
 
         field++;
-        field%=3;
+        field %= 3;
 
     }
 
@@ -50,14 +51,12 @@ public class TimerMode extends Mode{
      */
     public void changeValue() {
         // TODO implement here
-        if(field==0){
+        if (field == 0) {
             value++;
-        }
-        else if(field==1){
-            value+=60;
-        }
-        else{
-            value+=3600;
+        } else if (field == 1) {
+            value += 60;
+        } else {
+            value += 3600;
         }
     }
 
@@ -120,7 +119,7 @@ public class TimerMode extends Mode{
      */
     public void changeState(int state) {
         // TODO implement here
-        this.state =state;
+        this.state = state;
 
     }
 
@@ -134,13 +133,19 @@ public class TimerMode extends Mode{
         return null;
     }
 
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
+
     public Message modeModify(int event) {
         // TODO implement here
 
         HashMap<String, String> arg = new HashMap<String, String>();
 
-        if(this.state==0){
-            switch (event){
+        if (this.state == 0) {
+            switch (event) {
                 case 1:
                     //change mode
                 case 3:
@@ -150,8 +155,8 @@ public class TimerMode extends Mode{
 
             }
 
-        }else if(this.state==1){
-            switch (event){
+        } else if (this.state == 1) {
+            switch (event) {
                 case 1:
                 case 5:
                     saveTimer(value);
@@ -162,31 +167,34 @@ public class TimerMode extends Mode{
                     changeValue();  // -
                 case 4:
                     changeValue();   // +
-                default: break;
+                default:
+                    break;
             }
 
-        }else if(this.state==2){   // when running
-            switch (event){
+        } else if (this.state == 2) {   // when running
+            switch (event) {
                 case 1:
                     //mode change
                 case 3:
                     pauseTimer();
-                default: break;
+                default:
+                    break;
             }
-        }else if(this.state==3){    // when pause
-            switch (event){
+        } else if (this.state == 3) {    // when pause
+            switch (event) {
                 case 1:
                     // mode change
                 case 2:
                     resetTimer();
                 case 3:
                     resumeTimer();
-                default: break;
+                default:
+                    break;
             }
 
         }
         makeUpdateViewArg(arg, 1, null);
-        Message msg = new Message(11,"updateView",null);
+        Message msg = new Message(11, "updateView", null);
 
         return msg;
     }
@@ -199,13 +207,12 @@ public class TimerMode extends Mode{
 
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, 1, null);
-        Message msg = new Message(11,"updateView",null);
+        Message msg = new Message(11, "updateView", null);
         return msg;
     }
 
-    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
-        if(systemTime == -1)
-        {
+    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink) { //f
+        if (systemTime == -1) {
             arg.put("0", "");
             arg.put("1", ""); /* should be added in mode manager */
             arg.put("3", "");

@@ -10,7 +10,7 @@ class AlarmModeTest {
 
     @Test
     void changeAlarmIndexIncreaseTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String > arg = new HashMap<>();
         a.modeModify(3);
         a.modeModify(3);
@@ -24,7 +24,7 @@ class AlarmModeTest {
     }
     @Test
     void changeAlarmIndexDecreaseTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String > arg = new HashMap<>();
         a.modeModify(4);
         a.modeModify(4);
@@ -39,7 +39,7 @@ class AlarmModeTest {
 
     @Test
     void editAlarmTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         Message returnMsg = a.modeModify(5);
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0","EDT");
@@ -51,7 +51,7 @@ class AlarmModeTest {
 
     @Test
     void saveAlarmTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.modeModify(5);
         HashMap<String, String> arg = new HashMap<>();
         Message returnMsg = a.modeModify(5);
@@ -63,7 +63,7 @@ class AlarmModeTest {
     }
     @Test
     void alarmOnTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         Message returnMsg = a.modeModify(2);
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", "ringing");
@@ -73,7 +73,7 @@ class AlarmModeTest {
     }
     @Test
     void alarmOffTest(){
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.modeModify(2);
         Message returnMsg = a.modeModify(2);
         HashMap<String, String> arg = new HashMap<>();
@@ -83,7 +83,7 @@ class AlarmModeTest {
     }
     @Test
     void ONStateTest(){
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.modeModify(2);
         Message returnMsg = a.getModeData();
         HashMap<String, String> arg = new HashMap<>();
@@ -96,7 +96,7 @@ class AlarmModeTest {
     }
     @Test
     void OFFStateTest(){
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.modeModify(2);
         a.modeModify(2);
         Message returnMsg = a.getModeData();
@@ -111,7 +111,7 @@ class AlarmModeTest {
 
     @Test
     void changeFieldTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String> arg = new HashMap<>();
         a.modeModify(5);
         Message returnMsg = a.modeModify(2);
@@ -124,7 +124,7 @@ class AlarmModeTest {
 
     @Test
     void changeValueIncreaseTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String> arg = new HashMap<String, String>();
         a.modeModify(5);
         a.modeModify(2);
@@ -138,7 +138,7 @@ class AlarmModeTest {
     }
     @Test
     void changeValueDecreaseTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String> arg = new HashMap<String, String>();
         a.modeModify(5);
         a.modeModify(2);
@@ -152,7 +152,7 @@ class AlarmModeTest {
     }
     @Test
     void getModeDataTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "OFF");
 //        arg.put("1", null);
@@ -165,7 +165,7 @@ class AlarmModeTest {
 
     /*@Test
     void toggleModeActivationTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
         a.isActivate = false;
         a.toggleModeActivation();
         assertTrue(a.isActivate);
@@ -174,7 +174,8 @@ class AlarmModeTest {
 
     @Test
     void changeStateTest() {
-        AlarmMode a = new AlarmMode();
+        AlarmMode a = new AlarmMode(true);
+
         a.changeState(1);
         assertEquals(1, a.state);
     }

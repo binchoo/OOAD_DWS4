@@ -1,66 +1,58 @@
 package org.ooad_dws4;
 
-/**
- *
- */
-public class IOBridge {
+import java.util.HashMap;
 
-    /**
-     * Default constructor
-     */
+public class IOBridge extends DWSObject {
+
+    private MainController mainController;
+    private OutputController output;
+    private boolean isBuzzerRinging;
+    private boolean isMute;
+
     public IOBridge() {
         isBuzzerRinging = false;
         isMute = false;
     }
 
-    private MainController mainController;
-
-    /**
-     *
-     */
-    private OutputController output;
-
-    /**
-     *
-     */
-    private InputController input;
-
-    /**
-     *
-     */
-    private boolean isBuzzerRinging;
-
-    /**
-     *
-     */
-    private boolean isMute;
-
-    public void linkObject(MainController mainController, InputController inputController, OutputController outputController) {
+    public void linkObject(MainController mainController, OutputController outputController) {
         this.mainController = mainController;
-        this.input = inputController;
         this.output = outputController;
     }
 
-    /**
-     * @param msg
-     */
     public void outputEvent(Message msg) {
-        System.out.print("IOBridge >> ");
-        msg.doMessageAction();
+        int dest = msg.getDestination();
+        String action = msg.getAction();
+        switch (dest) {
+            case 10: {
+                if (action.equals("toggleMute")) {
+                    this.toggleSound();
+                    this.output.output(new Message(11, "updateView", new HashMap<String, String>() {
+                        {
+                            put("2", String.valueOf(isMute));
+                        }
+                    }));
+                }
+            }
+                break;
+            case 11: {
+                if (action.equals("buzzOff") || action.equals("buzzRinging")) {
+                    this.isBuzzerRinging = !this.isBuzzerRinging;
+                }
+                this.output.output(msg);
+            }
+                break;
+        }
     }
 
-    /**
-     * @param event
-     */
     public void inputEvent(int event) {
-        // TODO implement here
+        mainController.inputEvent(event);
+        if (!this.isMute)
+            this.output.output(new Message(11, "beep", null)); // beep
     }
 
-    /**
-     *
-     */
     public void toggleSound() {
-        // TODO implement here
+        this.isMute = !this.isMute;
+        System.out.println(isMute);
     }
 
 }

@@ -22,8 +22,10 @@ public class StopwatchMode extends Mode {
     private HashMap <String, String> arg;
 
 
-    public StopwatchMode() {
+    public StopwatchMode(boolean isActivation) {
+        this.isActivate = isActivation;
         this.stopwatch = new Stopwatch();
+        this.modeName = "STOPWATCH";
     }
 
     @Override
@@ -88,6 +90,11 @@ public class StopwatchMode extends Mode {
     @Override
     public Message update(long systemTime, boolean currentMode) {
         return null;
+    }
+
+    @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
     }
 
     public Message modeModify(int event) {

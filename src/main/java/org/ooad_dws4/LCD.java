@@ -1,8 +1,8 @@
 package org.ooad_dws4;
-import java.util.*;
-/**
- *
- */
+
+import java.util.HashMap;
+
 public interface LCD {
-    public boolean update(Dictionary<String, String> arg);
+    public void update(HashMap<String, String> arg);
 }
+
