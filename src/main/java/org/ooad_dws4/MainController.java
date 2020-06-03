@@ -63,7 +63,7 @@ public class MainController {
      * modeManager. Distribute the Message according to the destination.
      */
     public void inputEvent(int event) {
-        if (0 < event && event < 9) return;
+        if (0 > event || event > 9) return;
         Message message = this.modeManager.modeModify(event);
         if (message == null)
             return;
