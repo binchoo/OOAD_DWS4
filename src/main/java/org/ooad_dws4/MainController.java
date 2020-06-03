@@ -43,7 +43,6 @@ public class MainController {
      * the current screen is mode.
      */
     public void broadcast(long systemTime) {
-        System.out.println("Time : " + systemTime);
         Message message;
         if ((message = eventScheduler.broadcast(systemTime)) != null) {
             if (message.getDestination() < 20)
@@ -56,8 +55,6 @@ public class MainController {
         }
         if ((message = modeManager.broadcast(systemTime)) != null)
             ioBridge.outputEvent(message);
-
-//        testCode(systemTime);
     }
 
     /**
@@ -70,7 +67,7 @@ public class MainController {
         if (message == null)
             return;
         if (message.getDestination() < 20) {
-            if(message.getArg().containsKey("Action"))
+            if (message.getArg().containsKey("Action"))
                 if (message.getArg().containsValue("removeAlarmAll"))
                     this.eventScheduler.removeAlarmAll();
             ioBridge.outputEvent(message);
@@ -88,7 +85,7 @@ public class MainController {
                     break;
                 case 22:
                     message = this.eventScheduler.pushEvent(message);
-                    if(message != null)
+                    if (message != null)
                         this.ioBridge.outputEvent(message);
                     break;
             }
@@ -111,67 +108,5 @@ public class MainController {
     public void stopBuzzer() {
         defaultScreenTimerReset();
         ioBridge.outputEvent(eventScheduler.removeBuzzerOffEvent());
-    }
-
-    private void testCode(long systemTime) {
-
-        if (systemTime == 5000) {
-            System.out.println("Test Start");
-        }
-
-        if (systemTime == 10000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "ringing");
-            map.put("1", "8000");
-            map.put("2", "321");
-            this.eventScheduler.pushEvent(new Message(22, "updateAlarmEvent", map));
-        }
-
-        if (systemTime == 15000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "off");
-            map.put("2", "321");
-            this.eventScheduler.pushEvent(new Message(22, "updateAlarmEvent", map));
-        }
-
-        if (systemTime == 20000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "ringing");
-            map.put("1", "4000");
-            map.put("2", "322");
-            this.eventScheduler.pushEvent(new Message(22, "updateAlarmEvent", map));
-        }
-
-        if (systemTime == 25000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "ringing");
-            map.put("1", "7000");
-            map.put("2", "323");
-            this.eventScheduler.pushEvent(new Message(22, "updateAlarmEvent", map));
-        }
-
-        if (systemTime == 27000) {
-            this.stopBuzzer();
-        }
-
-        if (systemTime == 30000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "31000");
-            Message msg = this.timeRunner.systemTimeUpdate(new Message(21, "updateSystemTime", map));
-            this.eventScheduler.changeSystemTime(Long.parseLong(msg.getArg().get("TimeDifference")));
-            this.ioBridge.outputEvent(msg);
-        }
-
-        if (systemTime == 32000) {
-            this.defaultScreenTimerReset();
-        }
-
-        if (systemTime == 35000) {
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", "9000");
-            Message msg = this.timeRunner.systemTimeUpdate(new Message(21, "updateWorldTime", map));
-            this.eventScheduler.changeSystemTime(Long.parseLong(msg.getArg().get("TimeDifference")));
-            this.ioBridge.outputEvent(msg);
-        }
     }
 }
