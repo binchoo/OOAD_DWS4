@@ -29,10 +29,10 @@ public class TimerMode extends Mode{
         return null;
     }
 
-    @Override
+/*    @Override
     public Message toggleModeActivation() {
         return null;
-    }
+    }*/
 
     /**
      *

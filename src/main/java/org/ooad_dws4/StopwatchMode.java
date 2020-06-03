@@ -31,10 +31,10 @@ public class StopwatchMode extends Mode {
         return null;
     }
 
-    @Override
+/*    @Override
     public Message toggleModeActivation() {
         return null;
-    }
+    }*/
 
     /**
      *

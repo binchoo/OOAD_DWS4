@@ -18,10 +18,10 @@ public class DDayMode extends Mode{
         return null;
     }
 
-    @Override
+/*    @Override
     public Message toggleModeActivation() {
         return null;
-    }
+    }*/
 
     /**
      *

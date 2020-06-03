@@ -10,9 +10,7 @@ public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
     private int field ;
     private int valueChangeTracking[];
-//    private SimpleDateFormat dateFormat;
     private Date date;
-    long testValue;
     public TimeKeepingMode() {
         this.timekeeping = new TimeKeeping(0);
         this.state = 0;
@@ -21,7 +19,6 @@ public class TimeKeepingMode extends Mode{
         for(int i=0; i<6; i++)
             valueChangeTracking[i] = 0;
         this.isActivate = true;
-//        dateFormat = new SimpleDateFormat("EEEEE MM yyyy HH:mm:ss.SSSZ", new Locale("en", "US"));
         date = new Date(0);
     }
 
@@ -159,7 +156,7 @@ public class TimeKeepingMode extends Mode{
         a[0] = new SimpleDateFormat("yyyy").format(tmpDate);
         a[1] = new SimpleDateFormat("MM").format(tmpDate);
         a[2] = new SimpleDateFormat("dd").format(tmpDate);
-        a[3] = new SimpleDateFormat("hh").format(tmpDate);
+        a[3] = new SimpleDateFormat("HH").format(tmpDate);
         a[4] = new SimpleDateFormat("mm").format(tmpDate);
         a[5] = new SimpleDateFormat("ss").format(tmpDate);
         a[6] = new SimpleDateFormat("EEE", new Locale("en", "US")).format(tmpDate).toUpperCase();
@@ -169,7 +166,7 @@ public class TimeKeepingMode extends Mode{
     private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
         String argData[] = makeTimeSet(systemTime);
         arg.put("0", argData[6]);
-        arg.put("1", null); /* should be added in mode manager */
+        /*arg.put("1", null); *//* should be added in mode manager */
         arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
         arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
         arg.put("blink", blink);
@@ -179,15 +176,15 @@ public class TimeKeepingMode extends Mode{
         String argData[] = makeTimeSet(systemTime);
         if(systemTime == -1)
         {
-            arg.put("0", "");
-            arg.put("1", ""); /* should be added in mode manager */
+            /*arg.put("0", "");
+            arg.put("1", ""); *//* should be added in mode manager *//*
             arg.put("3", "");
             arg.put("4", "");
-            arg.put("blink", blink);
+            arg.put("blink", blink);*/
             return;
         }
         arg.put("0", argData[6]);
-        arg.put("1", null); /* should be added in mode manager */
+        /*arg.put("1", null); *//* should be added in mode manager */
         arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
         arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
         arg.put("blink", blink);

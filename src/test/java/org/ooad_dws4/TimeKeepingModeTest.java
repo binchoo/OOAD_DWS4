@@ -14,7 +14,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.modeModify(5);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "THU");
-        arg.put("1", null); /* should be added in mode manager */
+//        arg.put("1", null); /* should be added in mode manager */
         arg.put("3", "09|0000");
         arg.put("4", "1970-01-01");
         arg.put("blink", "0");
@@ -28,7 +28,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.modeModify(2);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "THU");
-        arg.put("1", null); /* should be added in mode manager */
+//        arg.put("1", null); /* should be added in mode manager */
         arg.put("3", "09|0000");
         arg.put("4", "1970-01-01");
         arg.put("blink", "1");
@@ -41,7 +41,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.modeModify(4);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "FRI");
-        arg.put("1", null);
+//        arg.put("1", null);
         arg.put("3", "09|0000");
         arg.put("4", "1971-01-01");
         arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
@@ -55,7 +55,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "THU");
-        arg.put("1", null);
+//        arg.put("1", null);
         arg.put("3", "09|0000");
         arg.put("4", "1970-01-01");
         arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
@@ -74,7 +74,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "TUE");
-        arg.put("1", null);
+//        arg.put("1", null);
         arg.put("3", "08|0000");
         arg.put("4", "1970-12-01");
         arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
@@ -102,7 +102,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.update(10000, true);
         HashMap<String, String > arg = new HashMap<>();
         arg.put("0", "THU");
-        arg.put("1", null);
+//        arg.put("1", null);
         arg.put("3", "09|0010");
         arg.put("4", "1970-01-01");
         arg.put("blink", null);
@@ -121,7 +121,7 @@ public class TimeKeepingModeTest {
         Message returnMsg = t.getModeData();
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", "THU");
-        arg.put("1", null);
+//        arg.put("1", null);
         arg.put("3", "09|0000");
         arg.put("4", "1970-01-01");
         arg.put("blink", null);
