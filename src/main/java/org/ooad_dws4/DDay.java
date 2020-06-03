@@ -5,25 +5,26 @@ import java.util.Date;
 public class DDay {
 
     private boolean state;
-    private Date date;
-    private long mTime; // millisecond time
+    private long time; // millisecond time
 
-    public DDay() {
-        mTime = 1563032234338L;
+    public DDay(long time) {
+        this.time = time;
+        this.state = false;
     }
 
     public void changeState() {
-        // TODO implement here
-        if (state){state=false;}
-        else{state= true;}
+        this.state = !this.state;
     }
 
-    public long getDdayData() {
-        // TODO implement here
-        return 0;
+    public boolean getState() {
+        return this.state;
     }
 
-    public long getmTime() {
-        return mTime;
+    public void setTime(long time) {
+        this.time = time;
+    }
+
+    public long getTime() {
+        return time;
     }
 }

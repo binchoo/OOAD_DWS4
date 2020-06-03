@@ -31,8 +31,6 @@ public abstract class Mode extends DWSObject {
 
     public abstract Message modeModify(int event);
 
-    public abstract void changeState(int state);
-
     public abstract Message update(long systemTime);
 
     public abstract Message update(long systemTime, boolean currentMode);

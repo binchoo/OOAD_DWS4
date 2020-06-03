@@ -116,7 +116,7 @@ public class AlarmMode extends Mode {
         return null;
     }
 
-    @Override
+
     public void changeState(int state) {
         this.state = (this.state + 1) % 2;
     }

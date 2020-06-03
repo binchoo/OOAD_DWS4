@@ -71,10 +71,6 @@ public class WoldTimeMode extends Mode {
     }
 
     @Override
-    public void changeState(int state) {
-    }
-
-    @Override
     public Message update(long systemTime) {
         return null;
     }
