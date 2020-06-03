@@ -84,7 +84,7 @@ public class DDayMode extends Mode{
      *    chage dday state edit*/
     public void enterDdayEdit() {
         // TODO implement here
-//        changeState(1);
+        changeState(1);
     }
 
     /**

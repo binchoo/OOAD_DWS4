@@ -2,25 +2,12 @@ package org.ooad_dws4;
 
 import java.util.HashMap;
 
-/**
- *
- */
 public class StopwatchMode extends Mode {
 
-    /**
-     * Default constructor
-     */
-    /*public StopwatchMode() {
-    }
 
-     */
-
-    /**
-     *
-     */
     private Stopwatch stopwatch;
-    private HashMap <String, String> arg;
-
+    //private HashMap <String, String> arg;
+    private int hour,minute,second;
 
     public StopwatchMode() {
         this.stopwatch = new Stopwatch();
@@ -28,66 +15,94 @@ public class StopwatchMode extends Mode {
 
     @Override
     public Message getModeData() {
-        return null;
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg,"","","","STOPWATCH",null);
+        return new Message(11,"updateView", arg);
     }
 
     @Override
-    public Message toggleModeActivation() {
-        return null;
-    }
+    public Message toggleModeActivation() { return null; }
 
-    /**
-     *
-     */
-    public void runStopwatch() {
+    public Message runStopwatch() {
         // TODO implement here
-        //change state running
+
         changeState(2);
 
         stopwatch.getStopwatchData();
 
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg,"RUN","","","STOPWATCH",null);
+
+        return new Message(11,"updateView",arg);
+
     }
 
     /**
      *
      */
-    public void pauseStopwatch() {
-        // TODO implement here
+    public Message pauseStopwatch() {
+
         //change state pause
         changeState(3);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg,"PUS","","","",null);
+
+        return new Message(11,"updateView",arg);
     }
 
     /**
      *
      */
-    public void resetStopwatch() {
-        // TODO implement here
+    public Message resetStopwatch() {
+
         stopwatch.reset();
         changeState(0);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg," ","","","",null);
+
+        return new Message(11,"updateView",arg);
     }
 
     /**
      *
      */
-    public void resumeStopwatch() {
-        // TODO implement here
+    public Message resumeStopwatch() {
+
         //change state running
         changeState(2);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg,"RUN","","","",null);
+
+        return new Message(11,"updateView",arg);
     }
 
     public void changeState(int state) {
-        // TODO implement here
         this.state = state;
     }
 
     @Override
     public Message update(long systemTime) {
-        return null;
+            if (state==2){
+                stopwatch.setStopwatchData(stopwatch.getStopwatchData()+1000);
+
+            }
+            HashMap<String, String> arg = new HashMap<String, String>();
+
+            return new Message(35,"updateView",arg);
+
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        return null;
+
+        HashMap<String, String> arg = new HashMap<String, String>();
+
+        if (state==2){
+            stopwatch.setStopwatchData(stopwatch.getStopwatchData()+1000);
+
+        }
+
+        return new Message(11,"updateView",arg);
     }
 
     public Message modeModify(int event) {
@@ -96,10 +111,10 @@ public class StopwatchMode extends Mode {
 
         if(this.state==0){
             switch (event){
-                case 1:
+                //case 1:
                     //change mode
                 case 3:
-                    runStopwatch();
+                    return runStopwatch();
                 default: break;
 
 
@@ -107,20 +122,20 @@ public class StopwatchMode extends Mode {
 
         }else if(this.state==2){   // when running
             switch (event){
-                case 1:
+                //case 1:
                     //mode change
                 case 3:
-                    pauseStopwatch();
+                    return pauseStopwatch();
                 default: break;
             }
         }else if(this.state==3){    // when pause
             switch (event){
-                case 1:
+                //case 1:
                     // mode change
                 case 2:
-                    resetStopwatch();
+                    return resetStopwatch();
                 case 3:
-                    resumeStopwatch();
+                    return resumeStopwatch();
                 default: break;
             }
 
@@ -128,10 +143,22 @@ public class StopwatchMode extends Mode {
         return null;
     }
 
-    public Message update() {
-        // TODO implement here
-        Message msg = new Message(11,"update",null);
-        return msg;
+
+    private void makeUpdateViewArg(HashMap<String, String> arg,String ar0,String ar1,String ar3, String ar4 , String blink){ //f
+        /*if(systemTime == -1)
+        {
+            arg.put("0", "");
+            arg.put("1", "");  //should be added in mode manager
+            arg.put("3", "");
+            arg.put("4", "");
+            arg.put("blink", blink);
+            return;
+        }*/
+        arg.put("0", ar0);
+        arg.put("1", null); // should be added in mode manager
+        arg.put("3", ar3);
+        arg.put("4", ar4);
+        arg.put("blink", blink);
     }
 
 }
