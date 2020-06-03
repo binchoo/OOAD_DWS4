@@ -1,4 +1,4 @@
-package org.ooad_dws4.Model.Input;
+package org.ooad_dws4;
 
 public interface Input {
 

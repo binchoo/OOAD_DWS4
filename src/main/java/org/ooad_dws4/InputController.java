@@ -1,6 +1,4 @@
-package org.ooad_dws4.Model.Input;
-
-import org.ooad_dws4.Model.Controller.IOBridge;
+package org.ooad_dws4;
 
 public class InputController implements Input {
 

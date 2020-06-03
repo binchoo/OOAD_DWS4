@@ -1,6 +1,4 @@
-package org.ooad_dws4.Model.Output;
-
-import org.ooad_dws4.Model.Common.Message;
+package org.ooad_dws4;
 
 public class OutputController{
 

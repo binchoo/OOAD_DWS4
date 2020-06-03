@@ -1,9 +1,5 @@
-package org.ooad_dws4.Controller;
+package org.ooad_dws4;
 
-import org.ooad_dws4.Model.Controller.IOBridge;
-import org.ooad_dws4.Model.Controller.MainController;
-import org.ooad_dws4.Model.Input.InputController;
-import org.ooad_dws4.Model.Output.OutputController;
 import org.ooad_dws4.View.DWSFrame;
 
 public class Application {

@@ -1,6 +1,6 @@
 package org.ooad_dws4.View.Button;
 
-import org.ooad_dws4.Model.Input.Input;
+import org.ooad_dws4.Input;
 
 public class ButtonsetAdapter {
 

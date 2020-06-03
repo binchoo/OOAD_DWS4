@@ -1,8 +1,4 @@
-package org.ooad_dws4.Model.Controller;
-
-import org.ooad_dws4.Model.Common.DWSObject;
-import org.ooad_dws4.Model.Common.Message;
-import org.ooad_dws4.Model.Output.OutputController;
+package org.ooad_dws4;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package org.ooad_dws4.Model.Common;
+package org.ooad_dws4;
 
 import java.util.HashMap;
 
