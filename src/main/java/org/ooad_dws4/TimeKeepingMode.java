@@ -12,7 +12,7 @@ public class TimeKeepingMode extends Mode{
         for(int i=0; i<6; i++)
             valueChangeTracking[i] = 0;
         isActivate = true;
-        this.modeName = "WATCH";
+        this.modeName = "TIMEKEEPER";
     }
 
     /* 5 -> 2 -> 3|4 -> 1|5 */
