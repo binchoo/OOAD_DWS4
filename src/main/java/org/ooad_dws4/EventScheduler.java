@@ -98,12 +98,16 @@ public class EventScheduler extends DWSObject {
             if (!setEvent(makeBuzzEvent(message), "updateAlarmEvent".equals(action)))
                 return null;
             String lcd0 = message.getArg().get("2").equals("351") ? "RUN" : " ON";
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", lcd0);
-            return new Message(11, "updateView", map);
-        } else
+            HashMap<String, String> arg = new HashMap<>();
+            arg.put("0", lcd0);
+            return new Message(11, "updateView", arg);
+        } else {
             removeEvent(Integer.parseInt(message.getArg().get("2")));
-        return null;
+            HashMap<String, String> arg = new HashMap<>();
+            arg.put("0", "OFF");
+            return new Message(11, "updateView", arg);
+
+        }
     }
 
     /**

@@ -1,4 +1,5 @@
 package org.ooad_dws4;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,6 +12,7 @@ public class WoldTimeMode extends Mode {
     private long systemTime;
     private int changingIndex;
     private boolean systemTimeUpdateFlag;
+
     public WoldTimeMode(boolean isActivation) {
         this.cities = new City[4];
         this.cities[0] = new City(true, 9, "SEL"); /* Seoul : GMT+9 */
@@ -21,15 +23,15 @@ public class WoldTimeMode extends Mode {
         this.changingIndex = timeZoneIndex;
         this.currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
-        /* NY : GMT-4
-         * London: GMT+1
-         * Paris : GMT+2
-         * Seoul : GMT+9 */
+        /*
+         * NY : GMT-4 London: GMT+1 Paris : GMT+2 Seoul : GMT+9
+         */
         this.isActivate = isActivation;
         this.modeName = "WORLD TIME";
     }
+
     private void changeCityIndex(int value) {
-        if(this.changingIndex == 0 && value == -1){
+        if (this.changingIndex == 0 && value == -1) {
             changingIndex = 3;
             return;
         }
@@ -40,16 +42,17 @@ public class WoldTimeMode extends Mode {
         return changedTimeZone - currentTimeZone;
     }
 
-    /*public void changeCity(int value) {
-        // TODO implement here
-    }*/
-    private void toggleActivation(){}
-    public Message getModeData(){
-        HashMap<String, String> arg = new HashMap<>();
-//        makeUpdateViewArg(arg, );
-        return null;
+    /*
+     * public void changeCity(int value) { // TODO implement here }
+     */
+    private void toggleActivation() {
     }
 
+    public Message getModeData() {
+        HashMap<String, String> arg = new HashMap<>();
+        // makeUpdateViewArg(arg, );
+        return null;
+    }
 
     @Override
     public Message modeModify(int event) {
@@ -63,6 +66,7 @@ public class WoldTimeMode extends Mode {
         }
         return null;
     }
+
     /* system operation */
     private Message setCity() {
         int offsetDiff = calcOffsetDif(cities[timeZoneIndex].getTimeZoneData(),
@@ -73,12 +77,13 @@ public class WoldTimeMode extends Mode {
         this.timeZoneIndex = this.changingIndex;
         this.currentTimeZone = this.cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
-        for(int i = 0 ;i < 4; i++)
+        for (int i = 0; i < 4; i++)
             cities[i].changeState(i == timeZoneIndex);
         return new Message(21, "updateWorldTime", arg);
     }
+
     /* system operation */
-    private Message changeCity(int value){
+    private Message changeCity(int value) {
         this.systemTimeUpdateFlag = false;
         int currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
         changeCityIndex(value);
@@ -90,11 +95,6 @@ public class WoldTimeMode extends Mode {
     }
 
     @Override
-    public void changeState(int state) {
-        return;
-    }
-
-    @Override
     public Message update(long systemTime) {
         this.systemTime = systemTime;
         return null;
@@ -102,7 +102,7 @@ public class WoldTimeMode extends Mode {
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        if(this.systemTimeUpdateFlag)
+        if (this.systemTimeUpdateFlag)
             this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, systemTime, null);
@@ -115,10 +115,11 @@ public class WoldTimeMode extends Mode {
     }
 
     /* personally added */
-    public long getSystemTime(){
+    public long getSystemTime() {
         return this.systemTime;
     }
-    private String[] makeTimeSet(long time){
+
+    private String[] makeTimeSet(long time) {
         Date tmpDate = new Date(time);
         String a[] = new String[7];
         a[0] = new SimpleDateFormat("yyyy").format(tmpDate);
@@ -131,14 +132,14 @@ public class WoldTimeMode extends Mode {
         return a;
     }
 
-    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
+    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink) { // f
         String argData[] = makeTimeSet(systemTime);
         arg.put("0", cities[changingIndex].getName());
-        /*arg.put("1", null); *//* should be added in mode manager */
-        if(timeZoneIndex == changingIndex)
-            arg.put("3", argData[3]+"|"+argData[4]+"TZ");
+        /* arg.put("1", null); *//* should be added in mode manager */
+        if (timeZoneIndex == changingIndex)
+            arg.put("3", argData[3] + "|" + argData[4] + "TZ");
         else
-            arg.put("3", argData[3]+"|"+argData[4]+"  ");
+            arg.put("3", argData[3] + "|" + argData[4] + "  ");
         arg.put("4", "WORLD TIME");
         arg.put("blink", null);
     }

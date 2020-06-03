@@ -1,23 +1,35 @@
 package org.ooad_dws4;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
-public class DDayMode extends Mode{
+public class DDayMode extends Mode {
+
     private DDay[] ddays;
     private HashMap<String, String> arg;
+    private Calendar calendar;
+    private int currentIndex;
+    private int field = 0;
+    private long value = 0;
+    private long systemTime;
+    private final long aDay = 86400000;
 
     public DDayMode(boolean isActivation) {
+        Date date = new Date();
         ddays = new DDay[4];
-        for(int i=0;i<4;i++) {
-            ddays[i] = new DDay();
-        }
+        for (int i = 0; i < 4; i++)
+            ddays[i] = new DDay(date.getTime());
+        this.calendar = Calendar.getInstance();
         this.isActivate = isActivation;
         this.modeName = "D-DAY";
+        this.systemTime = 0;
+        currentIndex = 0;
     }
 
-    @Override
     public Message getModeData() {
-        return null;
+        return makeView(currentIndex);
     }
 
 /*    @Override
@@ -25,147 +37,153 @@ public class DDayMode extends Mode{
         return null;
     }*/
 
-    /**
-     *
-     */
-    private int currentDday=0;
-    private int field=0;
-    private long value=0;
-
-
-    /**
-     *
-     */
-    public void changeField() {
-        // TODO implement here
-        field++;
-        field%=3;
-
-
-
-    }
-
-    /**
-     *
-     */
-    public void changeValue() {
-        // TODO implement here
-        if(field==0){
-            value++;
-        }
-        else if(field==1){
-            value+=60;
-        }
-        else{
-            value+=3600;
-        }
-    }
-
-    /**
-     *   change stsate default
-     */
-    public void saveDday() {
-        // TODO implement here
-
-        changeState(0);
-
-    }
-
-    /**
-     *    change dday index
-     */
-    public void changeDdayIndex() {
-        // TODO implement here
-
-        currentDday= (currentDday++)%4;
-
-
-    }
-
-    /**
-     *    chage dday state edit*/
-    public void enterDdayEdit() {
-        // TODO implement here
-//        changeState(1);
-    }
-
-    /**
-     *  toggle on / off
-     */
-    public void toggleDdayActivation() {
-        // TODO implement here
-        ddays[currentDday].changeState();
-
-
-    }
-
-    public void changeState(int state) {
-        // TODO implement here
-        this.state =state;
-
+    public void changeState(String state) {
+        if ("DEFAULT".equals(state))
+            this.state = 0;
+        else if ("EDIT".equals(state))
+            this.state = 1;
     }
 
     @Override
     public Message update(long systemTime) {
-        return null;
+        this.systemTime = systemTime;
+        HashMap<String, String> arg = new HashMap<>();
+        arg.put("1", makeDDayCount(this.systemTime, ddays[currentIndex].getTime()));
+        return new Message(30, "sendDDayData", arg);
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        return null;
+        if (!currentMode) return null;
+        this.systemTime = systemTime;
+        return makeView(currentIndex);
     }
-
 
     @Override
     public boolean receiveMessage(Message msg) {
         return false;
     }
 
+    @Override
     public Message modeModify(int event) {
-        // TODO implement here
-        HashMap<String, String> arg = new HashMap<String, String>();
-
-        if(this.state==0){
-            switch (event){
-                case 1:
-                    //change mode
-                case 2:
-                    toggleDdayActivation();
-                case 3:
-                    changeDdayIndex();   // -
-                case 4:
-                    changeDdayIndex();   // +
-                case 5:
-                    enterDdayEdit();
-
-
-            }
-
-        }else if(this.state==1){
-            switch (event){
-                case 1:
-                case 5:
-                    saveDday();
-
-                case 2:
-                    changeField();
-                case 3:
-                    changeValue();  // -
-                case 4:
-                    changeValue();   // +
-                default: break;
-            }
-
+        if (this.state == 0) {
+            if (event == 2)
+                return toggleDdayActivation();
+            else if (event == 3 || event == 4)
+                return changeCurrentIndex(event == 4 ? 1 : -1);   // -
+            else if (event == 5)
+                return enterDdayEdit();
+        } else if (this.state == 1) {
+            if (event == 1 || event == 5)
+                return saveDday();
+            else if (event == 2)
+                return changeField();
+            else if (event == 3 || event == 4)
+                return changeValue(event == 4 ? 1 : -1);
         }
-
-
         return null;
     }
 
-    public Message update() {
-        // TODO implement here
-        Message msg = new Message(11,"update",null);
-        return msg;
+    private Message changeField() {
+        Message message = makeView(currentIndex);
+        field++;
+        field %= 3;
+        message.getArg().put("blink", Integer.toString(field));
+        return message;
     }
 
+    private Message changeValue(int sign) {
+        long rawTime = ddays[currentIndex].getTime();
+        Date date = new Date(rawTime);
+        this.calendar.setTime(date);
+        if (field == 0)
+            calendar.add(Calendar.YEAR, sign);
+        else if (field == 1)
+            calendar.add(Calendar.MONTH, sign);
+        else
+            calendar.add(Calendar.DATE, sign);
+        ddays[currentIndex].setTime(calendar.getTime().getTime());
+        return makeView(currentIndex);
+    }
+
+    private Message saveDday() {
+        changeState("DEFAULT");
+        field = 0;
+        return makeView(currentIndex);
+    }
+
+
+    private Message changeCurrentIndex(int sing) {
+        currentIndex += sing;
+        if (currentIndex > ddays.length - 1) currentIndex = 0;
+        else if (currentIndex < 0) currentIndex = ddays.length - 1;
+        return makeView(currentIndex);
+    }
+
+    private Message enterDdayEdit() {
+        changeState("EDIT");
+        Message message = makeView(currentIndex);
+        message.getArg().put("blink", "0");
+        return message;
+    }
+
+    private Message toggleDdayActivation() {
+        ddays[currentIndex].changeState();
+        return makeView(currentIndex);
+    }
+
+
+    private String makeViewString(long sec) {
+        char sign = sec >= 0 ? '+' : '-';
+        sec = Math.abs(sec);
+        int day = (int) (sec / (1000 * 60 * 60 * 24)); // day = 1234 / 0123 / 0012 / 0001 / 0000 ...
+        if (day > 9999) day = 9999;
+        int nonZero = (int) Math.log10(day) + 1;
+        if (day == 0) nonZero = 1;
+        String str = "";
+        str += currentIndex + 1;
+        str += sign;
+        for (int i = 0; i < 4 - nonZero; i++) str += ' ';
+        str += String.valueOf(day);
+        return str;
+    }
+
+    private String makeDDayCount(long targetTime, long baseTime) {
+        long difference = targetTime - baseTime;
+        String sign = difference < 0 ? "-" : "+";
+        difference = Math.abs(difference);
+        int day = (int) (difference / aDay);
+        day = Math.min(day, 9999);
+        char charDay[] = Integer.toString(day).toCharArray();
+        char result[] = "    ".toCharArray();
+        for (int i = 0; i < charDay.length; i++)
+            result[result.length - charDay.length + i] = charDay[i];
+        return sign + (currentIndex + 1) + new String(result);
+    }
+
+
+    private String makeDateForm(long time) {
+        Date date = new Date(time);
+        String year = new SimpleDateFormat("yyyy").format(date);
+        String month = new SimpleDateFormat("MM").format(date);
+        String day = new SimpleDateFormat("dd").format(date);
+        return year + "-" + month + "-" + day;
+    }
+
+
+    private Message makeView(int index) {
+        HashMap<String, String> arg = new HashMap<>();
+        String state;
+        if (this.state == 1)
+            state = "EDT";
+        else if (ddays[index].getState())
+            state = " ON";
+        else
+            state = "OFF";
+        arg.put("0", state);
+        arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
+        arg.put("3", "D-DAY " + (index + 1));
+        arg.put("4", makeDateForm(ddays[index].getTime()));
+        return new Message(11, "updateView", arg);
+    }
 }
