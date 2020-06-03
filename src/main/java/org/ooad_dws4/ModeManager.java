@@ -12,11 +12,6 @@ import java.util.Locale;
 public class ModeManager {
 
     /**
-     * @brief Default date formatter for each modes
-     */
-    private SimpleDateFormat dateFormat;
-
-    /**
      * @brief Modes for real functions
      */
     private Mode[] modes;
@@ -60,7 +55,6 @@ public class ModeManager {
      * @brief Default constructor
      */
     public ModeManager() {
-        dateFormat = new SimpleDateFormat("EEEEE MMMMM yyyy HH:mm:ss.SSSZ", new Locale("en", "US"));
         setModeObject();
         this.currentMode = 0;
         this.defaultMode = 0;
@@ -89,7 +83,6 @@ public class ModeManager {
      * @brief Update operation for each unit time for modes
      */
     public Message broadcast(long systemTime) {
-        System.out.println("ModeManager : " + dateFormat.format(new Date(systemTime)));
         Message outputMessage;
         for (int i = 0; i < modes.length; i++) {
             if (i == currentMode) continue;

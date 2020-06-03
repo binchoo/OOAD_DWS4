@@ -1,44 +1,29 @@
 package org.ooad_dws4;
 
-import java.util.*;
+import java.util.Date;
 
-/**
- * 
- */
 public class DDay {
 
-    /**
-     * Default constructor
-     */
+    private boolean state;
+    private Date date;
+    private long mTime; // millisecond time
+
     public DDay() {
+        mTime = 1563032234338L;
     }
 
-    /**
-     * true = on  false =off
-     */
-    private boolean state;
-
-    /**
-     * 
-     */
-    private long date;
-
-
-    /**
-     * toggle day state (on<->off)
-     */
     public void changeState() {
         // TODO implement here
         if (state){state=false;}
         else{state= true;}
     }
 
-    /**
-     * 
-     */
     public long getDdayData() {
         // TODO implement here
-        return date;
+        return 0;
     }
 
+    public long getmTime() {
+        return mTime;
+    }
 }
