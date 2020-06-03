@@ -109,7 +109,9 @@ public class DDayMode extends Mode {
     private Message saveDday() {
         changeState("DEFAULT");
         field = 0;
-        return makeView(currentIndex);
+        Message message = makeView(currentIndex);
+        message.getArg().put("blink", "-1");
+        return message;
     }
 
 

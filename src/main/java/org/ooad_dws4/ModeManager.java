@@ -118,7 +118,7 @@ public class ModeManager {
                     return new Message(11, "updateView", map);
                 }
             }
-            if (event == 1) {
+            if (event == 1 && modes[currentMode].getState() != 1) {
                 changeModeIndex();
                 return changeMode(currentMode);
             }
