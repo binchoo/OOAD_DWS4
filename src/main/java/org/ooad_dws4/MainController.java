@@ -7,7 +7,6 @@ import java.util.HashMap;
  * @brief Central Bride from DWS
  */
 public class MainController {
-
     /**
      * @brief The objects that MainController can use
      */
@@ -23,13 +22,14 @@ public class MainController {
     }
 
     /**
-     * @param ioBridge       IOBridge Object.        Object Number : 10
-     * @param timeRunner     TimeRunner Object.      Object Number : 21
-     * @param eventScheduler EventScheduler Object.  Object Number : 22
-     * @param modeManager    ModeManager Object.     Object Number : 30
+     * @param ioBridge       IOBridge Object. Object Number : 10
+     * @param timeRunner     TimeRunner Object. Object Number : 21
+     * @param eventScheduler EventScheduler Object. Object Number : 22
+     * @param modeManager    ModeManager Object. Object Number : 30
      * @brief Make Reference Link with other Objects
      */
-    public void linkObjects(IOBridge ioBridge, TimeRunner timeRunner, EventScheduler eventScheduler, ModeManager modeManager) {
+    public void linkObjects(IOBridge ioBridge, TimeRunner timeRunner, EventScheduler eventScheduler,
+            ModeManager modeManager) {
         this.ioBridge = ioBridge;
         this.timeRunner = timeRunner;
         this.eventScheduler = eventScheduler;
@@ -38,9 +38,10 @@ public class MainController {
 
     /**
      * @param systemTime Pass the current system time throughout the system.
-     * @brief The pulse started by TimeRunner is delivered to each part.
-     * 1. Deadline check in eventScheduler. If there is a result (not null), output occurs.
-     * 2. Each mode function is performed in modeManager. Creating the current screen is mode.
+     * @brief The pulse started by TimeRunner is delivered to each part. 1. Deadline
+     *        check in eventScheduler. If there is a result (not null), output
+     *        occurs. 2. Each mode function is performed in modeManager. Creating
+     *        the current screen is mode.
      */
     public void broadcast(long systemTime) {
         System.out.println("Time : " + systemTime);
@@ -62,13 +63,13 @@ public class MainController {
 
     /**
      * @param event The number of the button clicked.
-     * @brief Button input event handling.
-     * The event itself is passed to the modeManager.
-     * Distribute the Message according to the destination.
+     * @brief Button input event handling. The event itself is passed to the
+     *        modeManager. Distribute the Message according to the destination.
      */
     public void inputEvent(int event) {
         Message message = this.modeManager.modeModify(event);
-        if (message == null) return;
+        if (message == null)
+            return;
         if (message.getDestination() < 20) {
             if (message.getArg().containsValue("removeAlarmAll"))
                 this.eventScheduler.removeAlarmAll();
@@ -91,16 +92,17 @@ public class MainController {
     }
 
     /**
-     * @brief Resets the timer that returns to the default screen each time a button is pressed.
+     * @brief Resets the timer that returns to the default screen each time a button
+     *        is pressed.
      */
     public void defaultScreenTimerReset() {
         this.eventScheduler.defaultScreenTimerReset();
     }
 
     /**
-     * @brief Remove BuzzOff event from eventScheduler
-     * If a button is input while the buzzer is ringing,
-     * the buzzOffEvent is removed and the buzzer is immediately turned off.
+     * @brief Remove BuzzOff event from eventScheduler If a button is input while
+     *        the buzzer is ringing, the buzzOffEvent is removed and the buzzer is
+     *        immediately turned off.
      */
     public void stopBuzzer() {
         defaultScreenTimerReset();

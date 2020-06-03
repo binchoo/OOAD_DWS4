@@ -1,26 +1,37 @@
 package org.ooad_dws4;
 
+import org.ooad_dws4.View.DWSFrame;
+
 public class Application {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
-        Clock.timeUnit = 1000;
-        Clock.defaultScreenTime = 600000;
-        Clock.buzzerOffTime = 7000;
+                Clock.timeUnit = 1000;
+                Clock.defaultScreenTime = 600000;
+                Clock.buzzerOffTime = 7000;
 
-        Clock clock = new Clock();
-        TimeRunner timeRunner = new TimeRunner();
-        MainController mainController = new MainController();
-        EventScheduler eventScheduler = new EventScheduler();
+                // Model
+                Clock clock = new Clock();
+                TimeRunner timeRunner = new TimeRunner();
+                MainController mainController = new MainController();
+                EventScheduler eventScheduler = new EventScheduler();
+                IOBridge ioBridge = new IOBridge();
+                ModeManager modeManager = new ModeManager();
+                InputController inputController = new InputController();
+                OutputController outputController = new OutputController();
 
-        IOBridge ioBridge = new IOBridge();
-        ModeManager modeManager = new ModeManager();
+                mainController.linkObjects(ioBridge, timeRunner, eventScheduler, modeManager);
+                timeRunner.linkObject(mainController);
+                clock.linkObjects(timeRunner);
+                eventScheduler.linkObjects(mainController);
+                mainController.linkObjects(ioBridge);
+                ioBridge.linkObject(mainController, outputController);
+                inputController.linkObject(ioBridge);
 
-        mainController.linkObjects(ioBridge, timeRunner, eventScheduler, modeManager);
-        timeRunner.linkObject(mainController);
-        clock.linkObjects(timeRunner);
-        eventScheduler.linkObjects(mainController);
+                // View
+                DWSFrame dwsFrame = new DWSFrame();
+                dwsFrame.getBtnPanel().getButtonsetAdapter().linkObject(inputController);
+                outputController.getBuzzerAdapter().linkObject(dwsFrame.getBuzzer());
+                outputController.getLcdAdapter().linkObject(dwsFrame.getLcdPanel());
 
-        clock.run();
-
-    }
+        }
 }

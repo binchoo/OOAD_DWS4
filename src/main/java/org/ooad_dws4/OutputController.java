@@ -1,38 +1,30 @@
 package org.ooad_dws4;
 
-/**
- * 
- */
-public class OutputController {
+public class OutputController{
 
-    /**
-     * Default constructor
-     */
+    private BuzzerAdapter buzzerAdapter;
+    private LCDAdapter lcdAdapter;
+
     public OutputController() {
+        this.buzzerAdapter = new BuzzerAdapter();
+        this.lcdAdapter = new LCDAdapter();
     }
 
-    /**
-     * 
-     */
-    private Buzzer buzzer;
-
-    /**
-     * 
-     */
-    private LCD lcd;
-
-
-
-
-
-
-    /**
-     * @param msg 
-     * @return
-     */
-    public boolean output(Message msg) {
-        // TODO implement here
-        return false;
+    public void output(Message msg) {
+        String action = msg.getAction();
+        if(action.equals("updateView")){
+            this.lcdAdapter.update(msg.getArg());
+        }
+        else{
+            this.buzzerAdapter.execute(action);
+        }
     }
 
+    public BuzzerAdapter getBuzzerAdapter() {
+        return buzzerAdapter;
+    }
+
+    public LCDAdapter getLcdAdapter() {
+        return lcdAdapter;
+    }
 }

@@ -1,6 +1,7 @@
 package org.ooad_dws4;
 
-import java.util.*;
+import java.util.HashMap;
+
 public class Message {
 
     private int destination;
@@ -24,9 +25,11 @@ public class Message {
     public HashMap<String, String> getArg() {
         return arg;
     }
+
     public void doMessageAction() {
         System.out.print("dest:" + this.destination + ", action:" + this.action + ", arg->");
-        if (this.arg == null) System.out.print("NULL");
+        if (this.arg == null)
+            System.out.print("NULL");
         else
             for (HashMap.Entry m : this.arg.entrySet())
                 System.out.printf(" {%s:%s} ", m.getKey(), m.getValue());
