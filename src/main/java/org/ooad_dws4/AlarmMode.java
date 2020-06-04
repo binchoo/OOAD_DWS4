@@ -12,6 +12,7 @@ public class AlarmMode extends Mode {
     private int changingAlarmIndex;
     private int field;
     private long systemTime;
+    private boolean timeSync;
     private Date date;
 
     public AlarmMode(boolean isActivation) {
@@ -25,6 +26,7 @@ public class AlarmMode extends Mode {
         this.systemTime = 0;
         this.isActivate = isActivation;
         this.modeName = "ALARM";
+        this.timeSync = true;
         date = new Date(this.alarms[currentAlarmIndex].getAlarmData());
     }
 
@@ -39,9 +41,11 @@ public class AlarmMode extends Mode {
 
     /* system operation */
     private Message editAlarm() {
-        changeState(1);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
+        if(getStateName()=="OFF") {
+            changeState(1);
+            makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
+        }else makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -62,7 +66,8 @@ public class AlarmMode extends Mode {
     private Message toggleAlarmActivation() {
         alarms[currentAlarmIndex].toggleActivation();
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateAlarmEventArg(arg, this.alarms[currentAlarmIndex].getAlarmData() - systemTime);
+        long corrector = this.alarms[currentAlarmIndex].getAlarmData() - systemTime >= 0 ? 0 : 1000 * 60 * 60 * 24;
+        makeUpdateAlarmEventArg(arg, this.alarms[currentAlarmIndex].getAlarmData() - systemTime + corrector);
         return new Message(22, "updateAlarmEvent", arg);
         /*makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);*/
@@ -81,6 +86,8 @@ public class AlarmMode extends Mode {
         cal.setTime(date);
         if (this.field == 0) cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) + value);
         else cal.set(Calendar.MINUTE, cal.get(Calendar.MINUTE) + value);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
         date = cal.getTime();
         alarms[currentAlarmIndex].setAlarmData(date.getTime());
         long alarmTime = alarms[currentAlarmIndex].getAlarmData();
@@ -156,12 +163,24 @@ public class AlarmMode extends Mode {
 
     @Override
     public Message update(long systemTime) {
+        if(timeSync) {
+            for(int i=0; i < alarms.length; i++)
+                alarms[i].setAlarmData(systemTime);
+            date.setTime(systemTime);
+            timeSync = false;
+        }
         this.systemTime = systemTime;
         return null;
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
+        if(timeSync) {
+            for(int i=0; i < alarms.length; i++)
+                alarms[i].setAlarmData(systemTime);
+            date.setTime(systemTime);
+            timeSync = false;
+        }
         this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
