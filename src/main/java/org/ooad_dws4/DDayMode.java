@@ -48,7 +48,8 @@ public class DDayMode extends Mode {
         this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         arg.put("1", makeDDayCount(this.systemTime, ddays[currentIndex].getTime()));
-        return new Message(30, "sendDDayData", arg);
+        if (!ddays[currentIndex].getState()) return null;
+        return new Message(30, "1", arg);
     }
 
     @Override
@@ -184,7 +185,8 @@ public class DDayMode extends Mode {
         else
             state = "OFF";
         arg.put("0", state);
-        arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
+        if(ddays[index].getState())
+            arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
         arg.put("3", "D-DAY " + (index + 1));
         arg.put("4", makeDateForm(ddays[index].getTime()));
         return new Message(11, "updateView", arg);

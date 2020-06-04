@@ -89,7 +89,7 @@ public class ModeManager {
                 continue;
             Message temp = modes[i].update(systemTime);
             if (temp != null)
-                if (i == 5)
+                if (i == 5 && temp.getArg().containsKey("1"))
                     ddayData = temp.getArg().get("1");
         }
         outputMessage = modes[currentMode].update(systemTime, true);
@@ -119,7 +119,9 @@ public class ModeManager {
                     else if (event == 3 || event == 4) {
                         if (!modes[5].getIsActivate())
                             return null;
-                        ddayData = modes[5].modeModify(event).getArg().get("1");
+                        String temp = modes[5].modeModify(event).getArg().get("1");
+                        if (temp != null)
+                            ddayData = temp;
                         HashMap<String, String> map = new HashMap<>();
                         map.put("1", ddayData);
                         return new Message(11, "updateView", map);
@@ -135,7 +137,7 @@ public class ModeManager {
                 return changeMode(currentMode);
             }
             Message message = modes[currentMode].modeModify(event);
-            if (currentMode == 5)
+            if (currentMode == 5 && message.getArg().containsKey("1"))
                 ddayData = message.getArg().get("1");
             return message;
         }
