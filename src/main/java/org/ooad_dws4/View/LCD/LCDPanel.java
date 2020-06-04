@@ -156,6 +156,9 @@ public class LCDPanel extends JPanel {
     public void blink(int screenNum){
         stopBlink(0,26);
         switch(screenNum){
+            case -1:
+                // stop Blink
+                break;
             case 0:
                 startBlink(17,20);
                 break;

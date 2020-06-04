@@ -114,7 +114,6 @@ public class DDayMode extends Mode {
         return message;
     }
 
-
     private Message changeCurrentIndex(int sing) {
         currentIndex += sing;
         if (currentIndex > ddays.length - 1) currentIndex = 0;
