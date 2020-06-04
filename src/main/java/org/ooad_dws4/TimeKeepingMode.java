@@ -112,7 +112,7 @@ public class TimeKeepingMode extends Mode {
 //        return new Message(11, "updateView", arg);
     }
 
-    public void changeState(int state) {
+    private void changeState(int state) {
         this.state = state;
     }
 
@@ -145,11 +145,6 @@ public class TimeKeepingMode extends Mode {
     }
 
     @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
-    @Override
     public Message getModeData() { // f
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timekeeping.getTimeData(), null);
@@ -163,6 +158,10 @@ public class TimeKeepingMode extends Mode {
     // }
     public TimeKeeping getTimekeeping() {
         return timekeeping;
+    }
+
+    public long getSystemTime() {
+        return timekeeping.getTimeData();
     }
 
     private String[] makeTimeSet(long time) {
