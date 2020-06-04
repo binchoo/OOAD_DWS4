@@ -21,13 +21,13 @@ public class ModeManager {
     }
 
     private void setModeObject() {
-        this.modes = new Mode[6];
+       /* this.modes = new Mode[6];
         this.modes[0] = new TimeKeepingMode();
         this.modes[1] = new WoldTimeMode();
         this.modes[2] = new AlarmMode();
         this.modes[3] = new TimerMode();
         this.modes[4] = new StopwatchMode();
-        this.modes[5] = new DDayMode();
+        this.modes[5] = new DDayMode();*/
     }
 
     private SimpleDateFormat dateFormat;

@@ -9,19 +9,26 @@ public class StopwatchMode extends Mode {
     //private HashMap <String, String> arg;
     private int hour,minute,second;
 
-    public StopwatchMode() {
+    public StopwatchMode(boolean isActivation) {
+        this.state=0;
         this.stopwatch = new Stopwatch();
+        this.isActivate = isActivation;
+        this.modeName= "STOPWATCH";
     }
 
     @Override
     public Message getModeData() {
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","","STOPWATCH",null);
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
         return new Message(11,"updateView", arg);
     }
 
-    @Override
-    public Message toggleModeActivation() { return null; }
+    //@Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
 
     public Message runStopwatch() {
         // TODO implement here
@@ -31,7 +38,9 @@ public class StopwatchMode extends Mode {
         stopwatch.getStopwatchData();
 
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"RUN","","","STOPWATCH",null);
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg,"RUN",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
 
         return new Message(11,"updateView",arg);
 
@@ -45,8 +54,9 @@ public class StopwatchMode extends Mode {
         //change state pause
         changeState(3);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"PUS","","","",null);
-
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg,"PUS",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
         return new Message(11,"updateView",arg);
     }
 
@@ -58,7 +68,9 @@ public class StopwatchMode extends Mode {
         stopwatch.reset();
         changeState(0);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg," ","","","",null);
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
 
         return new Message(11,"updateView",arg);
     }
@@ -71,7 +83,10 @@ public class StopwatchMode extends Mode {
         //change state running
         changeState(2);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"RUN","","","",null);
+
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg,"RUN",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
 
         return new Message(11,"updateView",arg);
     }
@@ -88,7 +103,7 @@ public class StopwatchMode extends Mode {
             }
             HashMap<String, String> arg = new HashMap<String, String>();
 
-            return new Message(35,"updateView",arg);
+            return null;
 
     }
 
@@ -99,7 +114,9 @@ public class StopwatchMode extends Mode {
 
         if (state==2){
             stopwatch.setStopwatchData(stopwatch.getStopwatchData()+1000);
-
+            long stopwatchtime = stopwatch.getStopwatchData();
+            msecTohhmmss(stopwatchtime);
+            makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"STOPWATCH",null);
         }
 
         return new Message(11,"updateView",arg);
@@ -117,21 +134,18 @@ public class StopwatchMode extends Mode {
                     return runStopwatch();
                 default: break;
 
-
             }
 
         }else if(this.state==2){   // when running
             switch (event){
-                //case 1:
-                    //mode change
+
                 case 3:
                     return pauseStopwatch();
                 default: break;
             }
         }else if(this.state==3){    // when pause
             switch (event){
-                //case 1:
-                    // mode change
+
                 case 2:
                     return resetStopwatch();
                 case 3:
@@ -139,26 +153,25 @@ public class StopwatchMode extends Mode {
                 default: break;
             }
 
-        }
+        }else return null;
         return null;
     }
 
 
     private void makeUpdateViewArg(HashMap<String, String> arg,String ar0,String ar1,String ar3, String ar4 , String blink){ //f
-        /*if(systemTime == -1)
-        {
-            arg.put("0", "");
-            arg.put("1", "");  //should be added in mode manager
-            arg.put("3", "");
-            arg.put("4", "");
-            arg.put("blink", blink);
-            return;
-        }*/
+
         arg.put("0", ar0);
         arg.put("1", null); // should be added in mode manager
         arg.put("3", ar3);
         arg.put("4", ar4);
         arg.put("blink", blink);
+    }
+
+    public void msecTohhmmss(long timerTime) {
+        this.second = (int) (timerTime / 1000) % 60;
+        this.minute = (int) ((timerTime) / (1000 * 60) % 60);
+        this.hour = (int) ((timerTime) / (1000 * 60 * 60) % 24);
+
     }
 
 }

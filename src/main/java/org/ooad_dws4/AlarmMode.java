@@ -75,7 +75,7 @@ public class AlarmMode extends Mode{
         return new Message(11, "updateView", arg);
     }
 
-    @Override
+    //@Override
     public Message toggleModeActivation() {
         HashMap<String, String> arg = new HashMap<String, String>();
         this.isActivate = !this.isActivate;

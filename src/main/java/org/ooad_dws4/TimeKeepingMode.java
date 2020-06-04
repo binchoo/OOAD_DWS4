@@ -105,7 +105,7 @@ public class TimeKeepingMode extends Mode{
         return new Message(11,"updateView", arg);
     }
 
-    @Override
+    //@Override
     public Message toggleModeActivation() {
         return null;
     }

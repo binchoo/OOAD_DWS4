@@ -11,27 +11,27 @@ public class TimerMode extends Mode{
     private long value;
     private int hour,minute,second;
 
-    //private HashMap <String, String> arg;
 
-    public TimerMode() {
+
+    public TimerMode(boolean isActivation) {
 
         this.timer = new Timer();
         this.state=0;
         this.field=-1;
-        isActivate=true;
+        this.isActivate =isActivation;
+        this.modeName="TIMER";
     }
 
     @Override
     public Message getModeData() {
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"   ",null,"","",null);
+        long timerTime = timer.getDeadlineData();
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
         return new Message(11,"updateView",arg);
     }
 
-    @Override
-    public Message toggleModeActivation() {
-        return null;
-    }
+
 
     public Message changeField() {
         // TODO implement here
@@ -40,7 +40,8 @@ public class TimerMode extends Mode{
         field%=3;
         long timerTime = timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
-       // makeUpdateViewArg(arg,timerTime ,Integer.toString(field));
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"EDT",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",Integer.toString(5-field));
             // add blink
         return new Message(11,"updateView",arg);
     }
@@ -68,7 +69,8 @@ public class TimerMode extends Mode{
         msecTohhmmss(timerTime);
 
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","",Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"TIMER",null);
+
+        makeUpdateViewArg(arg,"EDT",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
         return new Message(11,"updateView",arg);
 
@@ -80,9 +82,10 @@ public class TimerMode extends Mode{
         timer.reset();
 
         long timerTime = timer.getDeadlineData();
+        msecTohhmmss(timerTime);
 
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","00|0000","",null);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
         return new Message(11,"updateView",arg);
 
@@ -96,11 +99,11 @@ public class TimerMode extends Mode{
         long timerTime =timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
 
-        makeUpdateViewArg(arg,"","","","",null);
+        arg.put("0","ringing");
+        arg.put("1",Long.toString(timer.getDeadlineData()));
+        arg.put("2","351");
 
-        this.field =-1;
-
-        return new Message(11,"updateView",arg);
+        return new Message(22,"updateTimerEvent",arg);
 
 
 
@@ -111,7 +114,8 @@ public class TimerMode extends Mode{
         changeState(1);
         long timerTime =timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","","",null);
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"EDT",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
         return new Message(11,"updateView",arg);
 
@@ -125,13 +129,10 @@ public class TimerMode extends Mode{
 
         long timerTime =timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        //makeUpdateViewArg(arg,"","","","",null);
-        arg.put("0","ringing");
-        arg.put("1",Long.toString(timer.getDeadlineData()));
-        arg.put("2","351");
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
-        return new Message(22,"updateTimerEvent",arg);
-
+        return new Message(11,"updateView",arg);
     }
 
     public Message pauseTimer() {
@@ -140,7 +141,8 @@ public class TimerMode extends Mode{
 
         long timerTime =timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","","",null);
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"PUS",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
         return new Message(11,"updateView",arg);
 
@@ -152,7 +154,8 @@ public class TimerMode extends Mode{
 
         long timerTime =timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","","",null);
+        msecTohhmmss(timerTime);
+        makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
 
         return new Message(11,"updateView",arg);
     }
@@ -163,29 +166,35 @@ public class TimerMode extends Mode{
 
     @Override
     public Message update(long systemTime) {
-        timer.setDeadlineData(timer.getDeadlineData()-1000);
-        long timerTime = timer.getDeadlineData();
-
-        HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg,"","","","",null);
-
-        return new Message(35,"updateView",arg);
+        if(state==2) {
+            timer.setDeadlineData(timer.getDeadlineData() - 1000);
+            long timerTime = timer.getDeadlineData();
+        }
+        return null;
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        timer.setDeadlineData(timer.getDeadlineData()-1000);
-        long timerTime = timer.getDeadlineData();
+
 
         HashMap<String, String> arg = new HashMap<String, String>();
         if (state==2){
-            makeUpdateViewArg(arg,"","",Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"TIMER",null);
+            timer.setDeadlineData(timer.getDeadlineData()-1000);
+            long timerTime = timer.getDeadlineData();
+            msecTohhmmss(timerTime);
+            //makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
+            arg.put("3",Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second));
         }
         else{
-        makeUpdateViewArg(arg,"","","","",null);
+
+            //makeUpdateViewArg(arg,"   ",null,Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second),"  TIMER   ",null);
+            arg.put("3",Integer.toString(hour)+"|"+Integer.toString(minute)+Integer.toString(second));
         }
 
         return new Message(11,"updateView",arg);
+    }
+    public boolean receiveMessage(Message msg) {
+        return false;
     }
 
     public Message modeModify(int event) {
@@ -245,28 +254,9 @@ public class TimerMode extends Mode{
         return null;
     }
 
-    public Message update() {
-        // TODO implement here
-        //state   0:default    1:edit 2: running 3: pause
-        long sendtime = timer.getDeadlineData() - 1;
-        timer.setDeadlineData(sendtime);
-
-        HashMap<String, String> arg = new HashMap<String, String>();
-        //makeUpdateViewArg(arg, 1, null);
-        Message msg = new Message(11,"updateView",null);
-        return msg;
-    }
 
     private void makeUpdateViewArg(HashMap<String, String> arg,String ar0,String ar1,String ar3, String ar4 , String blink){ //f
-        /*if(systemTime == -1)
-        {
-            arg.put("0", "");
-            arg.put("1", "");  //should be added in mode manager
-            arg.put("3", "");
-            arg.put("4", "");
-            arg.put("blink", blink);
-            return;
-        }*/
+
         arg.put("0", ar0);
         arg.put("1", null); // should be added in mode manager
         arg.put("3", ar3);
@@ -274,10 +264,10 @@ public class TimerMode extends Mode{
         arg.put("blink", blink);
     }
 
-    public void msecTohhmmss(long timerTime){
-        second=(int)(timerTime/1000) %60 ;
-        minute=(int)((timerTime)/(1000*60)%60);
-        hour=(int)((timerTime)/(1000*60*60)%24);
+    public void msecTohhmmss(long timerTime) {
+        this.second = (int) (timerTime / 1000) % 60;
+        this.minute = (int) ((timerTime) / (1000 * 60) % 60);
+        this.hour = (int) ((timerTime) / (1000 * 60 * 60) % 24);
 
     }
 

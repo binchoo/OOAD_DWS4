@@ -1,9 +1,11 @@
 package org.ooad_dws4;
 
 public class Application {
+     static int  hour, minute, second;
+
     public static void main(String[] args) {
 
-        Clock.timeUnit = 1000;
+       /* Clock.timeUnit = 1000;
         Clock.defaultScreenTime = 600000;
         Clock.buzzerOffTime = 7000;
 
@@ -21,6 +23,11 @@ public class Application {
         eventScheduler.linkObjects(mainController);
 
         clock.run();
+        */
+        TimerMode time = new TimerMode(true);
+
+          Message msg  =time.saveTimer(23430000);
+        System.out.println(msg.getArg().get("3"));
 
     }
 }
