@@ -34,39 +34,39 @@ class DDayModeTest {
 
     @Test
     void modeModify() {
-        DDayMode dDay = new DDayMode(true);
-        Message m = dDay.update(new Date().getTime(), true);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(2);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(3);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(4);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(4);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(5);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(3);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(3);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(2);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(4);
-        if (m != null)
-            m.doMessageAction();
-        m = dDay.modeModify(1);
-        if (m != null)
-            m.doMessageAction();
+//        DDayMode dDay = new DDayMode(true);
+//        Message m = dDay.update(new Date().getTime(), true);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(2);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(3);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(4);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(4);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(5);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(3);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(3);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(2);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(4);
+//        if (m != null)
+//            m.doMessageAction();
+//        m = dDay.modeModify(1);
+//        if (m != null)
+//            m.doMessageAction();
     }
 }

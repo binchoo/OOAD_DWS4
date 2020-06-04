@@ -136,6 +136,7 @@ public class ModeManager {
                 return changeMode(currentMode);
             }
             Message message = modes[currentMode].modeModify(event);
+            if (message == null) return null;
             if (currentMode == 5 && message.getArg().containsKey("1"))
                 ddayData = message.getArg().get("1");
             return message;
