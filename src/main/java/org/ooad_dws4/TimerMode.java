@@ -1,7 +1,5 @@
 package org.ooad_dws4;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 
 public class TimerMode extends Mode {
@@ -62,7 +60,6 @@ public class TimerMode extends Mode {
         timer.reset();
         changeState("DEFAULT");
         long timerTime = timer.getDeadlineData();
-
         msecTohhmmss(timerTime);
         return makeView();
     }
@@ -74,7 +71,6 @@ public class TimerMode extends Mode {
         arg.put("1", Long.toString(timer.getDeadlineData()));
         arg.put("2", "351");
         return new Message(22, "updateTimerEvent", arg);
-
     }
 
     public Message changeTimerTime() {
@@ -87,7 +83,6 @@ public class TimerMode extends Mode {
     }
 
     public Message saveTimer() {
-        // TODO implement here
         changeState("DEFAULT");
         long timerTime = timer.getDeadlineData();
         field = 3;
@@ -111,8 +106,11 @@ public class TimerMode extends Mode {
 
     @Override
     public Message update(long systemTime) {
-        if (state == 2)
-            timer.setDeadlineData(timer.getDeadlineData() - Clock.timeUnit);
+        if (state == 2){
+            timer.runTimer();
+            if(!(timer.getDeadlineData() > 0))
+                changeState("DEFAULT");
+        }
         return null;
     }
 

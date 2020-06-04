@@ -15,7 +15,7 @@ public class Timer {
      * Default constructor
      */
     public Timer() {
-        this.deadline = 12846000L;
+        this.deadline = 600000L;
     }
 
     /**
@@ -25,6 +25,10 @@ public class Timer {
         return this.deadline;
     }
 
+    public void runTimer() {
+        deadline = deadline - Clock.timeUnit;
+        deadline = deadline < 0 ? 0 : deadline;
+    }
 
     /**
      * setDeadline
