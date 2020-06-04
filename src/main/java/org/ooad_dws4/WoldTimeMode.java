@@ -42,11 +42,6 @@ public class WoldTimeMode extends Mode {
         return changedTimeZone - currentTimeZone;
     }
 
-    /*
-     * public void changeCity(int value) { // TODO implement here }
-     */
-    private void toggleActivation() {
-    }
 
     @Override
     public Message getModeData() {
@@ -114,11 +109,6 @@ public class WoldTimeMode extends Mode {
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
         return new Message(11, "updateView", arg);
-    }
-
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
     }
 
     /* personally added */

@@ -176,7 +176,6 @@ class AlarmModeTest {
     void changeStateTest() {
         AlarmMode a = new AlarmMode(true);
 
-        a.changeState(1);
-        assertEquals(1, a.state);
+        assertEquals(0, a.state);
     }
 }

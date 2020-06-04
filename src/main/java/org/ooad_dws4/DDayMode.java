@@ -27,7 +27,7 @@ public class DDayMode extends Mode {
         this.systemTime = 0;
         currentIndex = 0;
     }
-
+    @Override
     public Message getModeData() {
         return makeView(currentIndex);
     }
@@ -58,11 +58,6 @@ public class DDayMode extends Mode {
             return null;
         this.systemTime = systemTime;
         return makeView(currentIndex);
-    }
-
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
     }
 
     @Override
