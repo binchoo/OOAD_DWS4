@@ -9,11 +9,17 @@ public class LCDPanel extends JPanel {
     private int imageHeight;
     private LCDComponent[] lcdComp = new LCDComponent[27];
 
-    // initial view
-      private char LCDCharacter[] = {
-        'T', 'H', 'U', '-', '1', '9', '9', '9', '9', // 0~80
-        ' ', '0', '9', '|', '0', '0', '0', '0', // 9~16
-        '1', '9', '7', '0', '-', '0', '1', '-', '0', '1' // 17~26
+
+    //    private char LCDCharacter[] = {
+//            'T', 'H', 'U', '-', '1', '9', '9', '9', '9', // 0~80
+//            ' ', '0', '9', '|', '0', '0', '0', '0', // 9~16
+//            '1', '9', '7', '0', '-', '0', '1', '-', '0', '1' // 17~26
+//    };
+//    // initial view
+    private char LCDCharacter[] = {
+            ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', // 0~80
+            ' ', 'S', 'T', 'A', 'R', 'T', '.', '.', // 9~16
+            'N', 'O', 'W', 'L', 'O', 'A', 'D', 'I', 'N', 'G'// 17~26
     };
 
 //    Use Case 1. Change Mode
@@ -160,29 +166,29 @@ public class LCDPanel extends JPanel {
         }
     }
 
-    public void blink(int screenNum){
-        stopBlink(0,26);
-        switch(screenNum){
+    public void blink(int screenNum) {
+        stopBlink(0, 26);
+        switch (screenNum) {
             case -1:
                 // stop Blink
                 break;
             case 0:
-                startBlink(17,20);
+                startBlink(17, 20);
                 break;
             case 1:
-                startBlink(22,23);
+                startBlink(22, 23);
                 break;
             case 2:
-                startBlink(25,26);
+                startBlink(25, 26);
                 break;
             case 3:
-                startBlink(10,11);
+                startBlink(10, 11);
                 break;
             case 4:
-                startBlink(13,14);
+                startBlink(13, 14);
                 break;
             case 5:
-                startBlink(15,16);
+                startBlink(15, 16);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + screenNum);
