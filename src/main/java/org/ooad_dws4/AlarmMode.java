@@ -184,6 +184,7 @@ public class AlarmMode extends Mode {
         this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
+        arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
 

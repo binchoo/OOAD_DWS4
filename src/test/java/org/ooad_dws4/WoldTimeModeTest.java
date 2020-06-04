@@ -56,7 +56,7 @@ class WoldTimeModeTest {
 //        arg.put("1", null);
         arg.put("3", "09|03TZ");
         arg.put("4", "WORLD TIME");
-        arg.put("blink", null);
+//        arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
     }
 

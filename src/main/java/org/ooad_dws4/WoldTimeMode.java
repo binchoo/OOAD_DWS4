@@ -108,6 +108,7 @@ public class WoldTimeMode extends Mode {
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
+        arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
 
