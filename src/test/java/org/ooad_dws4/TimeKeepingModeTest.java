@@ -34,53 +34,53 @@ public class TimeKeepingModeTest {
         arg.put("blink", "1");
         assertEquals(arg, returnMsg.getArg());
     }
-    @Test
-    public void changeValueIncreaseTest(){
-        TimeKeepingMode t = new TimeKeepingMode();
-        t.modeModify(5);
-        Message returnMsg = t.modeModify(4);
-        HashMap<String, String> arg = new HashMap<String, String>();
-        arg.put("0", "FRI");
-//        arg.put("1", null);
-        arg.put("3", "09|0000");
-        arg.put("4", "1971-01-01");
-        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
-        arg.put("blink", "0");
-        assertEquals(arg, returnMsg.getArg());
-    }
-    @Test
-    public void changeValueBoundTest(){
-        TimeKeepingMode t = new TimeKeepingMode();
-        t.modeModify(5);
-        Message returnMsg = t.modeModify(3);
-        HashMap<String, String> arg = new HashMap<String, String>();
-        arg.put("0", "THU");
-//        arg.put("1", null);
-        arg.put("3", "09|0000");
-        arg.put("4", "1970-01-01");
-        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
-        arg.put("blink", "0");
-        assertEquals(arg, returnMsg.getArg());
-    }
-    @Test
-    public void changeValueDecreaseTest(){
-        TimeKeepingMode t = new TimeKeepingMode();
-        t.modeModify(5);
-        t.modeModify(4); /* Increase year */
-        t.modeModify(2); /* Change Field(to MONTH) */
-        t.modeModify(3); /* Decrease Month */
-        t.modeModify(2);
-        t.modeModify(2);
-        Message returnMsg = t.modeModify(3);
-        HashMap<String, String> arg = new HashMap<String, String>();
-        arg.put("0", "TUE");
-//        arg.put("1", null);
-        arg.put("3", "08|0000");
-        arg.put("4", "1970-12-01");
-        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
-        arg.put("blink", "3");
-        assertEquals(arg, returnMsg.getArg());
-    }
+//    @Test
+//    public void changeValueIncreaseTest(){
+//        TimeKeepingMode t = new TimeKeepingMode();
+//        t.modeModify(5);
+//        Message returnMsg = t.modeModify(4);
+//        HashMap<String, String> arg = new HashMap<String, String>();
+//        arg.put("0", "FRI");
+////        arg.put("1", null);
+//        arg.put("3", "09|0000");
+//        arg.put("4", "1971-01-01");
+//        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+//        arg.put("blink", "0");
+//        assertEquals(arg, returnMsg.getArg());
+//    }
+//    @Test
+//    public void changeValueBoundTest(){
+//        TimeKeepingMode t = new TimeKeepingMode();
+//        t.modeModify(5);
+//        Message returnMsg = t.modeModify(3);
+//        HashMap<String, String> arg = new HashMap<String, String>();
+//        arg.put("0", "THU");
+////        arg.put("1", null);
+//        arg.put("3", "09|0000");
+//        arg.put("4", "1970-01-01");
+//        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+//        arg.put("blink", "0");
+//        assertEquals(arg, returnMsg.getArg());
+//    }
+//    @Test
+//    public void changeValueDecreaseTest(){
+//        TimeKeepingMode t = new TimeKeepingMode();
+//        t.modeModify(5);
+//        t.modeModify(4); /* Increase year */
+//        t.modeModify(2); /* Change Field(to MONTH) */
+//        t.modeModify(3); /* Decrease Month */
+//        t.modeModify(2);
+//        t.modeModify(2);
+//        Message returnMsg = t.modeModify(3);
+//        HashMap<String, String> arg = new HashMap<String, String>();
+//        arg.put("0", "TUE");
+////        arg.put("1", null);
+//        arg.put("3", "08|0000");
+//        arg.put("4", "1970-12-01");
+//        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+//        arg.put("blink", "3");
+//        assertEquals(arg, returnMsg.getArg());
+//    }
     @Test
     public void changeStatTest(){
         TimeKeepingMode t = new TimeKeepingMode();
@@ -108,12 +108,12 @@ public class TimeKeepingModeTest {
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
     }
-    @Test
-    void updateNoCurrentTest(){
-        TimeKeepingMode t = new TimeKeepingMode();
-        t.update(20000, true);
-        assertEquals(20000, t.getTimekeeping().getTimeData());
-    }
+//    @Test
+//    void updateNoCurrentTest(){
+//        TimeKeepingMode t = new TimeKeepingMode();
+//        t.update(20000, true);
+//        assertEquals(20000, t.getTimekeeping().getTimeData());
+//    }
 
     @Test
     void getModeDataTest() {

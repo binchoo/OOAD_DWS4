@@ -107,11 +107,13 @@ public class AlarmMode extends Mode {
         makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
-    /*public Message toggleModeActivation() {
-        HashMap<String, String> arg = new HashMap<String, String>();
-        this.isActivate = !this.isActivate;
-        return new Message(11, "updateView", arg);
-    }*/
+
+//    //@Override
+//    public Message toggleModeActivation() {
+//        HashMap<String, String> arg = new HashMap<String, String>();
+//        this.isActivate = !this.isActivate;
+//        return new Message(11, "updateView", arg);
+//    }
     @Override
     /* 5 -> 2 -> 3|4 -> 1|5*/
     public Message modeModify(int event) {

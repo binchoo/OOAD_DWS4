@@ -1,4 +1,5 @@
 package org.ooad_dws4;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -6,10 +7,11 @@ import java.util.HashMap;
 import java.util.Locale;
 
 /* active parameter , system time */
-public class TimeKeepingMode extends Mode{
+public class TimeKeepingMode extends Mode {
     private TimeKeeping timekeeping;
-    private int field ;
+    private int field;
     private Date date;
+
     public TimeKeepingMode() {
         this.timekeeping = new TimeKeeping(0);
         this.state = 0;
@@ -21,14 +23,14 @@ public class TimeKeepingMode extends Mode{
 
     /* 5 -> 2 -> 3|4 -> 1|5 */
     @Override
-    public Message modeModify(int event){
-        if(this.state == 0){ /* default state */
-            switch(event){
+    public Message modeModify(int event) {
+        if (this.state == 0) { /* default state */
+            switch (event) {
                 case 5: /* change state to edit mode */
                     return changeTime();
             }
-        }else if(this.state==1){ /* edit state */
-            switch(event){
+        } else if (this.state == 1) { /* edit state */
+            switch (event) {
                 case 1: /* change state to default mode */
                 case 5:
                     return saveTime();
@@ -39,7 +41,8 @@ public class TimeKeepingMode extends Mode{
                 case 4:
                     return changeValue(1);
             }
-        }else return null;
+        } else
+            return null;
         return null;
     }
 
@@ -50,13 +53,13 @@ public class TimeKeepingMode extends Mode{
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timeData, Integer.toString(field));
         return new Message(11, "updateView", arg);
-    } //f
+    } // f
 
     /* system operation */
     private Message changeValue(int value) {
-//        Calendar cal = Calendar.getInstance();
+        // Calendar cal = Calendar.getInstance();
         cal.setTime(date);
-        switch(this.field){
+        switch (this.field) {
             case 0:
                 cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) + value);
                 break;
@@ -86,7 +89,7 @@ public class TimeKeepingMode extends Mode{
 
     /* system operation */
     private Message changeTime() {
-        changeState((this.state+1) % 2);
+        changeState((this.state + 1) % 2);
         HashMap<String, String> arg = new HashMap<String, String>();
         long timeData = timekeeping.getTimeData();
         this.field++;
@@ -96,7 +99,7 @@ public class TimeKeepingMode extends Mode{
 
     /* system operation */
     private Message saveTime() {
-        changeState((this.state+1) % 2);
+        changeState((this.state + 1) % 2);
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timeData, null);
@@ -108,33 +111,34 @@ public class TimeKeepingMode extends Mode{
         this.state = state;
     }
 
-    /* for 6. View Time*/
+    /* for 6. View Time */
     /* need to modify function name */
     @Override
-    public Message update(long systemTime){ //f
+    public Message update(long systemTime) { // f
         timekeeping.setTimeData(systemTime);
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
         if (systemTime % 1000 == 0)
             makeUpdateViewArg(arg, timeData, null);
-        else makeUpdateViewArg(arg, -1, null);
+        else
+            makeUpdateViewArg(arg, -1, null);
         return null;
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        if(currentMode) {
+        if (currentMode) {
             timekeeping.setTimeData(systemTime);
             long timeData = timekeeping.getTimeData();
             HashMap<String, String> arg = new HashMap<String, String>();
             if (systemTime % 1000 == 0)
                 makeUpdateViewArg(arg, timeData, null);
-            else makeUpdateViewArg(arg, -1, null);
+            else
+                makeUpdateViewArg(arg, -1, null);
             return new Message(11, "updateView", arg);
         }
         return null;
     }
-
 
     @Override
     public boolean receiveMessage(Message msg) {
@@ -142,18 +146,19 @@ public class TimeKeepingMode extends Mode{
     }
 
     @Override
-    public Message getModeData(){ //f
+    public Message getModeData() { // f
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timekeeping.getTimeData(), null);
-        return new Message(11,"updateView", arg);
+        return new Message(11, "updateView", arg);
     }
     /* personally added */
 
-    public TimeKeeping getTimekeeping() {
-        return this.timekeeping;
-    }
+    // @Override
+    // public Message toggleModeActivation() {
+    // return null;
+    // }
 
-    private String[] makeTimeSet(long time){
+    private String[] makeTimeSet(long time) {
         Date tmpDate = new Date(time);
         String a[] = new String[7];
         a[0] = new SimpleDateFormat("yyyy").format(tmpDate);
@@ -166,30 +171,30 @@ public class TimeKeepingMode extends Mode{
         return a;
     }
 
-    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
+    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink) {
         String argData[] = makeTimeSet(systemTime);
         arg.put("0", argData[6]);
-        /*arg.put("1", null); *//* should be added in mode manager */
-        arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
-        arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
+        /* arg.put("1", null); *//* should be added in mode manager */
+        arg.put("3", argData[3] + "|" + argData[4] + argData[5]);
+        arg.put("4", argData[0] + "-" + argData[1] + "-" + argData[2]);
         arg.put("blink", blink);
         arg.put("newTime", Long.toString(systemTime));
     }
-    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
+
+    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink) { // f
         String argData[] = makeTimeSet(systemTime);
-        if(systemTime == -1)
-        {
-            /*arg.put("0", "");
-            arg.put("1", ""); *//* should be added in mode manager *//*
-            arg.put("3", "");
-            arg.put("4", "");
-            arg.put("blink", blink);*/
+        if (systemTime == -1) {
+            /*
+             * arg.put("0", ""); arg.put("1", "");
+             *//* should be added in mode manager *//*
+                                                     * arg.put("3", ""); arg.put("4", ""); arg.put("blink", blink);
+                                                     */
             return;
         }
         arg.put("0", argData[6]);
-        /*arg.put("1", null); *//* should be added in mode manager */
-        arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
-        arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
+        /* arg.put("1", null); *//* should be added in mode manager */
+        arg.put("3", argData[3] + "|" + argData[4] + argData[5]);
+        arg.put("4", argData[0] + "-" + argData[1] + "-" + argData[2]);
         arg.put("blink", blink);
     }
     /* personally added */

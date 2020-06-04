@@ -82,15 +82,19 @@ public class ModeManager {
     public Message broadcast(long systemTime) {
         Message outputMessage;
         for (int i = 0; i < modes.length; i++) {
-            if (i == currentMode) continue;
-            if (!modes[i].getIsActivate()) continue;
+            if (i == currentMode)
+                continue;
+            if (!modes[i].getIsActivate())
+                continue;
             Message temp = modes[i].update(systemTime, false);
             if (temp != null)
-                if (i == 5) ddayData = temp.getArg().get("1");
+                if (i == 5)
+                    ddayData = temp.getArg().get("1");
         }
         outputMessage = modes[currentMode].update(systemTime, true);
         outputMessage.getArg().put("1", ddayData);
-        if (isEditState) return null;
+        if (isEditState)
+            return null;
         return outputMessage;
     }
 
@@ -104,22 +108,28 @@ public class ModeManager {
         if (isEditState) {
             return modeActivationControl(event);
         } else {
+            boolean isNotEditMode = modes[currentMode].getState() != 1;
             if (currentMode == defaultMode) {
                 if (event == 6)
                     return editModeActivation();
-                if (event == 3 || event == 4) {
-                    if (!modes[5].getIsActivate()) return null;
-                    ddayData = modes[5].modeModify(event).getArg().get("1");
-                    HashMap<String, String> map = new HashMap<>();
-                    map.put("1", ddayData);
-                    return new Message(11, "updateView", map);
+                if (isNotEditMode) {
+                    if (event == 2)
+                        return new Message(10, "toggleMute", null);
+                    else if (event == 3 || event == 4) {
+                        if (!modes[5].getIsActivate())
+                            return null;
+                        ddayData = modes[5].modeModify(event).getArg().get("1");
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put("1", ddayData);
+                        return new Message(11, "updateView", map);
+                    }
                 }
-                if (event == 8){
+                if (event == 8) {
                     HashMap<String, String> map = new HashMap<>();
                     return new Message(10, "toggleMute", map);
                 }
             }
-            if (event == 1 && modes[currentMode].getState() != 1) {
+            if (event == 1 && isNotEditMode) {
                 changeModeIndex();
                 return changeMode(currentMode);
             }
@@ -130,12 +140,16 @@ public class ModeManager {
     /**
      * @param message SwitchDefaultScreen Message
      * @return Return default mode's updateView Message
-     * @brief If the current mode is not in edit state, change the mode to the default screen
+     * @brief If the current mode is not in edit state, change the mode to the
+     *        default screen
      */
     public Message showDefaultScreen(Message message) {
-        if (message.getDestination() != 30) return null;
-        if (!"SwitchDefaultScreen".equals(message.getAction())) return null;
-        if (modes[currentMode].getState() == 1) return null;
+        if (message.getDestination() != 30)
+            return null;
+        if (!"SwitchDefaultScreen".equals(message.getAction()))
+            return null;
+        if (modes[currentMode].getState() == 1)
+            return null;
         currentMode = defaultMode;
         return changeMode(defaultMode);
     }
@@ -146,7 +160,7 @@ public class ModeManager {
      * @brief Returns data to display the LCD in the mode suitable for the index
      */
     private Message changeMode(int index) {
-//        return makeEditModeView(index);
+        // return makeEditModeView(index);
         return modes[index].getModeData();
     }
 
@@ -183,18 +197,20 @@ public class ModeManager {
     private int countActiveMode() {
         int active = 0;
         for (Mode mode : this.modes)
-            if (mode.isActivate) active++;
+            if (mode.isActivate)
+                active++;
         return active;
     }
 
     /**
      * @return updateView message that is current(default) mode's view
-     * @brief Submit the edited mode activation and return to the default screen
-     * if Alarm mode is deactivation, add removeAlarmAll Action to Message
-     * if DDay mode is deactivation, clear ddayData property
+     * @brief Submit the edited mode activation and return to the default screen if
+     *        Alarm mode is deactivation, add removeAlarmAll Action to Message if
+     *        DDay mode is deactivation, clear ddayData property
      */
     private Message saveActivation() {
-        if (activationCount < 4) return null;
+        if (activationCount < 4)
+            return null;
         this.isEditState = false;
         Message message = changeMode(currentMode);
         if (!modes[2].getIsActivate())
@@ -216,10 +232,12 @@ public class ModeManager {
 
     /**
      * @return updateView message that is the mode activation edit view
-     * @brief Edit mode activation. Cancel if the active mode is greater than the maxActivationCount.
+     * @brief Edit mode activation. Cancel if the active mode is greater than the
+     *        maxActivationCount.
      */
     private Message changeEditTargetActivation() {
-        if (activationModeIndex == defaultMode) return null;
+        if (activationModeIndex == defaultMode)
+            return null;
         modes[activationModeIndex].toggleModeActivation();
         activationCount = countActiveMode();
         if (activationCount > 4) {

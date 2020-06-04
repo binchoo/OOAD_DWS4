@@ -11,6 +11,7 @@ public abstract class Mode extends DWSObject {
 
     public Mode() {
         cal = Calendar.getInstance();
+        state = 0;
     }
     // public abstract Message toggleModeActivation();
 

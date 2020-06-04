@@ -31,7 +31,10 @@ public class Application {
                 outputController.getBuzzerAdapter().linkObject(dwsFrame.getBuzzer());
                 outputController.getLcdAdapter().linkObject(dwsFrame.getLcdPanel());
 
-//                clock.run();
+                // TestCode
+                // mainController.broadcast(new Date().getTime());
+                // Release Code
+                // clock.run();
 
         }
 }
