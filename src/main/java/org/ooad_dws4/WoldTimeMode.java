@@ -48,9 +48,11 @@ public class WoldTimeMode extends Mode {
     private void toggleActivation() {
     }
 
-    // @Override
-    public Message toggleModeActivation() {
-        return null;
+    @Override
+    public Message getModeData() {
+        HashMap<String, String> arg = new HashMap<String, String>();
+        makeUpdateViewArg(arg, systemTime + (currentTimeZone * 1000 * 60 * 60), null);
+        return new Message(11, "updateView", arg);
     }
 
     @Override

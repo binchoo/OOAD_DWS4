@@ -128,10 +128,6 @@ public class StopwatchMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
 
     public Message modeModify(int event) {
         // TODO implement here

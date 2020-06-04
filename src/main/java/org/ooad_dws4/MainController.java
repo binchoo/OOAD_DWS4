@@ -15,6 +15,7 @@ public class MainController {
     private IOBridge ioBridge;
     private ModeManager modeManager;
 //    int repeat2=0, repeat4 = 0; // for UI test
+
     /**
      * @brief Default constructor
      */
@@ -29,7 +30,7 @@ public class MainController {
      * @brief Make Reference Link with other Objects
      */
     public void linkObjects(IOBridge ioBridge, TimeRunner timeRunner, EventScheduler eventScheduler,
-            ModeManager modeManager) {
+                            ModeManager modeManager) {
         this.ioBridge = ioBridge;
         this.timeRunner = timeRunner;
         this.eventScheduler = eventScheduler;
@@ -39,9 +40,9 @@ public class MainController {
     /**
      * @param systemTime Pass the current system time throughout the system.
      * @brief The pulse started by TimeRunner is delivered to each part. 1. Deadline
-     *        check in eventScheduler. If there is a result (not null), output
-     *        occurs. 2. Each mode function is performed in modeManager. Creating
-     *        the current screen is mode.
+     * check in eventScheduler. If there is a result (not null), output
+     * occurs. 2. Each mode function is performed in modeManager. Creating
+     * the current screen is mode.
      */
     public void broadcast(long systemTime) {
         Message message;
@@ -61,7 +62,7 @@ public class MainController {
     /**
      * @param event The number of the button clicked.
      * @brief Button input event handling. The event itself is passed to the
-     *        modeManager. Distribute the Message according to the destination.
+     * modeManager. Distribute the Message according to the destination.
      */
     public void inputEvent(int event) {
         if (!(0 < event && event < 9))
@@ -70,10 +71,12 @@ public class MainController {
         if (message == null)
             return;
         if (message.getDestination() < 20) {
-            if(message.getArg() != null)
-                if (message.getArg().containsKey("Action"))
+            if (message.getArg() != null)
+                if (message.getArg().containsKey("Action")) {
                     if (message.getArg().containsValue("removeAlarmAll"))
                         this.eventScheduler.removeAlarmAll();
+                    message.getArg().remove("Action");
+                }
             ioBridge.outputEvent(message);
         } else if (message.getDestination() < 30) {
             switch (message.getDestination()) {
@@ -98,7 +101,7 @@ public class MainController {
 
     /**
      * @brief Resets the timer that returns to the default screen each time a button
-     *        is pressed.
+     * is pressed.
      */
     public void defaultScreenTimerReset() {
         this.eventScheduler.defaultScreenTimerReset();
@@ -106,8 +109,8 @@ public class MainController {
 
     /**
      * @brief Remove BuzzOff event from eventScheduler If a button is input while
-     *        the buzzer is ringing, the buzzOffEvent is removed and the buzzer is
-     *        immediately turned off.
+     * the buzzer is ringing, the buzzOffEvent is removed and the buzzer is
+     * immediately turned off.
      */
     public void stopBuzzer() {
         defaultScreenTimerReset();

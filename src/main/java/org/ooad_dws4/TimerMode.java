@@ -24,9 +24,22 @@ public class TimerMode extends Mode {
         HashMap<String, String> arg = new HashMap<String, String>();
         long timerTime = timer.getDeadlineData();
         msecTohhmmss(timerTime);
-        makeUpdateViewArg(arg, "   ", null,
-                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "  TIMER   ", null);
+        makeUpdateViewArg(arg, "   ", null, makeTimeForm(hour, minute, second), "  TIMER   ", null);
         return new Message(11, "updateView", arg);
+    }
+
+    public String makeTimeForm(int hour, int minute, int second) {
+        char result[] = "  |    ".toCharArray();
+        char hourChar[] = Integer.toString(hour).toCharArray();
+        char minChar[] = Integer.toString(minute).toCharArray();
+        char secChar[] = Integer.toString(second).toCharArray();
+        for (int i = 0; i < hourChar.length; i++)
+            result[2 - hourChar.length + i] = hourChar[i];
+        for (int i = 0; i < minChar.length; i++)
+            result[5 - minChar.length + i] = minChar[i];
+        for (int i = 0; i < secChar.length; i++)
+            result[7 - secChar.length + i] = secChar[i];
+        return new String(result);
     }
 
     public Message changeField() {
@@ -193,10 +206,6 @@ public class TimerMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
     @Override
     public boolean receiveMessage(Message msg) {
         return false;
@@ -263,10 +272,10 @@ public class TimerMode extends Mode {
     }
 
     private void makeUpdateViewArg(HashMap<String, String> arg, String ar0, String ar1, String ar3, String ar4,
-            String blink) { // f
+                                   String blink) { // f
 
         arg.put("0", ar0);
-        arg.put("1", null); // should be added in mode manager
+//        arg.put("1", null); // should be added in mode manager
         arg.put("3", ar3);
         arg.put("4", ar4);
         arg.put("blink", blink);

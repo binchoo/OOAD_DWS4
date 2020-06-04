@@ -61,4 +61,11 @@ class TimerModeTest {
     @Test
     void msecTohhmmss() {
     }
+
+    @Test
+    void makeTimeForm() {
+        TimerMode timerMode = new TimerMode(true);
+        System.out.println(timerMode.makeTimeForm(2,15,52));
+
+    }
 }
