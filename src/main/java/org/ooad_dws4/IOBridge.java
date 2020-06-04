@@ -35,9 +35,8 @@ public class IOBridge extends DWSObject {
             }
                 break;
             case 11: {
-                if (action.equals("buzzOff") || action.equals("buzzRinging")) {
+                if (action.equals("buzzOff") || action.equals("buzzRinging"))
                     this.isBuzzerRinging = !this.isBuzzerRinging;
-                }
                 this.output.output(msg);
             }
                 break;
@@ -45,7 +44,10 @@ public class IOBridge extends DWSObject {
     }
 
     public void inputEvent(int event) {
-        mainController.inputEvent(event);
+        if(isBuzzerRinging)
+            mainController.stopBuzzer();
+        else
+            mainController.inputEvent(event);
         if (!this.isMute)
             this.output.output(new Message(11, "beep", null)); // beep
     }
