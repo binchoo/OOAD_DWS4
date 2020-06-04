@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TimeKeepingModeTest {
     @Test
@@ -12,7 +13,11 @@ public class TimeKeepingModeTest {
         TimeKeepingMode t = new TimeKeepingMode();
         Message returnMsg = t.modeModify(5);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, 0, Integer.toString(0));
+        arg.put("0", "THU");
+//        arg.put("1", null); /* should be added in mode manager */
+        arg.put("3", "09|0000");
+        arg.put("4", "1970-01-01");
+        arg.put("blink", "0");
         assertEquals(arg, returnMsg.getArg());
     }
 
@@ -22,7 +27,11 @@ public class TimeKeepingModeTest {
         t.modeModify(5);
         Message returnMsg = t.modeModify(2);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, 0, Integer.toString(1));
+        arg.put("0", "THU");
+//        arg.put("1", null); /* should be added in mode manager */
+        arg.put("3", "09|0000");
+        arg.put("4", "1970-01-01");
+        arg.put("blink", "1");
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
@@ -31,7 +40,12 @@ public class TimeKeepingModeTest {
         t.modeModify(5);
         Message returnMsg = t.modeModify(4);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateSystemTimeArg(arg, 5, Integer.toString(6));
+        arg.put("0", "FRI");
+//        arg.put("1", null);
+        arg.put("3", "09|0000");
+        arg.put("4", "1971-01-01");
+        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+        arg.put("blink", "0");
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
@@ -40,16 +54,31 @@ public class TimeKeepingModeTest {
         t.modeModify(5);
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateSystemTimeArg(arg, 5, Integer.toString(0));
+        arg.put("0", "THU");
+//        arg.put("1", null);
+        arg.put("3", "09|0000");
+        arg.put("4", "1970-01-01");
+        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+        arg.put("blink", "0");
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
     public void changeValueDecreaseTest(){
         TimeKeepingMode t = new TimeKeepingMode();
         t.modeModify(5);
+        t.modeModify(4); /* Increase year */
+        t.modeModify(2); /* Change Field(to MONTH) */
+        t.modeModify(3); /* Decrease Month */
+        t.modeModify(2);
+        t.modeModify(2);
         Message returnMsg = t.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateSystemTimeArg(arg, 5, Integer.toString(4));
+        arg.put("0", "TUE");
+//        arg.put("1", null);
+        arg.put("3", "08|0000");
+        arg.put("4", "1970-12-01");
+        arg.put("newTime", Long.toString(t.getTimekeeping().getTimeData()));
+        arg.put("blink", "3");
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
@@ -68,34 +97,34 @@ public class TimeKeepingModeTest {
 
     }
     @Test
-    void updateTest() {
+    void updateCurrentTest() {
+        TimeKeepingMode t = new TimeKeepingMode();
+        Message returnMsg = t.update(10000, true);
+        HashMap<String, String > arg = new HashMap<>();
+        arg.put("0", "THU");
+//        arg.put("1", null);
+        arg.put("3", "09|0010");
+        arg.put("4", "1970-01-01");
+        arg.put("blink", null);
+        assertEquals(arg, returnMsg.getArg());
+    }
+    @Test
+    void updateNoCurrentTest(){
+        TimeKeepingMode t = new TimeKeepingMode();
+        t.update(20000, true);
+        assertEquals(20000, t.getTimekeeping().getTimeData());
     }
 
     @Test
     void getModeDataTest() {
-    }
-
-    @Test
-    void toggleModeActivationTest() {
-    }
-
-    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
-
-    }
-    private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
-        if(systemTime == -1)
-        {
-            arg.put("0", "");
-            arg.put("1", ""); /* should be added in mode manager */
-            arg.put("3", "");
-            arg.put("4", "");
-            arg.put("blink", blink);
-            return;
-        }
-        arg.put("0", Long.toString(systemTime));
-        arg.put("1", null); /* should be added in mode manager */
-        arg.put("3", Long.toString(systemTime));
-        arg.put("4", Long.toString(systemTime));
-        arg.put("blink", blink);
+        TimeKeepingMode t = new TimeKeepingMode();
+        Message returnMsg = t.getModeData();
+        HashMap<String, String> arg = new HashMap<>();
+        arg.put("0", "THU");
+//        arg.put("1", null);
+        arg.put("3", "09|0000");
+        arg.put("4", "1970-01-01");
+        arg.put("blink", null);
+        assertEquals(arg, returnMsg.getArg());
     }
 }

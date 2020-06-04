@@ -6,52 +6,66 @@ import java.util.HashMap;
 import java.util.Locale;
 
 /**
- *
+ * @author Kelvin Kwak (lunox273@gmail.com)
+ * @brief Central Bride from DWS
  */
 public class ModeManager {
 
     /**
-     *
-     */
-    private SimpleDateFormat dateFormat;
-    /**
-     *
+     * @brief Modes for real functions
      */
     private Mode[] modes;
 
+    /**
+     * @brief Is the system in edit mode?
+     */
     private boolean isEditState;
 
     /**
-     *
+     * @brief Mode displayed on the screen
      */
     private int currentMode;
 
     /**
-     *
+     * @brief Default mode of the system
      */
     private int defaultMode;
 
+    /**
+     * @brief D-Day data displayed on LCD1
+     */
     private String ddayData;
 
     /**
-     *
+     * @brief Number of activation modes
      */
     private int activationCount;
 
+    /**
+     * @brief Number of maximum activation modes
+     */
+    private int maxActivationCount;
+
+    /**
+     * @brief Index of the mode being edited in active mode
+     */
     private int activationModeIndex;
 
     /**
-     * Default constructor
+     * @brief Default constructor
      */
     public ModeManager() {
-        dateFormat = new SimpleDateFormat("EEEEE MMMMM yyyy HH:mm:ss.SSSZ", new Locale("en", "US"));
         setModeObject();
         this.currentMode = 0;
         this.defaultMode = 0;
+        this.maxActivationCount = 4;
         this.activationModeIndex = this.defaultMode;
         isEditState = false;
     }
 
+    /**
+     * @brief Set each function modes
+     */
     private void setModeObject() {
         this.modes = new Mode[6];
         this.modes[0] = new TimeKeepingMode();
@@ -63,12 +77,12 @@ public class ModeManager {
         this.activationCount = 4;
     }
 
-
     /**
-     * @param systemTime
+     * @param systemTime Current System time from TimeRunner
+     * @return Message for Update LCD View
+     * @brief Update operation for each unit time for modes
      */
     public Message broadcast(long systemTime) {
-        System.out.println("ModeManager : " + dateFormat.format(new Date(systemTime)));
         Message outputMessage;
         for (int i = 0; i < modes.length; i++) {
             if (i == currentMode) continue;
@@ -84,12 +98,12 @@ public class ModeManager {
     }
 
     /**
-     * @param event
-     * @return
+     * @param event Button press event (1~8)
+     * @return Message that feedback for each button press event
+     * @brief Do action suitable for each button press event
      */
     public Message modeModify(int event) {
         System.out.println("ModeManager : keypress " + event + " received!");
-
         if (isEditState) {
             return modeActivationControl(event);
         } else {
@@ -104,8 +118,7 @@ public class ModeManager {
                     return new Message(11, "updateView", map);
                 }
             }
-
-            if (event == 1) {
+            if (event == 1 && modes[currentMode].getState() != 1) {
                 changeModeIndex();
                 return changeMode(currentMode);
             }
@@ -114,25 +127,30 @@ public class ModeManager {
     }
 
     /**
-     *
+     * @param message SwitchDefaultScreen Message
+     * @return Return default mode's updateView Message
+     * @brief If the current mode is not in edit state, change the mode to the default screen
      */
     public Message showDefaultScreen(Message message) {
         if (message.getDestination() != 30) return null;
         if (!"SwitchDefaultScreen".equals(message.getAction())) return null;
         if (modes[currentMode].getState() == 1) return null;
+        currentMode = defaultMode;
         return changeMode(defaultMode);
     }
 
     /**
-     *
+     * @param index Mode Index
+     * @return Message for updateView data from mode
+     * @brief Returns data to display the LCD in the mode suitable for the index
      */
     private Message changeMode(int index) {
-        return makeEditModeView(index);
-        //return modes[index].getModeData();
+//        return makeEditModeView(index);
+        return modes[index].getModeData();
     }
 
     /**
-     *
+     * @brief Change current mode to next active mode
      */
     private void changeModeIndex() {
         currentMode += 1;
@@ -143,7 +161,9 @@ public class ModeManager {
     }
 
     /**
-     *
+     * @param event Button press event (1~8)
+     * @return Message that feedback for each button press event
+     * @brief A collection of method for editing the activation mode
      */
     private Message modeActivationControl(int event) {
         if (event == 3 || event == 4)
@@ -155,6 +175,10 @@ public class ModeManager {
         return null;
     }
 
+    /**
+     * @return Current activation mode
+     * @brief Recalculate the number of currently active modes
+     */
     private int countActiveMode() {
         int active = 0;
         for (Mode mode : this.modes)
@@ -162,6 +186,12 @@ public class ModeManager {
         return active;
     }
 
+    /**
+     * @return updateView message that is current(default) mode's view
+     * @brief Submit the edited mode activation and return to the default screen
+     * if Alarm mode is deactivation, add removeAlarmAll Action to Message
+     * if DDay mode is deactivation, clear ddayData property
+     */
     private Message saveActivation() {
         if (activationCount < 4) return null;
         this.isEditState = false;
@@ -173,12 +203,20 @@ public class ModeManager {
         return message;
     }
 
+    /**
+     * @return updateView message that is the mode activation edit view
+     * @brief Enter edit mode activation
+     */
     private Message editModeActivation() {
         isEditState = true;
         activationModeIndex = defaultMode;
         return makeEditModeView(activationModeIndex);
     }
 
+    /**
+     * @return updateView message that is the mode activation edit view
+     * @brief Edit mode activation. Cancel if the active mode is greater than the maxActivationCount.
+     */
     private Message changeEditTargetActivation() {
         if (activationModeIndex == defaultMode) return null;
         modes[activationModeIndex].toggleModeActivation();
@@ -190,6 +228,11 @@ public class ModeManager {
         return makeEditModeView(activationModeIndex);
     }
 
+    /**
+     * @param event Button press event (1~8)
+     * @return updateView message that is the mode activation edit view
+     * @brief Change the mode-activated editing index to cycle
+     */
     private Message changeModeIndex(int event) {
         activationModeIndex += event == 4 ? 1 : -1;
         if (activationModeIndex > 5)
@@ -199,11 +242,15 @@ public class ModeManager {
         return makeEditModeView(activationModeIndex);
     }
 
-
+    /**
+     * @param modeNumber
+     * @return updateView message that is the mode activation edit view
+     * @brief Returns the updateView message that is the mode activation edit view
+     */
     private Message makeEditModeView(int modeNumber) {
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", modes[modeNumber].getIsActivate() ? " ON" : "OFF");
-        arg.put("1", "   " + activationCount + "/4");
+        arg.put("1", "   " + activationCount + "/" + maxActivationCount);
         arg.put("3", " MODE  ");
         String modeName = modes[modeNumber].getModeName();
         switch (modeName.length()) {
@@ -240,5 +287,4 @@ public class ModeManager {
         arg.put("4", modeName);
         return new Message(11, "updateView", arg);
     }
-
 }

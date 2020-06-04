@@ -95,14 +95,19 @@ public class EventScheduler extends DWSObject {
         if (!("updateTimerEvent".equals(action) || "updateAlarmEvent".equals(action)))
             return null;
         if ("ringing".equals(message.getArg().get("0"))) {
-            setEvent(makeBuzzEvent(message), "updateAlarmEvent".equals(action));
+            if (!setEvent(makeBuzzEvent(message), "updateAlarmEvent".equals(action)))
+                return null;
             String lcd0 = message.getArg().get("2").equals("351") ? "RUN" : " ON";
-            HashMap<String, String> map = new HashMap<>();
-            map.put("0", lcd0);
-            return new Message(11, "updateView", map);
-        } else
+            HashMap<String, String> arg = new HashMap<>();
+            arg.put("0", lcd0);
+            return new Message(11, "updateView", arg);
+        } else {
             removeEvent(Integer.parseInt(message.getArg().get("2")));
-        return null;
+            HashMap<String, String> arg = new HashMap<>();
+            arg.put("0", "OFF");
+            return new Message(11, "updateView", arg);
+
+        }
     }
 
     /**
@@ -168,18 +173,21 @@ public class EventScheduler extends DWSObject {
     /**
      * @brief Add new Event to eventQueue
      */
-    private void setEvent(Event event) {
+    private boolean setEvent(Event event) {
+        if (event == null) return false;
         this.eventQueue.add(event);
         sortEventQueue();
+        return true;
     }
 
     /**
      * @brief if the event is from alarm, add to alarmEventQueue either.
      */
-    private void setEvent(Event event, boolean isAlarm) {
+    private boolean setEvent(Event event, boolean isAlarm) {
+        if (!setEvent(event)) return false;
         if (isAlarm)
             this.alarmEventQueue.add(event);
-        setEvent(event);
+        return true;
     }
 
     /**
@@ -188,7 +196,11 @@ public class EventScheduler extends DWSObject {
     private Event makeBuzzEvent(Message message) {
         Message buzzRing = new Message(11, "buzzRinging", null);
         HashMap<String, String> arg = message.getArg();
-        return new Event(Integer.parseInt(arg.get("2")), buzzRing, Long.parseLong(arg.get("1")));
+        try {
+            return new Event(Integer.parseInt(arg.get("2")), buzzRing, Long.parseLong(arg.get("1")));
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 
     /**

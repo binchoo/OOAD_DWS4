@@ -25,8 +25,8 @@ public class TimeRunner extends DWSObject implements PulseMaker {
      * Default constructor
      */
     public TimeRunner() {
-        systemTime = 0;
-        timeZone = 0;
+        systemTime = System.currentTimeMillis();
+        timeZone = +32400000;
     }
 
     /**

@@ -1,18 +1,22 @@
 package org.ooad_dws4;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
+
+/* active parameter , system time */
 public class TimeKeepingMode extends Mode{
     private TimeKeeping timekeeping;
     private int field ;
-    private int valueChangeTracking[];
+    private Date date;
     public TimeKeepingMode() {
         this.timekeeping = new TimeKeeping(0);
         this.state = 0;
         this.field = -1;
-        this.valueChangeTracking = new int[6];
-        for(int i=0; i<6; i++)
-            valueChangeTracking[i] = 0;
-        isActivate = true;
-        this.modeName = "WATCH";
+        this.isActivate = true;
+        date = new Date(0);
+        this.modeName = "TIMEKEEPER";
     }
 
     /* 5 -> 2 -> 3|4 -> 1|5 */
@@ -41,7 +45,7 @@ public class TimeKeepingMode extends Mode{
 
     /* system operation */
     private Message changeField() {
-        field = (field + 1) % 7;
+        field = (field + 1) % 6;
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, timeData, Integer.toString(field));
@@ -50,7 +54,30 @@ public class TimeKeepingMode extends Mode{
 
     /* system operation */
     private Message changeValue(int value) {
-        timekeeping.setTimeData(timekeeping.getTimeData() + value);
+//        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        switch(this.field){
+            case 0:
+                cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) + value);
+                break;
+            case 1:
+                cal.set(Calendar.MONTH, cal.get(Calendar.MONTH) + value);
+                break;
+            case 2:
+                cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + value);
+                break;
+            case 3:
+                cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) + value);
+                break;
+            case 4:
+                cal.set(Calendar.MINUTE, cal.get(Calendar.MINUTE) + value);
+                break;
+            case 5:
+                cal.set(Calendar.SECOND, cal.get(Calendar.SECOND) + value);
+                break;
+        }
+        date = cal.getTime();
+        timekeeping.setTimeData(date.getTime());
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateSystemTimeArg(arg, timeData, Integer.toString(field));
@@ -76,7 +103,7 @@ public class TimeKeepingMode extends Mode{
         this.field = -1;
         return new Message(11, "updateView", arg);
     }
-    @Override
+
     public void changeState(int state) {
         this.state = state;
     }
@@ -88,14 +115,23 @@ public class TimeKeepingMode extends Mode{
         timekeeping.setTimeData(systemTime);
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        if(systemTime % 1000 == 0)
-            makeUpdateViewArg(arg, systemTime, null);
+        if (systemTime % 1000 == 0)
+            makeUpdateViewArg(arg, timeData, null);
         else makeUpdateViewArg(arg, -1, null);
-        return new Message(11, "updateView", arg);
+        return null;
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
+        if(currentMode) {
+            timekeeping.setTimeData(systemTime);
+            long timeData = timekeeping.getTimeData();
+            HashMap<String, String> arg = new HashMap<String, String>();
+            if (systemTime % 1000 == 0)
+                makeUpdateViewArg(arg, timeData, null);
+            else makeUpdateViewArg(arg, -1, null);
+            return new Message(11, "updateView", arg);
+        }
         return null;
     }
 
@@ -111,26 +147,49 @@ public class TimeKeepingMode extends Mode{
         makeUpdateViewArg(arg, timekeeping.getTimeData(), null);
         return new Message(11,"updateView", arg);
     }
-
-
     /* personally added */
-    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
 
+    public TimeKeeping getTimekeeping() {
+        return this.timekeeping;
+    }
+
+    private String[] makeTimeSet(long time){
+        Date tmpDate = new Date(time);
+        String a[] = new String[7];
+        a[0] = new SimpleDateFormat("yyyy").format(tmpDate);
+        a[1] = new SimpleDateFormat("MM").format(tmpDate);
+        a[2] = new SimpleDateFormat("dd").format(tmpDate);
+        a[3] = new SimpleDateFormat("HH").format(tmpDate);
+        a[4] = new SimpleDateFormat("mm").format(tmpDate);
+        a[5] = new SimpleDateFormat("ss").format(tmpDate);
+        a[6] = new SimpleDateFormat("EEE", new Locale("en", "US")).format(tmpDate).toUpperCase();
+        return a;
+    }
+
+    private void makeUpdateSystemTimeArg(HashMap<String, String> arg, long systemTime, String blink){
+        String argData[] = makeTimeSet(systemTime);
+        arg.put("0", argData[6]);
+        /*arg.put("1", null); *//* should be added in mode manager */
+        arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
+        arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
+        arg.put("blink", blink);
+        arg.put("newTime", Long.toString(systemTime));
     }
     private void makeUpdateViewArg(HashMap<String, String> arg, long systemTime, String blink){ //f
+        String argData[] = makeTimeSet(systemTime);
         if(systemTime == -1)
         {
-            arg.put("0", "");
-            arg.put("1", ""); /* should be added in mode manager */
+            /*arg.put("0", "");
+            arg.put("1", ""); *//* should be added in mode manager *//*
             arg.put("3", "");
             arg.put("4", "");
-            arg.put("blink", blink);
+            arg.put("blink", blink);*/
             return;
         }
-        arg.put("0", Long.toString(systemTime));
-        arg.put("1", null); /* should be added in mode manager */
-        arg.put("3", Long.toString(systemTime));
-        arg.put("4", Long.toString(systemTime));
+        arg.put("0", argData[6]);
+        /*arg.put("1", null); *//* should be added in mode manager */
+        arg.put("3", argData[3]+"|"+argData[4]+argData[5]);
+        arg.put("4", argData[0]+"-"+argData[1]+"-"+argData[2]);
         arg.put("blink", blink);
     }
     /* personally added */
