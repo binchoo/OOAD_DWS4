@@ -1,9 +1,6 @@
 package org.ooad_dws4;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 
 /**
  * @author Kelvin Kwak (lunox273@gmail.com)
@@ -116,6 +113,10 @@ public class ModeManager {
                     HashMap<String, String> map = new HashMap<>();
                     map.put("1", ddayData);
                     return new Message(11, "updateView", map);
+                }
+                if (event == 8){
+                    HashMap<String, String> map = new HashMap<>();
+                    return new Message(10, "toggleMute", map);
                 }
             }
             if (event == 1 && modes[currentMode].getState() != 1) {

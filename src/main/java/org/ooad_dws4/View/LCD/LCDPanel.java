@@ -9,6 +9,13 @@ public class LCDPanel extends JPanel {
     private int imageHeight;
     private LCDComponent[] lcdComp = new LCDComponent[27];
 
+    // initial view
+      private char LCDCharacter[] = {
+        'T', 'H', 'U', '-', '1', '9', '9', '9', '9', // 0~8
+        ' ', '0', '9', '|', '0', '0', '0', '0', // 9~16
+        '1', '9', '7', '0', '-', '0', '1', '-', '0', '1' // 17~26
+    };
+
 //    Use Case 1. Change Mode
 //    Use Case 6. Timekeeping                                           blink
 //    Use Case 7. Change Date and Time                                  blink
@@ -32,11 +39,11 @@ public class LCDPanel extends JPanel {
 
     //    Use Case 3. Change D-Day Index
 //    Use Case 5. Toggle D-Day
-    private char LCDCharacter[] = {
-            ' ', 'O', 'N', '3', '+', ' ', ' ', '6', '5', // 0~8
-            ' ', 'D', '-', 'D', 'A', 'Y', ' ', '3', // 9~16
-            '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
-    };
+//    private char LCDCharacter[] = {
+//            ' ', 'O', 'N', '3', '+', ' ', ' ', '6', '5', // 0~8
+//            ' ', 'D', '-', 'D', 'A', 'Y', ' ', '3', // 9~16
+//            '2', '0', '2', '0', '-', '0', '4', '-', '0', '1' // 17~26
+//    };
 
 //    Use Case 4. Set Date of D-Day                                     blink
 //    private char LCDCharacter[] = {
