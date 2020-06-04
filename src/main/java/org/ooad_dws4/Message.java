@@ -26,6 +26,7 @@ public class Message {
         return arg;
     }
 
+    /*
     public void doMessageAction() {
         System.out.print("dest:" + this.destination + ", action:" + this.action + ", arg->");
         if (this.arg == null)
@@ -35,4 +36,5 @@ public class Message {
                 System.out.printf(" {%s:%s} ", m.getKey(), m.getValue());
         System.out.println();
     }
+     */
 }

@@ -127,7 +127,6 @@ public class AlarmMode extends Mode {
     @Override
     /* 5 -> 2 -> 3|4 -> 1|5*/
     public Message modeModify(int event) {
-        HashMap<String, String> arg = new HashMap<String, String>();
         if (this.state == 0) {
             switch (event) {
                 case 2:

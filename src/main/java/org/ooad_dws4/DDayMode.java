@@ -136,9 +136,9 @@ public class DDayMode extends Mode {
         return makeView(currentIndex);
     }
 
-    private String makeViewString(long sec) {
-        char sign = sec >= 0 ? '+' : '-';
-        sec = Math.abs(sec);
+    private String makeViewString(long rawSec) {
+        char sign = rawSec >= 0 ? '+' : '-';
+        long sec = Math.abs(rawSec);
         int day = (int) (sec / (1000 * 60 * 60 * 24)); // day = 1234 / 0123 / 0012 / 0001 / 0000 ...
         if (day > 9999)
             day = 9999;

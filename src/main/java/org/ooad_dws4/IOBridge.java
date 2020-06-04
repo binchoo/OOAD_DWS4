@@ -52,7 +52,7 @@ public class IOBridge extends DWSObject {
 
     public void toggleSound() {
         this.isMute = !this.isMute;
-        System.out.println(isMute);
+//        System.out.println(isMute);
     }
 
 }

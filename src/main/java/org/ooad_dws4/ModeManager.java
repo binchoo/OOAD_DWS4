@@ -105,7 +105,6 @@ public class ModeManager {
      * @brief Do action suitable for each button press event
      */
     public Message modeModify(int event) {
-        System.out.println("ModeManager : keypress " + event + " received!");
         if (isEditState) {
             return modeActivationControl(event);
         } else {

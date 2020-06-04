@@ -32,7 +32,6 @@ public class TimerMode extends Mode {
         field++;
         if (field > 5)
             field = 3;
-        long timerTime = timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("blink", Integer.toString(field));
         return new Message(11, "updateView", arg);
@@ -130,8 +129,6 @@ public class TimerMode extends Mode {
 
     public Message modeModify(int event) {
 
-        HashMap<String, String> arg = new HashMap<String, String>();
-
         if (this.state == 0) {
             switch (event) {
                 case 3:
@@ -199,8 +196,6 @@ public class TimerMode extends Mode {
             state = "EDT";
         else if (this.state == 2)
             state = "RUN";
-        else if (this.state == 3)
-            state = "OFF";
         else
             state = "OFF";
         arg.put("0", state);

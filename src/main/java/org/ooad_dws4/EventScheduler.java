@@ -114,7 +114,6 @@ public class EventScheduler extends DWSObject {
      * @brief Clear Alarm Event from eventQueue
      */
     public void removeAlarmAll() {
-        System.out.println("Remove Alarm All");
         for (Event event : this.alarmEventQueue)
             this.eventQueue.remove(event);
         this.alarmEventQueue.clear();
@@ -142,12 +141,16 @@ public class EventScheduler extends DWSObject {
      * @brief Decrease Deadline each unit time
      */
     private void decreaseDeadline() {
+        for (Event event : this.eventQueue)
+            event.decreaseDeadline();
+        /* Test Code
         System.out.print("Event Queue - ");
         for (Event event : this.eventQueue) {
             event.decreaseDeadline();
             System.out.print("[" + event.getId() + ":" + event.getDeadline() + ":" + event.getEventType() + "] - ");
         }
         System.out.print("END\n");
+         */
     }
 
     /**
