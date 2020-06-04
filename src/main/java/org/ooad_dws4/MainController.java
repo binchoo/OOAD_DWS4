@@ -79,7 +79,6 @@ public class MainController {
         } else if (message.getDestination() < 30) {
             switch (message.getDestination()) {
                 case 20:
-                    System.out.println(message.getAction());
                     break;
                 case 21:
                     message = this.timeRunner.systemTimeUpdate(message);
