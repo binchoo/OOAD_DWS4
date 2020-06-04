@@ -67,12 +67,12 @@ public class ModeManager {
     private void setModeObject() {
         this.modes = new Mode[6];
         this.modes[0] = new TimeKeepingMode();
-        this.modes[1] = new WoldTimeMode(true);
-        this.modes[2] = new AlarmMode(true);
+        this.modes[1] = new WoldTimeMode(false);
+        this.modes[2] = new AlarmMode(false);
         this.modes[3] = new TimerMode(true);
         this.modes[4] = new StopwatchMode(true);
         this.modes[5] = new DDayMode(true);
-        this.activationCount = 6;
+        this.activationCount = 4;
     }
 
     /**

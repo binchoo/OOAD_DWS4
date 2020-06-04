@@ -16,8 +16,8 @@ public class LCDBlink implements Runnable{
         stop = false;
         while(!stop){
             long current = System.currentTimeMillis();
-            if(current-start>500){
-                start+=500;
+            if(current-start>350){
+                start+=350;
 //                System.out.println(this.lcdComponent.lcdNum);
                 this.lcdComponent.blink();
             }
