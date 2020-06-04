@@ -10,13 +10,13 @@ class TimerModeTest {
     @Test
     void makeTimeForm() {
         TimerMode timerMode = new TimerMode(true);
-        System.out.println(timerMode.makeTimeForm(2,15,52));
+//        System.out.println(timerMode.makeTimeForm(2,15,52));
 
     }
 
     @Test
     void makeView() {
         TimerMode timerMode = new TimerMode(true);
-        timerMode.makeView().doMessageAction();
+//        timerMode.makeView().doMessageAction();
     }
 }

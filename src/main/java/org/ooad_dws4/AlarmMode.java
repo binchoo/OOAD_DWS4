@@ -112,6 +112,7 @@ public class AlarmMode extends Mode {
         arg.put("4", Long.toString(alarmTime));
         arg.put("blink", blink);
     }*/
+    @Override
     public Message getModeData() {
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
@@ -156,7 +157,7 @@ public class AlarmMode extends Mode {
     }
 
 
-    public void changeState(int state) {
+    private void changeState(int state) {
         this.state = state;
     }
 
@@ -184,15 +185,6 @@ public class AlarmMode extends Mode {
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
-    }
-
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
-    public int getCurrentAlarmIndex() {
-        return currentAlarmIndex;
     }
 
     /* personally added */
