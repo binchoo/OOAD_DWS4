@@ -1,60 +1,44 @@
 package org.ooad_dws4;
 
 /**
- * 
+ *
  */
 public class Timer {
+
+
+    /**
+     *
+     */
+    private long deadline;
 
     /**
      * Default constructor
      */
     public Timer() {
+        this.deadline = 12846000L;
     }
 
     /**
-     * 
-     */
-    private long deadline;
-
-
-
-
-    /**
-     * 
-     */
-    public void changeState() {
-        // TODO implement here
-        // ???
-    }
-
-    /**
-     *   return deadline
+     * return deadline
      */
     public long getDeadlineData() {
-        // TODO implement here
-
-        return deadline;
+        return this.deadline;
     }
 
+
     /**
-     *  setDeadline
+     * setDeadline
      */
     public void setDeadlineData(long deadline) {
-        // TODO implement here
-
-        this.deadline =deadline;
+        this.deadline = deadline;
     }
 
     /**
-     *   reset deadline
+     * reset deadline
      */
     public void reset() {
-        // TODO implement here
-
-        deadline=0;
-
+        this.deadline = 0;
     }
-
 
 
 }

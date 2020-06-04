@@ -85,6 +85,7 @@ public class MainController {
                     message = this.timeRunner.systemTimeUpdate(message);
                     if (message != null) {
                         this.eventScheduler.changeSystemTime(Long.parseLong(message.getArg().get("TimeDifference")));
+                        message.getArg().remove("TimeDifference");
                         this.ioBridge.outputEvent(message);
                     }
                     break;

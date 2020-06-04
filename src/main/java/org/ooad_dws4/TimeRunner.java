@@ -43,7 +43,8 @@ public class TimeRunner extends DWSObject implements PulseMaker {
      * @brief Receive systemTimeChange Event.
      */
     public Message systemTimeUpdate(Message message) {
-        long timeArg = Long.parseLong(message.getArg().get("0"));
+        long timeArg = Long.parseLong(message.getArg().get("newTime"));
+        message.getArg().remove("newTime");
         long timeDifference = 0;
         if ("updateSystemTime".equals(message.getAction()))
             timeDifference = changeSystemTime(timeArg);

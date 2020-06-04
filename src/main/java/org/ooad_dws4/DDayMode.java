@@ -36,7 +36,7 @@ public class DDayMode extends Mode {
      * @Override public Message toggleModeActivation() { return null; }
      */
 
-    public void changeState(String state) {
+    private void changeState(String state) {
         if ("DEFAULT".equals(state))
             this.state = 0;
         else if ("EDIT".equals(state))
