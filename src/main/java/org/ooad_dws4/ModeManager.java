@@ -55,7 +55,7 @@ public class ModeManager {
         setModeObject();
         this.currentMode = 0;
         this.defaultMode = 0;
-        this.ddayData = "      ";
+        this.ddayData = " 1 OFF";
         this.maxActivationCount = 4;
         this.activationModeIndex = this.defaultMode;
         isEditState = false;

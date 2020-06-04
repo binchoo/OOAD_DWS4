@@ -27,6 +27,7 @@ public class DDayMode extends Mode {
         this.systemTime = 0;
         currentIndex = 0;
     }
+
     @Override
     public Message getModeData() {
         return makeView(currentIndex);
@@ -66,7 +67,7 @@ public class DDayMode extends Mode {
             if (event == 2)
                 return toggleDdayActivation();
             else if (event == 3 || event == 4)
-                return changeCurrentIndex(event == 4 ? 1 : -1); // -
+                return changeCurrentIndex(event == 4 ? 1 : -1);
             else if (event == 5)
                 return enterDdayEdit();
         } else if (this.state == 1) {
@@ -79,6 +80,22 @@ public class DDayMode extends Mode {
         }
         return null;
     }
+
+//    public Message countActiveMode(int event) {
+//        if (event != 3 && event != 4)
+//            return null;
+//        int sign = event == 4 ? 1 : -1;
+//        for (int i = 0; i < ddays.length; i++) {
+//            currentIndex += sign;
+//            if (currentIndex > ddays.length - 1)
+//                currentIndex = 0;
+//            else if (currentIndex < 0)
+//                currentIndex = ddays.length - 1;
+//            if (ddays[currentIndex].getState())
+//                break;
+//        }
+//        return makeView(currentIndex);
+//    }
 
     private Message changeField() {
         Message message = makeView(currentIndex);
@@ -110,8 +127,8 @@ public class DDayMode extends Mode {
         return message;
     }
 
-    private Message changeCurrentIndex(int sing) {
-        currentIndex += sing;
+    private Message changeCurrentIndex(int sign) {
+        currentIndex += sign;
         if (currentIndex > ddays.length - 1)
             currentIndex = 0;
         else if (currentIndex < 0)
@@ -180,8 +197,10 @@ public class DDayMode extends Mode {
         else
             state = "OFF";
         arg.put("0", state);
-        if(ddays[index].getState())
+        if (ddays[index].getState())
             arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
+        else
+            arg.put("1", " " + (currentIndex + 1) + " OFF");
         arg.put("3", "D-DAY " + (index + 1));
         arg.put("4", makeDateForm(ddays[index].getTime()));
         return new Message(11, "updateView", arg);
