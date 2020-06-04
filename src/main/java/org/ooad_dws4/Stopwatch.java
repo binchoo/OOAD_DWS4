@@ -1,40 +1,40 @@
 package org.ooad_dws4;
 
 /**
- * 
+ *
  */
 public class Stopwatch {
 
-    private long stopWatchTime;
+    private long stopwatchTime;
+    private long maxValue;
 
-    public Stopwatch() {
+    public Stopwatch(long maxValue) {
+        this.stopwatchTime = 0L;
+        this.maxValue = maxValue;
     }
 
 
-    private long stopwatchTime;
-
-
-
     public void changeState() {
-        // TODO implement here
     }
 
 
     public long getStopwatchData() {
-        // TODO implement here
-        return stopWatchTime;
+        return stopwatchTime;
     }
 
-    public void setStopwatchData(long time){
+    public void runStopwatch() {
+        stopwatchTime = stopwatchTime + Clock.timeUnit;
+        stopwatchTime = Math.min(stopwatchTime, maxValue);
+    }
 
-        this.stopwatchTime =time;
+    public void setStopwatchData(long time) {
+        this.stopwatchTime = time;
     }
 
 
     public void reset() {
         // TODO implement here
-
-        stopWatchTime=0;
+        stopwatchTime = 0;
     }
 
 }
