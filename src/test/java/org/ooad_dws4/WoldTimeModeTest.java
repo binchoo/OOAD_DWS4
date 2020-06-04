@@ -32,7 +32,7 @@ class WoldTimeModeTest {
         w.modeModify(4);
         Message returnMsg = w.modeModify(2);
         HashMap<String, String > arg = new HashMap<>();
-        arg.put("0", Long.toString(-1 * 1000 * 60 * 60));
+        arg.put("newTime", Long.toString(-3600000));
         assertEquals(arg, returnMsg.getArg());
     }
 
