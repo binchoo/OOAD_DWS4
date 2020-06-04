@@ -122,9 +122,10 @@ public class TimeKeepingMode extends Mode {
     public Message update(long systemTime) { // f
         timekeeping.setTimeData(systemTime);
         long timeData = timekeeping.getTimeData();
+        date.setTime(timeData);
         HashMap<String, String> arg = new HashMap<String, String>();
         if (systemTime % 1000 == 0)
-            makeUpdateViewArg(arg, timeData, null);
+            makeUpdateViewArg(arg, date.getTime(), null);
         else
             makeUpdateViewArg(arg, -1, null);
         return null;
@@ -132,14 +133,15 @@ public class TimeKeepingMode extends Mode {
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        if (currentMode) {
+        HashMap<String, String> arg = new HashMap<String, String>();
+        if (currentMode && state != 1) {
             timekeeping.setTimeData(systemTime);
-            long timeData = timekeeping.getTimeData();
-            HashMap<String, String> arg = new HashMap<String, String>();
-            makeUpdateViewArg(arg, timeData, null);
-            return new Message(11, "updateView", arg);
+            date.setTime(timekeeping.getTimeData());
+//            makeUpdateViewArg(arg, date.getTime(), null);
+//            return new Message(11, "updateView", arg);
         }
-        return null;
+        makeUpdateViewArg(arg, date.getTime(), null);
+        return new Message(11, "updateView", arg);
     }
 
     @Override
