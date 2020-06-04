@@ -26,15 +26,17 @@ public class Message {
         return arg;
     }
 
-    /*
+
     public void doMessageAction() {
-        System.out.print("dest:" + this.destination + ", action:" + this.action + ", arg->");
-        if (this.arg == null)
-            System.out.print("NULL");
-        else
-            for (HashMap.Entry m : this.arg.entrySet())
-                System.out.printf(" {%s:%s} ", m.getKey(), m.getValue());
-        System.out.println();
+//        #REMIND# forTestCode
+
+//        System.out.print("dest:" + this.destination + ", action:" + this.action + ", arg->");
+//        if (this.arg == null)
+//            System.out.print("NULL");
+//        else
+//            for (HashMap.Entry m : this.arg.entrySet())
+//                System.out.printf(" {%s:%s} ", m.getKey(), m.getValue());
+//        System.out.println();
     }
-     */
+
 }

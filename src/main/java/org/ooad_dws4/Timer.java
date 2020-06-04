@@ -15,7 +15,7 @@ public class Timer {
      * Default constructor
      */
     public Timer() {
-        this.deadline = 6000*5L;
+        this.deadline = 300000L;
     }
 
     /**
