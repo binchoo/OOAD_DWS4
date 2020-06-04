@@ -34,7 +34,7 @@ public class Application {
                 // TestCode
                 // mainController.broadcast(new Date().getTime());
                 // Release Code
-                // clock.run();
+                 clock.run();
 
         }
 }

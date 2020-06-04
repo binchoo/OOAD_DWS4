@@ -65,6 +65,7 @@ public class TimerMode extends Mode {
     }
 
     private Message startTimer() {
+        if (timer.getDeadlineData() == 0) return null;
         changeState("RUN");
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "ringing");
@@ -106,9 +107,9 @@ public class TimerMode extends Mode {
 
     @Override
     public Message update(long systemTime) {
-        if (state == 2){
+        if (state == 2) {
             timer.runTimer();
-            if(!(timer.getDeadlineData() > 0))
+            if (!(timer.getDeadlineData() > 0))
                 changeState("DEFAULT");
         }
         return null;
@@ -199,7 +200,7 @@ public class TimerMode extends Mode {
         else if (this.state == 2)
             state = "RUN";
         else if (this.state == 3)
-            state = "PUS";
+            state = "OFF";
         else
             state = "OFF";
         arg.put("0", state);

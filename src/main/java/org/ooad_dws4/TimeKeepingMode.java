@@ -79,7 +79,7 @@ public class TimeKeepingMode extends Mode {
                 cal.set(Calendar.SECOND, cal.get(Calendar.SECOND) + value);
                 break;
         }
-        if(cal.getTime().getTime()>=0)
+        if (cal.getTime().getTime() >= 0)
             date = cal.getTime();
         timekeeping.setTimeData(date.getTime());
         long timeData = timekeeping.getTimeData();
@@ -136,10 +136,7 @@ public class TimeKeepingMode extends Mode {
             timekeeping.setTimeData(systemTime);
             long timeData = timekeeping.getTimeData();
             HashMap<String, String> arg = new HashMap<String, String>();
-            if (systemTime % 1000 == 0)
-                makeUpdateViewArg(arg, timeData, null);
-            else
-                makeUpdateViewArg(arg, -1, null);
+            makeUpdateViewArg(arg, timeData, null);
             return new Message(11, "updateView", arg);
         }
         return null;
@@ -162,9 +159,10 @@ public class TimeKeepingMode extends Mode {
     // public Message toggleModeActivation() {
     // return null;
     // }
-    public TimeKeeping getTimekeeping(){
+    public TimeKeeping getTimekeeping() {
         return timekeeping;
     }
+
     private String[] makeTimeSet(long time) {
         Date tmpDate = new Date(time);
         String a[] = new String[7];
@@ -194,8 +192,8 @@ public class TimeKeepingMode extends Mode {
             /*
              * arg.put("0", ""); arg.put("1", "");
              *//* should be added in mode manager *//*
-                                                     * arg.put("3", ""); arg.put("4", ""); arg.put("blink", blink);
-                                                     */
+             * arg.put("3", ""); arg.put("4", ""); arg.put("blink", blink);
+             */
             return;
         }
         arg.put("0", argData[6]);

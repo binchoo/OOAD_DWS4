@@ -6,7 +6,7 @@ public class Alarm {
 
     public Alarm() {
         this.state = false;
-        this.time = 15 * 1000 * 60 * 60;
+        this.time = 0;
     }
 
     public void changeState() {
