@@ -161,7 +161,7 @@ public class LCDPanel extends JPanel {
     }
 
     public void blink(int screenNum){
-        stopBlink(0,26);
+        stopBlink(10,26);
         switch(screenNum){
             case -1:
                 // stop Blink
@@ -198,6 +198,7 @@ public class LCDPanel extends JPanel {
                 setText(3, 8, value);
                 break;
             case 2:
+                System.out.println("1");
                 lcdComp[9].setVisible(Boolean.valueOf(value));
                 break;
             case 3:

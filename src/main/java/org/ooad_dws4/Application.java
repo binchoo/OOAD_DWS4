@@ -4,7 +4,6 @@ import org.ooad_dws4.View.DWSFrame;
 
 public class Application {
         public static void main(String[] args) {
-                // git test
                 Clock.timeUnit = 1000;
                 Clock.defaultScreenTime = 600000;
                 Clock.buzzerOffTime = 7000;

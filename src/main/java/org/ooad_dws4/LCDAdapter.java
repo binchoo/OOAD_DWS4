@@ -21,7 +21,7 @@ public class LCDAdapter implements LCD {
         for (String key : keys) {
             if(key.equals("blink")){
                 if(arg.get("blink")==null){
-                    this.lcdPanel.stopBlink(0,26);
+                    this.lcdPanel.stopBlink(10,26);
                 }
                 else{
                     this.lcdPanel.blink(Integer.parseInt(arg.get("blink")));
