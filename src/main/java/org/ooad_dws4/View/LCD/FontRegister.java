@@ -6,14 +6,18 @@ import java.io.IOException;
 
 public class FontRegister {
     private Font font14segment;
-    public FontRegister(){
+
+    public FontRegister() {
         try {
-            font14segment = Font.createFont(Font.TRUETYPE_FONT, new File("./font/DSEG14Classic-Regular.ttf"));
+            File file = new File(
+                    getClass().getClassLoader().getResource("./font/DSEG14Classic-Regular.ttf").getFile()
+            );
+            font14segment = Font.createFont(Font.TRUETYPE_FONT, file);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font14segment);
         } catch (IOException e) {
             e.printStackTrace();
-        } catch(FontFormatException e) {
+        } catch (FontFormatException e) {
             e.printStackTrace();
         }
     }

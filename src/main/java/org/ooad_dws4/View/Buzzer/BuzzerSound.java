@@ -15,10 +15,12 @@ public class BuzzerSound implements Runnable {
     public BuzzerSound() {
         this.stop = true;
         this.ringing = false;
-        soundFile = new File("./sound/beep.wav");
+        soundFile = new File(
+                getClass().getClassLoader().getResource("./sound/beep.wav").getFile()
+        );
     }
 
-    public void beep(){
+    public void beep() {
         try {
             AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
             clip = AudioSystem.getClip();
@@ -29,14 +31,14 @@ public class BuzzerSound implements Runnable {
         }
     }
 
-    public void ring(){
-        if(ringing) return;
+    public void ring() {
+        if (ringing) return;
         ringing = true;
         this.thread = new Thread(this);
         thread.start();
     }
 
-    public void stop(){
+    public void stop() {
         this.stop = true;
     }
 
@@ -44,15 +46,15 @@ public class BuzzerSound implements Runnable {
         int count = 0;
         long start = System.currentTimeMillis();
         stop = false;
-        while(!stop && (count < 60)){ // ring during 60 seconds
+        while (!stop && (count < 60)) { // ring during 60 seconds
             long current = System.currentTimeMillis();
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(current-start>1000){
-                start+=1000;
+            if (current - start > 1000) {
+                start += 1000;
                 count++;
                 try {
                     AudioInputStream audioIn = AudioSystem.getAudioInputStream(soundFile);
