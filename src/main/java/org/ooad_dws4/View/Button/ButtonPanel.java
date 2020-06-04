@@ -2,7 +2,6 @@ package org.ooad_dws4.View.Button;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class ButtonPanel extends JPanel {
 
@@ -23,8 +22,8 @@ public class ButtonPanel extends JPanel {
 
     public ButtonPanel(){
         this.buttonsetAdapter = new ButtonsetAdapter();
-        URL url = getClass().getResource("/img/button.png");
-        img = new ImageIcon(url).getImage();
+
+        img = new ImageIcon("./img/button.png").getImage();
         imageSize = 50;
         this.setBounds(0,0,680,800);
         this.setVisible(true);
