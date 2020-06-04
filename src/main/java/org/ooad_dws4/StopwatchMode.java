@@ -2,94 +2,130 @@ package org.ooad_dws4;
 
 import java.util.HashMap;
 
-/**
- *
- */
 public class StopwatchMode extends Mode {
 
-    /**
-     * Default constructor
-     */
-    /*public StopwatchMode() {
-    }
-
-     */
-
-    /**
-     *
-     */
     private Stopwatch stopwatch;
-    private HashMap <String, String> arg;
-
+    // private HashMap <String, String> arg;
+    private int hour, minute, second;
 
     public StopwatchMode(boolean isActivation) {
-        this.isActivate = isActivation;
+        this.state = 0;
         this.stopwatch = new Stopwatch();
+        this.isActivate = isActivation;
         this.modeName = "STOPWATCH";
     }
 
     @Override
     public Message getModeData() {
-        return null;
+        HashMap<String, String> arg = new HashMap<String, String>();
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg, "   ", null,
+                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH", null);
+        return new Message(11, "updateView", arg);
     }
 
-/*    @Override
-    public Message toggleModeActivation() {
-        return null;
-    }*/
+    // @Override
+    public boolean receiveMessage(Message msg) {
+        return false;
+    }
 
-    /**
-     *
-     */
-    public void runStopwatch() {
+    public Message runStopwatch() {
         // TODO implement here
-        //change state running
+
         changeState(2);
 
         stopwatch.getStopwatchData();
 
+        HashMap<String, String> arg = new HashMap<String, String>();
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg, "RUN", null,
+                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH", null);
+
+        return new Message(11, "updateView", arg);
+
     }
 
     /**
      *
      */
-    public void pauseStopwatch() {
-        // TODO implement here
-        //change state pause
+    public Message pauseStopwatch() {
+
+        // change state pause
         changeState(3);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg, "PUS", null,
+                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH", null);
+        return new Message(11, "updateView", arg);
     }
 
     /**
      *
      */
-    public void resetStopwatch() {
-        // TODO implement here
+    public Message resetStopwatch() {
+
         stopwatch.reset();
         changeState(0);
+        HashMap<String, String> arg = new HashMap<String, String>();
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg, "   ", null,
+                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH", null);
+
+        return new Message(11, "updateView", arg);
     }
 
     /**
      *
      */
-    public void resumeStopwatch() {
-        // TODO implement here
-        //change state running
+    public Message resumeStopwatch() {
+
+        // change state running
         changeState(2);
+        HashMap<String, String> arg = new HashMap<String, String>();
+
+        long stopwatchtime = stopwatch.getStopwatchData();
+        msecTohhmmss(stopwatchtime);
+        makeUpdateViewArg(arg, "RUN", null,
+                Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH", null);
+
+        return new Message(11, "updateView", arg);
     }
 
     public void changeState(int state) {
-        // TODO implement here
         this.state = state;
     }
 
     @Override
     public Message update(long systemTime) {
+        if (state == 2) {
+            stopwatch.setStopwatchData(stopwatch.getStopwatchData() + 1000);
+
+        }
+        HashMap<String, String> arg = new HashMap<String, String>();
+
         return null;
+
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        return null;
+
+        HashMap<String, String> arg = new HashMap<String, String>();
+
+        if (state == 2) {
+            stopwatch.setStopwatchData(stopwatch.getStopwatchData() + 1000);
+            long stopwatchtime = stopwatch.getStopwatchData();
+            msecTohhmmss(stopwatchtime);
+            makeUpdateViewArg(arg, "   ", null,
+                    Integer.toString(hour) + "|" + Integer.toString(minute) + Integer.toString(second), "STOPWATCH",
+                    null);
+        }
+
+        return new Message(11, "updateView", arg);
     }
 
     @Override
@@ -101,44 +137,56 @@ public class StopwatchMode extends Mode {
         // TODO implement here
         HashMap<String, String> arg = new HashMap<String, String>();
 
-        if(this.state==0){
-            switch (event){
-                case 1:
-                    //change mode
+        if (this.state == 0) {
+            switch (event) {
+                // case 1:
+                // change mode
                 case 3:
-                    runStopwatch();
-                default: break;
-
+                    return runStopwatch();
+                default:
+                    break;
 
             }
 
-        }else if(this.state==2){   // when running
-            switch (event){
-                case 1:
-                    //mode change
+        } else if (this.state == 2) { // when running
+            switch (event) {
+
                 case 3:
-                    pauseStopwatch();
-                default: break;
+                    return pauseStopwatch();
+                default:
+                    break;
             }
-        }else if(this.state==3){    // when pause
-            switch (event){
-                case 1:
-                    // mode change
+        } else if (this.state == 3) { // when pause
+            switch (event) {
+
                 case 2:
-                    resetStopwatch();
+                    return resetStopwatch();
                 case 3:
-                    resumeStopwatch();
-                default: break;
+                    return resumeStopwatch();
+                default:
+                    break;
             }
 
-        }
+        } else
+            return null;
         return null;
     }
 
-    public Message update() {
-        // TODO implement here
-        Message msg = new Message(11,"update",null);
-        return msg;
+    private void makeUpdateViewArg(HashMap<String, String> arg, String ar0, String ar1, String ar3, String ar4,
+            String blink) { // f
+
+        arg.put("0", ar0);
+        arg.put("1", null); // should be added in mode manager
+        arg.put("3", ar3);
+        arg.put("4", ar4);
+        arg.put("blink", blink);
+    }
+
+    public void msecTohhmmss(long timerTime) {
+        this.second = (int) (timerTime / 1000) % 60;
+        this.minute = (int) ((timerTime) / (1000 * 60) % 60);
+        this.hour = (int) ((timerTime) / (1000 * 60 * 60) % 24);
+
     }
 
 }

@@ -32,10 +32,9 @@ public class DDayMode extends Mode {
         return makeView(currentIndex);
     }
 
-/*    @Override
-    public Message toggleModeActivation() {
-        return null;
-    }*/
+    /*
+     * @Override public Message toggleModeActivation() { return null; }
+     */
 
     public void changeState(String state) {
         if ("DEFAULT".equals(state))
@@ -54,7 +53,8 @@ public class DDayMode extends Mode {
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
-        if (!currentMode) return null;
+        if (!currentMode)
+            return null;
         this.systemTime = systemTime;
         return makeView(currentIndex);
     }
@@ -70,7 +70,7 @@ public class DDayMode extends Mode {
             if (event == 2)
                 return toggleDdayActivation();
             else if (event == 3 || event == 4)
-                return changeCurrentIndex(event == 4 ? 1 : -1);   // -
+                return changeCurrentIndex(event == 4 ? 1 : -1); // -
             else if (event == 5)
                 return enterDdayEdit();
         } else if (this.state == 1) {
@@ -116,8 +116,10 @@ public class DDayMode extends Mode {
 
     private Message changeCurrentIndex(int sing) {
         currentIndex += sing;
-        if (currentIndex > ddays.length - 1) currentIndex = 0;
-        else if (currentIndex < 0) currentIndex = ddays.length - 1;
+        if (currentIndex > ddays.length - 1)
+            currentIndex = 0;
+        else if (currentIndex < 0)
+            currentIndex = ddays.length - 1;
         return makeView(currentIndex);
     }
 
@@ -133,18 +135,20 @@ public class DDayMode extends Mode {
         return makeView(currentIndex);
     }
 
-
     private String makeViewString(long sec) {
         char sign = sec >= 0 ? '+' : '-';
         sec = Math.abs(sec);
         int day = (int) (sec / (1000 * 60 * 60 * 24)); // day = 1234 / 0123 / 0012 / 0001 / 0000 ...
-        if (day > 9999) day = 9999;
+        if (day > 9999)
+            day = 9999;
         int nonZero = (int) Math.log10(day) + 1;
-        if (day == 0) nonZero = 1;
+        if (day == 0)
+            nonZero = 1;
         String str = "";
         str += currentIndex + 1;
         str += sign;
-        for (int i = 0; i < 4 - nonZero; i++) str += ' ';
+        for (int i = 0; i < 4 - nonZero; i++)
+            str += ' ';
         str += String.valueOf(day);
         return str;
     }
@@ -162,7 +166,6 @@ public class DDayMode extends Mode {
         return sign + (currentIndex + 1) + new String(result);
     }
 
-
     private String makeDateForm(long time) {
         Date date = new Date(time);
         String year = new SimpleDateFormat("yyyy").format(date);
@@ -170,7 +173,6 @@ public class DDayMode extends Mode {
         String day = new SimpleDateFormat("dd").format(date);
         return year + "-" + month + "-" + day;
     }
-
 
     private Message makeView(int index) {
         HashMap<String, String> arg = new HashMap<>();

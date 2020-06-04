@@ -48,9 +48,8 @@ public class WoldTimeMode extends Mode {
     private void toggleActivation() {
     }
 
-    public Message getModeData() {
-        HashMap<String, String> arg = new HashMap<>();
-        // makeUpdateViewArg(arg, );
+    // @Override
+    public Message toggleModeActivation() {
         return null;
     }
 
