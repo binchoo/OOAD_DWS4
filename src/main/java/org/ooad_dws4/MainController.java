@@ -70,9 +70,10 @@ public class MainController {
         if (message == null)
             return;
         if (message.getDestination() < 20) {
-            if (message.getArg().containsKey("Action"))
-                if (message.getArg().containsValue("removeAlarmAll"))
-                    this.eventScheduler.removeAlarmAll();
+            if(message.getArg() != null)
+                if (message.getArg().containsKey("Action"))
+                    if (message.getArg().containsValue("removeAlarmAll"))
+                        this.eventScheduler.removeAlarmAll();
             ioBridge.outputEvent(message);
         } else if (message.getDestination() < 30) {
             switch (message.getDestination()) {

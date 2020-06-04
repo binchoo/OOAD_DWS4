@@ -104,22 +104,27 @@ public class ModeManager {
         if (isEditState) {
             return modeActivationControl(event);
         } else {
+            boolean isNotEditMode = modes[currentMode].getState() != 1;
             if (currentMode == defaultMode) {
                 if (event == 6)
                     return editModeActivation();
-                if (event == 3 || event == 4) {
-                    if (!modes[5].getIsActivate()) return null;
-                    ddayData = modes[5].modeModify(event).getArg().get("1");
-                    HashMap<String, String> map = new HashMap<>();
-                    map.put("1", ddayData);
-                    return new Message(11, "updateView", map);
+                if (isNotEditMode) {
+                    if (event == 2)
+                        return new Message(10, "toggleMute", null);
+                    else if (event == 3 || event == 4) {
+                        if (!modes[5].getIsActivate()) return null;
+                        ddayData = modes[5].modeModify(event).getArg().get("1");
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put("1", ddayData);
+                        return new Message(11, "updateView", map);
+                    }
                 }
                 if (event == 8){
                     HashMap<String, String> map = new HashMap<>();
                     return new Message(10, "toggleMute", map);
                 }
             }
-            if (event == 1 && modes[currentMode].getState() != 1) {
+            if (event == 1 && isNotEditMode) {
                 changeModeIndex();
                 return changeMode(currentMode);
             }
