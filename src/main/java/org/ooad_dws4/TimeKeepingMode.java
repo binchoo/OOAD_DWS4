@@ -13,11 +13,11 @@ public class TimeKeepingMode extends Mode {
     private Date date;
 
     public TimeKeepingMode() {
-        this.timekeeping = new TimeKeeping(0);
+        this.timekeeping = new TimeKeeping(32400000000L); /* should be changed to 0 in real */
         this.state = 0;
         this.field = -1;
         this.isActivate = true;
-        date = new Date(0);
+        date = new Date(timekeeping.getTimeData());
         this.modeName = "TIMEKEEPER";
     }
 
@@ -79,12 +79,15 @@ public class TimeKeepingMode extends Mode {
                 cal.set(Calendar.SECOND, cal.get(Calendar.SECOND) + value);
                 break;
         }
-        date = cal.getTime();
+        if(cal.getTime().getTime()>=0)
+            date = cal.getTime();
         timekeeping.setTimeData(date.getTime());
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateSystemTimeArg(arg, timeData, Integer.toString(field));
-        return new Message(21, "updateSystemTime", arg);
+        makeUpdateViewArg(arg, timeData, Integer.toString(field));
+        return new Message(11, "updateView", arg);
+//        makeUpdateSystemTimeArg(arg, timeData, Integer.toString(field));
+//        return new Message(21, "updateSystemTime", arg);
     }
 
     /* system operation */
@@ -102,9 +105,11 @@ public class TimeKeepingMode extends Mode {
         changeState((this.state + 1) % 2);
         long timeData = timekeeping.getTimeData();
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, timeData, null);
         this.field = -1;
-        return new Message(11, "updateView", arg);
+        makeUpdateSystemTimeArg(arg, timeData, null);
+        return new Message(21, "updateSystemTime", arg);
+//        makeUpdateViewArg(arg, timeData, null);
+//        return new Message(11, "updateView", arg);
     }
 
     public void changeState(int state) {
@@ -157,7 +162,9 @@ public class TimeKeepingMode extends Mode {
     // public Message toggleModeActivation() {
     // return null;
     // }
-
+    public TimeKeeping getTimekeeping(){
+        return timekeeping;
+    }
     private String[] makeTimeSet(long time) {
         Date tmpDate = new Date(time);
         String a[] = new String[7];
