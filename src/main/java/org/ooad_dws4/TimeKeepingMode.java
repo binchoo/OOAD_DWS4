@@ -141,6 +141,7 @@ public class TimeKeepingMode extends Mode {
 //            return new Message(11, "updateView", arg);
         }
         makeUpdateViewArg(arg, date.getTime(), null);
+        arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
 

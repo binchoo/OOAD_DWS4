@@ -109,7 +109,7 @@ public class TimeKeepingModeTest {
 //        arg.put("1", null);
         arg.put("3", "09|0010");
         arg.put("4", "1970-01-01");
-        arg.put("blink", null);
+//        arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
     }
     @Test
