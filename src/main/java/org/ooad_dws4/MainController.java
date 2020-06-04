@@ -65,6 +65,7 @@ public class MainController {
     public void inputEvent(int event) {
         if (!(0 < event && event < 9))
             return;
+        defaultScreenTimerReset();
         Message message = this.modeManager.modeModify(event);
         if (message == null)
             return;
@@ -101,7 +102,7 @@ public class MainController {
      * @brief Resets the timer that returns to the default screen each time a button
      * is pressed.
      */
-    public void defaultScreenTimerReset() {
+    private void defaultScreenTimerReset() {
         this.eventScheduler.defaultScreenTimerReset();
     }
 
