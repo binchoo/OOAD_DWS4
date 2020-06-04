@@ -204,7 +204,7 @@ public class LCDPanel extends JPanel {
                 setText(3, 8, value);
                 break;
             case 2:
-//                System.out.println("1");
+                System.out.println("1");
                 lcdComp[9].setVisible(Boolean.valueOf(value));
                 break;
             case 3:
