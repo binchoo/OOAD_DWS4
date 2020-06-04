@@ -83,7 +83,7 @@ public class AlarmMode extends Mode {
         alarms[currentAlarmIndex].setAlarmData(date.getTime());
         long alarmTime = alarms[currentAlarmIndex].getAlarmData();
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarmTime, Long.toString(alarmTime));
+        makeUpdateViewArg(arg, alarmTime, Long.toString(field+3));
         return new Message(11, "updateView", arg);
     }
 

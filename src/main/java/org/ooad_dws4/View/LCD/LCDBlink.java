@@ -16,11 +16,6 @@ public class LCDBlink implements Runnable{
         stop = false;
         while(!stop){
             long current = System.currentTimeMillis();
-            try {
-                Thread.sleep(50);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             if(current-start>500){
                 start+=500;
 //                System.out.println(this.lcdComponent.lcdNum);
@@ -35,7 +30,7 @@ public class LCDBlink implements Runnable{
         thread.start();
     }
 
-    public void stop(){
+    public void stop() {
         this.stop = true;
         this.lcdComponent.setVisible(true);
     }
