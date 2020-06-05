@@ -3,3 +3,43 @@ build/
 .gradle/
 .project
 *.class
+*.lock
+*.bin
+
+
+### Java template
+*.class
+ 
+# Package Files #
+*.jar
+*.war
+*.ear
+ 
+### macOS template
+*.DS_Store
+.AppleDouble
+.LSOverride
+ 
+# IntelliJ project files
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
+ 
+/example/
+ 
+# Gradle
+.gradle
+build/
+.gradletasknamecache
+.settings/
+
+.gradle/5.2.1/executionHistory/executionHistory.bin
+.gradle/5.2.1/executionHistory/executionHistory.lock
+.gradle/5.2.1/fileHashes/fileHashes.bin
+.gradle/5.2.1/fileHashes/fileHashes.lock
+.gradle/5.2.1/javaCompile/javaCompile.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
