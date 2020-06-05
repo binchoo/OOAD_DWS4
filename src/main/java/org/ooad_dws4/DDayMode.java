@@ -28,6 +28,7 @@ public class DDayMode extends Mode {
         currentIndex = 0;
     }
 
+    @Override
     public Message getModeData() {
         return makeView(currentIndex);
     }
@@ -48,7 +49,8 @@ public class DDayMode extends Mode {
         this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         arg.put("1", makeDDayCount(this.systemTime, ddays[currentIndex].getTime()));
-        return new Message(30, "sendDDayData", arg);
+        if (!ddays[currentIndex].getState()) return null;
+        return new Message(30, "1", arg);
     }
 
     @Override
@@ -60,17 +62,12 @@ public class DDayMode extends Mode {
     }
 
     @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
-    @Override
     public Message modeModify(int event) {
         if (this.state == 0) {
             if (event == 2)
                 return toggleDdayActivation();
             else if (event == 3 || event == 4)
-                return changeCurrentIndex(event == 4 ? 1 : -1); // -
+                return changeCurrentIndex(event == 4 ? 1 : -1);
             else if (event == 5)
                 return enterDdayEdit();
         } else if (this.state == 1) {
@@ -83,6 +80,22 @@ public class DDayMode extends Mode {
         }
         return null;
     }
+
+//    public Message countActiveMode(int event) {
+//        if (event != 3 && event != 4)
+//            return null;
+//        int sign = event == 4 ? 1 : -1;
+//        for (int i = 0; i < ddays.length; i++) {
+//            currentIndex += sign;
+//            if (currentIndex > ddays.length - 1)
+//                currentIndex = 0;
+//            else if (currentIndex < 0)
+//                currentIndex = ddays.length - 1;
+//            if (ddays[currentIndex].getState())
+//                break;
+//        }
+//        return makeView(currentIndex);
+//    }
 
     private Message changeField() {
         Message message = makeView(currentIndex);
@@ -114,8 +127,8 @@ public class DDayMode extends Mode {
         return message;
     }
 
-    private Message changeCurrentIndex(int sing) {
-        currentIndex += sing;
+    private Message changeCurrentIndex(int sign) {
+        currentIndex += sign;
         if (currentIndex > ddays.length - 1)
             currentIndex = 0;
         else if (currentIndex < 0)
@@ -135,9 +148,9 @@ public class DDayMode extends Mode {
         return makeView(currentIndex);
     }
 
-    private String makeViewString(long sec) {
-        char sign = sec >= 0 ? '+' : '-';
-        sec = Math.abs(sec);
+    private String makeViewString(long rawSec) {
+        char sign = rawSec >= 0 ? '+' : '-';
+        long sec = Math.abs(rawSec);
         int day = (int) (sec / (1000 * 60 * 60 * 24)); // day = 1234 / 0123 / 0012 / 0001 / 0000 ...
         if (day > 9999)
             day = 9999;
@@ -184,7 +197,10 @@ public class DDayMode extends Mode {
         else
             state = "OFF";
         arg.put("0", state);
-        arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
+        if (ddays[index].getState())
+            arg.put("1", makeDDayCount(systemTime, ddays[index].getTime()));
+        else
+            arg.put("1", " " + (currentIndex + 1) + " OFF");
         arg.put("3", "D-DAY " + (index + 1));
         arg.put("4", makeDateForm(ddays[index].getTime()));
         return new Message(11, "updateView", arg);

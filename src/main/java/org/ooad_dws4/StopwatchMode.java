@@ -22,12 +22,8 @@ public class StopwatchMode extends Mode {
         return makeView();
     }
 
-    // @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
 
-    public Message runStopwatch() {
+    private Message runStopwatch() {
         changeState("RUN");
         msecTohhmmss(stopwatch.getStopwatchData());
         return makeView();
@@ -36,7 +32,7 @@ public class StopwatchMode extends Mode {
     /**
      *
      */
-    public Message pauseStopwatch() {
+    private Message pauseStopwatch() {
         changeState("PAUSE");
         msecTohhmmss(stopwatch.getStopwatchData());
         return makeView();
@@ -45,7 +41,7 @@ public class StopwatchMode extends Mode {
     /**
      *
      */
-    public Message resetStopwatch() {
+    private Message resetStopwatch() {
         changeState("DEFAULT");
         stopwatch.reset();
         msecTohhmmss(stopwatch.getStopwatchData());
@@ -55,7 +51,7 @@ public class StopwatchMode extends Mode {
     /**
      *
      */
-    public Message resumeStopwatch() {
+    private Message resumeStopwatch() {
         return runStopwatch();
     }
 
@@ -74,7 +70,7 @@ public class StopwatchMode extends Mode {
         return makeView();
     }
 
-
+    @Override
     public Message modeModify(int event) {
         if (this.state == 0) {
             if (event == 3)
@@ -91,7 +87,7 @@ public class StopwatchMode extends Mode {
         return null;
     }
 
-    public void msecTohhmmss(long timerTime) {
+    private void msecTohhmmss(long timerTime) {
         this.second = (int) (timerTime / 1000) % 60;
         this.minute = (int) ((timerTime) / (1000 * 60) % 60);
         this.hour = (int) ((timerTime) / (1000 * 60 * 60));
@@ -107,7 +103,7 @@ public class StopwatchMode extends Mode {
             this.state = 3;
     }
 
-    public Message makeView() {
+    private Message makeView() {
         HashMap<String, String> arg = new HashMap<>();
         String state;
         if (this.state == 2)
@@ -122,7 +118,7 @@ public class StopwatchMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    public String makeTimeForm(int hour, int minute, int second) {
+    private String makeTimeForm(int hour, int minute, int second) {
         char result[] = "00|0000".toCharArray();
         char hourChar[] = Integer.toString(hour).toCharArray();
         char minChar[] = Integer.toString(minute).toCharArray();

@@ -28,17 +28,16 @@ public class TimerMode extends Mode {
         return makeView();
     }
 
-    public Message changeField() {
+    private Message changeField() {
         field++;
         if (field > 5)
             field = 3;
-        long timerTime = timer.getDeadlineData();
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("blink", Integer.toString(field));
         return new Message(11, "updateView", arg);
     }
 
-    public Message changeValue(int sing) {
+    private Message changeValue(int sing) {
         long value = this.timer.getDeadlineData();
         long stepSize = 0;
         if (field == 3)
@@ -56,7 +55,7 @@ public class TimerMode extends Mode {
 
     }
 
-    public Message resetTimer() {
+    private Message resetTimer() {
         timer.reset();
         changeState("DEFAULT");
         long timerTime = timer.getDeadlineData();
@@ -65,6 +64,7 @@ public class TimerMode extends Mode {
     }
 
     private Message startTimer() {
+        if (timer.getDeadlineData() == 0) return null;
         changeState("RUN");
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "ringing");
@@ -73,7 +73,7 @@ public class TimerMode extends Mode {
         return new Message(22, "updateTimerEvent", arg);
     }
 
-    public Message changeTimerTime() {
+    private Message changeTimerTime() {
         // change state edit
         changeState("EDIT");
         Message message = makeView();
@@ -82,7 +82,7 @@ public class TimerMode extends Mode {
 
     }
 
-    public Message saveTimer() {
+    private Message saveTimer() {
         changeState("DEFAULT");
         long timerTime = timer.getDeadlineData();
         field = 3;
@@ -92,7 +92,7 @@ public class TimerMode extends Mode {
         return message;
     }
 
-    public Message pauseTimer() {
+    private Message pauseTimer() {
         changeState("PAUSE");
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "off");
@@ -100,15 +100,15 @@ public class TimerMode extends Mode {
         return new Message(22, "updateTimerEvent", arg);
     }
 
-    public Message resumeTimer() {
+    private Message resumeTimer() {
         return startTimer();
     }
 
     @Override
     public Message update(long systemTime) {
-        if (state == 2){
+        if (state == 2) {
             timer.runTimer();
-            if(!(timer.getDeadlineData() > 0))
+            if (!(timer.getDeadlineData() > 0))
                 changeState("DEFAULT");
         }
         return null;
@@ -123,13 +123,7 @@ public class TimerMode extends Mode {
     }
 
     @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
     public Message modeModify(int event) {
-
-        HashMap<String, String> arg = new HashMap<String, String>();
 
         if (this.state == 0) {
             switch (event) {
@@ -163,17 +157,7 @@ public class TimerMode extends Mode {
         return null;
     }
 
-//    private void makeUpdateViewArg(HashMap<String, String> arg, String ar0, String ar1, String ar3, String ar4,
-//                                   String blink) { // f
-//
-//        arg.put("0", ar0);
-////        arg.put("1", null); // should be added in mode manager
-//        arg.put("3", ar3);
-//        arg.put("4", ar4);
-//        arg.put("blink", blink);
-//    }
-
-    public void msecTohhmmss(long timerTime) {
+    private void msecTohhmmss(long timerTime) {
         this.second = (int) (timerTime / 1000) % 60;
         this.minute = (int) ((timerTime) / (1000 * 60) % 60);
         this.hour = (int) ((timerTime) / (1000 * 60 * 60) % 24);
@@ -191,15 +175,13 @@ public class TimerMode extends Mode {
 
     }
 
-    public Message makeView() {
+    private Message makeView() {
         HashMap<String, String> arg = new HashMap<>();
         String state;
         if (this.state == 1)
             state = "EDT";
         else if (this.state == 2)
             state = "RUN";
-        else if (this.state == 3)
-            state = "PUS";
         else
             state = "OFF";
         arg.put("0", state);
@@ -208,7 +190,7 @@ public class TimerMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    public String makeTimeForm(int hour, int minute, int second) {
+    private String makeTimeForm(int hour, int minute, int second) {
         char result[] = "00|0000".toCharArray();
         char hourChar[] = Integer.toString(hour).toCharArray();
         char minChar[] = Integer.toString(minute).toCharArray();

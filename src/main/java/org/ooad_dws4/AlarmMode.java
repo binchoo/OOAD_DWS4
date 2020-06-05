@@ -12,11 +12,12 @@ public class AlarmMode extends Mode {
     private int changingAlarmIndex;
     private int field;
     private long systemTime;
+    private boolean timeSync;
     private Date date;
 
     public AlarmMode(boolean isActivation) {
         this.alarms = new Alarm[4];
-        for(int i=0; i<4; i++)
+        for (int i = 0; i < 4; i++)
             this.alarms[i] = new Alarm();
         this.state = 0;
         this.currentAlarmIndex = 0;
@@ -25,7 +26,8 @@ public class AlarmMode extends Mode {
         this.systemTime = 0;
         this.isActivate = isActivation;
         this.modeName = "ALARM";
-        date = new Date(15 * 1000 * 60 * 60);
+        this.timeSync = true;
+        date = new Date(this.alarms[currentAlarmIndex].getAlarmData());
     }
 
     /* system operation */
@@ -39,9 +41,11 @@ public class AlarmMode extends Mode {
 
     /* system operation */
     private Message editAlarm() {
-        changeState(1);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field+3));
+        if(getStateName()=="OFF") {
+            changeState(1);
+            makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
+        }else makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -54,14 +58,16 @@ public class AlarmMode extends Mode {
     }
 
     private void changeIndex(int value) {
-        if(this.currentAlarmIndex == 0 && value == -1) this.currentAlarmIndex = 3;
-        else this.currentAlarmIndex = (this.currentAlarmIndex + value)% 4;
+        if (this.currentAlarmIndex == 0 && value == -1) this.currentAlarmIndex = 3;
+        else this.currentAlarmIndex = (this.currentAlarmIndex + value) % 4;
     }
+
     /* system operation */
     private Message toggleAlarmActivation() {
         alarms[currentAlarmIndex].toggleActivation();
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateAlarmEventArg(arg, this.alarms[currentAlarmIndex].getAlarmData() - systemTime);
+        long corrector = this.alarms[currentAlarmIndex].getAlarmData() - systemTime >= 0 ? 0 : 1000 * 60 * 60 * 24;
+        makeUpdateAlarmEventArg(arg, this.alarms[currentAlarmIndex].getAlarmData() - systemTime + corrector);
         return new Message(22, "updateAlarmEvent", arg);
         /*makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);*/
@@ -69,31 +75,35 @@ public class AlarmMode extends Mode {
 
     /* system operation */
     private Message changeField() {
-        this.field = (this.field+1) % 2;
+        this.field = (this.field + 1) % 2;
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field+3));
+        makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
         return new Message(11, "updateView", arg);
     }
+
     /* system operation */
     private Message changeValue(int value) {
         cal.setTime(date);
-        if(this.field == 0) cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) + value);
+        if (this.field == 0) cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) + value);
         else cal.set(Calendar.MINUTE, cal.get(Calendar.MINUTE) + value);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
         date = cal.getTime();
         alarms[currentAlarmIndex].setAlarmData(date.getTime());
         long alarmTime = alarms[currentAlarmIndex].getAlarmData();
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, alarmTime, Long.toString(field+3));
+        makeUpdateViewArg(arg, alarmTime, Long.toString(field + 3));
         return new Message(11, "updateView", arg);
     }
 
     /*private void toggleActivation(){}  should be deleted. */
-    private String getStateName(){
-        if(this.state == 0) /* in state default */
-            if(alarms[currentAlarmIndex].getState()) return " ON";
+    private String getStateName() {
+        if (this.state == 0) /* in state default */
+            if (alarms[currentAlarmIndex].getState()) return " ON";
             else return "OFF";
         return "EDT";
     }
+
     /*private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink){ //f
 
         arg.put("0", getStateName());
@@ -102,13 +112,14 @@ public class AlarmMode extends Mode {
         arg.put("4", Long.toString(alarmTime));
         arg.put("blink", blink);
     }*/
-    public Message getModeData(){
+    @Override
+    public Message getModeData() {
         HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
 
-//    //@Override
+    //    //@Override
 //    public Message toggleModeActivation() {
 //        HashMap<String, String> arg = new HashMap<String, String>();
 //        this.isActivate = !this.isActivate;
@@ -117,7 +128,6 @@ public class AlarmMode extends Mode {
     @Override
     /* 5 -> 2 -> 3|4 -> 1|5*/
     public Message modeModify(int event) {
-        HashMap<String, String> arg = new HashMap<String, String>();
         if (this.state == 0) {
             switch (event) {
                 case 2:
@@ -130,6 +140,7 @@ public class AlarmMode extends Mode {
                     return editAlarm();
             }
         } else {
+            if (this.alarms[currentAlarmIndex].getState()) return null;
             switch (event) {
                 case 1:
                 case 5:
@@ -146,54 +157,60 @@ public class AlarmMode extends Mode {
     }
 
 
-    public void changeState(int state) {
+    private void changeState(int state) {
         this.state = state;
     }
 
     @Override
     public Message update(long systemTime) {
+        if(timeSync) {
+            for(int i=0; i < alarms.length; i++)
+                alarms[i].setAlarmData(systemTime);
+            date.setTime(systemTime);
+            timeSync = false;
+        }
         this.systemTime = systemTime;
         return null;
     }
 
     @Override
     public Message update(long systemTime, boolean currentMode) {
+        if(timeSync) {
+            for(int i=0; i < alarms.length; i++)
+                alarms[i].setAlarmData(systemTime);
+            date.setTime(systemTime);
+            timeSync = false;
+        }
         this.systemTime = systemTime;
         HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
+        arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
 
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
-    }
-
-    public int getCurrentAlarmIndex() {
-        return currentAlarmIndex;
-    }
-
     /* personally added */
-    public Alarm[] getAlarms(){
+    public Alarm[] getAlarms() {
         return this.alarms;
     }
-    private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink){ //f
+
+    private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink) { //f
         String argData[] = makeTimeSet(alarmTime);
         arg.put("0", getStateName());
 //        arg.put("1", null);
-        arg.put("3", argData[3]+"|"+argData[4]+" "+(currentAlarmIndex + 1));
+        arg.put("3", argData[3] + "|" + argData[4] + " " + (currentAlarmIndex + 1));
         arg.put("4", "  ALARM   ");
         arg.put("blink", blink);
     }
-    private void makeUpdateAlarmEventArg(HashMap<String, String> arg, long alarmTime){
-        if(alarms[currentAlarmIndex].getState()){
+
+    private void makeUpdateAlarmEventArg(HashMap<String, String> arg, long alarmTime) {
+        if (alarms[currentAlarmIndex].getState()) {
             arg.put("0", "ringing");
             arg.put("1", Long.toString(alarmTime));
-        }
-        else arg.put("0", "off");
+        } else arg.put("0", "off");
         arg.put("2", Integer.toString(320 + currentAlarmIndex + 1));
     }
-    private String[] makeTimeSet(long time){
+
+    private String[] makeTimeSet(long time) {
         Date tmpDate = new Date(time);
         String a[] = new String[7];
         a[0] = new SimpleDateFormat("yyyy").format(tmpDate);

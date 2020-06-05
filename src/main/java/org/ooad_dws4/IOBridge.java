@@ -45,14 +45,17 @@ public class IOBridge extends DWSObject {
     }
 
     public void inputEvent(int event) {
-        mainController.inputEvent(event);
+        if(this.isBuzzerRinging)
+            mainController.stopBuzzer();
+        else
+            mainController.inputEvent(event);
         if (!this.isMute)
             this.output.output(new Message(11, "beep", null)); // beep
     }
 
     public void toggleSound() {
         this.isMute = !this.isMute;
-        System.out.println(isMute);
+//        System.out.println(isMute);
     }
 
 }

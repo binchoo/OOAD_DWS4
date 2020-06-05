@@ -55,6 +55,7 @@ public class ModeManager {
         setModeObject();
         this.currentMode = 0;
         this.defaultMode = 0;
+        this.ddayData = " 1 OFF";
         this.maxActivationCount = 4;
         this.activationModeIndex = this.defaultMode;
         isEditState = false;
@@ -67,9 +68,9 @@ public class ModeManager {
         this.modes = new Mode[6];
         this.modes[0] = new TimeKeepingMode();
         this.modes[1] = new WoldTimeMode(false);
-        this.modes[2] = new AlarmMode(true);
+        this.modes[2] = new AlarmMode(false);
         this.modes[3] = new TimerMode(true);
-        this.modes[4] = new StopwatchMode(false);
+        this.modes[4] = new StopwatchMode(true);
         this.modes[5] = new DDayMode(true);
         this.activationCount = 4;
     }
@@ -86,9 +87,9 @@ public class ModeManager {
                 continue;
             if (!modes[i].getIsActivate())
                 continue;
-            Message temp = modes[i].update(systemTime, false);
+            Message temp = modes[i].update(systemTime);
             if (temp != null)
-                if (i == 5)
+                if (i == 5 && temp.getArg().containsKey("1"))
                     ddayData = temp.getArg().get("1");
         }
         outputMessage = modes[currentMode].update(systemTime, true);
@@ -104,7 +105,6 @@ public class ModeManager {
      * @brief Do action suitable for each button press event
      */
     public Message modeModify(int event) {
-        System.out.println("ModeManager : keypress " + event + " received!");
         if (isEditState) {
             return modeActivationControl(event);
         } else {
@@ -118,22 +118,29 @@ public class ModeManager {
                     else if (event == 3 || event == 4) {
                         if (!modes[5].getIsActivate())
                             return null;
-                        ddayData = modes[5].modeModify(event).getArg().get("1");
+                        String temp = modes[5].modeModify(event).getArg().get("1");
+                        if (temp != null)
+                            ddayData = temp;
                         HashMap<String, String> map = new HashMap<>();
                         map.put("1", ddayData);
                         return new Message(11, "updateView", map);
                     }
                 }
-                if (event == 8) {
-                    HashMap<String, String> map = new HashMap<>();
-                    return new Message(10, "toggleMute", map);
+            }
+            if (isNotEditMode) {
+                if (event == 1) {
+                    changeModeIndex();
+                    return changeMode(currentMode);
+                } else if (event == 8) {
+                    currentMode = defaultMode;
+                    return changeMode(currentMode);
                 }
             }
-            if (event == 1 && isNotEditMode) {
-                changeModeIndex();
-                return changeMode(currentMode);
-            }
-            return modes[currentMode].modeModify(event);
+            Message message = modes[currentMode].modeModify(event);
+            if (message == null) return null;
+            if (currentMode == 5 && message.getArg().containsKey("1"))
+                ddayData = message.getArg().get("1");
+            return message;
         }
     }
 
@@ -141,7 +148,7 @@ public class ModeManager {
      * @param message SwitchDefaultScreen Message
      * @return Return default mode's updateView Message
      * @brief If the current mode is not in edit state, change the mode to the
-     *        default screen
+     * default screen
      */
     public Message showDefaultScreen(Message message) {
         if (message.getDestination() != 30)
@@ -205,8 +212,8 @@ public class ModeManager {
     /**
      * @return updateView message that is current(default) mode's view
      * @brief Submit the edited mode activation and return to the default screen if
-     *        Alarm mode is deactivation, add removeAlarmAll Action to Message if
-     *        DDay mode is deactivation, clear ddayData property
+     * Alarm mode is deactivation, add removeAlarmAll Action to Message if
+     * DDay mode is deactivation, clear ddayData property
      */
     private Message saveActivation() {
         if (activationCount < 4)
@@ -233,7 +240,7 @@ public class ModeManager {
     /**
      * @return updateView message that is the mode activation edit view
      * @brief Edit mode activation. Cancel if the active mode is greater than the
-     *        maxActivationCount.
+     * maxActivationCount.
      */
     private Message changeEditTargetActivation() {
         if (activationModeIndex == defaultMode)

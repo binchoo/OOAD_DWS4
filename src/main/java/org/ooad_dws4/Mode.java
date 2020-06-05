@@ -42,6 +42,6 @@ public abstract class Mode extends DWSObject {
 
     // public abstract Message saveActivation();
 
-    public abstract boolean receiveMessage(Message msg);
+    // public abstract boolean receiveMessage(Message msg);
 
 }

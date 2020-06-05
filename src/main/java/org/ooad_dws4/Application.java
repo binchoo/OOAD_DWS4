@@ -4,7 +4,7 @@ import org.ooad_dws4.View.DWSFrame;
 
 public class Application {
         public static void main(String[] args) {
-                Clock.timeUnit = 1000;
+                Clock.timeUnit = 100;
                 Clock.defaultScreenTime = 600000;
                 Clock.buzzerOffTime = 7000;
 
@@ -34,7 +34,7 @@ public class Application {
                 // TestCode
                 // mainController.broadcast(new Date().getTime());
                 // Release Code
-                // clock.run();
+                 clock.run();
 
         }
 }

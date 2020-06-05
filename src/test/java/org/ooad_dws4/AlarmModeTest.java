@@ -17,7 +17,7 @@ class AlarmModeTest {
         Message returnMsg = a.modeModify(3);
         arg.put("0", "OFF");
 //        arg.put("1", null);
-        arg.put("3", "00|00 2");
+        arg.put("3", "09|00 2");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
@@ -31,7 +31,7 @@ class AlarmModeTest {
         Message returnMsg = a.modeModify(4);
         arg.put("0", "OFF");
 //        arg.put("1", null);
-        arg.put("3", "00|00 4");
+        arg.put("3", "09|00 4");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
@@ -43,7 +43,7 @@ class AlarmModeTest {
         Message returnMsg = a.modeModify(5);
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0","EDT");
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", "3");
         assertEquals(arg, returnMsg.getArg());
@@ -56,7 +56,7 @@ class AlarmModeTest {
         HashMap<String, String> arg = new HashMap<>();
         Message returnMsg = a.modeModify(5);
         arg.put("0", "OFF");
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
@@ -89,7 +89,7 @@ class AlarmModeTest {
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", " ON");
 //        arg.put("1", null);
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
@@ -103,7 +103,7 @@ class AlarmModeTest {
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", "OFF");
 //        arg.put("1", null);
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         assertEquals(arg, returnMsg.getArg());
@@ -116,7 +116,7 @@ class AlarmModeTest {
         a.modeModify(5);
         Message returnMsg = a.modeModify(2);
         arg.put("0", "EDT");
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", "4");
         assertEquals(arg, returnMsg.getArg());
@@ -130,7 +130,7 @@ class AlarmModeTest {
         a.modeModify(2);
         Message returnMsg = a.modeModify(4);
         arg.put("0", "EDT");
-        arg.put("3", "00|01 1");
+        arg.put("3", "09|01 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         Message m = new Message(11, "updateView", arg);
@@ -144,7 +144,7 @@ class AlarmModeTest {
         a.modeModify(2);
         Message returnMsg = a.modeModify(3);
         arg.put("0", "EDT");
-        arg.put("3", "23|59 1");
+        arg.put("3", "08|59 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         Message m = new Message(11, "updateView", arg);
@@ -156,7 +156,7 @@ class AlarmModeTest {
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "OFF");
 //        arg.put("1", null);
-        arg.put("3", "00|00 1");
+        arg.put("3", "09|00 1");
         arg.put("4", "  ALARM   ");
         arg.put("blink", null);
         Message m = new Message(11, "updateView", arg);
@@ -176,7 +176,6 @@ class AlarmModeTest {
     void changeStateTest() {
         AlarmMode a = new AlarmMode(true);
 
-        a.changeState(1);
-        assertEquals(1, a.state);
+        assertEquals(0, a.state);
     }
 }

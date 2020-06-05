@@ -8,7 +8,7 @@ import java.util.Locale;
 public class WoldTimeMode extends Mode {
     private City[] cities;
     private int timeZoneIndex;
-    private int currentTimeZone;
+//    private int currentTimeZone;
     private long systemTime;
     private int changingIndex;
     private boolean systemTimeUpdateFlag;
@@ -21,7 +21,7 @@ public class WoldTimeMode extends Mode {
         this.cities[3] = new City(false, -4, "NYC"); /* NY : GMT-4 */
         this.timeZoneIndex = 0;
         this.changingIndex = timeZoneIndex;
-        this.currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
+//        this.currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
         /*
          * NY : GMT-4 London: GMT+1 Paris : GMT+2 Seoul : GMT+9
@@ -42,16 +42,14 @@ public class WoldTimeMode extends Mode {
         return changedTimeZone - currentTimeZone;
     }
 
-    /*
-     * public void changeCity(int value) { // TODO implement here }
-     */
-    private void toggleActivation() {
-    }
 
     @Override
     public Message getModeData() {
-        HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, systemTime + (currentTimeZone * 1000 * 60 * 60), null);
+        int currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
+        int changedTimeZone = cities[changingIndex].getTimeZoneData();
+        int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
+        HashMap<String, String> arg = new HashMap<>();
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -73,10 +71,10 @@ public class WoldTimeMode extends Mode {
         int offsetDiff = calcOffsetDif(cities[timeZoneIndex].getTimeZoneData(),
                 cities[changingIndex].getTimeZoneData());
         HashMap<String, String> arg = new HashMap<>();
-        arg.put("0", Integer.toString(offsetDiff * 1000 * 60 * 60));
+        arg.put("newTime", Integer.toString(offsetDiff * 1000 * 60 * 60));
         this.systemTime += offsetDiff * 1000 * 60 * 60;
         this.timeZoneIndex = this.changingIndex;
-        this.currentTimeZone = this.cities[timeZoneIndex].getTimeZoneData();
+//        this.currentTimeZone = this.cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
         for (int i = 0; i < 4; i++)
             cities[i].changeState(i == timeZoneIndex);
@@ -105,14 +103,13 @@ public class WoldTimeMode extends Mode {
     public Message update(long systemTime, boolean currentMode) {
         if (this.systemTimeUpdateFlag)
             this.systemTime = systemTime;
+        int currentTimeZone = cities[timeZoneIndex].getTimeZoneData();
+        int changedTimeZone = cities[changingIndex].getTimeZoneData();
+        int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, systemTime, null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
+        arg.remove("blink");
         return new Message(11, "updateView", arg);
-    }
-
-    @Override
-    public boolean receiveMessage(Message msg) {
-        return false;
     }
 
     /* personally added */
