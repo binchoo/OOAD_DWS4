@@ -28,6 +28,59 @@ public class TimerMode extends Mode {
         return makeView();
     }
 
+    @Override
+    public Message update(long systemTime) {
+        if (state == 2) {
+            timer.runTimer();
+            if (!(timer.getDeadlineData() > 0))
+                changeState("DEFAULT");
+        }
+        return null;
+    }
+
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
+        update(systemTime);
+        if (!currentMode) return null;
+        msecTohhmmss(timer.getDeadlineData());
+        return makeView();
+    }
+
+    @Override
+    public Message modeModify(int event) {
+
+        if (this.state == 0) {
+            switch (event) {
+                case 3:
+                    return startTimer();
+                case 5:
+                    return changeTimerTime();
+            }
+        } else if (this.state == 1) {
+            switch (event) {
+                case 1:
+                case 5:
+                    return saveTimer();
+                case 2:
+                    return changeField();
+                case 3:
+                case 4:
+                    return changeValue(event == 4 ? 1 : -1); // +
+            }
+        } else if (this.state == 2) { // when running
+            if (event == 3)
+                return pauseTimer();
+        } else if (this.state == 3) { // when pause
+            switch (event) {
+                case 2:
+                    return resetTimer();
+                case 3:
+                    return resumeTimer();
+            }
+        }
+        return null;
+    }
+
     private Message changeField() {
         field++;
         if (field > 5)
@@ -37,7 +90,7 @@ public class TimerMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    private Message changeValue(int sing) {
+    private Message changeValue(int sign) {
         long value = this.timer.getDeadlineData();
         long stepSize = 0;
         if (field == 3)
@@ -46,7 +99,7 @@ public class TimerMode extends Mode {
             stepSize = 1000 * 60;
         else if (field == 5)
             stepSize = 1000;
-        value += stepSize * sing;
+        value += stepSize * sign;
         if (value < 0 | value > maxValue)
             return null;
         timer.setDeadlineData(value);
@@ -104,58 +157,7 @@ public class TimerMode extends Mode {
         return startTimer();
     }
 
-    @Override
-    public Message update(long systemTime) {
-        if (state == 2) {
-            timer.runTimer();
-            if (!(timer.getDeadlineData() > 0))
-                changeState("DEFAULT");
-        }
-        return null;
-    }
 
-    @Override
-    public Message update(long systemTime, boolean currentMode) {
-        update(systemTime);
-        if (!currentMode) return null;
-        msecTohhmmss(timer.getDeadlineData());
-        return makeView();
-    }
-
-    @Override
-    public Message modeModify(int event) {
-
-        if (this.state == 0) {
-            switch (event) {
-                case 3:
-                    return startTimer();
-                case 5:
-                    return changeTimerTime();
-            }
-        } else if (this.state == 1) {
-            switch (event) {
-                case 1:
-                case 5:
-                    return saveTimer();
-                case 2:
-                    return changeField();
-                case 3:
-                case 4:
-                    return changeValue(event == 4 ? 1 : -1); // +
-            }
-        } else if (this.state == 2) { // when running
-            if (event == 3)
-                return pauseTimer();
-        } else if (this.state == 3) { // when pause
-            switch (event) {
-                case 2:
-                    return resetTimer();
-                case 3:
-                    return resumeTimer();
-            }
-        }
-        return null;
-    }
 
     private void msecTohhmmss(long timerTime) {
         this.second = (int) (timerTime / 1000) % 60;

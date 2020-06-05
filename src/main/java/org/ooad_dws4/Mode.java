@@ -7,10 +7,10 @@ public abstract class Mode extends DWSObject {
     protected boolean isActivate;
     protected int state;
     protected String modeName;
-    protected Calendar cal;
+    protected Calendar calendar;
 
     public Mode() {
-        cal = Calendar.getInstance();
+        calendar = Calendar.getInstance();
         state = 0;
     }
     // public abstract Message toggleModeActivation();
@@ -39,9 +39,5 @@ public abstract class Mode extends DWSObject {
     public abstract Message update(long systemTime);
 
     public abstract Message update(long systemTime, boolean currentMode);
-
-    // public abstract Message saveActivation();
-
-    // public abstract boolean receiveMessage(Message msg);
 
 }

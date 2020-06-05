@@ -8,12 +8,9 @@ import java.util.HashMap;
 public class DDayMode extends Mode {
 
     private DDay[] ddays;
-    private HashMap<String, String> arg;
-    private Calendar calendar;
     private int currentIndex;
     private int field = 0;
-    private long value = 0;
-    private long systemTime;
+    private long systemTime = 0;
     private final long aDay = 86400000;
 
     public DDayMode(boolean isActivation) {
@@ -21,11 +18,9 @@ public class DDayMode extends Mode {
         ddays = new DDay[4];
         for (int i = 0; i < 4; i++)
             ddays[i] = new DDay(date.getTime());
-        this.calendar = Calendar.getInstance();
         this.isActivate = isActivation;
         this.modeName = "D-DAY";
-        this.systemTime = 0;
-        currentIndex = 0;
+        this.currentIndex = 0;
     }
 
     @Override
@@ -33,16 +28,6 @@ public class DDayMode extends Mode {
         return makeView(currentIndex);
     }
 
-    /*
-     * @Override public Message toggleModeActivation() { return null; }
-     */
-
-    private void changeState(String state) {
-        if ("DEFAULT".equals(state))
-            this.state = 0;
-        else if ("EDIT".equals(state))
-            this.state = 1;
-    }
 
     @Override
     public Message update(long systemTime) {
@@ -81,21 +66,12 @@ public class DDayMode extends Mode {
         return null;
     }
 
-//    public Message countActiveMode(int event) {
-//        if (event != 3 && event != 4)
-//            return null;
-//        int sign = event == 4 ? 1 : -1;
-//        for (int i = 0; i < ddays.length; i++) {
-//            currentIndex += sign;
-//            if (currentIndex > ddays.length - 1)
-//                currentIndex = 0;
-//            else if (currentIndex < 0)
-//                currentIndex = ddays.length - 1;
-//            if (ddays[currentIndex].getState())
-//                break;
-//        }
-//        return makeView(currentIndex);
-//    }
+    private void changeState(String state) {
+        if ("DEFAULT".equals(state))
+            this.state = 0;
+        else if ("EDIT".equals(state))
+            this.state = 1;
+    }
 
     private Message changeField() {
         Message message = makeView(currentIndex);
@@ -146,24 +122,6 @@ public class DDayMode extends Mode {
     private Message toggleDdayActivation() {
         ddays[currentIndex].changeState();
         return makeView(currentIndex);
-    }
-
-    private String makeViewString(long rawSec) {
-        char sign = rawSec >= 0 ? '+' : '-';
-        long sec = Math.abs(rawSec);
-        int day = (int) (sec / (1000 * 60 * 60 * 24)); // day = 1234 / 0123 / 0012 / 0001 / 0000 ...
-        if (day > 9999)
-            day = 9999;
-        int nonZero = (int) Math.log10(day) + 1;
-        if (day == 0)
-            nonZero = 1;
-        String str = "";
-        str += currentIndex + 1;
-        str += sign;
-        for (int i = 0; i < 4 - nonZero; i++)
-            str += ' ';
-        str += String.valueOf(day);
-        return str;
     }
 
     private String makeDDayCount(long targetTime, long baseTime) {
