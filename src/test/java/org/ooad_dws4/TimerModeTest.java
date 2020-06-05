@@ -8,14 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TimerModeTest {
 
-
-    @Test
-    void makeTimeForm(int i, int i1, int i2) {
-        TimerMode timerMode = new TimerMode(true);
-//        System.out.println(timerMode.makeTimeForm(2,15,52));
-
-    }
-
     @Test
     void makeView() {
         TimerMode timerMode = new TimerMode(true);
