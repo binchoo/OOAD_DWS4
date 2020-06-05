@@ -6,7 +6,7 @@ public class Application {
         public static void main(String[] args) {
                 Clock.timeUnit = 100;
                 Clock.defaultScreenTime = 600000;
-                Clock.buzzerOffTime = 7000;
+                Clock.buzzerOffTime = 300000;
 
                 // Model
                 Clock clock = new Clock();
