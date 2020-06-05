@@ -57,4 +57,11 @@ public class IOBridge extends DWSObject {
         // System.out.println(isMute);
     }
 
+    public boolean isMute() {
+        return isMute;
+    }
+
+    public boolean isBuzzerRinging() {
+        return isBuzzerRinging;
+    }
 }
