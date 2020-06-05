@@ -126,14 +126,15 @@ public class ModeManager {
                         return new Message(11, "updateView", map);
                     }
                 }
-                if (event == 8) {
-                    HashMap<String, String> map = new HashMap<>();
-                    return new Message(10, "toggleMute", map);
-                }
             }
-            if (event == 1 && isNotEditMode) {
-                changeModeIndex();
-                return changeMode(currentMode);
+            if (isNotEditMode) {
+                if (event == 1) {
+                    changeModeIndex();
+                    return changeMode(currentMode);
+                } else if (event == 8) {
+                    currentMode = defaultMode;
+                    return changeMode(currentMode);
+                }
             }
             Message message = modes[currentMode].modeModify(event);
             if (message == null) return null;

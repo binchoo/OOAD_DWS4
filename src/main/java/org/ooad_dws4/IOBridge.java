@@ -44,7 +44,7 @@ public class IOBridge extends DWSObject {
     }
 
     public void inputEvent(int event) {
-        if(isBuzzerRinging)
+        if (this.isBuzzerRinging)
             mainController.stopBuzzer();
         else
             mainController.inputEvent(event);
@@ -54,7 +54,7 @@ public class IOBridge extends DWSObject {
 
     public void toggleSound() {
         this.isMute = !this.isMute;
-//        System.out.println(isMute);
+        // System.out.println(isMute);
     }
 
 }

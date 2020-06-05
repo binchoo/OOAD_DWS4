@@ -1,3 +1,20 @@
+### Java template
+*.class
+ 
+# Package Files #
+*.jar
+ 
+# IntelliJ project files
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
+
+# Gradle
+.gradle
 build/
-.idea/
-.gradle/
+.gradletasknamecache
+.settings/
