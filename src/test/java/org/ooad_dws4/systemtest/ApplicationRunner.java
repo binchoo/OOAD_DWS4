@@ -9,7 +9,6 @@ public class ApplicationRunner implements Runnable {
     DWSFrame view = null;
     public OnViewReadyListener onViewReadyListener = null;
 
-
     @Override
     public void run() {
         isRunning = true;

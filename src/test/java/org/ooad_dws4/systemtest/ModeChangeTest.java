@@ -1,36 +1,38 @@
 package org.ooad_dws4.systemtest;
 
 import org.junit.jupiter.api.Test;
-import org.ooad_dws4.View.DWSFrame;
 import static org.junit.jupiter.api.Assertions.*;
+import org.ooad_dws4.systemtest.SystemMocker.MODE;
+import org.ooad_dws4.systemtest.SystemMocker.STRING;
+import org.ooad_dws4.systemtest.SystemMocker.BUTTON;
+import org.ooad_dws4.systemtest.SystemMocker.LCDPART;
 
-public class ModeChangeTest {
+public class ModeChangeTest extends SystemTest {
 
-    ViewMocker viewMocker;
-    ModeChangeTest() {
-        viewMocker = new ViewMocker();
-        viewMocker.waitViewReady();
+    @Override
+    void onSystemReady() {
+        gotoModeChangeMode();
+        offAllMode();
+        sleepCompat(5000);
+    }
+
+    private void gotoModeChangeMode() {
+        system.click(BUTTON.LNG_ADJUST);
+    }
+
+    private void offAllMode() {
+        MODE mode = MODE.TIME_KEEPING;
+
+        while (mode.next() != MODE.TIME_KEEPING) {
+            String activation = system.getText(LCDPART.TOP_LEFT);
+            if (activation.equals(STRING.ON.getValue())) {
+                system.click(BUTTON.ADJUST);
+            }
+        }
     }
 
     @Test
     void viewReferenceOK() {
-        assertNotNull(viewMocker.view);
-    }
-
-    @Test
-    void gotoModeChangeMode() {
-        viewMocker.buttonClick(ViewMocker.BUTTON.LNG_ADJUST);
-        sleepCompat(5000);
-    }
-
-    void offAllMode() {
-        gotoModeChangeMode();
-    }
-
-    void sleepCompat(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (Exception e) {
-        }
+        assertNotNull(system.view);
     }
 }
