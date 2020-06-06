@@ -25,10 +25,6 @@ public class SystemMocker {
 
     public void showUp() {
         new Thread(appRunner).start();
-        waitViewReady();
-    }
-
-    private void waitViewReady() {
         appRunner.waitViewReady();
     }
 
@@ -91,16 +87,21 @@ public class SystemMocker {
         }
     }
 
-    enum STRING {
+    enum MODE_STATUS {
         ON(" ON"), OFF("OFF");
 
         String value;
 
-        STRING(String value) {
+        MODE_STATUS(String value) {
             this.value = value;
         }
 
-        public String getValue() {
+        public MODE_STATUS opposite() {
+            return this == ON? OFF : ON;
+        }
+
+        @Override
+        public String toString() {
             return value;
         }
     }
