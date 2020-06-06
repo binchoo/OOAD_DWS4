@@ -36,7 +36,7 @@ public class SystemMocker {
         int buttonCode = buttonLabel.getCode();
         buttonPanel.buttonClick(buttonCode);
     }
-    
+
     public String getText(LCDPART lcdPart) {
         if (lcdPart != LCDPART.ICON)
             return lcdPanel.getText(lcdPart.start, lcdPart.last);
@@ -54,11 +54,15 @@ public class SystemMocker {
         TIME_KEEPING, WORLD_TIME, ALARM, TIMER, STOPWATCH, D_DAY;
 
         private static MODE[] vals = values();
-        private static int count = vals.length;
+        public static int count = vals.length;
 
         MODE next() {
             int nextIndex = (ordinal() + 1) % count;
             return vals[nextIndex];
+        }
+
+        static MODE get(int index) {
+            return vals[index];
         }
     }
 
