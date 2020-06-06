@@ -66,7 +66,7 @@ public class ModeChangeTest extends SystemTest {
     }
 
     @Test
-    void allModeCombination_ModeInterchangeable() {
+    void allModeCombination_modeChangeable() {
         ModeCombinationGenerator cg = new ModeCombinationGenerator(6, 4);
         for (ArrayList<MODE> modeSet : cg.getModeCombination()) {
             MODE mode = MODE.TIME_KEEPING;
