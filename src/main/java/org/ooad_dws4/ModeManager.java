@@ -223,7 +223,7 @@ public class ModeManager {
         if (!modes[2].getIsActivate())
             message.getArg().put("Action", "removeAlarmAll");
         if (!modes[5].getIsActivate())
-            ddayData = "      ";
+            ddayData = "   OFF";
         return message;
     }
 

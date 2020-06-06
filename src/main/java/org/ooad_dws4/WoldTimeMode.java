@@ -8,7 +8,6 @@ import java.util.Locale;
 public class WoldTimeMode extends Mode {
     private City[] cities;
     private int timeZoneIndex;
-//    private int currentTimeZone;
     private long systemTime;
     private int changingIndex;
     private boolean systemTimeUpdateFlag;

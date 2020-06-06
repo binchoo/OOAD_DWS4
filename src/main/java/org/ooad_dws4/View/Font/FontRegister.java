@@ -1,19 +1,22 @@
-package org.ooad_dws4.View.LCD;
+package org.ooad_dws4.View.Font;
 
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 
 public class FontRegister {
     private Font font14segment;
-    public FontRegister(){
+
+    public FontRegister() {
         try {
-            font14segment = Font.createFont(Font.TRUETYPE_FONT, new File("./font/DSEG14Classic-Regular.ttf"));
+            InputStream font = getClass().getResourceAsStream("/font/DSEG14Classic-Regular.ttf");
+            font14segment = Font.createFont(Font.TRUETYPE_FONT, font);
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font14segment);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch(FontFormatException e) {
+            font.close();
+        } catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
     }

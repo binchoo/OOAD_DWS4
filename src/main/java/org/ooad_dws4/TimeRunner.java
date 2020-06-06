@@ -37,6 +37,10 @@ public class TimeRunner extends DWSObject implements PulseMaker {
         this.mainController = mainController;
     }
 
+    public long getSystemTime() {
+        return this.systemTime;
+    }
+
     /**
      * @param message Time change type and time value to change
      * @return Returns by adding the time difference to the received message
