@@ -1,7 +1,10 @@
 package org.ooad_dws4;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.util.Objects;
 
 public class ButtonPanel extends JPanel {
 
@@ -23,7 +26,11 @@ public class ButtonPanel extends JPanel {
     public ButtonPanel(){
         this.buttonsetAdapter = new ButtonsetAdapter();
 
-        img = new ImageIcon("./img/button.png").getImage();
+        try {
+            img = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/img/button.png"))).getImage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         imageSize = 50;
         this.setBounds(0,0,680,800);
         this.setVisible(true);
