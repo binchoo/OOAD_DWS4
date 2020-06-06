@@ -41,8 +41,8 @@ public class CombinationGenerator {
 
 class ModeCombinationGenerator extends CombinationGenerator {
 
-    private ArrayList<SystemMocker.MODE> modeSetCache;
-    private ArrayList<ArrayList<SystemMocker.MODE> > modeCombination;
+    private ArrayList<SystemMocker.Mode> modeSetCache;
+    private ArrayList<ArrayList<SystemMocker.Mode> > modeCombination;
 
     public ModeCombinationGenerator(int n, int r) {
         super(n - 1, r - 1);
@@ -55,16 +55,16 @@ class ModeCombinationGenerator extends CombinationGenerator {
     public void wrap() {
         ArrayList<int[]> comb = super.getCombination();
         for(int[] set : comb) {
-            modeSetCache.add(SystemMocker.MODE.TIME_KEEPING);
+            modeSetCache.add(SystemMocker.Mode.TIME_KEEPING);
             for(int index : set) {
-                modeSetCache.add(SystemMocker.MODE.get(index + 1));
+                modeSetCache.add(SystemMocker.Mode.get(index + 1));
             }
-            modeCombination.add((ArrayList<SystemMocker.MODE>) modeSetCache.clone());
+            modeCombination.add((ArrayList<SystemMocker.Mode>) modeSetCache.clone());
             modeSetCache.clear();
         }
     }
 
-    public ArrayList<ArrayList<SystemMocker.MODE> > getModeCombination() {
+    public ArrayList<ArrayList<SystemMocker.Mode> > getModeCombination() {
         return modeCombination;
     }
 }

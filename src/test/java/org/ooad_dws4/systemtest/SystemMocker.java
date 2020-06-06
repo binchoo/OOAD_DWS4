@@ -11,7 +11,9 @@ public class SystemMocker {
     public ButtonPanel buttonPanel;
     public LCDPanel lcdPanel;
     public BuzzerSound buzzerSound;
+
     ApplicationRunner appRunner;
+    Thread systemThread;
 
     public SystemMocker() {
         appRunner = new ApplicationRunner();
@@ -21,48 +23,59 @@ public class SystemMocker {
             lcdPanel = view.getLcdPanel();
             buzzerSound = view.getBuzzer();
         };
+
+        systemThread = new Thread(appRunner) {
+            @Override
+            public synchronized void start() {
+                super.start();
+                appRunner.waitViewReady();
+            }
+        };
     }
 
     public void showUp() {
-        new Thread(appRunner).start();
-        appRunner.waitViewReady();
+        systemThread.start();
     }
 
-    public void click(BUTTON buttonLabel) {
-        int buttonCode = buttonLabel.getCode();
-        buttonPanel.buttonClick(buttonCode);
+    public void dismiss() {
+        if (systemThread != null)
+            systemThread.interrupt();
     }
 
-    public String getText(LCDPART lcdPart) {
-        if (lcdPart != LCDPART.ICON)
+    public void click(Button button) {
+        buttonPanel.buttonClick(button.getCode());
+    }
+
+    public String getText(LCDPart lcdPart) {
+        if (lcdPart != LCDPart.ICON)
             return lcdPanel.getText(lcdPart.start, lcdPart.last);
         else
             return null;
     }
 
-    public void setText(LCDPART lcdPart, String text) {
-        if (lcdPart != LCDPART.ICON) {
+    public void setText(LCDPart lcdPart, String text) {
+        if (lcdPart != LCDPart.ICON) {
             lcdPanel.setText(lcdPart.start, lcdPart.last, text);
         }
     }
 
-    enum MODE {
+    enum Mode {
         TIME_KEEPING, WORLD_TIME, ALARM, TIMER, STOPWATCH, D_DAY;
 
-        private static MODE[] vals = values();
+        private static Mode[] vals = values();
         public static int count = vals.length;
 
-        MODE next() {
+        Mode next() {
             int nextIndex = (ordinal() + 1) % count;
             return vals[nextIndex];
         }
 
-        static MODE get(int index) {
+        static Mode get(int index) {
             return vals[index];
         }
     }
 
-    enum BUTTON {
+    enum Button {
         NONE, MODE, ADJUST, REVERSE, FORWARD,
         LNG_MODE, LNG_ADJUST, LNG_REVERSE, LNG_FORWARD;
 
@@ -71,7 +84,7 @@ public class SystemMocker {
         }
     }
 
-    enum LCDPART {
+    enum LCDPart {
         TOP_LEFT(0, 2),
         TOP_RIGTH(3, 8),
         ICON(9, 9),
@@ -81,22 +94,22 @@ public class SystemMocker {
         int start;
         int last;
 
-        LCDPART(int start, int last) {
+        LCDPart(int start, int last) {
             this.start = start;
             this.last = last;
         }
     }
 
-    enum MODE_STATUS {
+    enum ModeStatus {
         ON(" ON"), OFF("OFF");
 
         String value;
 
-        MODE_STATUS(String value) {
+        ModeStatus(String value) {
             this.value = value;
         }
 
-        public MODE_STATUS opposite() {
+        public ModeStatus opposite() {
             return this == ON? OFF : ON;
         }
 

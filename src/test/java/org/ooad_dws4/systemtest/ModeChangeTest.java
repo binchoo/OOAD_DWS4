@@ -2,10 +2,10 @@ package org.ooad_dws4.systemtest;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import org.ooad_dws4.systemtest.SystemMocker.MODE;
-import org.ooad_dws4.systemtest.SystemMocker.MODE_STATUS;
-import org.ooad_dws4.systemtest.SystemMocker.BUTTON;
-import org.ooad_dws4.systemtest.SystemMocker.LCDPART;
+import org.ooad_dws4.systemtest.SystemMocker.Mode;
+import org.ooad_dws4.systemtest.SystemMocker.ModeStatus;
+import org.ooad_dws4.systemtest.SystemMocker.Button;
+import org.ooad_dws4.systemtest.SystemMocker.LCDPart;
 
 import java.util.ArrayList;
 
@@ -14,28 +14,27 @@ public class ModeChangeTest extends SystemTest {
     @Override
     void onSystemReady() {
         gotoModeChangeMode();
-        sleepCompat(2000);
     }
 
     private void gotoModeChangeMode() {
-        system.click(BUTTON.LNG_ADJUST);
+        system.click(Button.LNG_ADJUST);
     }
 
-    private void modeSetActivation(MODE_STATUS onoff, ArrayList<MODE> modeSet) {
-        MODE mode = MODE.TIME_KEEPING;
+    private void modeSetActivation(ModeStatus onoff, ArrayList<Mode> modeSet) {
+        Mode mode = Mode.TIME_KEEPING;
         do {
-            String activation = system.getText(LCDPART.TOP_LEFT);
+            String modeStatusString = system.getText(LCDPart.TOP_LEFT);
 
-            if (activation.equals(onoff.opposite().toString())
+            if (modeStatusString.equals(onoff.opposite().toString())
                     && (modeSet == null || modeSet.contains(mode)))
-                system.click(BUTTON.ADJUST);
+                system.click(Button.ADJUST);
 
-            system.click(BUTTON.FORWARD);
+            system.click(Button.FORWARD);
             mode = mode.next();
 
-        } while (mode != MODE.TIME_KEEPING);
+        } while (mode != Mode.TIME_KEEPING);
 
-        assertEquals(mode, MODE.TIME_KEEPING);
+        assertEquals(mode, Mode.TIME_KEEPING);
     }
 
     @Test
@@ -46,19 +45,19 @@ public class ModeChangeTest extends SystemTest {
     @Test
     void allModeCombination_generatorWorksProperly() {
         ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
-        int normalCombSize = mcg.getModeCombination().size();
+        int modeCombSize = mcg.getModeCombination().size();
 
         CombinationGenerator cg = new CombinationGenerator(5, 3);
-        int modeCombSize = cg.getCombination().size();
+        int normalCombSize = cg.getCombination().size();
 
         assertEquals(modeCombSize, normalCombSize);
     }
 
     @Test
     void allModeCombination_printModeCombination() {
-        ModeCombinationGenerator cg = new ModeCombinationGenerator(6, 4);
-        for (ArrayList<MODE> modeSet : cg.getModeCombination()) {
-            for(MODE mode : modeSet) {
+        ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
+        for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
+            for(Mode mode : modeSet) {
                 System.out.print(mode + ", ");
             }
             System.out.println();
@@ -67,21 +66,20 @@ public class ModeChangeTest extends SystemTest {
 
     @Test
     void allModeCombination_modeChangeable() {
-        ModeCombinationGenerator cg = new ModeCombinationGenerator(6, 4);
-        for (ArrayList<MODE> modeSet : cg.getModeCombination()) {
-            MODE mode = MODE.TIME_KEEPING;
+        ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
+        for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
 
-            modeSetActivation(MODE_STATUS.OFF, null);
-            modeSetActivation(MODE_STATUS.ON, null);
-            system.click(BUTTON.MODE);
+            modeSetActivation(ModeStatus.OFF, null);
+            modeSetActivation(ModeStatus.ON, modeSet);
+            system.click(Button.MODE);
 
-            String currentModeString = system.getText(LCDPART.BOTTOM);
+            String currentModeString = system.getText(LCDPart.BOTTOM);
             for(int i = 0; i < 4; i++)
-                system.click(BUTTON.MODE);
+                system.click(Button.MODE);
+            assertEquals(currentModeString, system.getText(LCDPart.BOTTOM));
 
-            assertEquals(currentModeString, system.getText(LCDPART.BOTTOM));
-            sleepCompat(300);
             gotoModeChangeMode();
+            sleep(100);
         }
     }
 }

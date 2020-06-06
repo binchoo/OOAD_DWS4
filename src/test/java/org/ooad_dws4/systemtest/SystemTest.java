@@ -8,14 +8,14 @@ public abstract class SystemTest {
         system = new SystemMocker();
         system.showUp();
 
-        sleepCompat(1000);
+        sleep(1000);
 
         onSystemReady();
     }
 
     abstract void onSystemReady();
 
-    void sleepCompat(long millis) {
+    void sleep(long millis) {
         try {
             Thread.sleep(millis);
         } catch (Exception e) {
