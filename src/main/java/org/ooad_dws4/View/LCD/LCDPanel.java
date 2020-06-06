@@ -132,7 +132,7 @@ public class LCDPanel extends JPanel {
     };
 
     public LCDPanel() {
-        img = new ImageIcon("./img/emptyLCD(full).png").getImage();
+        img = new ImageIcon(getClass().getResource("./resource/emptyLCD(full).png")).getImage();
         imageWidth = 500;
         imageHeight = 540;
         this.setBounds(50, 100, imageWidth, imageHeight);
@@ -143,7 +143,7 @@ public class LCDPanel extends JPanel {
         int offsetX = 57, offsetY = 48;
         for (int i = 0; i < 27; i++) {
             if (i == 9) {
-                this.lcdComp[i] = new LCDIcon(new ImageIcon("./img/mute.png").getImage(),
+                this.lcdComp[i] = new LCDIcon(new ImageIcon(getClass().getResource("./resource/mute.png")).getImage(),
                         LCDProperty[i][0], LCDProperty[i][1] + offsetX, LCDProperty[i][2] + offsetY, i);
                 this.lcdComp[i].setVisible(false);
             } else {

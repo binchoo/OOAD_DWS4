@@ -8,7 +8,7 @@ public class FontRegister {
     private Font font14segment;
     public FontRegister(){
         try {
-            font14segment = Font.createFont(Font.TRUETYPE_FONT, new File("./font/DSEG14Classic-Regular.ttf"));
+            font14segment = Font.createFont(Font.TRUETYPE_FONT, new File("./resource/DSEG14Classic-Regular.ttf"));
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font14segment);
         } catch (IOException e) {

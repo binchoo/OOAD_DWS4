@@ -15,7 +15,7 @@ public class BuzzerSound implements Runnable {
     public BuzzerSound() {
         this.stop = true;
         this.ringing = false;
-        soundFile = new File("./sound/beep.wav");
+        soundFile = new File("./resource/beep.wav");
     }
 
     public void beep(){
