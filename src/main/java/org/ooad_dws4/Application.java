@@ -3,6 +3,8 @@ package org.ooad_dws4;
 import org.ooad_dws4.View.DWSFrame;
 
 public class Application {
+
+        public static DWSFrame dwsFrame;
         public static void main(String[] args) {
                 Clock.timeUnit = 100;
                 Clock.defaultScreenTime = 600000;
@@ -26,7 +28,7 @@ public class Application {
                 inputController.linkObject(ioBridge);
 
                 // View
-                DWSFrame dwsFrame = new DWSFrame();
+                dwsFrame = new DWSFrame();
                 dwsFrame.getBtnPanel().getButtonsetAdapter().linkObject(inputController);
                 outputController.getBuzzerAdapter().linkObject(dwsFrame.getBuzzer());
                 outputController.getLcdAdapter().linkObject(dwsFrame.getLcdPanel());
