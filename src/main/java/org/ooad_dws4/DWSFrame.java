@@ -1,8 +1,4 @@
-package org.ooad_dws4.View;
-
-import org.ooad_dws4.View.Button.ButtonPanel;
-import org.ooad_dws4.View.Buzzer.BuzzerSound;
-import org.ooad_dws4.View.LCD.LCDPanel;
+package org.ooad_dws4;
 
 import javax.swing.*;
 import java.awt.*;
