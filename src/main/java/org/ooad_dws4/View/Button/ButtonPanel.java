@@ -1,10 +1,11 @@
-package org.ooad_dws4;
+package org.ooad_dws4.View.Button;
+
+import org.ooad_dws4.ButtonsetAdapter;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.util.Objects;
 
 public class ButtonPanel extends JPanel {
 

@@ -1,4 +1,4 @@
-package org.ooad_dws4;
+package org.ooad_dws4.View.Buzzer;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

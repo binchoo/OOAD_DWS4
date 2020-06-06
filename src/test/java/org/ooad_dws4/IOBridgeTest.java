@@ -1,6 +1,8 @@
 package org.ooad_dws4;
 
 import org.junit.jupiter.api.Test;
+import org.ooad_dws4.View.Buzzer.BuzzerSound;
+import org.ooad_dws4.View.LCD.LCDPanel;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
