@@ -1,4 +1,4 @@
-package org.ooad_dws4.View.LCD;
+package org.ooad_dws4;
 
 import javax.swing.*;
 import java.awt.*;

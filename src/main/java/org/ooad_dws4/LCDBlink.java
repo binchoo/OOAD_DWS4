@@ -1,4 +1,4 @@
-package org.ooad_dws4.View.LCD;
+package org.ooad_dws4;
 
 public class LCDBlink implements Runnable{
     private LCDComponent lcdComponent;
