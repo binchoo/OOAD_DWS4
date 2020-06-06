@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ModeChangeTest extends SystemTest {
 
     @Override
-    void onSystemReady() {
+    public void onSystemReady() {
         gotoModeChangeMode();
     }
 
@@ -22,17 +22,18 @@ public class ModeChangeTest extends SystemTest {
 
     private void modeSetActivation(ModeStatus onoff, ArrayList<Mode> modeSet) {
         Mode mode = Mode.TIME_KEEPING;
+        String modeStatusString;
+
         do {
-            String modeStatusString = system.getText(LCDPart.TOP_LEFT);
+            modeStatusString = system.getText(LCDPart.TOP_LEFT);
 
             if (modeStatusString.equals(onoff.opposite().toString())
-                    && (modeSet == null || modeSet.contains(mode)))
+                    && (modeSet == null || modeSet.contains(mode))) {
                 system.click(Button.ADJUST);
-
+            }
             system.click(Button.FORWARD);
-            mode = mode.next();
 
-        } while (mode != Mode.TIME_KEEPING);
+        } while ((mode = mode.next()) != Mode.TIME_KEEPING);
 
         assertEquals(mode, Mode.TIME_KEEPING);
     }
@@ -79,7 +80,7 @@ public class ModeChangeTest extends SystemTest {
             assertEquals(currentModeString, system.getText(LCDPart.BOTTOM));
 
             gotoModeChangeMode();
-            sleep(100);
+            testWorkerSleep(100);
         }
     }
 }

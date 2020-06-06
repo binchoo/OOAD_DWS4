@@ -5,7 +5,7 @@ import org.ooad_dws4.View.DWSFrame;
 
 public class ApplicationRunner implements Runnable {
 
-    boolean isRunning = false;
+    Boolean isRunning = false;
     DWSFrame view = null;
     public OnViewReadyListener onViewReadyListener = null;
 
@@ -15,14 +15,25 @@ public class ApplicationRunner implements Runnable {
         Application.main(null);
     }
 
-    public void waitViewReady() {
-        while (!isRunning);
-        System.out.println("System Executed.");
+    synchronized public void waitViewReady() {
 
-        while ((view = Application.dwsFrame) == null);
-        System.out.println("View Loaded.");
+        System.out.println("System Loading.");
+        while (!isRunning) waitMillis(100);
 
-        onViewReadyListener.onViewReady(view);
+        System.out.println("View Loading.");
+        while ((view = Application.dwsFrame) == null)
+            waitMillis(100);
+
+        System.out.println("System Loaded.");
+        if (onViewReadyListener != null)
+            onViewReadyListener.onViewReady(view);
+    }
+
+    void waitMillis(long l) {
+        try {
+            super.wait(100);
+        } catch (InterruptedException e) {
+        }
     }
 
     interface OnViewReadyListener {

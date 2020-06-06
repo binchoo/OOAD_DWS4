@@ -30,6 +30,7 @@ public class Application {
                 // View
                 dwsFrame = new DWSFrame();
                 dwsFrame.getBtnPanel().getButtonsetAdapter().linkObject(inputController);
+
                 outputController.getBuzzerAdapter().linkObject(dwsFrame.getBuzzer());
                 outputController.getLcdAdapter().linkObject(dwsFrame.getLcdPanel());
 

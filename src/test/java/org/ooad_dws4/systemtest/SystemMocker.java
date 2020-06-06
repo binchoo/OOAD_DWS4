@@ -12,8 +12,8 @@ public class SystemMocker {
     public LCDPanel lcdPanel;
     public BuzzerSound buzzerSound;
 
-    ApplicationRunner appRunner;
-    Thread systemThread;
+    private ApplicationRunner appRunner;
+    private Thread systemThread;
 
     public SystemMocker() {
         appRunner = new ApplicationRunner();
@@ -37,11 +37,6 @@ public class SystemMocker {
         systemThread.start();
     }
 
-    public void dismiss() {
-        if (systemThread != null)
-            systemThread.interrupt();
-    }
-
     public void click(Button button) {
         buttonPanel.buttonClick(button.getCode());
     }
@@ -59,7 +54,7 @@ public class SystemMocker {
         }
     }
 
-    enum Mode {
+    public enum Mode {
         TIME_KEEPING, WORLD_TIME, ALARM, TIMER, STOPWATCH, D_DAY;
 
         private static Mode[] vals = values();
@@ -75,7 +70,7 @@ public class SystemMocker {
         }
     }
 
-    enum Button {
+    public enum Button {
         NONE, MODE, ADJUST, REVERSE, FORWARD,
         LNG_MODE, LNG_ADJUST, LNG_REVERSE, LNG_FORWARD;
 
@@ -84,7 +79,7 @@ public class SystemMocker {
         }
     }
 
-    enum LCDPart {
+    public enum LCDPart {
         TOP_LEFT(0, 2),
         TOP_RIGTH(3, 8),
         ICON(9, 9),
@@ -100,7 +95,7 @@ public class SystemMocker {
         }
     }
 
-    enum ModeStatus {
+    public enum ModeStatus {
         ON(" ON"), OFF("OFF");
 
         String value;

@@ -1,24 +1,37 @@
 package org.ooad_dws4.systemtest;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.ooad_dws4.Application;
+
+import javax.swing.*;
+
 public abstract class SystemTest {
 
     protected SystemMocker system;
 
-    public SystemTest() {
+    @BeforeEach
+    private void systemInit() {
         system = new SystemMocker();
         system.showUp();
 
-        sleep(1000);
-
+        testWorkerSleep(1000); // wait until view is updated at least once.
         onSystemReady();
     }
 
-    abstract void onSystemReady();
+    @AfterEach
+    private void systemFree() {
+        Application.dwsFrame = null;
+    }
 
-    void sleep(long millis) {
+    protected static void testWorkerSleep(long millis) {
         try {
             Thread.sleep(millis);
         } catch (Exception e) {
         }
     }
+
+    public abstract void onSystemReady();
 }
