@@ -1,4 +1,4 @@
-package org.ooad_dws4.View.Button;
+package org.ooad_dws4;
 
 import javax.swing.*;
 

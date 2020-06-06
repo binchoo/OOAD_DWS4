@@ -1,7 +1,5 @@
 package org.ooad_dws4;
 
-import org.ooad_dws4.View.Buzzer.BuzzerSound;
-
 public class BuzzerAdapter implements Buzzer {
 
     private BuzzerSound buzzerSound;

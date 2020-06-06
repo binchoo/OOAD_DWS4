@@ -1,4 +1,4 @@
-package org.ooad_dws4.View.LCD;
+package org.ooad_dws4;
 
 public class LCDText extends LCDComponent {
     FontRegister fg;

@@ -1,7 +1,5 @@
 package org.ooad_dws4;
 
-import org.ooad_dws4.View.DWSFrame;
-
 public class Application {
         public static void main(String[] args) {
                 Clock.timeUnit = 100;

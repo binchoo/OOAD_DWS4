@@ -1,7 +1,5 @@
 package org.ooad_dws4;
 
-import org.ooad_dws4.View.LCD.LCDPanel;
-
 import java.util.HashMap;
 import java.util.Set;
 
