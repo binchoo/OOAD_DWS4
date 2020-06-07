@@ -31,7 +31,7 @@ public class ApplicationRunner implements Runnable {
 
     void waitMillis(long l) {
         try {
-            super.wait(100);
+            super.wait(l);
         } catch (InterruptedException e) {
         }
     }

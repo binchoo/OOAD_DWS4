@@ -26,7 +26,7 @@ public class SystemMocker {
 
         systemThread = new Thread(appRunner) {
             @Override
-            public synchronized void start() {
+            public void start() {
                 super.start();
                 appRunner.waitViewReady();
             }

@@ -63,7 +63,7 @@ public class ModeChangeTest extends SystemTest {
             assertEquals(currentModeString, system.getText(LCDPart.BOTTOM));
 
             gotoModeChangeMode();
-            testWorkerSleep(100);
+            testWorkerSleep(10);
         }
     }
 
@@ -77,7 +77,7 @@ public class ModeChangeTest extends SystemTest {
             String onoff = system.getText(LCDPart.TOP_LEFT); //TIMEKEEPING 모드의 ON/OFF 문자열을 본다
             assertEquals(onoff, ModeStatus.ON.toString()); //ON인지 체크한다
 
-            testWorkerSleep(100);
+            testWorkerSleep(10);
         }
     }
 
@@ -94,7 +94,7 @@ public class ModeChangeTest extends SystemTest {
                 tryModeSave(); // 저장을 시도한다
 
                 assertTrue(isModeChangeMode()); // 아직도 "MODE" 가 전시되어야 한다.
-                testWorkerSleep(100);
+                testWorkerSleep(10);
             }
         }
     }
@@ -112,7 +112,7 @@ public class ModeChangeTest extends SystemTest {
 
             assertFalse(isModeChangeMode()); //모드변경 모드를 탈출하여 중앙 문자가 "MODE"가 아니어야 한다
             gotoModeChangeMode(); //다음 테스트를 위해 모드변경 모드로 되돌아온다
-            testWorkerSleep(100);
+            testWorkerSleep(10);
         }
     }
 
@@ -134,7 +134,7 @@ public class ModeChangeTest extends SystemTest {
                 }
 
                 assertNotEquals(onCount, r);
-                testWorkerSleep(100);
+                testWorkerSleep(10);
             }
         }
     }
