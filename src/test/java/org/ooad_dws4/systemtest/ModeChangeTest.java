@@ -38,6 +38,15 @@ public class ModeChangeTest extends SystemTest {
         assertEquals(mode, Mode.TIME_KEEPING);
     }
 
+    private boolean isModeChangeMode() {
+        String centerString = system.getText(LCDPart.CLOCK);
+        return centerString.contains("MODE");
+    }
+
+    private void tryModeSave() {
+        system.click(Button.MODE);
+    }
+
     @Test
     void viewReferenceOK() {
         assertNotNull(system.view);
@@ -72,7 +81,7 @@ public class ModeChangeTest extends SystemTest {
 
             modeSetActivation(ModeStatus.OFF, null);
             modeSetActivation(ModeStatus.ON, modeSet);
-            system.click(Button.MODE);
+            tryModeSave(); // 모드 변경을 저장한다
 
             String currentModeString = system.getText(LCDPart.BOTTOM);
             for(int i = 0; i < 4; i++)
@@ -81,6 +90,78 @@ public class ModeChangeTest extends SystemTest {
 
             gotoModeChangeMode();
             testWorkerSleep(100);
+        }
+    }
+
+    @Test
+    void allModeCombination_timekeepingAlwaysOn() {
+        ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
+        for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
+
+            modeSetActivation(ModeStatus.OFF, modeSet); //모든 모드를 끄려고 시도한다. 작업이 끝나면 TIMEKEEPING 보여지고 있다.
+
+            String onoff = system.getText(LCDPart.TOP_LEFT); //TIMEKEEPING 모드의 ON/OFF 문자열을 본다
+            assertEquals(onoff, ModeStatus.ON.toString()); //ON인지 체크한다
+
+            testWorkerSleep(100);
+        }
+    }
+
+    @Test
+    void allModeCombination_lessFourModeSelected_NotSavable() {
+        for(int r = 1; r < 4; r++) {
+            assertTrue(isModeChangeMode());
+
+            ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, r);
+            for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
+                modeSetActivation(ModeStatus.OFF, null); //전체 모드를 끈다
+                modeSetActivation(ModeStatus.ON, modeSet); //모드 조합에 대하여 다시 켠다
+
+                tryModeSave(); // 저장을 시도한다
+
+                assertTrue(isModeChangeMode()); // 아직도 "MODE" 가 전시되어야 한다.
+                testWorkerSleep(100);
+            }
+        }
+    }
+
+    @Test
+    void allModeCombination_FourModeSelected_Savable() {
+        ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
+        for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
+            assertTrue(isModeChangeMode());
+
+            modeSetActivation(ModeStatus.OFF, null);
+            modeSetActivation(ModeStatus.ON, modeSet);
+
+            tryModeSave(); // 저장을 시도한다
+
+            assertFalse(isModeChangeMode()); //모드변경 모드를 탈출하여 중앙 문자가 "MODE"가 아니어야 한다
+            gotoModeChangeMode(); //다음 테스트를 위해 모드변경 모드로 되돌아온다
+            testWorkerSleep(100);
+        }
+    }
+
+    @Test
+    void allModeCombination_moreThanFourMode_Unacceptable() {
+        for(int r = 5; r <= 6; r++) {
+            assertTrue(isModeChangeMode());
+
+            ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, r);
+            for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
+                modeSetActivation(ModeStatus.OFF, null); //전체 모드를 끈다
+                modeSetActivation(ModeStatus.ON, modeSet); //모드 조합에 대하여 다시 켠다
+
+                int onCount = 0;
+                for (int i = 0; i < 6; i++) { //ON인 모드를 센다
+                    String onoff = system.getText(LCDPart.TOP_LEFT);
+                    if (onoff.equals(ModeStatus.ON))
+                        onCount++;
+                }
+
+                assertNotEquals(onCount, r);
+                testWorkerSleep(100);
+            }
         }
     }
 }
