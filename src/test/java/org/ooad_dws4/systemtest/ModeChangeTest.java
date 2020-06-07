@@ -16,35 +16,9 @@ public class ModeChangeTest extends SystemTest {
         gotoModeChangeMode();
     }
 
+
     private void gotoModeChangeMode() {
         system.click(Button.LNG_ADJUST);
-    }
-
-    private void modeSetActivation(ModeStatus onoff, ArrayList<Mode> modeSet) {
-        Mode mode = Mode.TIME_KEEPING;
-        String modeStatusString;
-
-        do {
-            modeStatusString = system.getText(LCDPart.TOP_LEFT);
-
-            if (modeStatusString.equals(onoff.opposite().toString())
-                    && (modeSet == null || modeSet.contains(mode))) {
-                system.click(Button.ADJUST);
-            }
-            system.click(Button.FORWARD);
-
-        } while ((mode = mode.next()) != Mode.TIME_KEEPING);
-
-        assertEquals(mode, Mode.TIME_KEEPING);
-    }
-
-    private boolean isModeChangeMode() {
-        String centerString = system.getText(LCDPart.CLOCK);
-        return centerString.contains("MODE");
-    }
-
-    private void tryModeSave() {
-        system.click(Button.MODE);
     }
 
     @Test
@@ -108,7 +82,7 @@ public class ModeChangeTest extends SystemTest {
     }
 
     @Test
-    void allModeCombination_lessFourModeSelected_NotSavable() {
+    void allModeCombination_lessFourModeSelected_notSavable() {
         for(int r = 1; r < 4; r++) {
             assertTrue(isModeChangeMode());
 
@@ -126,7 +100,7 @@ public class ModeChangeTest extends SystemTest {
     }
 
     @Test
-    void allModeCombination_FourModeSelected_Savable() {
+    void allModeCombination_fourModeSelected_savable() {
         ModeCombinationGenerator mcg = new ModeCombinationGenerator(6, 4);
         for (ArrayList<Mode> modeSet : mcg.getModeCombination()) {
             assertTrue(isModeChangeMode());
@@ -143,7 +117,7 @@ public class ModeChangeTest extends SystemTest {
     }
 
     @Test
-    void allModeCombination_moreThanFourMode_Unacceptable() {
+    void allModeCombination_moreModeSelected_notAcceptable() {
         for(int r = 5; r <= 6; r++) {
             assertTrue(isModeChangeMode());
 
@@ -163,6 +137,33 @@ public class ModeChangeTest extends SystemTest {
                 testWorkerSleep(100);
             }
         }
+    }
+
+    private void modeSetActivation(ModeStatus onoff, ArrayList<Mode> modeSet) {
+        Mode mode = Mode.TIME_KEEPING;
+        String modeStatusString;
+
+        do {
+            modeStatusString = system.getText(LCDPart.TOP_LEFT);
+
+            if (modeStatusString.equals(onoff.opposite().toString())
+                    && (modeSet == null || modeSet.contains(mode))) {
+                system.click(Button.ADJUST);
+            }
+            system.click(Button.FORWARD);
+
+        } while ((mode = mode.next()) != Mode.TIME_KEEPING);
+
+        assertEquals(mode, Mode.TIME_KEEPING);
+    }
+
+    private boolean isModeChangeMode() {
+        String centerString = system.getText(LCDPart.CLOCK);
+        return centerString.contains("MODE");
+    }
+
+    private void tryModeSave() {
+        system.click(Button.MODE);
     }
 }
 
