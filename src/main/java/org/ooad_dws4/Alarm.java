@@ -31,6 +31,7 @@ public class Alarm {
     public void setAlarmData(long time){
         this.time = time;
     }
+
     public boolean getState(){
         return this.state;
     }

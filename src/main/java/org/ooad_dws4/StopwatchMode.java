@@ -5,7 +5,6 @@ import java.util.HashMap;
 public class StopwatchMode extends Mode {
 
     private Stopwatch stopwatch;
-    // private HashMap <String, String> arg;
     private int hour, minute, second;
     private long maxValue = 359999000L;
 
@@ -20,6 +19,38 @@ public class StopwatchMode extends Mode {
     public Message getModeData() {
         msecTohhmmss(stopwatch.getStopwatchData());
         return makeView();
+    }
+
+    @Override
+    public Message update(long systemTime) {
+        if (state == 2)
+            this.stopwatch.runStopwatch();
+        return null;
+    }
+
+    @Override
+    public Message update(long systemTime, boolean currentMode) {
+        if (currentMode)
+            update(systemTime);
+        msecTohhmmss(stopwatch.getStopwatchData());
+        return makeView();
+    }
+
+    @Override
+    public Message modeModify(int event) {
+        if (this.state == 0) {
+            if (event == 3)
+                return runStopwatch();
+        } else if (this.state == 2) { // when running
+            if (event == 3)
+                return pauseStopwatch();
+        } else if (this.state == 3) { // when pause
+            if (event == 2)
+                return resetStopwatch();
+            else if (event == 3)
+                return resumeStopwatch();
+        }
+        return null;
     }
 
 
@@ -53,38 +84,6 @@ public class StopwatchMode extends Mode {
      */
     private Message resumeStopwatch() {
         return runStopwatch();
-    }
-
-    @Override
-    public Message update(long systemTime) {
-        if (state == 2)
-            this.stopwatch.runStopwatch();
-        return null;
-    }
-
-    @Override
-    public Message update(long systemTime, boolean currentMode) {
-        if (currentMode)
-            update(systemTime);
-        msecTohhmmss(stopwatch.getStopwatchData());
-        return makeView();
-    }
-
-    @Override
-    public Message modeModify(int event) {
-        if (this.state == 0) {
-            if (event == 3)
-                return runStopwatch();
-        } else if (this.state == 2) { // when running
-            if (event == 3)
-                return pauseStopwatch();
-        } else if (this.state == 3) { // when pause
-            if (event == 2)
-                return resetStopwatch();
-            else if (event == 3)
-                return resumeStopwatch();
-        }
-        return null;
     }
 
     private void msecTohhmmss(long timerTime) {

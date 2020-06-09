@@ -1,7 +1,9 @@
 package org.ooad_dws4.View.LCD;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class LCDPanel extends JPanel {
     private Image img;
@@ -132,7 +134,15 @@ public class LCDPanel extends JPanel {
     };
 
     public LCDPanel() {
+<<<<<<< HEAD
         img = new ImageIcon(getClass().getResource("./resource/emptyLCD(full).png")).getImage();
+=======
+        try {
+            img = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/img/emptyLCD(full).png"))).getImage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+>>>>>>> mainline
         imageWidth = 500;
         imageHeight = 540;
         this.setBounds(50, 100, imageWidth, imageHeight);
@@ -143,8 +153,17 @@ public class LCDPanel extends JPanel {
         int offsetX = 57, offsetY = 48;
         for (int i = 0; i < 27; i++) {
             if (i == 9) {
+<<<<<<< HEAD
                 this.lcdComp[i] = new LCDIcon(new ImageIcon(getClass().getResource("./resource/mute.png")).getImage(),
                         LCDProperty[i][0], LCDProperty[i][1] + offsetX, LCDProperty[i][2] + offsetY, i);
+=======
+                try {
+                    this.lcdComp[i] = new LCDIcon(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/img/mute.png"))).getImage(),
+                            LCDProperty[i][0], LCDProperty[i][1] + offsetX, LCDProperty[i][2] + offsetY, i);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+>>>>>>> mainline
                 this.lcdComp[i].setVisible(false);
             } else {
                 this.lcdComp[i] = new LCDText(LCDCharacter[i], LCDProperty[i][0], LCDProperty[i][1] + offsetX, LCDProperty[i][2] + offsetY, i);

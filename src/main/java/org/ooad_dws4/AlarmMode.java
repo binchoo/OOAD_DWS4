@@ -83,12 +83,12 @@ public class AlarmMode extends Mode {
 
     /* system operation */
     private Message changeValue(int value) {
-        cal.setTime(date);
-        if (this.field == 0) cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) + value);
-        else cal.set(Calendar.MINUTE, cal.get(Calendar.MINUTE) + value);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        date = cal.getTime();
+        calendar.setTime(date);
+        if (this.field == 0) calendar.set(Calendar.HOUR, calendar.get(Calendar.HOUR) + value);
+        else calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + value);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        date = calendar.getTime();
         alarms[currentAlarmIndex].setAlarmData(date.getTime());
         long alarmTime = alarms[currentAlarmIndex].getAlarmData();
         HashMap<String, String> arg = new HashMap<>();

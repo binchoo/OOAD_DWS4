@@ -35,12 +35,17 @@ public class IOBridge extends DWSObject {
             }
                 break;
             case 11: {
-                if (action.equals("buzzOff") || action.equals("buzzRinging"))
-                    this.isBuzzerRinging = !this.isBuzzerRinging;
+                if (action.equals("buzzOff")){
+                    isBuzzerRinging = false;
+                }
+                else if(action.equals("buzzRinging")){
+                    this.isBuzzerRinging = true;
+                }
                 this.output.output(msg);
             }
-                break;
+            break;
         }
+
     }
 
     public void inputEvent(int event) {

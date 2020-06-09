@@ -1,4 +1,5 @@
 package org.ooad_dws4;
+
 /**
  * @author Kelvin Kwak (lunox273@gmail.com)
  * @brief Default unit for Event Scheduler
@@ -16,7 +17,7 @@ public class Event {
     private long deadline;
 
     /**
-     *@brief What is this Message?
+     * @brief What is this Message?
      */
     private Message message;
 
@@ -53,7 +54,7 @@ public class Event {
      * @return Is the deadline over?
      */
     public boolean checkDeadline() {
-        return this.deadline <= 0;
+        return !(this.deadline > 0);
     }
 
     public String getEventType() {
