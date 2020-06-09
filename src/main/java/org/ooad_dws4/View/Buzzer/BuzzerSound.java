@@ -3,8 +3,7 @@ package org.ooad_dws4.View.Buzzer;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import java.io.*;
-import java.net.URISyntaxException;
+import java.io.BufferedInputStream;
 
 public class BuzzerSound implements Runnable {
     private Clip clip;
@@ -16,10 +15,6 @@ public class BuzzerSound implements Runnable {
     public BuzzerSound() {
         this.stop = true;
         this.ringing = false;
-<<<<<<< HEAD
-        soundFile = new File("./resource/beep.wav");
-=======
->>>>>>> mainline
     }
 
     public void beep() {

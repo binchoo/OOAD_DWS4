@@ -11,12 +11,8 @@ public class FontRegister {
 
     public FontRegister() {
         try {
-<<<<<<< HEAD:src/main/java/org/ooad_dws4/View/LCD/FontRegister.java
-            font14segment = Font.createFont(Font.TRUETYPE_FONT, new File("./resource/DSEG14Classic-Regular.ttf"));
-=======
             InputStream font = getClass().getResourceAsStream("/font/DSEG14Classic-Regular.ttf");
             font14segment = Font.createFont(Font.TRUETYPE_FONT, font);
->>>>>>> mainline:src/main/java/org/ooad_dws4/View/Font/FontRegister.java
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             ge.registerFont(font14segment);
             font.close();

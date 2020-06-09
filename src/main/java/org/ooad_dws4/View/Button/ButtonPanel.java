@@ -26,16 +26,11 @@ public class ButtonPanel extends JPanel {
 
     public ButtonPanel(){
         this.buttonsetAdapter = new ButtonsetAdapter();
-<<<<<<< HEAD
-        img = new ImageIcon(getClass().getResource("button.png")).getImage();
-=======
-
         try {
             img = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/img/button.png"))).getImage();
         } catch (IOException e) {
             e.printStackTrace();
         }
->>>>>>> mainline
         imageSize = 50;
         this.setBounds(0,0,680,800);
         this.setVisible(true);
