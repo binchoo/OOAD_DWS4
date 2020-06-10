@@ -222,6 +222,14 @@ public class LCDPanel extends JPanel {
         }
     }
 
+    public String getText(int startIndex, int finishIndex) {
+        StringBuilder builder = new StringBuilder();
+        for(int i = startIndex; i <= finishIndex; i++) {
+            builder.append(lcdComp[i].getText());
+        }
+        return builder.toString();
+    }
+
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(img, 0, 0, imageWidth, imageHeight, this);

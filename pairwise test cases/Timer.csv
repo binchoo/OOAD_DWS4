@@ -1,0 +1,14 @@
+Timer Time	Timer Status	Mode	Current Field	Buzzer Status	Operation
+Zero	Off	Normal	Hour	No Ring	Pause
+Future	Pus	Edit	Hour	Ring	Start
+Zero	Run	Edit	Minute	No Ring	Start
+Future	Run	Normal	Sec	Ring	StopRinging
+Zero	Pus	Normal	Minute	Ring	Pause
+Zero	Pus	Edit	Sec	No Ring	Clear
+Future	Off	Edit	Hour	No Ring	StopRinging
+Future	Off	Edit	Sec	Ring	Pause
+Future	Run	Normal	Hour	Ring	Clear
+Future	Off	Normal	Minute	Ring	Clear
+Zero	Off	Normal	Sec	Ring	Start
+Future	Run	Normal	Sec	Ring	Pause
+Zero	Pus	Edit	Minute	No Ring	StopRinging

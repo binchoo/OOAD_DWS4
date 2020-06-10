@@ -1,0 +1,21 @@
+StopWatch Status	Edit Field	Operation
+Pus	Hour	Stop
+Edit	Hour	Start
+Edit	Minute	Stop
+Run	Hour	Move Field Forward
+Edit	Minute	Move Field Forward
+Run	Minute	Move Field Backward
+Off	Hour	Move Field Backward
+Off	Minute	Stop
+Run	Hour	Clear
+Pus	Minute	Move Field Backward
+Run	Minute	Start
+Off	Hour	Start
+Edit	Hour	Move Field Backward
+Run	Hour	Stop
+Edit	Minute	Clear
+Off	Hour	Move Field Forward
+Pus	Hour	Start
+Pus	Hour	Clear
+Off	Hour	Clear
+Pus	Minute	Move Field Forward

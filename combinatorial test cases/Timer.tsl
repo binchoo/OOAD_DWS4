@@ -1,0 +1,166 @@
+
+Test Case 1  		<single>
+   Timer Time :  Zero
+
+
+Test Case 2  		(Key = 2.1.1.1.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Edit
+   Current Field :  Hour
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 3  		(Key = 2.1.1.2.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Edit
+   Current Field :  Minute
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 4  		(Key = 2.1.1.3.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Edit
+   Current Field :  Sec
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 5  		(Key = 2.1.2.0.1.4.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  Ring
+   Operation     :  Stop Ringing
+
+
+Test Case 6  		(Key = 2.1.2.0.2.1.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Start
+
+
+Test Case 7  		(Key = 2.1.2.0.2.3.)
+   Timer Time    :  Future
+   Timer Status  :  Off
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Clear
+
+
+Test Case 8  		(Key = 2.2.1.1.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Edit
+   Current Field :  Hour
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 9  		(Key = 2.2.1.2.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Edit
+   Current Field :  Minute
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 10 		(Key = 2.2.1.3.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Edit
+   Current Field :  Sec
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 11 		(Key = 2.2.2.0.1.4.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  Ring
+   Operation     :  Stop Ringing
+
+
+Test Case 12 		(Key = 2.2.2.0.2.2.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Pause
+
+
+Test Case 13 		(Key = 2.2.2.0.2.3.)
+   Timer Time    :  Future
+   Timer Status  :  Run
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Clear
+
+
+Test Case 14 		(Key = 2.3.1.1.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Edit
+   Current Field :  Hour
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 15 		(Key = 2.3.1.2.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Edit
+   Current Field :  Minute
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 16 		(Key = 2.3.1.3.0.0.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Edit
+   Current Field :  Sec
+   Buzzer Status :  <n/a>
+   Operation     :  <n/a>
+
+
+Test Case 17 		(Key = 2.3.2.0.1.4.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  Ring
+   Operation     :  Stop Ringing
+
+
+Test Case 18 		(Key = 2.3.2.0.2.1.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Start
+
+
+Test Case 19 		(Key = 2.3.2.0.2.3.)
+   Timer Time    :  Future
+   Timer Status  :  Pus
+   Mode          :  Normal
+   Current Field :  <n/a>
+   Buzzer Status :  No Ring
+   Operation     :  Clear
+

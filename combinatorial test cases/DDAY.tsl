@@ -1,0 +1,444 @@
+
+Test Case 1  		<error>
+   Mode Activation :  DDAY is not Activated
+
+
+Test Case 2  		(Key = 1.1.1.0.1.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 3  		(Key = 1.1.1.0.2.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 4  		(Key = 1.1.1.0.6.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 5  		(Key = 1.1.2.1.3.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 6  		(Key = 1.1.2.1.4.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 7  		(Key = 1.2.1.0.1.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 8  		(Key = 1.2.1.0.2.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 9  		(Key = 1.2.1.0.5.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  On dday
+
+
+Test Case 10 		(Key = 1.2.2.1.3.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 11 		(Key = 1.2.2.1.4.)
+   Mode Activation :  DDAY is Activated
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 12 		(Key = 3.1.1.0.1.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 13 		(Key = 3.1.1.0.2.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 14 		(Key = 3.1.1.0.6.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 15 		(Key = 3.1.2.1.3.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 16 		(Key = 3.1.2.1.4.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 17 		(Key = 3.2.1.0.1.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 18 		(Key = 3.2.1.0.2.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 19 		(Key = 3.2.1.0.5.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  On dday
+
+
+Test Case 20 		(Key = 3.2.2.1.3.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 21 		(Key = 3.2.2.1.4.)
+   Mode Activation :  0 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 22 		(Key = 4.1.1.0.1.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 23 		(Key = 4.1.1.0.2.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 24 		(Key = 4.1.1.0.6.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 25 		(Key = 4.1.2.1.3.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 26 		(Key = 4.1.2.1.4.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 27 		(Key = 4.2.1.0.1.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 28 		(Key = 4.2.1.0.2.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 29 		(Key = 4.2.1.0.5.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  On dday
+
+
+Test Case 30 		(Key = 4.2.2.1.3.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 31 		(Key = 4.2.2.1.4.)
+   Mode Activation :  1 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 32 		(Key = 5.1.1.0.1.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 33 		(Key = 5.1.1.0.2.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 34 		(Key = 5.1.1.0.6.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 35 		(Key = 5.1.2.1.3.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 36 		(Key = 5.1.2.1.4.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 37 		(Key = 5.2.1.0.1.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 38 		(Key = 5.2.1.0.2.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 39 		(Key = 5.2.1.0.5.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  On dday
+
+
+Test Case 40 		(Key = 5.2.2.1.3.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 41 		(Key = 5.2.2.1.4.)
+   Mode Activation :  2 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 42 		(Key = 6.1.1.0.1.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 43 		(Key = 6.1.1.0.2.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 44 		(Key = 6.1.1.0.6.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 45 		(Key = 6.1.2.1.3.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 46 		(Key = 6.1.2.1.4.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 47 		(Key = 6.2.1.0.1.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 48 		(Key = 6.2.1.0.2.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 49 		(Key = 6.2.1.0.5.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  Off
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  On dday
+
+
+Test Case 50 		(Key = 6.2.2.1.3.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 51 		(Key = 6.2.2.1.4.)
+   Mode Activation :  3 ddays on
+   DDAY Activation :  Off
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+
+
+Test Case 52 		(Key = 7.1.1.0.1.)
+   Mode Activation :  4 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Forward
+
+
+Test Case 53 		(Key = 7.1.1.0.2.)
+   Mode Activation :  4 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Move Backward
+
+
+Test Case 54 		(Key = 7.1.1.0.6.)
+   Mode Activation :  4 ddays on
+   DDAY Activation :  On
+   Mode            :  Normal
+   Field to Edit   :  <n/a>
+   Operation       :  Off dday
+
+
+Test Case 55 		(Key = 7.1.2.1.3.)
+   Mode Activation :  4 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Forward
+
+
+Test Case 56 		(Key = 7.1.2.1.4.)
+   Mode Activation :  4 ddays on
+   DDAY Activation :  On
+   Mode            :  Edit
+   Field to Edit   :  All
+   Operation       :  Move Field Backward
+

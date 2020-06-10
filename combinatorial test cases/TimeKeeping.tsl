@@ -1,0 +1,196 @@
+
+Test Case 1  		(Key = 1.1.0.1.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Check Clock Going
+
+
+Test Case 2  		(Key = 1.1.0.4.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Move DDAY Forward
+
+
+Test Case 3  		(Key = 1.1.0.5.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Move DDAY Backward
+
+
+Test Case 4  		(Key = 1.2.1.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Forward
+
+
+Test Case 5  		(Key = 1.2.1.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Backward
+
+
+Test Case 6  		(Key = 1.2.2.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Forward
+
+
+Test Case 7  		(Key = 1.2.2.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Backward
+
+
+Test Case 8  		(Key = 1.2.3.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Forward
+
+
+Test Case 9  		(Key = 1.2.3.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Backward
+
+
+Test Case 10 		(Key = 1.2.4.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Forward
+
+
+Test Case 11 		(Key = 1.2.4.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Backward
+
+
+Test Case 12 		(Key = 1.2.5.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Forward
+
+
+Test Case 13 		(Key = 1.2.5.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Backward
+
+
+Test Case 14 		(Key = 1.2.6.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Forward
+
+
+Test Case 15 		(Key = 1.2.6.3.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Backward
+
+
+Test Case 16 		(Key = 2.1.0.1.)
+   DDAY is Activated :  False
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Check Clock Going
+
+
+Test Case 17 		(Key = 2.2.1.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Forward
+
+
+Test Case 18 		(Key = 2.2.1.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Backward
+
+
+Test Case 19 		(Key = 2.2.2.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Forward
+
+
+Test Case 20 		(Key = 2.2.2.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Backward
+
+
+Test Case 21 		(Key = 2.2.3.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Forward
+
+
+Test Case 22 		(Key = 2.2.3.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Backward
+
+
+Test Case 23 		(Key = 2.2.4.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Forward
+
+
+Test Case 24 		(Key = 2.2.4.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Backward
+
+
+Test Case 25 		(Key = 2.2.5.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Forward
+
+
+Test Case 26 		(Key = 2.2.5.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Backward
+
+
+Test Case 27 		(Key = 2.2.6.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Forward
+
+
+Test Case 28 		(Key = 2.2.6.3.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Backward
+

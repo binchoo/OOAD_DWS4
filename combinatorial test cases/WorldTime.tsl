@@ -1,0 +1,20 @@
+
+Test Case 1  		(Key = 1.1.)
+   Current City :  SEL
+   Operation    :  Select Other City
+
+
+Test Case 2  		(Key = 2.1.)
+   Current City :  PAR
+   Operation    :  Select Other City
+
+
+Test Case 3  		(Key = 3.1.)
+   Current City :  LON
+   Operation    :  Select Other City
+
+
+Test Case 4  		(Key = 4.1.)
+   Current City :  NYC
+   Operation    :  Select Other City
+
