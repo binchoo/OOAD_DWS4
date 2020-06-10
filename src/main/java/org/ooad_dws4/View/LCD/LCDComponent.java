@@ -26,5 +26,4 @@ public abstract class LCDComponent extends JLabel {
         if (this.isVisible()) this.setVisible(false);
         else this.setVisible(true);
     }
-
 }

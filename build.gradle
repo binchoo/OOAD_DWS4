@@ -19,9 +19,6 @@ dependencies {
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
     testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
     testRuntime('org.slf4j:slf4j-api:1.7.10')
-    implementation 'junit:junit:4.12'
-    implementation 'org.jetbrains:annotations:15.0'
-    implementation 'org.jetbrains:annotations:15.0'
 }
 
 test {
