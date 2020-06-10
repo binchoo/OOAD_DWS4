@@ -1,0 +1,35 @@
+
+Test Case 1  		(Key = 1.1.)
+   Activated Mode :  four
+   Operation      :  move forward
+
+
+Test Case 2  		(Key = 1.2.)
+   Activated Mode :  four
+   Operation      :  move reverse
+
+
+Test Case 3  		(Key = 1.3.)
+   Activated Mode :  four
+   Operation      :  exit
+
+
+Test Case 4  		(Key = 2.1.)
+   Activated Mode :  more
+   Operation      :  move forward
+
+
+Test Case 5  		(Key = 2.2.)
+   Activated Mode :  more
+   Operation      :  move reverse
+
+
+Test Case 6  		(Key = 3.1.)
+   Activated Mode :  less
+   Operation      :  move forward
+
+
+Test Case 7  		(Key = 3.2.)
+   Activated Mode :  less
+   Operation      :  move reverse
+

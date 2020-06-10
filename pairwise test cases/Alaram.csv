@@ -1,0 +1,10 @@
+Alarm Count	Alaram Status	Buzzer Status	Mode	Current Field
+3	Off	Ring	Edit	Hour
+1	On	Off	Edit	Minute
+4	On	Ring	Normal	Hour
+3	Off	Off	Normal	Minute
+3	On	Ring	Edit	Minute
+1	Off	Ring	Normal	Hour
+2	On	Off	Normal	Hour
+4	Off	Off	Edit	Minute
+2	Off	Ring	Edit	Minute
