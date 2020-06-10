@@ -2,7 +2,7 @@
 *.class
  
 # Package Files #
-*.jar
+#*.jar
  
 # IntelliJ project files
 .idea
