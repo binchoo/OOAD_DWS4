@@ -128,7 +128,7 @@ public class DDayMode extends Mode {
         long difference = targetTime - baseTime;
         String sign = difference < 0 ? "-" : "+";
         difference = Math.abs(difference);
-        int day = (int) (difference / aDay);
+        int day = (int) (difference / aDay) + 1;
         day = Math.min(day, 9999);
         char charDay[] = Integer.toString(day).toCharArray();
         char result[] = "    ".toCharArray();
