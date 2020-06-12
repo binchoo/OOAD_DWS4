@@ -48,7 +48,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * 3600000), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -70,8 +70,8 @@ public class WoldTimeMode extends Mode {
         int offsetDiff = calcOffsetDif(cities[timeZoneIndex].getTimeZoneData(),
                 cities[changingIndex].getTimeZoneData());
         HashMap<String, String> arg = new HashMap<>();
-        arg.put("newTime", Integer.toString(offsetDiff * 1000 * 60 * 60));
-        this.systemTime += offsetDiff * 1000 * 60 * 60;
+        arg.put("newTime", Integer.toString(offsetDiff * 3600000));
+        this.systemTime += offsetDiff * 3600000;
         this.timeZoneIndex = this.changingIndex;
 //        this.currentTimeZone = this.cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
@@ -88,7 +88,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * 3600000), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -106,7 +106,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * 1000 * 60 * 60), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * 3600000), null);
         arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
