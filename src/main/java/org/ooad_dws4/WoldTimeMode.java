@@ -11,7 +11,7 @@ public class WoldTimeMode extends Mode {
     private long systemTime;
     private int changingIndex;
     private boolean systemTimeUpdateFlag;
-    private static final long aDay = 24L * 60 * 60 * 1000;
+    private static final long aHour = 60 * 60 * 1000;
 
     public WoldTimeMode(boolean isActivation) {
         this.cities = new City[4];
@@ -49,7 +49,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * aDay), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * aHour), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -71,8 +71,8 @@ public class WoldTimeMode extends Mode {
         int offsetDiff = calcOffsetDif(cities[timeZoneIndex].getTimeZoneData(),
                 cities[changingIndex].getTimeZoneData());
         HashMap<String, String> arg = new HashMap<>();
-        arg.put("newTime", Long.toString(offsetDiff * aDay));
-        this.systemTime += offsetDiff * aDay;
+        arg.put("newTime", Long.toString(offsetDiff * aHour));
+        this.systemTime += offsetDiff * aHour;
         this.timeZoneIndex = this.changingIndex;
 //        this.currentTimeZone = this.cities[timeZoneIndex].getTimeZoneData();
         this.systemTimeUpdateFlag = true;
@@ -89,7 +89,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<String, String>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * aDay), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * aHour), null);
         return new Message(11, "updateView", arg);
     }
 
@@ -107,7 +107,7 @@ public class WoldTimeMode extends Mode {
         int changedTimeZone = cities[changingIndex].getTimeZoneData();
         int offsetDiff = calcOffsetDif(currentTimeZone, changedTimeZone);
         HashMap<String, String> arg = new HashMap<>();
-        makeUpdateViewArg(arg, systemTime + (offsetDiff * aDay), null);
+        makeUpdateViewArg(arg, systemTime + (offsetDiff * aHour), null);
         arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
