@@ -11,7 +11,7 @@ public class DDayMode extends Mode {
     private int currentIndex;
     private int field = 0;
     private long systemTime = 0;
-    private final long aDay = 86400000;
+    private static final long aDay = 86400000L;
 
     public DDayMode(boolean isActivation) {
         Date date = new Date();
