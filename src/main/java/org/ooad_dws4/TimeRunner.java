@@ -12,11 +12,6 @@ public class TimeRunner extends DWSObject implements PulseMaker {
     private long systemTime;
 
     /**
-     * @breif Time zone. msec
-     */
-    private long timeZone;
-
-    /**
      * @brief The objects that TimeRunner can use.
      */
     private MainController mainController;
@@ -26,7 +21,6 @@ public class TimeRunner extends DWSObject implements PulseMaker {
      */
     public TimeRunner() {
         systemTime = System.currentTimeMillis();
-        timeZone = +32400000;
     }
 
     /**
@@ -64,7 +58,6 @@ public class TimeRunner extends DWSObject implements PulseMaker {
      * @brief if the type of time change is updateWorldTime,
      */
     private long changeTimeZone(long newTimeZone) {
-        this.timeZone = newTimeZone;
         this.systemTime += newTimeZone;
         return -newTimeZone;
     }

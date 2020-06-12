@@ -40,6 +40,7 @@ public class IOBridge extends DWSObject {
                 this.output.output(msg);
             }
                 break;
+            default:
         }
     }
 

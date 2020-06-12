@@ -78,6 +78,8 @@ public class TimeKeepingMode extends Mode {
             case 5:
                 calendar.set(Calendar.SECOND, calendar.get(Calendar.SECOND) + value);
                 break;
+            default:
+                return null;
         }
         if (calendar.getTime().getTime() >= 0)
             date = calendar.getTime();
