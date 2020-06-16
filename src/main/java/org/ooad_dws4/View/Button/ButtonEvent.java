@@ -1,6 +1,5 @@
 package org.ooad_dws4.View.Button;
 
-import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
