@@ -11,7 +11,6 @@ public class ButtonEvent extends MouseAdapter implements Runnable {
     private boolean longReleased;
     private Thread thread;
     private long elapsedTime;
-    private JButton button;
     private ButtonPanel buttonPanel;
 
     public ButtonEvent(int btnNum) {
@@ -48,7 +47,6 @@ public class ButtonEvent extends MouseAdapter implements Runnable {
     }
 
     public void mousePressed(MouseEvent e) {
-        this.button = (JButton)e.getSource();
         elapsedTime = 0;
         thread = new Thread(this);
         thread.start();
