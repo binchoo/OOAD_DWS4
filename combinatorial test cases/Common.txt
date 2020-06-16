@@ -26,5 +26,5 @@ Parameters:
    Press and Listen.
    Wait Alarm.
    Wait Timer.
-   Go Back To TimeKeeping.  [if TimeKeeping]
+   Go Back To TimeKeeping. 
 

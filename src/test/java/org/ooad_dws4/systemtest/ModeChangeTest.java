@@ -166,4 +166,3 @@ public class ModeChangeTest extends SystemTest {
         system.click(Button.MODE);
     }
 }
-
