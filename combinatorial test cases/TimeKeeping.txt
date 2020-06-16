@@ -1,0 +1,38 @@
+# Test specification for Siena HierarchicalDispatcher "application"
+#
+# This specification is designed to test methods publish(SENPPacket),
+# subscribe(SENPPacket), unsubscribe(SENPPacket) and unsubscribe(Notifiable)
+# of interface Siena, which is implemented by class HierarchicalDispatcher.
+#
+# In this specification, an instance of HierarchicalDispatcher is called a
+# "server", any non-server entity interacting with a server (including a
+# test program) is called a "client" or a "pub" (for publisher) or a
+# "sub" (for subscriber), and an attribute is called an "attr".  A "matching
+# pub" is a publisher whose notifications match the subscriber's subscriptions,
+# while a "non-matching pub" is a publisher whose notifcations do not match
+# the subscriber's subscriptions.
+
+Parameters:
+    DDAY is Activated:
+    True.                   [property DDAYOn]
+    False.
+
+    Mode:
+    Normal.                 [property Normal]
+    Edit.                   [property Edit]
+
+    Current Field:
+    Year.                   [if Edit]
+    Month.                  [if Edit]
+    Day.                    [if Edit]
+    Hour.                   [if Edit]
+    Minute.                 [if Edit]
+    Sec.                    [if Edit]
+
+
+    Operation:
+    Check Clock Going.      [if Normal]
+    Move Field Forward.     [if Edit]
+    Move DDAY Forward.      [if Normal && DDAYOn]
+    Move DDAY Backward.     [if Normal && DDAYOn]
+    

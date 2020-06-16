@@ -1,0 +1,103 @@
+
+Test Case 1  		(Key = 1.1.1.)
+   Button Sound Effect :  On
+   Current Mode        :  TimeKeeping
+   Operation           :  Press and Listen
+
+Common/SoundEffectOn/ModeTimeKeeping/PressAndListen
+
+
+Test Case 2  		(Key = 1.1.2.)
+   Button Sound Effect :  On
+   Current Mode        :  TimeKeeping
+   Operation           :  Wait Alarm
+
+Common/SoundEffectOn/ModeTimeKeeping/WaitAlarm
+
+Test Case 3  		(Key = 1.1.3.)
+   Button Sound Effect :  On
+   Current Mode        :  TimeKeeping
+   Operation           :  Wait Timer
+
+Common/SoundEffectOn/ModeTimeKeeping/WaitTimer
+
+Test Case 4  		(Key = 1.1.4.)
+   Button Sound Effect :  On
+   Current Mode        :  TimeKeeping
+   Operation           :  Go Back To TimeKeeping
+
+Common/SoundEffectOn/ModeTimeKeeping/GoBackToTimeKeeping
+
+
+Test Case 5  		(Key = 1.2.1.)
+   Button Sound Effect :  On
+   Current Mode        :  Else
+   Operation           :  Press and Listen
+
+Common/SoundEffectOn/Else/PressAndListen
+
+Test Case 6  		(Key = 1.2.2.)
+   Button Sound Effect :  On
+   Current Mode        :  Else
+   Operation           :  Wait Alarm
+
+Common/SoundEffectOn/Else/WaitAlarm
+
+
+Test Case 7  		(Key = 1.2.3.)
+   Button Sound Effect :  On
+   Current Mode        :  Else
+   Operation           :  Wait Timer
+
+Common/SoundEffectOn/Else/WaitTimer
+
+
+Test Case 8  		(Key = 2.1.1.)
+   Button Sound Effect :  Off
+   Current Mode        :  TimeKeeping
+   Operation           :  Press and Listen
+
+Common/SoundEffectOff/ModeTimeKeeping/PressAndListen
+
+
+Test Case 9  		(Key = 2.1.2.)
+   Button Sound Effect :  Off
+   Current Mode        :  TimeKeeping
+   Operation           :  Wait Alarm
+
+Common/SoundEffectOff/ModeTimeKeeping/WaitAlarm
+
+Test Case 10 		(Key = 2.1.3.)
+   Button Sound Effect :  Off
+   Current Mode        :  TimeKeeping
+   Operation           :  Wait Timer
+
+Common/SoundEffectOff/ModeTimeKeeping/WaitTimer
+
+Test Case 11 		(Key = 2.1.4.)
+   Button Sound Effect :  Off
+   Current Mode        :  TimeKeeping
+   Operation           :  Go Back To TimeKeeping
+
+Common/SoundEffectOff/ModeTimeKeeping/GoBackToTimeKeeping
+
+Test Case 12 		(Key = 2.2.1.)
+   Button Sound Effect :  Off
+   Current Mode        :  Else
+   Operation           :  Press and Listen
+
+Common/SoundEffectOff/Else/PressAndListen
+
+Test Case 13 		(Key = 2.2.2.)
+   Button Sound Effect :  Off
+   Current Mode        :  Else
+   Operation           :  Wait Alarm
+
+Common/SoundEffectOff/Else/WaitAlarm
+
+Test Case 14 		(Key = 2.2.3.)
+   Button Sound Effect :  Off
+   Current Mode        :  Else
+   Operation           :  Wait Timer
+
+Common/SoundEffectOff/Else/WaitTimer

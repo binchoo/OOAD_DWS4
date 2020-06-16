@@ -1,0 +1,174 @@
+
+Test Case 1  		<error>
+   Mode Activation :  DDAY is not Activated
+
+
+Test Case 2  		(Key = 1.1.2.1.0.1.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  No DDAY On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move DDAY Forward
+
+DDAY/DDAYIsActivated/NoDDAYOn/Off/Normal/x/MoveDDAYForward
+
+Test Case 3  		(Key = 1.1.2.1.0.2.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  No DDAY On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move Backward
+
+DDAY/DDAYIsActivated/NoDDAYOn/Off/Normal/x/MoveDDAYBackward
+
+Test Case 4  		(Key = 1.1.2.1.0.4.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  No DDAY On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  On Selected DDAY
+
+DDAY/DDAYIsActivated/NoDDAYOn/Off/Normal/x/OnSelectedDDAY
+
+
+Test Case 5  		(Key = 1.1.2.2.1.3.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  No DDAY On
+   Selected DDAY Activation :  Off
+   Mode                     :  Edit
+   Field to Edit            :  All
+   Operation                :  Move Field Forward
+
+DDAY/DDAYIsActivated/NoDDAYOn/Off/Edit/All/MoveFieldForward
+
+
+Test Case 6  		(Key = 1.2.1.1.0.1.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move DDAY Forward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/On/Normal/x/MoveDDAYForward
+
+
+Test Case 7  		(Key = 1.2.1.1.0.2.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move Backward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/On/Normal/x/MoveDDAYBackward
+
+
+Test Case 8  		(Key = 1.2.1.1.0.5.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Off Selected DDAY
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/On/Normal/x/OffSelectedDDAY
+
+
+Test Case 9  		(Key = 1.2.1.2.1.3.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Edit
+   Field to Edit            :  All
+   Operation                :  Move Field Forward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/On/Edit/All/MoveFieldForward
+
+
+Test Case 10 		(Key = 1.2.2.1.0.1.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move DDAY Forward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/Off/Normal/x/MoveDDAYForward
+
+
+Test Case 11 		(Key = 1.2.2.1.0.2.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move Backward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/Off/Normal/x/MoveDDAYBackward
+
+
+Test Case 12 		(Key = 1.2.2.1.0.4.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  Off
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  On Selected DDAY
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/Off/Normal/x/OnSelectedDDAY
+
+
+Test Case 13 		(Key = 1.2.2.2.1.3.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  1-3 DDAYs On
+   Selected DDAY Activation :  Off
+   Mode                     :  Edit
+   Field to Edit            :  All
+   Operation                :  Move Field Forward
+
+DDAY/DDAYIsActivated/1-3DDAYsOn/Off/Edit/All/MoveFieldForward
+
+Test Case 14 		(Key = 1.3.1.1.0.1.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  4 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move DDAY Forward
+
+DDAY/DDAYIsActivated/4DDAYsOn/On/Normal/x/MoveDDAYForward
+
+Test Case 15 		(Key = 1.3.1.1.0.2.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  4 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Move Backward
+
+DDAY/DDAYIsActivated/4DDAYsOn/On/Normal/x/MoveBackward
+
+
+Test Case 16 		(Key = 1.3.1.1.0.5.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  4 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Normal
+   Field to Edit            :  <n/a>
+   Operation                :  Off Selected DDAY
+
+DDAY/DDAYIsActivated/4DDAYsOn/On/Normal/x/OffSelectedDDAY
+
+Test Case 17 		(Key = 1.3.1.2.1.3.)
+   Mode Activation          :  DDAY is Activated
+   DDAY On Count            :  4 DDAYs On
+   Selected DDAY Activation :  On
+   Mode                     :  Edit
+   Field to Edit            :  All
+   Operation                :  Move Field Forward
+
+DDAY/DDAYIsActivated/4DDAYsOn/On/Edit/All/MoveFieldForward

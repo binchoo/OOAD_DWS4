@@ -1,0 +1,128 @@
+
+Test Case 1  		(Key = 1.1.0.1.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Check Clock Going
+
+TimeKeeping/DDayIsActive/NormalMode/x/CheckClockGoing
+
+Test Case 2  		(Key = 1.1.0.3.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Move DDAY Forward
+
+TimeKeeping/DDayIsActive/NormalMode/x/MoveDDAYForward
+
+Test Case 3  		(Key = 1.1.0.4.)
+   DDAY is Activated :  True
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Move DDAY Backward
+
+TimeKeeping/DDayIsActive/NormalMode/x/MoveDDAYBackward
+
+Test Case 4  		(Key = 1.2.1.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Year/MoveFieldForward
+
+Test Case 5  		(Key = 1.2.2.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Month/MoveFieldForward
+
+Test Case 6  		(Key = 1.2.3.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Day/MoveFieldForward
+
+Test Case 7  		(Key = 1.2.4.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Hour/MoveFieldForward
+
+Test Case 8  		(Key = 1.2.5.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Minute/MoveFieldForward
+
+Test Case 9  		(Key = 1.2.6.2.)
+   DDAY is Activated :  True
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsActive/EditMode/Sec/MoveFieldForward
+
+Test Case 10 		(Key = 2.1.0.1.)
+   DDAY is Activated :  False
+   Mode              :  Normal
+   Current Field     :  <n/a>
+   Operation         :  Check Clock Going
+
+TimeKeeping/DDayIsNotActive/NormalMode/x/CheckClockGoing
+
+Test Case 11 		(Key = 2.2.1.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Year
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Year/MoveFieldForward
+
+Test Case 12 		(Key = 2.2.2.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Month
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Month/MoveFieldForward
+
+Test Case 13 		(Key = 2.2.3.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Day
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Day/MoveFieldForward
+
+Test Case 14 		(Key = 2.2.4.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Hour
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Hour/MoveFieldForward
+
+Test Case 15 		(Key = 2.2.5.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Minute
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Minute/MoveFieldForward
+
+Test Case 16 		(Key = 2.2.6.2.)
+   DDAY is Activated :  False
+   Mode              :  Edit
+   Current Field     :  Sec
+   Operation         :  Move Field Forward
+
+TimeKeeping/DDayIsNotActive/EditMode/Sec/MoveFieldForward

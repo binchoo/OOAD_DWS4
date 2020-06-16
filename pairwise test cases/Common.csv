@@ -1,0 +1,13 @@
+Button Sound Effect	Current Mode
+On	WorldTime
+Off	StopWatch
+On	DDAY
+On	StopWatch
+Off	DDAY
+Off	WorldTime
+Off	TimeKeeping
+On	TimeKeeping
+On	Timer
+On	Alarm
+Off	Timer
+Off	Alarm
