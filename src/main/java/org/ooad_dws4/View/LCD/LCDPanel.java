@@ -223,6 +223,8 @@ public class LCDPanel extends JPanel {
             case 4:
                 setText(17, 26, value);
                 break;
+            default:
+                break;
         }
     }
 
