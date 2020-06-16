@@ -37,7 +37,6 @@ Environments:
 Parameters:
     Operation:
     Move Field Forward. [if Edit]
-    Move Field Backward.[if Edit]
     Save.               [if Edit]
     Buzzer Off.         [if Ringing]
     Check Buzzer Rings. [if !AllAlarmOff && !Ringing]

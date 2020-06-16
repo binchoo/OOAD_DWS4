@@ -1,54 +1,50 @@
 
-Test Case 1  		(Key = 1.0.3.)
+Test Case 1  		(Key = 1.0.2.)
    StopWatch Status :  Off
    Edit Field       :  <n/a>
    Operation        :  Clear
 
+StopWatch/Off/x/Clear
 
-Test Case 2  		(Key = 1.0.4.)
+
+Test Case 2  		(Key = 1.0.3.)
    StopWatch Status :  Off
    Edit Field       :  <n/a>
    Operation        :  Start
 
+StopWatch/Off/x/Start
 
-Test Case 3  		(Key = 2.0.5.)
+Test Case 3  		(Key = 2.0.4.)
    StopWatch Status :  Run
    Edit Field       :  <n/a>
    Operation        :  Stop
 
+StopWatch/Run/x/Stop
 
-Test Case 4  		(Key = 3.0.3.)
+Test Case 4  		(Key = 3.0.2.)
    StopWatch Status :  Pus
    Edit Field       :  <n/a>
    Operation        :  Clear
 
+StopWatch/Pus/x
 
-Test Case 5  		(Key = 3.0.4.)
+Test Case 5  		(Key = 3.0.3.)
    StopWatch Status :  Pus
    Edit Field       :  <n/a>
    Operation        :  Start
 
+StopWatch/Pus/x/Start
 
 Test Case 6  		(Key = 4.1.1.)
    StopWatch Status :  Edit
    Edit Field       :  Hour
    Operation        :  Move Field Forward
 
+StopWatch/Edit/Hour/MoveFieldForward
 
-Test Case 7  		(Key = 4.1.2.)
-   StopWatch Status :  Edit
-   Edit Field       :  Hour
-   Operation        :  Move Field Backward
-
-
-Test Case 8  		(Key = 4.2.1.)
+Test Case 7  		(Key = 4.2.1.)
    StopWatch Status :  Edit
    Edit Field       :  Minute
    Operation        :  Move Field Forward
 
-
-Test Case 9  		(Key = 4.2.2.)
-   StopWatch Status :  Edit
-   Edit Field       :  Minute
-   Operation        :  Move Field Backward
-
+StopWatch/Edit/Minute/MoveFieldForward

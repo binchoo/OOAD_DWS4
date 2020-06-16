@@ -13,20 +13,13 @@
 # the subscriber's subscriptions.
 
 Environments:
-    StopWatch Status:
-    Off.
-    Run.                [property Run]
-    Pus.
-    Edit.               [property Edit]
-
-    Edit Field:
-    Hour.               [if Edit]
-    Minute.             [if Edit]
+    Activated Mode:
+	four.				[property Normal]
+	more.
+	less.				
 
 Parameters:
     Operation:
-    Move Field Forward.     [if Edit]
-    Move Field Backward.    [if Edit]
-    Clear.                  [if !Edit && !Run]
-    Start.                  [if !Edit && !Run]
-    Stop.                   [if !Edit && Run]
+	Move Forward.			
+	Move Backward.
+	Exit.				[if Normal]

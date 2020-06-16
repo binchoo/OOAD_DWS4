@@ -12,14 +12,27 @@
 # while a "non-matching pub" is a publisher whose notifcations do not match
 # the subscriber's subscriptions.
 
-Environments:
-    Activated Mode:
-	four.				[property Normal]
-	more.
-	less.				
-
 Parameters:
+    DDAY is Activated:
+    True.                   [property DDAYOn]
+    False.
+
+    Mode:
+    Normal.                 [property Normal]
+    Edit.                   [property Edit]
+
+    Current Field:
+    Year.                   [if Edit]
+    Month.                  [if Edit]
+    Day.                    [if Edit]
+    Hour.                   [if Edit]
+    Minute.                 [if Edit]
+    Sec.                    [if Edit]
+
+
     Operation:
-	move forward.			
-	move reverse.			
-	exit.				[if Normal]
+    Check Clock Going.      [if Normal]
+    Move Field Forward.     [if Edit]
+    Move DDAY Forward.      [if Normal && DDAYOn]
+    Move DDAY Backward.     [if Normal && DDAYOn]
+    

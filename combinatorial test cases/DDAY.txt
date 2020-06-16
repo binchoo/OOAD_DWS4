@@ -17,16 +17,14 @@ Environments:
     DDAY is Activated.          
     DDAY is not Activated.      [error]
 
-    DDAY On Count
-    0 ddays on.
-    1 ddays on.
-    2 ddays on.
-    3 ddays on.
-    4 ddays on.                 [property AllOn]
+    DDAY On Count:
+    No DDAY On.		[property NoOn]
+    1-3 DDAYs On.
+    4 DDAYs On.                 [property AllOn]
 
 Parameters:
-    DDAY Activation:
-    On.                         [property On]
+    Selected DDAY Activation:
+    On.                         [if !NoOn] [property On]
     Off.                        [if !AllOn] [property Off]
 
     Mode:
@@ -37,9 +35,8 @@ Parameters:
     All.                        [if Edit] 
 
     Operation:
-    Move Forward.               [if Normal]
+    Move DDAY Forward.               [if Normal]
     Move Backward.              [if Normal]
     Move Field Forward.         [if Edit]
-    Move Field Backward.        [if Edit]
-    On dday.                    [if Off && Normal]
-    Off dday.                   [if On && Normal]
+    On Selected DDAY.                    [if Off && Normal]
+    Off Selected DDAY.                   [if On && Normal]

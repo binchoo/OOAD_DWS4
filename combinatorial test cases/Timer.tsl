@@ -2,6 +2,7 @@
 Test Case 1  		<single>
    Timer Time :  Zero
 
+Timer/TimeZero/
 
 Test Case 2  		(Key = 2.1.1.1.0.0.)
    Timer Time    :  Future
@@ -11,6 +12,7 @@ Test Case 2  		(Key = 2.1.1.1.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Off/Edit/Hour/x/x
 
 Test Case 3  		(Key = 2.1.1.2.0.0.)
    Timer Time    :  Future
@@ -20,6 +22,7 @@ Test Case 3  		(Key = 2.1.1.2.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Off/Edit/Minute/x/x
 
 Test Case 4  		(Key = 2.1.1.3.0.0.)
    Timer Time    :  Future
@@ -29,6 +32,7 @@ Test Case 4  		(Key = 2.1.1.3.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Off/Edit/Sec/x/x
 
 Test Case 5  		(Key = 2.1.2.0.1.4.)
    Timer Time    :  Future
@@ -38,6 +42,7 @@ Test Case 5  		(Key = 2.1.2.0.1.4.)
    Buzzer Status :  Ring
    Operation     :  Stop Ringing
 
+Timer/TimeFuture/Off/Normal/x/Ring/StopRinging
 
 Test Case 6  		(Key = 2.1.2.0.2.1.)
    Timer Time    :  Future
@@ -47,6 +52,7 @@ Test Case 6  		(Key = 2.1.2.0.2.1.)
    Buzzer Status :  No Ring
    Operation     :  Start
 
+Timer/TimeFuture/Off/Normal/x/NoRing/Start
 
 Test Case 7  		(Key = 2.1.2.0.2.3.)
    Timer Time    :  Future
@@ -56,6 +62,7 @@ Test Case 7  		(Key = 2.1.2.0.2.3.)
    Buzzer Status :  No Ring
    Operation     :  Clear
 
+Timer/TimeFuture/Off/Normal/x/NoRing/Clear
 
 Test Case 8  		(Key = 2.2.1.1.0.0.)
    Timer Time    :  Future
@@ -65,6 +72,7 @@ Test Case 8  		(Key = 2.2.1.1.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Run/Edit/Hour/x/x
 
 Test Case 9  		(Key = 2.2.1.2.0.0.)
    Timer Time    :  Future
@@ -74,6 +82,7 @@ Test Case 9  		(Key = 2.2.1.2.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Run/Edit/Minute/x/x
 
 Test Case 10 		(Key = 2.2.1.3.0.0.)
    Timer Time    :  Future
@@ -83,6 +92,7 @@ Test Case 10 		(Key = 2.2.1.3.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Run/Edit/Sec/x/x
 
 Test Case 11 		(Key = 2.2.2.0.1.4.)
    Timer Time    :  Future
@@ -92,6 +102,7 @@ Test Case 11 		(Key = 2.2.2.0.1.4.)
    Buzzer Status :  Ring
    Operation     :  Stop Ringing
 
+Timer/TimeFuture/Run/Normal/x/Ring/StopRinging
 
 Test Case 12 		(Key = 2.2.2.0.2.2.)
    Timer Time    :  Future
@@ -101,6 +112,7 @@ Test Case 12 		(Key = 2.2.2.0.2.2.)
    Buzzer Status :  No Ring
    Operation     :  Pause
 
+Timer/TimeFuture/Run/Normal/x/NoRing/Pause
 
 Test Case 13 		(Key = 2.2.2.0.2.3.)
    Timer Time    :  Future
@@ -110,6 +122,7 @@ Test Case 13 		(Key = 2.2.2.0.2.3.)
    Buzzer Status :  No Ring
    Operation     :  Clear
 
+Timer/TimeFuture/Run/Normal/x/NoRing/Clear
 
 Test Case 14 		(Key = 2.3.1.1.0.0.)
    Timer Time    :  Future
@@ -119,6 +132,7 @@ Test Case 14 		(Key = 2.3.1.1.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Pus/Edit/Hour/x/x
 
 Test Case 15 		(Key = 2.3.1.2.0.0.)
    Timer Time    :  Future
@@ -128,6 +142,7 @@ Test Case 15 		(Key = 2.3.1.2.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Pus/Edit/Minute/x/x
 
 Test Case 16 		(Key = 2.3.1.3.0.0.)
    Timer Time    :  Future
@@ -137,6 +152,7 @@ Test Case 16 		(Key = 2.3.1.3.0.0.)
    Buzzer Status :  <n/a>
    Operation     :  <n/a>
 
+Timer/TimeFuture/Pus/Edit/Sec/x/x
 
 Test Case 17 		(Key = 2.3.2.0.1.4.)
    Timer Time    :  Future
@@ -146,6 +162,7 @@ Test Case 17 		(Key = 2.3.2.0.1.4.)
    Buzzer Status :  Ring
    Operation     :  Stop Ringing
 
+Timer/TimeFuture/Pus/Normal/x/Ring/StopRinging
 
 Test Case 18 		(Key = 2.3.2.0.2.1.)
    Timer Time    :  Future
@@ -155,6 +172,7 @@ Test Case 18 		(Key = 2.3.2.0.2.1.)
    Buzzer Status :  No Ring
    Operation     :  Start
 
+Timer/TimeFuture/Pus/Normal/x/NoRing/Start
 
 Test Case 19 		(Key = 2.3.2.0.2.3.)
    Timer Time    :  Future
@@ -164,3 +182,4 @@ Test Case 19 		(Key = 2.3.2.0.2.3.)
    Buzzer Status :  No Ring
    Operation     :  Clear
 
+Timer/TimeFuture/Pus/Normal/x/NoRing/Clear

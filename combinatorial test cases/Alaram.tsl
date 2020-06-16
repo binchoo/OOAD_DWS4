@@ -1,5 +1,5 @@
 
-Test Case 1  		(Key = 1.2.1.1.0.4.)
+Test Case 1  		(Key = 1.2.1.1.0.3.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -7,6 +7,7 @@ Test Case 1  		(Key = 1.2.1.1.0.4.)
    Current Field :  <n/a>
    Operation     :  Buzzer Off
 
+AllOff/Off/Ring/Normal/x/BuzzerOff
 
 Test Case 2  		(Key = 1.2.1.2.1.1.)
    Alarm Count   :  All off
@@ -16,6 +17,7 @@ Test Case 2  		(Key = 1.2.1.2.1.1.)
    Current Field :  Hour
    Operation     :  Move Field Forward
 
+AllOff/Off/Ring/Edit/Hour/MoveFieldForward
 
 Test Case 3  		(Key = 1.2.1.2.1.2.)
    Alarm Count   :  All off
@@ -23,8 +25,9 @@ Test Case 3  		(Key = 1.2.1.2.1.2.)
    Buzzer Status :  Ring
    Mode          :  Edit
    Current Field :  Hour
-   Operation     :  Move Field Backward
+   Operation     :  Save
 
+AllOff/Off/Ring/Edit/Hour/Save
 
 Test Case 4  		(Key = 1.2.1.2.1.3.)
    Alarm Count   :  All off
@@ -32,19 +35,12 @@ Test Case 4  		(Key = 1.2.1.2.1.3.)
    Buzzer Status :  Ring
    Mode          :  Edit
    Current Field :  Hour
-   Operation     :  Save
-
-
-Test Case 5  		(Key = 1.2.1.2.1.4.)
-   Alarm Count   :  All off
-   Alaram Status :  Off
-   Buzzer Status :  Ring
-   Mode          :  Edit
-   Current Field :  Hour
    Operation     :  Buzzer Off
 
+AllOff/Off/Ring/Edit/Hour/BuzzerOff
 
-Test Case 6  		(Key = 1.2.1.2.2.1.)
+
+Test Case 5  		(Key = 1.2.1.2.2.1.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -53,16 +49,7 @@ Test Case 6  		(Key = 1.2.1.2.2.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 7  		(Key = 1.2.1.2.2.2.)
-   Alarm Count   :  All off
-   Alaram Status :  Off
-   Buzzer Status :  Ring
-   Mode          :  Edit
-   Current Field :  Minute
-   Operation     :  Move Field Backward
-
-
-Test Case 8  		(Key = 1.2.1.2.2.3.)
+Test Case 6  		(Key = 1.2.1.2.2.2.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -71,7 +58,7 @@ Test Case 8  		(Key = 1.2.1.2.2.3.)
    Operation     :  Save
 
 
-Test Case 9  		(Key = 1.2.1.2.2.4.)
+Test Case 7  		(Key = 1.2.1.2.2.3.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -80,7 +67,7 @@ Test Case 9  		(Key = 1.2.1.2.2.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 10 		(Key = 1.2.2.1.0.0.)
+Test Case 8  		(Key = 1.2.2.1.0.0.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -89,7 +76,7 @@ Test Case 10 		(Key = 1.2.2.1.0.0.)
    Operation     :  <n/a>
 
 
-Test Case 11 		(Key = 1.2.2.2.1.1.)
+Test Case 9  		(Key = 1.2.2.2.1.1.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -98,16 +85,7 @@ Test Case 11 		(Key = 1.2.2.2.1.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 12 		(Key = 1.2.2.2.1.2.)
-   Alarm Count   :  All off
-   Alaram Status :  Off
-   Buzzer Status :  Off
-   Mode          :  Edit
-   Current Field :  Hour
-   Operation     :  Move Field Backward
-
-
-Test Case 13 		(Key = 1.2.2.2.1.3.)
+Test Case 10 		(Key = 1.2.2.2.1.2.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -116,7 +94,7 @@ Test Case 13 		(Key = 1.2.2.2.1.3.)
    Operation     :  Save
 
 
-Test Case 14 		(Key = 1.2.2.2.2.1.)
+Test Case 11 		(Key = 1.2.2.2.2.1.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -125,16 +103,7 @@ Test Case 14 		(Key = 1.2.2.2.2.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 15 		(Key = 1.2.2.2.2.2.)
-   Alarm Count   :  All off
-   Alaram Status :  Off
-   Buzzer Status :  Off
-   Mode          :  Edit
-   Current Field :  Minute
-   Operation     :  Move Field Backward
-
-
-Test Case 16 		(Key = 1.2.2.2.2.3.)
+Test Case 12 		(Key = 1.2.2.2.2.2.)
    Alarm Count   :  All off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -143,7 +112,7 @@ Test Case 16 		(Key = 1.2.2.2.2.3.)
    Operation     :  Save
 
 
-Test Case 17 		(Key = 2.1.1.1.0.4.)
+Test Case 13 		(Key = 2.1.1.1.0.3.)
    Alarm Count   :  Has off
    Alaram Status :  On
    Buzzer Status :  Ring
@@ -152,7 +121,7 @@ Test Case 17 		(Key = 2.1.1.1.0.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 18 		(Key = 2.1.2.1.0.5.)
+Test Case 14 		(Key = 2.1.2.1.0.4.)
    Alarm Count   :  Has off
    Alaram Status :  On
    Buzzer Status :  Off
@@ -161,7 +130,7 @@ Test Case 18 		(Key = 2.1.2.1.0.5.)
    Operation     :  Check Buzzer Rings
 
 
-Test Case 19 		(Key = 2.2.1.1.0.4.)
+Test Case 15 		(Key = 2.2.1.1.0.3.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -170,7 +139,7 @@ Test Case 19 		(Key = 2.2.1.1.0.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 20 		(Key = 2.2.1.2.1.1.)
+Test Case 16 		(Key = 2.2.1.2.1.1.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -179,16 +148,7 @@ Test Case 20 		(Key = 2.2.1.2.1.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 21 		(Key = 2.2.1.2.1.2.)
-   Alarm Count   :  Has off
-   Alaram Status :  Off
-   Buzzer Status :  Ring
-   Mode          :  Edit
-   Current Field :  Hour
-   Operation     :  Move Field Backward
-
-
-Test Case 22 		(Key = 2.2.1.2.1.3.)
+Test Case 17 		(Key = 2.2.1.2.1.2.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -197,7 +157,7 @@ Test Case 22 		(Key = 2.2.1.2.1.3.)
    Operation     :  Save
 
 
-Test Case 23 		(Key = 2.2.1.2.1.4.)
+Test Case 18 		(Key = 2.2.1.2.1.3.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -206,7 +166,7 @@ Test Case 23 		(Key = 2.2.1.2.1.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 24 		(Key = 2.2.1.2.2.1.)
+Test Case 19 		(Key = 2.2.1.2.2.1.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -215,16 +175,7 @@ Test Case 24 		(Key = 2.2.1.2.2.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 25 		(Key = 2.2.1.2.2.2.)
-   Alarm Count   :  Has off
-   Alaram Status :  Off
-   Buzzer Status :  Ring
-   Mode          :  Edit
-   Current Field :  Minute
-   Operation     :  Move Field Backward
-
-
-Test Case 26 		(Key = 2.2.1.2.2.3.)
+Test Case 20 		(Key = 2.2.1.2.2.2.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -233,7 +184,7 @@ Test Case 26 		(Key = 2.2.1.2.2.3.)
    Operation     :  Save
 
 
-Test Case 27 		(Key = 2.2.1.2.2.4.)
+Test Case 21 		(Key = 2.2.1.2.2.3.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Ring
@@ -242,7 +193,7 @@ Test Case 27 		(Key = 2.2.1.2.2.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 28 		(Key = 2.2.2.1.0.5.)
+Test Case 22 		(Key = 2.2.2.1.0.4.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -251,7 +202,7 @@ Test Case 28 		(Key = 2.2.2.1.0.5.)
    Operation     :  Check Buzzer Rings
 
 
-Test Case 29 		(Key = 2.2.2.2.1.1.)
+Test Case 23 		(Key = 2.2.2.2.1.1.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -260,16 +211,7 @@ Test Case 29 		(Key = 2.2.2.2.1.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 30 		(Key = 2.2.2.2.1.2.)
-   Alarm Count   :  Has off
-   Alaram Status :  Off
-   Buzzer Status :  Off
-   Mode          :  Edit
-   Current Field :  Hour
-   Operation     :  Move Field Backward
-
-
-Test Case 31 		(Key = 2.2.2.2.1.3.)
+Test Case 24 		(Key = 2.2.2.2.1.2.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -278,7 +220,7 @@ Test Case 31 		(Key = 2.2.2.2.1.3.)
    Operation     :  Save
 
 
-Test Case 32 		(Key = 2.2.2.2.1.5.)
+Test Case 25 		(Key = 2.2.2.2.1.4.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -287,7 +229,7 @@ Test Case 32 		(Key = 2.2.2.2.1.5.)
    Operation     :  Check Buzzer Rings
 
 
-Test Case 33 		(Key = 2.2.2.2.2.1.)
+Test Case 26 		(Key = 2.2.2.2.2.1.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -296,16 +238,7 @@ Test Case 33 		(Key = 2.2.2.2.2.1.)
    Operation     :  Move Field Forward
 
 
-Test Case 34 		(Key = 2.2.2.2.2.2.)
-   Alarm Count   :  Has off
-   Alaram Status :  Off
-   Buzzer Status :  Off
-   Mode          :  Edit
-   Current Field :  Minute
-   Operation     :  Move Field Backward
-
-
-Test Case 35 		(Key = 2.2.2.2.2.3.)
+Test Case 27 		(Key = 2.2.2.2.2.2.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -314,7 +247,7 @@ Test Case 35 		(Key = 2.2.2.2.2.3.)
    Operation     :  Save
 
 
-Test Case 36 		(Key = 2.2.2.2.2.5.)
+Test Case 28 		(Key = 2.2.2.2.2.4.)
    Alarm Count   :  Has off
    Alaram Status :  Off
    Buzzer Status :  Off
@@ -323,7 +256,7 @@ Test Case 36 		(Key = 2.2.2.2.2.5.)
    Operation     :  Check Buzzer Rings
 
 
-Test Case 37 		(Key = 3.1.1.1.0.4.)
+Test Case 29 		(Key = 3.1.1.1.0.3.)
    Alarm Count   :  All on
    Alaram Status :  On
    Buzzer Status :  Ring
@@ -332,7 +265,7 @@ Test Case 37 		(Key = 3.1.1.1.0.4.)
    Operation     :  Buzzer Off
 
 
-Test Case 38 		(Key = 3.1.2.1.0.5.)
+Test Case 30 		(Key = 3.1.2.1.0.4.)
    Alarm Count   :  All on
    Alaram Status :  On
    Buzzer Status :  Off
@@ -340,3 +273,41 @@ Test Case 38 		(Key = 3.1.2.1.0.5.)
    Current Field :  <n/a>
    Operation     :  Check Buzzer Rings
 
+AllOff/Off/Ring/Normal/x/BuzzerOff
+
+AllOff/Off/Ring/Edit/Hour/MoveFieldForward
+AllOff/Off/Ring/Edit/Hour/Save
+AllOff/Off/Ring/Edit/Hour/BuzzerOff
+AllOff/Off/Ring/Edit/Minute/MoveFieldForward
+AllOff/Off/Ring/Edit/Minute/Save
+AllOff/Off/Ring/Edit/Minute/BuzzerOff
+
+AllOff/Off/NoRing/Normal/x/x
+
+AllOff/Off/NoRing/Edit/Hour/MoveFieldForward
+AllOff/Off/NoRing/Edit/Hour/Save
+AllOff/Off/NoRing/Edit/Minute/MoveFieldForward
+AllOff/Off/NoRing/Edit/Minute/Save
+
+HasOff/On/Ring/Normal/x/BuzzerOff
+HasOff/On/NoRing/Normal/x/CheckBuzzerRings
+HasOff/On/NoRing/Normal/x/BuzzerOff
+
+HasOff/Off/Ring/Edit/Hour/MoveFieldForward
+HasOff/Off/Ring/Edit/Hour/Save
+HasOff/Off/Ring/Edit/Hour/BuzzerOff
+HasOff/Off/Ring/Edit/Minute/MoveFieldForward
+HasOff/Off/Ring/Edit/Minute/Save
+HasOff/Off/Ring/Edit/Minute/BuzzerOff
+
+HasOff/Off/NoRing/Normal/x/CheckBuzzerRings
+
+HasOff/Off/NoRing/Edit/Hour/MoveFieldForward
+HasOff/Off/NoRing/Edit/Hour/Save
+HasOff/Off/NoRing/Edit/Hour/CheckBuzzerRings
+HasOff/Off/NoRing/Edit/Minute/MoveFieldForward
+HasOff/Off/NoRing/Edit/Minute/Save
+HasOff/Off/NoRing/Edit/Minute/CheckBuzzerRings
+
+AllOn/On/Ring/Normal/x/BuzzerOff
+AllOn/On/NoRing/Normal/x/CheckBuzzerRings
