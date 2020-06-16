@@ -22,9 +22,10 @@ public class Stopwatch {
         return stopwatchTime;
     }
 
-    public void runStopwatch() {
+    public boolean runStopwatch() {
         stopwatchTime = stopwatchTime + Clock.timeUnit;
         stopwatchTime = Math.min(stopwatchTime, maxValue);
+        return maxValue == stopwatchTime;
     }
 
     public void setStopwatchData(long time) {

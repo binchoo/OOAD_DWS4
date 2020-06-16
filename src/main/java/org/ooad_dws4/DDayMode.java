@@ -11,7 +11,7 @@ public class DDayMode extends Mode {
     private int currentIndex;
     private int field = 0;
     private long systemTime = 0;
-    private final long aDay = 86400000;
+    private static final long aDay = 86400000L;
 
     public DDayMode(boolean isActivation) {
         Date date = new Date();
@@ -128,7 +128,7 @@ public class DDayMode extends Mode {
         long difference = targetTime - baseTime;
         String sign = difference < 0 ? "-" : "+";
         difference = Math.abs(difference);
-        int day = (int) (difference / aDay);
+        int day = (int) (difference / aDay) + 1;
         day = Math.min(day, 9999);
         char charDay[] = Integer.toString(day).toCharArray();
         char result[] = "    ".toCharArray();

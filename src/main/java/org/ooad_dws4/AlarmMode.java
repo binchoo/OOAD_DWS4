@@ -9,7 +9,6 @@ import java.util.Locale;
 public class AlarmMode extends Mode {
     private Alarm[] alarms;
     private int currentAlarmIndex;
-    private int changingAlarmIndex;
     private int field;
     private long systemTime;
     private boolean timeSync;
@@ -21,7 +20,6 @@ public class AlarmMode extends Mode {
             this.alarms[i] = new Alarm();
         this.state = 0;
         this.currentAlarmIndex = 0;
-        this.changingAlarmIndex = this.currentAlarmIndex;
         this.field = 0;
         this.systemTime = 0;
         this.isActivate = isActivation;

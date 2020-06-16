@@ -24,7 +24,8 @@ public class StopwatchMode extends Mode {
     @Override
     public Message update(long systemTime) {
         if (state == 2)
-            this.stopwatch.runStopwatch();
+            if(this.stopwatch.runStopwatch())
+                changeState("DEFAULT");
         return null;
     }
 
