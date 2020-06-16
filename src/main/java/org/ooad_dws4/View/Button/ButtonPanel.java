@@ -26,7 +26,6 @@ public class ButtonPanel extends JPanel {
 
     public ButtonPanel(){
         this.buttonsetAdapter = new ButtonsetAdapter();
-
         try {
             img = new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/img/button.png"))).getImage();
         } catch (IOException e) {
