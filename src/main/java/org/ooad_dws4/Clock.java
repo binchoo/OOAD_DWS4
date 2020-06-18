@@ -10,9 +10,9 @@ public class Clock implements Runnable {
     /**
      * @brief System Clock Data
      */
-    static long timeUnit;
-    static long defaultScreenTime;
-    static long buzzerOffTime;
+    static public long timeUnit;
+    static public long defaultScreenTime;
+    static public long buzzerOffTime;
 
     /**
      * @brief The objects that Clock can use.

@@ -116,14 +116,7 @@ public class ModeManager {
                     if (event == 2)
                         return new Message(10, "toggleMute", null);
                     else if (event == 3 || event == 4) {
-                        if (!modes[5].getIsActivate())
-                            return null;
-                        String temp = modes[5].modeModify(event).getArg().get("1");
-                        if (temp != null)
-                            ddayData = temp;
-                        HashMap<String, String> map = new HashMap<>();
-                        map.put("1", ddayData);
-                        return new Message(11, "updateView", map);
+                        return makeDdayLcd(event);
                     }
                 }
             }
@@ -142,6 +135,22 @@ public class ModeManager {
                 ddayData = message.getArg().get("1");
             return message;
         }
+    }
+
+    /**
+     * @param event SwitchDefaultScreen Message
+     * @return Return l mode's updateView Message
+     * @brief If the current mode is not in edit state, change the mode to the
+     */
+    private Message makeDdayLcd(int event) {
+        if (!modes[5].getIsActivate())
+            return null;
+        String temp = modes[5].modeModify(event).getArg().get("1");
+        if (temp != null)
+            ddayData = temp;
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1", ddayData);
+        return new Message(11, "updateView", map);
     }
 
     /**

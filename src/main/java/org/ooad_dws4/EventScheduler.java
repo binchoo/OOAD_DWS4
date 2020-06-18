@@ -31,7 +31,7 @@ public class EventScheduler {
     /**
      * @brief Milli second of a day.
      */
-    private final long aDay = 86400000;
+    static private final long aDay = 86400000;
 
     /**
      * @brief Push SwitchDefaultScreen event in default constructor.
