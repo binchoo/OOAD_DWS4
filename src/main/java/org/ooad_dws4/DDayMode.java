@@ -9,8 +9,8 @@ public class DDayMode extends Mode {
 
     private DDay[] ddays;
     private int currentIndex;
-    private int field = 0;
-    private long systemTime = 0;
+    private int field;
+    private long systemTime;
     private static final long aDay = 86400000L;
 
     public DDayMode(boolean isActivation) {
@@ -21,6 +21,8 @@ public class DDayMode extends Mode {
         this.isActivate = isActivation;
         this.modeName = "D-DAY";
         this.currentIndex = 0;
+        this.field = 0;
+        this.systemTime = 0;
     }
 
     @Override
