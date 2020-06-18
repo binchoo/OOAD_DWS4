@@ -40,7 +40,7 @@ public class AlarmMode extends Mode {
     /* system operation */
     private Message editAlarm() {
         HashMap<String, String> arg = new HashMap<>();
-        if(getStateName()=="OFF") {
+        if(getStateName().equals("OFF")) {
             changeState(1);
             makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
         }else makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
