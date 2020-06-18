@@ -35,7 +35,8 @@ class DDayModeTest {
         Message m = dDay.update(new Date().getTime(), true);
         assertEquals(" 1 OFF", m.getArg().get("1"));
         m = dDay.modeModify(2);
-        assertEquals("+1   0", m.getArg().get("1"));
+        assertEquals("+1   1", m.getArg().get("1"));
+        dDay.update(100);
         m = dDay.modeModify(3);
         assertEquals("D-DAY 4", m.getArg().get("3"));
         m = dDay.modeModify(4);

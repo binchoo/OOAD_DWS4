@@ -2,7 +2,7 @@ package org.ooad_dws4;
 
 import java.util.HashMap;
 
-public class IOBridge extends DWSObject {
+public class IOBridge {
 
     private MainController mainController;
     private OutputController output;
@@ -35,12 +35,18 @@ public class IOBridge extends DWSObject {
             }
                 break;
             case 11: {
-                if (action.equals("buzzOff") || action.equals("buzzRinging"))
-                    this.isBuzzerRinging = !this.isBuzzerRinging;
+                if (action.equals("buzzOff")){
+                    isBuzzerRinging = false;
+                }
+                else if(action.equals("buzzRinging")){
+                    this.isBuzzerRinging = true;
+                }
                 this.output.output(msg);
             }
                 break;
+            default:
         }
+
     }
 
     public void inputEvent(int event) {

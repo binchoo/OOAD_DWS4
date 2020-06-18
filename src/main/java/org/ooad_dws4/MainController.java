@@ -94,6 +94,7 @@ public class MainController {
                     if (message != null)
                         this.ioBridge.outputEvent(message);
                     break;
+                default:
             }
         }
     }
