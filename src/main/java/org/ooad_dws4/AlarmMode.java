@@ -186,11 +186,6 @@ public class AlarmMode extends Mode {
         return new Message(11, "updateView", arg);
     }
 
-    /* personally added */
-    public Alarm[] getAlarms() {
-        return this.alarms;
-    }
-
     private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink) { //f
         String argData[] = makeTimeSet(alarmTime);
         arg.put("0", getStateName());
