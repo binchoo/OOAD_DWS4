@@ -32,7 +32,7 @@ public class TimerMode extends Mode {
     public Message update(long systemTime) {
         if (state == 2) {
             timer.runTimer();
-            if (!(timer.getDeadlineData() > 0))
+            if (timer.getDeadlineData() < 0)
                 changeState("DEFAULT");
         }
         return null;

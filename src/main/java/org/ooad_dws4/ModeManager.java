@@ -115,9 +115,8 @@ public class ModeManager {
                 if (isNotEditMode) {
                     if (event == 2)
                         return new Message(10, "toggleMute", null);
-                    else if (event == 3 || event == 4) {
+                    else if (event == 3 || event == 4)
                         return makeDdayLcd(event);
-                    }
                 }
             }
             if (isNotEditMode) {
@@ -136,12 +135,7 @@ public class ModeManager {
             return message;
         }
     }
-
-    /**
-     * @param event SwitchDefaultScreen Message
-     * @return Return l mode's updateView Message
-     * @brief If the current mode is not in edit state, change the mode to the
-     */
+    
     private Message makeDdayLcd(int event) {
         if (!modes[5].getIsActivate())
             return null;
