@@ -2,16 +2,13 @@ package org.ooad_dws4;
 
 public class ButtonsetAdapter {
 
-    private Input input;
+    private static Input input;
 
-    public ButtonsetAdapter() {
-    }
-
-    public void linkObject(Input input){
+    public void linkObject(final Input input){
         this.input = input;
     }
 
-    public void buttonClick(int button) {
+    public void buttonClick(final int button) {
         input.buttonClick(button);
     }
 

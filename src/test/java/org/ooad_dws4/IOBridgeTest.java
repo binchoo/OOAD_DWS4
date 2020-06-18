@@ -26,10 +26,10 @@ public class IOBridgeTest {
         // test 2
         ioBridge.outputEvent(new Message(11,
                 "buzzRinging", null));
-        assertTrue(ioBridge.isBuzzerRinging());
+        assertTrue(ioBridge.isRinging());
         ioBridge.outputEvent(new Message(11,
                 "buzzOff", null));
-        assertTrue(!ioBridge.isBuzzerRinging());
+        assertTrue(!ioBridge.isRinging());
 
     }
 

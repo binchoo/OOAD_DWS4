@@ -1,8 +1,9 @@
 package org.ooad_dws4;
 
-import java.util.HashMap;
+
+import java.util.Map;
 
 public interface LCD {
-    public void update(HashMap<String, String> arg);
+    void update(Map<String, String> arg);
 }
 

@@ -4,14 +4,14 @@ import java.util.HashMap;
 
 public class IOBridge {
 
-    private MainController mainController;
-    private OutputController output;
-    private boolean isBuzzerRinging;
-    private boolean isMute;
+    private static MainController mainController;
+    private static OutputController output;
+    private static boolean isRinging;
+    private static boolean mute;
 
     public IOBridge() {
-        isBuzzerRinging = false;
-        isMute = false;
+        isRinging = false;
+        mute = false;
     }
 
     public void linkObject(MainController mainController, OutputController outputController) {
@@ -20,26 +20,26 @@ public class IOBridge {
     }
 
     public void outputEvent(Message msg) {
-        int dest = msg.getDestination();
-        String action = msg.getAction();
+        final int dest = msg.getDestination();
+        final String action = msg.getAction();
         switch (dest) {
             case 10: {
-                if (action.equals("toggleMute")) {
+                if ("toggleMute".equals(action)) {
                     this.toggleSound();
                     this.output.output(new Message(11, "updateView", new HashMap<String, String>() {
                         {
-                            put("2", String.valueOf(isMute));
+                            put("2", String.valueOf(mute));
                         }
                     }));
                 }
             }
                 break;
             case 11: {
-                if (action.equals("buzzOff")){
-                    isBuzzerRinging = false;
+                if ("buzzOff".equals(action)){
+                    isRinging = false;
                 }
-                else if(action.equals("buzzRinging")){
-                    this.isBuzzerRinging = true;
+                else if("buzzRinging".equals(action)){
+                    this.isRinging = true;
                 }
                 this.output.output(msg);
             }
@@ -50,24 +50,24 @@ public class IOBridge {
     }
 
     public void inputEvent(int event) {
-        if (this.isBuzzerRinging)
+        if (this.isRinging)
             mainController.stopBuzzer();
         else
             mainController.inputEvent(event);
-        if (!this.isMute)
+        if (!this.mute)
             this.output.output(new Message(11, "beep", null)); // beep
     }
 
     public void toggleSound() {
-        this.isMute = !this.isMute;
+        this.mute = !this.mute;
         // System.out.println(isMute);
     }
 
     public boolean isMute() {
-        return isMute;
+        return mute;
     }
 
-    public boolean isBuzzerRinging() {
-        return isBuzzerRinging;
+    public boolean isRinging() {
+        return isRinging;
     }
 }
