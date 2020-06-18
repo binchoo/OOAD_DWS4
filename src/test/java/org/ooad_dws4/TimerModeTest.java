@@ -7,7 +7,7 @@ import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TimerModeTest {
-
+    //
     @Test
     void makeView() {
         TimerMode timerMode = new TimerMode(true);
