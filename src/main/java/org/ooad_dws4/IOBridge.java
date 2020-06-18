@@ -2,7 +2,7 @@ package org.ooad_dws4;
 
 import java.util.HashMap;
 
-public class IOBridge extends DWSObject {
+public class IOBridge {
 
     private MainController mainController;
     private OutputController output;
