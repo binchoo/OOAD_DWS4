@@ -4,7 +4,7 @@ package org.ooad_dws4;
  * @author Kelvin Kwak (lunox273@gmail.com)
  * @brief Owner of information about the time on the DWS
  */
-public class TimeRunner extends DWSObject implements PulseMaker {
+public class TimeRunner implements PulseMaker {
 
     /**
      * @breif Default time of this system. msec
