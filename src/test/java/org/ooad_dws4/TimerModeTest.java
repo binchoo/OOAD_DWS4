@@ -33,7 +33,7 @@ class TimerModeTest {
         Message returnMessage =timerMode.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "ringing");
-        arg.put("1", "300000");
+        arg.put("1", "600000");
         arg.put("2", "351");
 
         assertEquals(arg,returnMessage.getArg());
