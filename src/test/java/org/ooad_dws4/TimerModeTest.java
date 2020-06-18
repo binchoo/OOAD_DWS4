@@ -34,7 +34,7 @@ class TimerModeTest {
         Message returnMessage =timerMode.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "ringing");
-        arg.put("1", "300000");
+        arg.put("1", "600000");
         arg.put("2", "351");
 
         assertEquals(arg,returnMessage.getArg());
@@ -76,9 +76,9 @@ class TimerModeTest {
         Message returnMessage =timerMode.modeModify(5);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "OFF");
-        arg.put("3", "00|0500");
+        arg.put("3", "00|1000");
         arg.put("4","  TIMER   ");
-        arg.put("blink",null);
+        arg.put("blink", null);
 
         assertEquals(arg,returnMessage.getArg());
     }
@@ -109,7 +109,7 @@ class TimerModeTest {
         Message returnMessage =timerMode.modeModify(3);
         HashMap<String, String> arg = new HashMap<String, String>();
         arg.put("0", "ringing");
-        arg.put("1", "300000");
+        arg.put("1", "600000");
         arg.put("2", "351");
 
         assertEquals(arg,returnMessage.getArg());
