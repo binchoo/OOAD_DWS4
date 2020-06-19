@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class AlarmMode extends Mode {
-    private Alarm[] alarms;
+    private final Alarm[] alarms;
     private int currentAlarmIndex;
     private int field;
     private long systemTime;
