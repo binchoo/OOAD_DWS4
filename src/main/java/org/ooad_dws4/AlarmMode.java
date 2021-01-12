@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Locale;
 
 public class AlarmMode extends Mode {
-    private Alarm[] alarms;
+    private final Alarm[] alarms;
     private int currentAlarmIndex;
     private int field;
     private long systemTime;
@@ -29,17 +29,17 @@ public class AlarmMode extends Mode {
     }
 
     /* system operation */
-    private Message changeAlarmIndex(int value) {
+    private Message changeAlarmIndex(final int value) {
         changeIndex(value);
         date.setTime(alarms[currentAlarmIndex].getAlarmData());
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
 
     /* system operation */
     private Message editAlarm() {
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         if(getStateName().equals("OFF")) {
             changeState(1);
             makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
@@ -50,12 +50,12 @@ public class AlarmMode extends Mode {
     /* system operation */
     private Message saveAlarm() {
         changeState(0);
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
 
-    private void changeIndex(int value) {
+    private void changeIndex(final int value) {
         if (this.currentAlarmIndex == 0 && value == -1) this.currentAlarmIndex = 3;
         else this.currentAlarmIndex = (this.currentAlarmIndex + value) % 4;
     }
@@ -63,7 +63,7 @@ public class AlarmMode extends Mode {
     /* system operation */
     private Message toggleAlarmActivation() {
         alarms[currentAlarmIndex].toggleActivation();
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         long corrector = this.alarms[currentAlarmIndex].getAlarmData() - systemTime >= 0 ? 0 : 1000 * 60 * 60 * 24;
         makeUpdateAlarmEventArg(arg, this.alarms[currentAlarmIndex].getAlarmData() - systemTime + corrector);
         return new Message(22, "updateAlarmEvent", arg);
@@ -74,13 +74,13 @@ public class AlarmMode extends Mode {
     /* system operation */
     private Message changeField() {
         this.field = (this.field + 1) % 2;
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), Integer.toString(field + 3));
         return new Message(11, "updateView", arg);
     }
 
     /* system operation */
-    private Message changeValue(int value) {
+    private Message changeValue(final int value) {
         calendar.setTime(date);
         if (this.field == 0) calendar.set(Calendar.HOUR, calendar.get(Calendar.HOUR) + value);
         else calendar.set(Calendar.MINUTE, calendar.get(Calendar.MINUTE) + value);
@@ -88,8 +88,8 @@ public class AlarmMode extends Mode {
         calendar.set(Calendar.MILLISECOND, 0);
         date = calendar.getTime();
         alarms[currentAlarmIndex].setAlarmData(date.getTime());
-        long alarmTime = alarms[currentAlarmIndex].getAlarmData();
-        HashMap<String, String> arg = new HashMap<>();
+        final long alarmTime = alarms[currentAlarmIndex].getAlarmData();
+        final HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarmTime, Long.toString(field + 3));
         return new Message(11, "updateView", arg);
     }
@@ -112,7 +112,7 @@ public class AlarmMode extends Mode {
     }*/
     @Override
     public Message getModeData() {
-        HashMap<String, String> arg = new HashMap<String, String>();
+        final HashMap<String, String> arg = new HashMap<String, String>();
         makeUpdateViewArg(arg, this.alarms[currentAlarmIndex].getAlarmData(), null);
         return new Message(11, "updateView", arg);
     }
@@ -125,7 +125,7 @@ public class AlarmMode extends Mode {
 //    }
     @Override
     /* 5 -> 2 -> 3|4 -> 1|5*/
-    public Message modeModify(int event) {
+    public Message modeModify(final int event) {
         if (this.state == 0) {
             switch (event) {
                 case 2:
@@ -160,7 +160,7 @@ public class AlarmMode extends Mode {
     }
 
     @Override
-    public Message update(long systemTime) {
+    public Message update(final long systemTime) {
         if(timeSync) {
             for(int i=0; i < alarms.length; i++)
                 alarms[i].setAlarmData(systemTime);
@@ -172,7 +172,7 @@ public class AlarmMode extends Mode {
     }
 
     @Override
-    public Message update(long systemTime, boolean currentMode) {
+    public Message update(final long systemTime, final boolean currentMode) {
         if(timeSync) {
             for(int i=0; i < alarms.length; i++)
                 alarms[i].setAlarmData(systemTime);
@@ -180,14 +180,14 @@ public class AlarmMode extends Mode {
             timeSync = false;
         }
         this.systemTime = systemTime;
-        HashMap<String, String> arg = new HashMap<>();
+        final HashMap<String, String> arg = new HashMap<>();
         makeUpdateViewArg(arg, alarms[currentAlarmIndex].getAlarmData(), null);
         arg.remove("blink");
         return new Message(11, "updateView", arg);
     }
 
     private void makeUpdateViewArg(HashMap<String, String> arg, long alarmTime, String blink) { //f
-        String argData[] = makeTimeSet(alarmTime);
+        final String argData[] = makeTimeSet(alarmTime);
         arg.put("0", getStateName());
 //        arg.put("1", null);
         arg.put("3", argData[3] + "|" + argData[4] + " " + (currentAlarmIndex + 1));
@@ -204,7 +204,7 @@ public class AlarmMode extends Mode {
     }
 
     private String[] makeTimeSet(long time) {
-        Date tmpDate = new Date(time);
+        final Date tmpDate = new Date(time);
         String a[] = new String[7];
         a[0] = new SimpleDateFormat("yyyy").format(tmpDate);
         a[1] = new SimpleDateFormat("MM").format(tmpDate);
