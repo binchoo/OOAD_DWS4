@@ -178,5 +178,4 @@ class AlarmModeTest {
 
         assertEquals(0, a.state);
     }
->>>>>>> 6c26c71760d8bfce5c31de09fdf63fa7e5ccb7fc
 }
