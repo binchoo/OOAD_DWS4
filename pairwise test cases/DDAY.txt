@@ -1,0 +1,15 @@
+Mode Activation:DDAY is Activated,DDAY is not Activated,
+DDAY On Count:No DDAY on,1-3 DDAYs On,4 DDAYs On,
+Selected DDAY Activation:On,Off,
+Mode:Normal,Edit,
+Field To Edit:All,
+Operations:Move DDAY Forward,Move Backward,Move Field Forward,On Selected DDAY,Off Selected DDAY,
+
+IF [DDAY On Count] = "NoOn" THEN [Selected DDAY Activation] IN {"Off"};
+IF [DDAY On Count] = "AllOn" THEN [Selected DDAY Activation] IN {"On"};
+
+IF [Mode] = "Edit" THEN [Field to Edit] IN {"All"};
+If [Mode] = "Edit" THEN [Operation] IN {"Move Field Forward"};
+If [Mode] = "Normal" THEN [Operation] IN {"Move DDAY Forward", "Move Backward"};
+If [Mode] = "Normal" and [Selected DDAY Activation] = "Off" THEN [Operation] IN {"On Selected DDAY"};
+If [Mode] = "Normal" and [Selected DDAY Activation] = "On" THEN [Operation] IN {"Off Selected DDAY"};

@@ -1,0 +1,16 @@
+Alarm Count:All off,Has off,All on
+Alarm Status:On,Off,
+Buzzer Status:Ring,Off,
+Mode:Normal,Edit,
+Current Field:Hour,Minute,
+Operations:Move Field Forward,Save,Buzzer Off,Check Buzzer Rings,
+
+IF [Alarm Count] = "All off" THEN [Alarm Status] IN {"Off"};
+IF [Alarm Count] = "All on" THEN [Alarm Status] IN {"On"};
+
+IF [Alarm Status] = "Off" THEN [Mode] IN {"Normal"};
+
+If [Mode] = "Edit" THEN [Current Field] IN {"Hour", "Minute"};
+
+If [Mode] = "Edit" THEN [Operation] IN {"Move Field Forward", "Save", "Buzzer Off"};
+if [AlarmCount] <> "All Off" and [Buzzer Status] <> "Ringing" THEN [Operation] In {"Move Field Forward", "Save", "Buzzer Off", "Check Buzzer Rings"};

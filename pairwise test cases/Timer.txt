@@ -1,0 +1,12 @@
+Timer Time:Zero,Future,
+Timer Status:Off,Run,Pus,
+Mode:Edit,Normal,
+Currnet Field:Hour,Mintue,Sec,
+Buzzer Status:Ring,No Ring,
+Operations:Start,Pause,Clear,Stop Ringing,
+
+IF [Mode] <> "Edit" THEN [Current Field] = "";
+IF [Mode] <> "Normal" THEN [Buzzer Status] = "";
+IF [Mode] = "Normal" and [Timer Status] <> "Run" and [Buzzer Status] <> "Ringing" THEN [Operation] IN {"Start", "Clear"};
+IF [Mode] = "Normal" and [Timer Status] = "Run" and [Buzzer Status] <> "Ringing" THEN [Operation] IN {"Pause"};
+IF [Buzzer Status] <> "Ringing" THEN [Operation] = "Stop Ringing";

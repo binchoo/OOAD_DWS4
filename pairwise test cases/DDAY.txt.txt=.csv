@@ -1,0 +1,26 @@
+Mode Activation	DDAY On Count	Selected DDAY Activation	Mode	Field To Edit	Operations
+DDAY is Activated		On	Edit	All	On Selected DDAY
+			Normal		
+DDAY is not Activated		Off		All	Move Field Forward
+DDAY is Activated	4 DDAYs On			All	
+DDAY is not Activated	4 DDAYs On	On	Normal		Off Selected DDAY
+	No DDAY on	Off	Edit	All	Off Selected DDAY
+DDAY is Activated	No DDAY on	On			Move Backward
+DDAY is Activated			Normal	All	Off Selected DDAY
+DDAY is not Activated			Edit	All	Move Backward
+DDAY is Activated	No DDAY on	Off	Normal		Move DDAY Forward
+DDAY is not Activated	1-3 DDAYs On	On	Edit	All	
+	1-3 DDAYs On				On Selected DDAY
+	4 DDAYs On	On	Edit	All	Move DDAY Forward
+DDAY is not Activated	No DDAY on	Off	Normal	All	
+	4 DDAYs On	Off	Normal		Move Field Forward
+DDAY is Activated	No DDAY on				Move Field Forward
+DDAY is not Activated	4 DDAYs On	Off	Normal	All	On Selected DDAY
+DDAY is not Activated					Move DDAY Forward
+DDAY is Activated	1-3 DDAYs On	Off		All	Off Selected DDAY
+	No DDAY on			All	On Selected DDAY
+	4 DDAYs On	Off	Normal		Move Backward
+DDAY is Activated	1-3 DDAYs On	On	Normal		Move Backward
+DDAY is not Activated	1-3 DDAYs On	Off			Move DDAY Forward
+DDAY is Activated	1-3 DDAYs On	On			Move Field Forward
+DDAY is Activated			Edit	All	Move Field Forward

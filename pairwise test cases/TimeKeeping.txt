@@ -1,0 +1,9 @@
+DDAY is Activated:DDAYIsOn,DDAYIsOff,
+Mode:Normal,Edit,
+Current Field:Year,Month,Day,Hour,Minute,
+Operations:Check Clock Going,Move Field Forward,Move DDAY Forward,Move DDAY Backward,
+
+IF [Mode] = "Normal" THEN [Current Field] = "";
+IF [Mode] = "Normal" and [DDAY is Activated] = "True" THEN [Operation] IN {"Move DDAY Forward", "Move DDAY Backward"};
+IF [Mode] = "Edit" THEN [Operation] = "Move Field Forward";
+IF [Mode] = "Normal" THEN [Operation] = "Check Clock Going";

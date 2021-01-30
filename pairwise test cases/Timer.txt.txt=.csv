@@ -1,0 +1,25 @@
+Timer Time	Timer Status	Mode	Currnet Field	Buzzer Status	Operations
+		Edit	Hour		
+Zero	Off	Normal		No Ring	
+	Run	Normal	Mintue	Ring	Pause
+Future	Pus	Normal	Sec	Ring	
+Zero	Pus		Mintue		Clear
+Future		Normal	Sec	No Ring	Pause
+	Pus	Normal	Hour	No Ring	Start
+Zero		Normal		Ring	Clear
+Future	Off		Sec		Pause
+Zero	Off	Normal	Hour	Ring	Stop Ringing
+Future	Run	Edit			Start
+Zero	Run	Normal	Sec	Ring	Start
+Zero	Run	Normal	Hour	No Ring	Pause
+Future	Run	Normal	Mintue	No Ring	
+	Off	Edit	Mintue		Start
+	Pus				Stop Ringing
+Zero	Pus	Edit			Pause
+Future	Run	Normal	Hour	No Ring	Clear
+Future		Normal	Mintue	No Ring	Stop Ringing
+			Hour		Start
+	Off	Edit	Sec		Clear
+Future	Run				
+Future	Run	Edit	Sec		Stop Ringing
+Zero	Pus	Normal	Mintue		Pause

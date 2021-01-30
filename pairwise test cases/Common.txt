@@ -1,0 +1,3 @@
+Button Sound Effect:On,Off,
+Current Mode:TimeKeeping,Else,
+Operations:Press And Listen,Wait Alaram,Wait Timer,Go Back To TimeKeeping,

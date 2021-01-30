@@ -1,0 +1,22 @@
+Alarm Count	Alarm Status	Buzzer Status	Mode	Current Field	Operations
+Has off	On		Normal	Hour	Save
+All off	Off	Ring	Normal	Minute	Check Buzzer Rings
+All on	On	Off			Buzzer Off
+Has off		Ring	Edit	Hour	Move Field Forward
+Has off				Hour	Check Buzzer Rings
+Has off		Off	Edit	Hour	
+All off	Off		Normal	Hour	Buzzer Off
+All on	On	Ring	Edit	Minute	Buzzer Off
+All on	On		Normal		Move Field Forward
+Has off	Off	Off	Normal	Minute	Move Field Forward
+Has off		Ring			Buzzer Off
+All off	Off	Off	Normal		Move Field Forward
+Has off			Edit	Minute	Save
+All on	On	Ring			Save
+Has off		Ring	Normal		
+All off	Off		Normal	Minute	
+All on	On	Ring		Minute	
+All on	On	Ring		Hour	Move Field Forward
+All off	Off	Off	Normal	Minute	Save
+All on	On	Off	Edit	Hour	Check Buzzer Rings
+Has off	Off	Off	Normal		Check Buzzer Rings

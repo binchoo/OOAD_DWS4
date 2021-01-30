@@ -1,0 +1,33 @@
+DDAY is Activated	Mode	Current Field	Operations
+DDAYIsOff	Edit	Day	Move Field Forward
+DDAYIsOn	Normal		Move Field Forward
+		Month	Check Clock Going
+DDAYIsOff		Year	
+DDAYIsOn	Edit	Month	
+	Edit	Hour	Move DDAY Forward
+DDAYIsOn		Year	Move Field Forward
+DDAYIsOn		Hour	Move Field Forward
+	Edit	Year	Move DDAY Backward
+DDAYIsOn	Edit	Year	Check Clock Going
+DDAYIsOff		Day	Check Clock Going
+DDAYIsOn		Minute	Check Clock Going
+DDAYIsOff	Edit	Hour	
+DDAYIsOn		Year	Move DDAY Forward
+	Normal		
+DDAYIsOff	Edit	Month	Move DDAY Forward
+DDAYIsOn		Hour	Check Clock Going
+		Month	Move Field Forward
+		Day	
+DDAYIsOff	Normal		Move DDAY Forward
+DDAYIsOff		Minute	Move DDAY Backward
+DDAYIsOn			Check Clock Going
+DDAYIsOn	Edit	Day	Move DDAY Backward
+DDAYIsOn	Normal		Move DDAY Backward
+	Edit	Minute	
+DDAYIsOn	Edit	Day	Move DDAY Forward
+		Minute	Move DDAY Forward
+DDAYIsOff		Minute	Move Field Forward
+	Edit	Month	Move DDAY Backward
+	Normal		Check Clock Going
+DDAYIsOff	Edit		Move Field Forward
+	Edit	Hour	Move DDAY Backward

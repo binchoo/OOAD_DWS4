@@ -1,0 +1,17 @@
+Button Sound Effect	Current Mode	Operations
+On	Else	Go Back To TimeKeeping
+Off	TimeKeeping	Go Back To TimeKeeping
+	Else	
+Off		Wait Timer
+Off	Else	Wait Alaram
+On	TimeKeeping	Wait Timer
+		Go Back To TimeKeeping
+On		
+	TimeKeeping	Wait Timer
+Off	TimeKeeping	
+Off	Else	Wait Timer
+		Press And Listen
+Off	Else	Press And Listen
+	TimeKeeping	Wait Alaram
+On		Wait Alaram
+On	TimeKeeping	Press And Listen

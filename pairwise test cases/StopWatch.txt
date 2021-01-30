@@ -1,0 +1,8 @@
+StopWatch Status:Off,Run,Pus,Edit,
+Edit Field:Hour,Minute,
+Operations:Move Field Forward,Clear,Start,Stop,
+
+IF [StopWatch Status] <> "Edit" THEN [Edit Field] = "";
+IF [StopWatch Status] = "Edit" THEN [Operation] = "Move Field Forward";
+IF [StopWatch Status] = "Run" THEN [Operation] IN {"Stop"};
+IF [StopWatch Status] <> "Run" and [StopWatch Status] <> "Edit" THEN [Operation] IN {"Start", "Clear"};

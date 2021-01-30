@@ -1,0 +1,4 @@
+Activated Mode:four,more,less,
+Operations:Move Forward,Move Backward,Exit,
+
+if [Activated Mode] = "four" THEN [Operation] In {"Move Forward","Move Backward","Exit"};

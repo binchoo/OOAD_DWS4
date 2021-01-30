@@ -1,0 +1,17 @@
+Activated Mode	Operations
+less	Move Backward
+less	Exit
+four	Move Forward
+four	Exit
+	
+	Move Backward
+more	Exit
+	Move Forward
+four	Move Backward
+less	Move Forward
+four	
+more	Move Forward
+more	
+less	
+	Exit
+more	Move Backward
