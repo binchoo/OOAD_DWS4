@@ -19,3 +19,5 @@
 ![](https://github.com/binchoo/OOAD_DWS4/blob/mainline/readme_resources/Class%20Diagram.png)
 ## 세부 문서
 https://www.notion.so/OOAD-Index-5277432b405d43b681dcfdda1892046e
+## 젠킨스
+![Jenkins](http://35.225.155.19:7001/job/OOAD_DWS4/)
