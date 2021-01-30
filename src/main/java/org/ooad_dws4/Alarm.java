@@ -28,7 +28,7 @@ public class Alarm {
     public void changeValue() {
         // TODO implement here
     }
-    public void setAlarmData(long time){
+    public void setAlarmData(final long time){
         this.time = time;
     }
 

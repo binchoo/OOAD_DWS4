@@ -67,7 +67,7 @@ class AlarmModeTest {
         Message returnMsg = a.modeModify(2);
         HashMap<String, String> arg = new HashMap<>();
         arg.put("0", "ringing");
-        arg.put("1", Long.toString(a.getAlarms()[0].getAlarmData()));
+        arg.put("1", "0");
         arg.put("2", "321");
         assertEquals(arg, returnMsg.getArg());
     }
@@ -178,4 +178,5 @@ class AlarmModeTest {
 
         assertEquals(0, a.state);
     }
+>>>>>>> 6c26c71760d8bfce5c31de09fdf63fa7e5ccb7fc
 }

@@ -8,21 +8,18 @@ import java.util.Map;
 
 public class LCDAdapter implements LCD {
 
-    private LCDPanel lcdPanel;
+    private static LCDPanel lcdPanel;
 
-    public LCDAdapter() {
-    }
-
-    public void linkObject(LCDPanel lcdPanel){
+    public void linkObject(final LCDPanel lcdPanel){
         this.lcdPanel = lcdPanel;
     }
 
-    public void update(HashMap<String, String> arg) {
-        Iterator<Map.Entry<String, String>> iterator = arg.entrySet().iterator();
+    public void update(final Map<String, String> arg) {
+        final Iterator<Map.Entry<String, String>> iterator = arg.entrySet().iterator();
         while (iterator.hasNext()) {
-            Map.Entry<String, String> entry = iterator.next();
-            String key = entry.getKey();
-            String value = entry.getValue();
+            final Map.Entry<String, String> entry = iterator.next();
+            final String key = entry.getKey();
+            final String value = entry.getValue();
             if(key.equals("blink")){
                 if(value==null){
                     this.lcdPanel.stopBlink(10,26);

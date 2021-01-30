@@ -2,17 +2,17 @@ package org.ooad_dws4;
 
 public class OutputController{
 
-    private BuzzerAdapter buzzerAdapter;
-    private LCDAdapter lcdAdapter;
+    private static BuzzerAdapter buzzerAdapter = null;
+    private static LCDAdapter lcdAdapter = null;
 
     public OutputController() {
         this.buzzerAdapter = new BuzzerAdapter();
         this.lcdAdapter = new LCDAdapter();
     }
 
-    public void output(Message msg) {
-        String action = msg.getAction();
-        if(action.equals("updateView")){
+    public void output(final Message msg) {
+        final String action = msg.getAction();
+        if("updateView".equals(action)){
             this.lcdAdapter.update(msg.getArg());
         }
         else{

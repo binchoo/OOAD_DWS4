@@ -24,12 +24,14 @@ public class TimeKeepingMode extends Mode {
     /* 5 -> 2 -> 3|4 -> 1|5 */
     @Override
     public Message modeModify(int event) {
-        if (this.state == 0) { /* default state */
+        final int defaultState = 0;
+        final int editState = 1;
+        if (this.state == defaultState) { /* default state */
             switch (event) {
                 case 5: /* change state to edit mode */
                     return changeTime();
             }
-        } else if (this.state == 1) { /* edit state */
+        } else if (this.state == editState) { /* edit state */
             switch (event) {
                 case 1: /* change state to default mode */
                 case 5:

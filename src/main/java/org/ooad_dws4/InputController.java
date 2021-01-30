@@ -2,17 +2,14 @@ package org.ooad_dws4;
 
 public class InputController implements Input {
 
-    private IOBridge ioBridge;
+    private static IOBridge ioBridge;
 
-    public InputController() {
-    }
-
-    public void linkObject(IOBridge ioBridge) {
+    public void linkObject(final IOBridge ioBridge) {
         this.ioBridge = ioBridge;
     }
 
     @Override
-    public void buttonClick(int button) {
+    public void buttonClick(final int button) {
         ioBridge.inputEvent(button);
     }
 }

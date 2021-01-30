@@ -6,7 +6,7 @@ import java.util.*;
  * @author Kelvin Kwak (lunox273@gmail.com)
  * @brief Central Bride from DWS
  */
-public class EventScheduler extends DWSObject {
+public class EventScheduler {
     /**
      * @brief The objects that MainController can use
      */
@@ -31,7 +31,7 @@ public class EventScheduler extends DWSObject {
     /**
      * @brief Milli second of a day.
      */
-    private final long aDay = 86400000;
+    static private final long aDay = 86400000;
 
     /**
      * @brief Push SwitchDefaultScreen event in default constructor.

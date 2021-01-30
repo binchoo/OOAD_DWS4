@@ -3,7 +3,7 @@ package org.ooad_dws4;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public abstract class Mode extends DWSObject {
+public abstract class Mode {
     protected boolean isActivate;
     protected int state;
     protected String modeName;

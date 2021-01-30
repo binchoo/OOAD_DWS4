@@ -115,16 +115,8 @@ public class ModeManager {
                 if (isNotEditMode) {
                     if (event == 2)
                         return new Message(10, "toggleMute", null);
-                    else if (event == 3 || event == 4) {
-                        if (!modes[5].getIsActivate())
-                            return null;
-                        String temp = modes[5].modeModify(event).getArg().get("1");
-                        if (temp != null)
-                            ddayData = temp;
-                        HashMap<String, String> map = new HashMap<>();
-                        map.put("1", ddayData);
-                        return new Message(11, "updateView", map);
-                    }
+                    else if (event == 3 || event == 4)
+                        return makeDdayLcd(event);
                 }
             }
             if (isNotEditMode) {
@@ -142,6 +134,17 @@ public class ModeManager {
                 ddayData = message.getArg().get("1");
             return message;
         }
+    }
+    
+    private Message makeDdayLcd(int event) {
+        if (!modes[5].getIsActivate())
+            return null;
+        String temp = modes[5].modeModify(event).getArg().get("1");
+        if (temp != null)
+            ddayData = temp;
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1", ddayData);
+        return new Message(11, "updateView", map);
     }
 
     /**
