@@ -33,8 +33,20 @@ UP 방법론의 실습과 QA 과정을 경험하기 위한 교육용 프로젝�
 
 ![30 시간 Refresh](https://user-images.githubusercontent.com/30566564/124222353-8d4bae00-db3c-11eb-87af-2c4059085c88.jpg)
 
-## 세부 문서
-https://www.notion.so/OOAD-Index-5277432b405d43b681dcfdda1892046e
-## 젠킨스
-[Jenkins](http://35.225.155.19:7001/job/OOAD_DWS4/)
+## 관련 문서
 
+- [**Menual**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]manual.pdf)
+
+- [**Planning**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage1000_v2.pdf)
+
+- [**Analysis**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage2030_v2.pdf)
+
+- [**Design**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage2040_v2.pdf)
+
+- [**Implementation**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage2050_v2.pdf)
+
+- [**System Testing**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage_2nd.pdf)
+
+- [**Static Analysis**](http://dslab.konkuk.ac.kr/Class/2020/20SMA/Team_project_A/T4/[A][T4]stage_3rd.pdf)
+
+  
